@@ -205,6 +205,7 @@ article ul li{margin-bottom:6px}
 .kkalt button.fel{border-color:var(--vin);background:#4a1726}.kkalt button.fel b{background:var(--vin);color:#fff}
 .kkalt button:disabled{cursor:default;opacity:1}
 .kkalt button.bort{opacity:.45}
+.kktips{margin:8px 0 0;color:var(--dim);font-size:.9rem}
 .kkinl{color:var(--dim);font-weight:700;margin:0 0 10px}
 .kkres{font:800 clamp(1.8rem,8vw,2.4rem)/1.1 "Baloo 2",sans-serif;margin:4px 0 10px}
 .kkres.ratt{color:var(--mint)}.kkres.fel{color:#ff7a8e}
@@ -739,13 +740,42 @@ document.addEventListener('click', e => {
 const KKD = JSON.parse(document.getElementById('kkdata').textContent || '{}');
 const KKN = ['Lugn','Lagom','Het'].filter(n => ((KKD.nivaer || {})[n] || []).length);
 let KKI = (() => { try { return JSON.parse(localStorage.getItem('dryckeslexikon-korkortet') || 'null') || {}; } catch(e) { return {}; } })();
-KKI = {antal: [4,6,8,10].includes(KKI.antal) ? KKI.antal : 6,
+KKI = {antal: [4,6,8,10].includes(KKI.antal) ? KKI.antal : 6, svar: ['Lätt','Medel','Svår'].includes(KKI.svar) ? KKI.svar : 'Medel',
   niva: Array.isArray(KKI.niva) ? KKI.niva.filter(n => KKN.includes(n)) : KKN.filter(n => n !== 'Het'),
   anvanda: Array.isArray(KKI.anvanda) ? KKI.anvanda.slice(-300) : [], runda: KKI.runda|0};
 if (!KKI.niva.length) KKI.niva = KKN.slice(0, 1);
 const sparaKKI = () => { try { localStorage.setItem('dryckeslexikon-korkortet', JSON.stringify(KKI)); } catch(e) {} };
 let KK = {fas:'val'}; // val -> hemlig (visar) -> gissa (gissat) -> svar
 const kkPool = nivaer => [...new Set(nivaer.flatMap(n => KKD.nivaer[n] || []))];
+// Hur lika två påståenden är: gemensamma teman (3 p), samma temagrupp (1 p), gemensamma ord (1 p).
+const KKG = {}; Object.entries(KKD.grupper || {}).forEach(([g, ts]) => ts.forEach(t => KKG[t] = g));
+const KKSTOPP = new Set('någon något sitt sina sig den det har efter från till med utan aldrig bara mest som att och för ett en i på av om ha'.split(' '));
+const kkOrd = t => new Set(t.toLowerCase().replace(/[^a-zåäö ]/g, ' ').split(/\s+/).filter(w => w.length > 2 && !KKSTOPP.has(w)));
+function kkLikhet(a, b){
+  const ta = (KKD.teman || {})[a] || [], tb = (KKD.teman || {})[b] || [];
+  const gem = ta.filter(t => tb.includes(t)).length;
+  const ga = new Set(ta.map(t => KKG[t]).filter(Boolean)), grupp = tb.some(t => ga.has(KKG[t])) ? 1 : 0;
+  const oa = kkOrd(a); let ord = 0; kkOrd(b).forEach(w => { if (oa.has(w)) ord++; });
+  return gem * 3 + grupp + ord;
+}
+// Lätt: så olika som möjligt (även sinsemellan). Svår: de som liknar det rätta mest. Medel: hälften lika, resten slumpade.
+function kkFalska(ratt, kand, n){
+  if (n <= 0) return [];
+  const sorterad = blanda(kand).map(t => [t, kkLikhet(ratt, t)]).sort((x, y) => y[1] - x[1]).map(x => x[0]);
+  if (KKI.svar === 'Svår') return sorterad.slice(0, n);
+  if (KKI.svar === 'Medel'){
+    const lika = blanda(sorterad.slice(0, Math.max(n, 10))).slice(0, Math.ceil(n / 2));
+    return lika.concat(blanda(sorterad.filter(t => !lika.includes(t))).slice(0, n - lika.length));
+  }
+  const valda = [ratt], ut = [];
+  let rest = blanda(kand);
+  while (ut.length < n && rest.length){
+    let bast = null, bp = Infinity;
+    for (const t of rest){ const p = Math.max(...valda.map(v => kkLikhet(v, t))) * 10 + kkLikhet(ratt, t); if (p < bp){ bp = p; bast = t; } }
+    ut.push(bast); valda.push(bast); rest = rest.filter(t => t !== bast);
+  }
+  return ut;
+}
 function kkNytt(byt){
   const pool = kkPool(KKI.niva); if (!pool.length) return;
   let kvar = pool.filter(t => !KKI.anvanda.includes(t) && t !== KK.ratt);
@@ -754,8 +784,8 @@ function kkNytt(byt){
   if (byt && KK.ratt) KKI.anvanda = KKI.anvanda.filter(t => t !== KK.ratt);
   KKI.anvanda.push(ratt);
   // Falska påståenden: först från valda nivåer, fyll på från övriga om det inte räcker.
-  let falska = blanda(pool.filter(t => t !== ratt)).slice(0, KKI.antal - 1);
-  if (falska.length < KKI.antal - 1) falska = falska.concat(blanda(kkPool(KKN).filter(t => t !== ratt && !falska.includes(t)))).slice(0, KKI.antal - 1);
+  let falska = kkFalska(ratt, pool.filter(t => t !== ratt), KKI.antal - 1);
+  if (falska.length < KKI.antal - 1) falska = falska.concat(kkFalska(ratt, kkPool(KKN).filter(t => t !== ratt && !falska.includes(t)), KKI.antal - 1 - falska.length));
   if (!byt) KKI.runda++;
   sparaKKI();
   KK = {fas:'hemlig', visar: !!byt, ratt, alt: blanda(falska.concat(ratt)), gissat: null};
@@ -769,6 +799,9 @@ function korkortSida(){
       <div class="kkval">
         <h3>Antal påståenden att gissa bland</h3>
         <div class="chips">${[4,6,8,10].map(a => `<button type="button" class="chip" data-kkantal="${a}" aria-pressed="${KKI.antal === a}">${a}</button>`).join('')}</div>
+        <h3>Svårighetsgrad</h3>
+        <div class="chips">${['Lätt','Medel','Svår'].map(k => `<button type="button" class="chip" data-kksvar="${k}" aria-pressed="${KKI.svar === k}">${k}</button>`).join('')}</div>
+        <p class="kktips">${{'Lätt':'Påståendena är tydligt olika varandra.','Medel':'Några av påståendena liknar det rätta.','Svår':'Påståendena är väldigt lika det rätta.'}[KKI.svar]}</p>
         <h3>Nivå</h3>
         <div class="chips">${KKN.map(k => `<button type="button" class="chip" data-kkniva="${k}" aria-pressed="${KKI.niva.includes(k)}">${k} <span style="opacity:.6">${KKD.nivaer[k].length}</span></button>`).join('')}</div>
       </div>
@@ -789,7 +822,7 @@ function korkortSida(){
   } else {
     const svar = KK.fas === 'svar', ratt = KK.gissat === KK.ratt;
     v.innerHTML = `<section class="verktyg">
-      <span class="imsteg">Runda ${KKI.runda}</span>
+      <span class="imsteg">Runda ${KKI.runda} · ${KKI.svar}</span>
       ${svar ? (KK.gissat == null ? `<div class="kkres">Svaret var</div>` : `<div class="kkres ${ratt ? 'ratt' : 'fel'}">${ratt ? 'Rätt gissat!' : 'Fel gissat!'}</div>`)
              : `<h1>Vilket påstående var det?</h1><p>Titta på hur körkorten ligger och kom överens. Tryck på ert svar.</p>`}
       <p class="kkinl">${inl}</p>
@@ -806,6 +839,7 @@ function korkortSida(){
 }
 document.addEventListener('click', e => {
   const an = e.target.closest('[data-kkantal]'); if (an){ KKI.antal = +an.dataset.kkantal; sparaKKI(); korkortSida(); return; }
+  const sv = e.target.closest('[data-kksvar]'); if (sv){ KKI.svar = sv.dataset.kksvar; sparaKKI(); korkortSida(); return; }
   const nv = e.target.closest('[data-kkniva]');
   if (nv){ const k = nv.dataset.kkniva; KKI.niva = KKI.niva.includes(k) ? KKI.niva.filter(x => x !== k) : KKN.filter(x => x === k || KKI.niva.includes(x)); sparaKKI(); korkortSida(); return; }
   const al = e.target.closest('[data-kkalt]');

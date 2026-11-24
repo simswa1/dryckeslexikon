@@ -1,0 +1,525 @@
+{
+ "_forklaring": "Teman per påstående i Körkortet. Används av svårighetsgraden: Lätt väljer påståenden utan gemensamma teman, Svår väljer de som delar flest teman (och samma temagrupp) med det rätta. Påståenden som saknas här jämförs bara på gemensamma ord. Nya teman kan läggas i en grupp under 'grupper'.",
+ "grupper": {
+  "kärlek": [
+   "dejt",
+   "kyss",
+   "sex",
+   "flört",
+   "crush",
+   "ex",
+   "kärlek",
+   "svartsjuk",
+   "dumpa",
+   "kompis",
+   "rummet",
+   "ikväll",
+   "hemlis"
+  ],
+  "fest": [
+   "fest",
+   "fylla",
+   "krog",
+   "dans",
+   "sjunga",
+   "bröllop",
+   "skratt"
+  ],
+  "mobil": [
+   "mobil",
+   "sms",
+   "sociala",
+   "ringa"
+  ],
+  "vardag": [
+   "jobb",
+   "ordning",
+   "pengar",
+   "shopping",
+   "hem",
+   "kläder",
+   "familj",
+   "framtid",
+   "djur"
+  ],
+  "pinsamt": [
+   "pinsamt",
+   "lögn",
+   "fräck",
+   "tjafs",
+   "glömsk",
+   "ånger",
+   "skvaller",
+   "gråta",
+   "polis",
+   "sen"
+  ],
+  "äventyr": [
+   "tävling",
+   "styrka",
+   "överleva",
+   "utmaning",
+   "resa",
+   "vilse",
+   "kändis",
+   "film",
+   "social"
+  ],
+  "mat": [
+   "mat"
+  ],
+  "sömn": [
+   "sömn"
+  ]
+ },
+ "teman": {
+  "somna först på festen?": [
+   "sömn",
+   "fest"
+  ],
+  "komma sist till sitt eget bröllop?": [
+   "sen",
+   "bröllop"
+  ],
+  "gå vilse i sin egen hemstad?": [
+   "vilse",
+   "glömsk"
+  ],
+  "vinna ett tävlingsprogram på tv?": [
+   "tävling",
+   "kändis"
+  ],
+  "bli känd på sociala medier?": [
+   "kändis",
+   "sociala"
+  ],
+  "glömma var bilen står parkerad?": [
+   "glömsk"
+  ],
+  "klara sig längst i en zombieapokalyps?": [
+   "överleva"
+  ],
+  "bli rik på en idé som låter dum?": [
+   "pengar"
+  ],
+  "ta sista pizzabiten utan att fråga?": [
+   "mat",
+   "fräck"
+  ],
+  "gråta till en tecknad film?": [
+   "gråta",
+   "film"
+  ],
+  "ha flest olästa mejl?": [
+   "mobil",
+   "jobb"
+  ],
+  "prata med husdjur som om de vore människor?": [
+   "djur"
+  ],
+  "flytta till landet och skaffa höns?": [
+   "djur",
+   "framtid"
+  ],
+  "laga en trerättersmiddag av det som finns i kylen?": [
+   "mat"
+  ],
+  "missa ett flyg?": [
+   "sen",
+   "resa"
+  ],
+  "bli bästis med en främling på krogen?": [
+   "krog",
+   "social"
+  ],
+  "alltid ha en laddare med sig?": [
+   "mobil",
+   "ordning"
+  ],
+  "börja dansa först?": [
+   "dans",
+   "fest"
+  ],
+  "sjunga i duschen så att grannarna hör?": [
+   "sjunga"
+  ],
+  "ha en hemlig talang?": [
+   "hemlis"
+  ],
+  "köpa något på impuls som aldrig används?": [
+   "pengar",
+   "shopping"
+  ],
+  "vara tvärsäker och ändå ha fel?": [
+   "tjafs"
+  ],
+  "vinna en armbrytning?": [
+   "tävling",
+   "styrka"
+  ],
+  "skratta åt sitt eget skämt innan poängen?": [
+   "skratt"
+  ],
+  "ta flest selfies på en semester?": [
+   "sociala",
+   "resa"
+  ],
+  "bli förälder först?": [
+   "framtid",
+   "familj"
+  ],
+  "glömma en väns namn mitt i en presentation?": [
+   "glömsk",
+   "pinsamt"
+  ],
+  "ha flest kläder i garderoben?": [
+   "shopping",
+   "kläder"
+  ],
+  "springa ett maraton?": [
+   "tävling",
+   "styrka"
+  ],
+  "bli sur över ett brädspel?": [
+   "tävling",
+   "tjafs"
+  ],
+  "somna på bio?": [
+   "sömn",
+   "film"
+  ],
+  "veta allt skvaller först?": [
+   "skvaller"
+  ],
+  "hitta ut ur ett escape room först?": [
+   "tävling"
+  ],
+  "klä ut sig mest på en maskerad?": [
+   "kläder",
+   "fest"
+  ],
+  "äta den starkaste chilin?": [
+   "mat",
+   "utmaning"
+  ],
+  "hitta på en ursäkt för att slippa städa?": [
+   "lögn",
+   "hem"
+  ],
+  "bo kvar i samma stad hela livet?": [
+   "framtid",
+   "hem"
+  ],
+  "ha flest appar på mobilen?": [
+   "mobil"
+  ],
+  "bli igenkänd av en kändis?": [
+   "kändis"
+  ],
+  "ha bäst koll på allas födelsedagar?": [
+   "ordning",
+   "glömsk"
+  ],
+  "överleva en vecka i skogen?": [
+   "överleva"
+  ],
+  "vara först upp på morgonen efter en fest?": [
+   "sömn",
+   "fest"
+  ],
+  "skicka ett sms till fel person?": [
+   "sms",
+   "pinsamt"
+  ],
+  "ljuga om sin ålder?": [
+   "lögn"
+  ],
+  "ha kollat sitt ex på sociala medier den här veckan?": [
+   "ex",
+   "sociala"
+  ],
+  "bli utkastad från en krog?": [
+   "krog",
+   "fylla"
+  ],
+  "ringa sitt ex efter några glas?": [
+   "ex",
+   "fylla",
+   "ringa"
+  ],
+  "tappa bort mobilen på en fest?": [
+   "mobil",
+   "fest",
+   "fylla"
+  ],
+  "ha googlat sig själv?": [
+   "sociala"
+  ],
+  "låtsas ha sett en film den aldrig sett?": [
+   "lögn",
+   "film"
+  ],
+  "glömma vad som hände i går kväll?": [
+   "fylla",
+   "glömsk"
+  ],
+  "äta kebab klockan tre på natten?": [
+   "mat",
+   "fylla"
+  ],
+  "ha flest dejtingappar i mobilen?": [
+   "dejt",
+   "mobil"
+  ],
+  "göra slut över sms?": [
+   "sms",
+   "dumpa"
+  ],
+  "råka gilla en gammal bild när den spanar på någon?": [
+   "sociala",
+   "pinsamt"
+  ],
+  "hålla det längsta talet på ett bröllop?": [
+   "bröllop",
+   "fest"
+  ],
+  "gå till jobbet bakfull?": [
+   "jobb",
+   "fylla"
+  ],
+  "smita från notan?": [
+   "krog",
+   "pengar",
+   "fräck"
+  ],
+  "låtsas vara sjuk för att slippa något?": [
+   "lögn",
+   "jobb"
+  ],
+  "fastna i ett pinsamt samtal med chefen?": [
+   "jobb",
+   "pinsamt"
+  ],
+  "skryta om något som aldrig hänt?": [
+   "lögn"
+  ],
+  "ta karaokemikrofonen och vägra släppa den?": [
+   "sjunga",
+   "fest"
+  ],
+  "starta ett politiskt gräl på en middag?": [
+   "tjafs"
+  ],
+  "ha ett hemligt konto på sociala medier?": [
+   "sociala",
+   "hemlis"
+  ],
+  "springa på sitt ex när den ser som sämst ut?": [
+   "ex",
+   "pinsamt"
+  ],
+  "äta mat som legat på golvet?": [
+   "mat"
+  ],
+  "läsa någon annans sms över axeln?": [
+   "sms",
+   "fräck"
+  ],
+  "somna i taxin hem?": [
+   "sömn",
+   "fylla"
+  ],
+  "gå hem från festen utan att säga hejdå?": [
+   "fest"
+  ],
+  "ha en tatuering den ångrar?": [
+   "ånger"
+  ],
+  "dansa uppe på ett bord?": [
+   "dans",
+   "fest",
+   "fylla"
+  ],
+  "ringa sin mamma när den är full?": [
+   "familj",
+   "fylla",
+   "ringa"
+  ],
+  "låna något och aldrig lämna tillbaka det?": [
+   "fräck",
+   "glömsk"
+  ],
+  "dyka upp på en fest utan att vara bjuden?": [
+   "fest",
+   "fräck"
+  ],
+  "bli svartsjuk för en småsak?": [
+   "svartsjuk"
+  ],
+  "skicka \"är du vaken?\" efter midnatt?": [
+   "sms",
+   "flört"
+  ],
+  "vinna en ölhävning?": [
+   "tävling",
+   "fylla"
+  ],
+  "gråta på en fest?": [
+   "gråta",
+   "fest"
+  ],
+  "ha blivit stoppad av polisen?": [
+   "polis"
+  ],
+  "svara på jobbmejl på semestern?": [
+   "jobb",
+   "mobil",
+   "resa"
+  ],
+  "kalla sin partner fel namn?": [
+   "pinsamt",
+   "kärlek"
+  ],
+  "stjäla ett glas från en bar?": [
+   "krog",
+   "fräck"
+  ],
+  "ha en hemlig crush i det här rummet?": [
+   "crush",
+   "rummet",
+   "hemlis"
+  ],
+  "kyssa någon i kväll?": [
+   "kyss",
+   "ikväll"
+  ],
+  "ha haft flest dejter i år?": [
+   "dejt"
+  ],
+  "ha skickat en het bild?": [
+   "sms",
+   "sex"
+  ],
+  "gå hem med någon från festen?": [
+   "ikväll",
+   "sex",
+   "fest"
+  ],
+  "ha kysst två personer samma kväll?": [
+   "kyss"
+  ],
+  "bli ihop med ett ex igen?": [
+   "ex",
+   "kärlek"
+  ],
+  "flörta med bartendern?": [
+   "flört",
+   "krog"
+  ],
+  "ha den vildaste dejtinghistorien?": [
+   "dejt"
+  ],
+  "ha dejtat någon mycket äldre?": [
+   "dejt"
+  ],
+  "ha kysst någon i det här sällskapet?": [
+   "kyss",
+   "rummet"
+  ],
+  "ha blivit påkommen i ett pinsamt läge?": [
+   "sex",
+   "pinsamt"
+  ],
+  "ha haft en one night stand?": [
+   "sex"
+  ],
+  "ha dejtat två kompisar till varandra?": [
+   "dejt",
+   "kompis"
+  ],
+  "ha haft en hemlig relation?": [
+   "hemlis",
+   "kärlek"
+  ],
+  "bli kär i sin chef?": [
+   "jobb",
+   "kärlek"
+  ],
+  "ha smugit ut från någons lägenhet på morgonen?": [
+   "sex"
+  ],
+  "säga ja till en dejt med någon här?": [
+   "dejt",
+   "rummet"
+  ],
+  "ha flest hemligheter om sitt kärleksliv?": [
+   "hemlis",
+   "kärlek"
+  ],
+  "ha haft en semesterromans?": [
+   "resa",
+   "kärlek"
+  ],
+  "ha strippat på en fest?": [
+   "fest",
+   "sex"
+  ],
+  "ha sms:at någon i det här rummet mitt i natten?": [
+   "sms",
+   "rummet",
+   "flört"
+  ],
+  "ha kysst någon för att göra någon annan svartsjuk?": [
+   "kyss",
+   "svartsjuk"
+  ],
+  "ha legat med någon på första dejten?": [
+   "sex",
+   "dejt"
+  ],
+  "ha blivit dumpad över sms?": [
+   "sms",
+   "dumpa"
+  ],
+  "ha gått på två dejter samma dag?": [
+   "dejt"
+  ],
+  "ha en fantasi den aldrig berättat om?": [
+   "hemlis",
+   "sex"
+  ],
+  "ha kysst någon på jobbet?": [
+   "kyss",
+   "jobb"
+  ],
+  "ha flörtat sig till gratis drinkar?": [
+   "flört",
+   "krog"
+  ],
+  "tänka på någon annan just nu?": [
+   "crush",
+   "hemlis"
+  ],
+  "ha dejtat någon bara för utseendet?": [
+   "dejt"
+  ],
+  "bli upptäckt med någon i ett badrum på en fest?": [
+   "sex",
+   "fest",
+   "pinsamt"
+  ],
+  "ha legat med ett ex till en kompis?": [
+   "sex",
+   "ex",
+   "kompis"
+  ],
+  "ha haft sex på en offentlig plats?": [
+   "sex"
+  ],
+  "skicka ett flörtigt sms efter i kväll?": [
+   "sms",
+   "flört",
+   "ikväll"
+  ]
+ }
+}
