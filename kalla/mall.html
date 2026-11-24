@@ -186,6 +186,29 @@ article ul li{margin-bottom:6px}
 .imsteg{display:inline-block;margin:0 0 10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-weight:800}
 .imlista{text-align:left;max-width:420px;margin:0 auto 14px;padding-left:1.3em}
 .imlista li{margin-bottom:6px}
+/* ===== Körkortet ===== */
+.c-korkort{background:linear-gradient(150deg,#c79bff,#6a3fc0 60%,#2b1a5c);color:#fff}
+.c-korkort p{opacity:.95}
+.kkval{max-width:420px;margin:0 auto 12px;text-align:left}
+.kkval h3{font-size:1.05rem;margin:16px 0 8px}
+.kkval .chips{display:flex;flex-wrap:wrap;gap:8px}
+.kkval .chip{font-size:1rem;min-width:56px}
+.kkval .chip[aria-pressed=true]{background:#2e2350;border-color:#c79bff;color:var(--text)}
+.imkort.kkp{background:#fff;color:#1d1630;border-color:#fff}
+.imkort.kkp .stor-t{font-size:clamp(1.5rem,7vw,2.2rem)}
+.kkalt{list-style:none;padding:0;margin:0 auto 14px;max-width:520px;display:grid;gap:8px;counter-reset:kk}
+.kkalt button{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:10px 14px;border-radius:16px;border:2px solid var(--kant);background:var(--yta);font-weight:700;font-size:1rem;text-align:left;cursor:pointer}
+.kkalt button b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--yta2);font:800 1rem "Baloo 2",sans-serif}
+.kkalt button[aria-pressed=true]{border-color:#c79bff;background:#2e2350}
+.kkalt button[aria-pressed=true] b{background:#c79bff;color:#1d1630}
+.kkalt button.ratt{border-color:var(--mint);background:#123d33}.kkalt button.ratt b{background:var(--mint);color:#062a24}
+.kkalt button.fel{border-color:var(--vin);background:#4a1726}.kkalt button.fel b{background:var(--vin);color:#fff}
+.kkalt button:disabled{cursor:default;opacity:1}
+.kkalt button.bort{opacity:.45}
+.kkinl{color:var(--dim);font-weight:700;margin:0 0 10px}
+.kkres{font:800 clamp(1.8rem,8vw,2.4rem)/1.1 "Baloo 2",sans-serif;margin:4px 0 10px}
+.kkres.ratt{color:var(--mint)}.kkres.fel{color:#ff7a8e}
+.verktygslank.kklank{background:linear-gradient(150deg,#c79bff33,#6a3fc033);border-color:#8a5ad8}
 .verktygslank.imlank{background:linear-gradient(150deg,#ff9a5a33,#b8325a33);border-color:#b8325a}
 .verktyg{max-width:520px;margin:0 auto;padding:12px 0 10px;text-align:center}
 .verktyg h1{font-size:clamp(1.8rem,7vw,2.4rem)}
@@ -310,6 +333,7 @@ body.ispel .topp,body.ispel .slump{display:none}
  <symbol id="penna" viewBox="0 0 100 100"><rect x="10" y="18" width="52" height="66" rx="4" fill="#fff7a8" transform="rotate(-8 36 51)"/><g stroke="#c9a400" stroke-width="3" stroke-linecap="round" opacity=".6" transform="rotate(-8 36 51)"><path d="M20 36h32M20 48h32M20 60h22"/></g><g transform="rotate(35 70 50)"><rect x="62" y="10" width="14" height="62" rx="2" fill="#ffb838"/><path d="M62 72h14l-7 16z" fill="#f4d3a0"/><path d="M66.5 82h5l-2.5 6z" fill="#1d1630"/><rect x="62" y="6" width="14" height="8" rx="2" fill="#e2475f"/></g></symbol>
   <symbol id="musik" viewBox="0 0 100 100"><path d="M38 20l44-10v56" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/><path d="M38 20v58" stroke="#fff" stroke-width="7"/><ellipse cx="28" cy="80" rx="13" ry="10" fill="#7aa8ff"/><ellipse cx="72" cy="68" rx="13" ry="10" fill="#ff7a8e"/></symbol>
  <symbol id="hjarta" viewBox="0 0 100 100"><path d="M50 88C20 66 6 50 6 32 6 18 17 8 30 8c9 0 16 5 20 12 4-7 11-12 20-12 13 0 24 10 24 24 0 18-14 34-44 56z" fill="#fff"/><path d="M30 18c-7 0-13 5-14 12" stroke="#ffc2cc" stroke-width="6" stroke-linecap="round" fill="none"/></symbol>
+ <symbol id="korkort" viewBox="0 0 120 100"><ellipse cx="60" cy="94" rx="52" ry="5" fill="#000" opacity=".2"/><g transform="rotate(-12 30 60)"><rect x="4" y="40" width="50" height="34" rx="5" fill="#ffe1ec"/><rect x="9" y="46" width="14" height="18" rx="2" fill="#e2475f"/><path d="M27 50h21M27 57h16M27 64h19" stroke="#b8325a" stroke-width="3" stroke-linecap="round"/></g><g transform="rotate(10 90 60)"><rect x="66" y="40" width="50" height="34" rx="5" fill="#dff7ff"/><rect x="71" y="46" width="14" height="18" rx="2" fill="#7aa8ff"/><path d="M89 50h21M89 57h16M89 64h19" stroke="#5160d6" stroke-width="3" stroke-linecap="round"/></g><rect x="33" y="30" width="54" height="38" rx="6" fill="#fff"/><rect x="39" y="37" width="16" height="20" rx="2" fill="#ffb838"/><circle cx="47" cy="44" r="4" fill="#fff"/><path d="M41 56c1-5 4-7 6-7s5 2 6 7z" fill="#fff"/><path d="M60 41h21M60 48h16M60 55h19" stroke="#6a3fc0" stroke-width="3" stroke-linecap="round"/><g font-family="Arial" font-weight="800" font-size="13" text-anchor="middle"><circle cx="60" cy="16" r="11" fill="#5fd8b0"/><text x="60" y="21" fill="#062a24">1</text><circle cx="16" cy="30" r="9" fill="#ffb838"/><text x="16" y="34.5" fill="#2a1300" font-size="11">2</text><circle cx="104" cy="30" r="9" fill="#e2475f"/><text x="104" y="34.5" fill="#fff" font-size="11">3</text></g></symbol>
  <symbol id="impostor" viewBox="0 0 120 100"><ellipse cx="60" cy="94" rx="50" ry="5" fill="#000" opacity=".2"/><g fill="#ffd9a8"><circle cx="22" cy="44" r="11"/><path d="M6 88c0-18 7-28 16-28s16 10 16 28z"/><circle cx="98" cy="44" r="11"/><path d="M82 88c0-18 7-28 16-28s16 10 16 28z"/></g><g fill="#1d1630"><path d="M38 90c0-24 9-38 22-38s22 14 22 38z"/><circle cx="60" cy="36" r="16"/><path d="M38 30c2-14 12-20 22-20s20 6 22 20c-6-3-14-4-22-4s-16 1-22 4z"/><rect x="34" y="27" width="52" height="6" rx="3"/></g><path d="M48 37h24" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="52" cy="37" r="2.4" fill="#e2475f"/><circle cx="68" cy="37" r="2.4" fill="#e2475f"/><rect x="88" y="6" width="28" height="22" rx="8" fill="#fff"/><path d="M94 28l-2 8 9-8z" fill="#fff"/><text x="102" y="23" text-anchor="middle" font-size="17" font-weight="800" fill="#b8325a" font-family="Arial">?</text></symbol>
  <!--LEKBILDER-->
  </defs>
@@ -323,6 +347,7 @@ body.ispel .topp,body.ispel .slump{display:none}
 <script id="lekdata" type="application/json">__LEKAR__</script>
 <script id="fragdata" type="application/json">__FRAGOR__</script>
 <script id="impdata" type="application/json">__IMPOSTOR__</script>
+<script id="kkdata" type="application/json">__KORKORTET__</script>
 <script>
 {
 const LEKAR = JSON.parse(document.getElementById('lekdata').textContent)
@@ -407,8 +432,10 @@ function start(){
       ${ikon('kort')}<h2>Kortlek</h2><p>Dra kort direkt i telefonen.</p></a>
     <a class="stor c-tarn" href="#tarningar">
       ${ikon('tarning')}<h2>Tärningar</h2><p>Slå 1–10 tärningar.</p></a>
-    <a class="stor hel c-impostor" href="#impostor">
+    <a class="stor c-impostor" href="#impostor">
       ${ikon('impostor')}<h2>Impostor</h2><p>Alla får samma hemliga ord utom en. Vem är impostorn?</p></a>
+    <a class="stor c-korkort" href="#korkortet">
+      ${ikon('korkort')}<h2>Körkortet</h2><p>Rangordna körkorten. Vilket påstående var det?</p></a>
   </nav>
   <section class="valja" aria-labelledby="vh">
   <h3 class="rubrik" id="vh">Vad har ni framme?</h3>
@@ -527,6 +554,7 @@ function lekSida(id){
       : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
     ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? (n => `<a class="verktygslank" href="${n ? '#tarningar-' + encodeURIComponent(l.id) : '#tarningar'}">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>${n ? `Öppnas med ${tarningText(n)}, som leken använder` : 'Öppna de digitala tärningarna'}</small></span></a>`)(tarningarFor(l)) : ''}
     ${l.verktyg === 'impostor' ? `<a class="verktygslank imlank" href="#impostor">${ikon('impostor')}<span>▶ Spela i telefonen<small>Skicka runt telefonen, var och en ser sitt ord</small></span></a>` : ''}
+    ${l.verktyg === 'korkortet' ? `<a class="verktygslank kklank" href="#korkortet">${ikon('korkort')}<span>▶ Spela i telefonen<small>Hemligt påstående, rangordna och gissa</small></span></a>` : ''}
     ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
     ${lst('Varianter', l.varianter)}
     ${l.taggar && l.taggar.length ? `<div class="taggar">${l.taggar.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
@@ -707,7 +735,93 @@ document.addEventListener('click', e => {
   else if (a === 'avbryt'){ IM = {fas:'val'}; }
   impostorSida();
 });
-const VERKTYG = {kortlek:kortlekSida, tarningar:tarningSida, impostor:impostorSida};
+// ===== Körkortet: en spelare får ett hemligt påstående och rangordnar körkorten, de andra gissar bland 4–10 påståenden =====
+const KKD = JSON.parse(document.getElementById('kkdata').textContent || '{}');
+const KKN = ['Lugn','Lagom','Het'].filter(n => ((KKD.nivaer || {})[n] || []).length);
+let KKI = (() => { try { return JSON.parse(localStorage.getItem('dryckeslexikon-korkortet') || 'null') || {}; } catch(e) { return {}; } })();
+KKI = {antal: [4,6,8,10].includes(KKI.antal) ? KKI.antal : 6,
+  niva: Array.isArray(KKI.niva) ? KKI.niva.filter(n => KKN.includes(n)) : KKN.filter(n => n !== 'Het'),
+  anvanda: Array.isArray(KKI.anvanda) ? KKI.anvanda.slice(-300) : [], runda: KKI.runda|0};
+if (!KKI.niva.length) KKI.niva = KKN.slice(0, 1);
+const sparaKKI = () => { try { localStorage.setItem('dryckeslexikon-korkortet', JSON.stringify(KKI)); } catch(e) {} };
+let KK = {fas:'val'}; // val -> hemlig (visar) -> gissa (gissat) -> svar
+const kkPool = nivaer => [...new Set(nivaer.flatMap(n => KKD.nivaer[n] || []))];
+function kkNytt(byt){
+  const pool = kkPool(KKI.niva); if (!pool.length) return;
+  let kvar = pool.filter(t => !KKI.anvanda.includes(t) && t !== KK.ratt);
+  if (!kvar.length){ KKI.anvanda = KKI.anvanda.filter(t => !pool.includes(t)); kvar = pool.filter(t => t !== KK.ratt); if (!kvar.length) kvar = pool; }
+  const ratt = kvar[Math.floor(Math.random() * kvar.length)];
+  if (byt && KK.ratt) KKI.anvanda = KKI.anvanda.filter(t => t !== KK.ratt);
+  KKI.anvanda.push(ratt);
+  // Falska påståenden: först från valda nivåer, fyll på från övriga om det inte räcker.
+  let falska = blanda(pool.filter(t => t !== ratt)).slice(0, KKI.antal - 1);
+  if (falska.length < KKI.antal - 1) falska = falska.concat(blanda(kkPool(KKN).filter(t => t !== ratt && !falska.includes(t)))).slice(0, KKI.antal - 1);
+  if (!byt) KKI.runda++;
+  sparaKKI();
+  KK = {fas:'hemlig', visar: !!byt, ratt, alt: blanda(falska.concat(ratt)), gissat: null};
+}
+function korkortSida(){
+  const v = $('#vy'), inl = esc(KKD.inledning || 'Vem är mest trolig att …');
+  if (KK.fas === 'val'){
+    const n = kkPool(KKI.niva).length;
+    v.innerHTML = `<section class="verktyg">
+      <h1>Körkortet</h1><p>Alla lägger fram sitt körkort eller id. En spelare får ett hemligt påstående och rangordnar körkorten. De andra gissar vilket påstående det var.</p>
+      <div class="kkval">
+        <h3>Antal påståenden att gissa bland</h3>
+        <div class="chips">${[4,6,8,10].map(a => `<button type="button" class="chip" data-kkantal="${a}" aria-pressed="${KKI.antal === a}">${a}</button>`).join('')}</div>
+        <h3>Nivå</h3>
+        <div class="chips">${KKN.map(k => `<button type="button" class="chip" data-kkniva="${k}" aria-pressed="${KKI.niva.includes(k)}">${k} <span style="opacity:.6">${KKD.nivaer[k].length}</span></button>`).join('')}</div>
+      </div>
+      <button type="button" class="spela" data-kk="start" ${n ? '' : 'disabled'}>${n ? 'Starta' : 'Välj minst en nivå'}</button>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#lek-korkortet" style="display:inline-flex;align-items:center;text-decoration:none">Regler</a></div>
+    </section>`;
+  } else if (KK.fas === 'hemlig'){
+    v.innerHTML = `<section class="verktyg">
+      <span class="imsteg">Runda ${KKI.runda}</span>
+      ${!KK.visar
+        ? `<button type="button" class="imkort dold" data-kk="visa" style="width:100%"><span class="etikett" style="color:#fff">Ge telefonen till</span><span class="num" style="font-size:clamp(2rem,10vw,3rem)">Den som rangordnar</span><p style="color:#fff">Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.</p></button>
+           <button type="button" class="spela" data-kk="visa">Visa påståendet</button>`
+        : `<div class="imkort kkp" aria-live="polite"><span class="etikett">${inl}</span><span class="stor-t">${esc(KK.ratt)}</span><p>${esc(KKD.instruktion || '')}</p></div>
+           <button type="button" class="spela" data-kk="gom">Klar. Göm och visa alternativen</button>
+           <div class="knapprad" style="margin-top:10px"><button type="button" class="liten" data-kk="byt">Byt påstående</button></div>`}
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">Avbryt rundan</button></div>
+    </section>`;
+  } else {
+    const svar = KK.fas === 'svar', ratt = KK.gissat === KK.ratt;
+    v.innerHTML = `<section class="verktyg">
+      <span class="imsteg">Runda ${KKI.runda}</span>
+      ${svar ? (KK.gissat == null ? `<div class="kkres">Svaret var</div>` : `<div class="kkres ${ratt ? 'ratt' : 'fel'}">${ratt ? 'Rätt gissat!' : 'Fel gissat!'}</div>`)
+             : `<h1>Vilket påstående var det?</h1><p>Titta på hur körkorten ligger och kom överens. Tryck på ert svar.</p>`}
+      <p class="kkinl">${inl}</p>
+      <ol class="kkalt">${KK.alt.map((t, i) => {
+        const k = svar ? (t === KK.ratt ? 'ratt' : t === KK.gissat ? 'fel' : 'bort') : '';
+        return `<li><button type="button" class="${k}" data-kkalt="${i}" aria-pressed="${!svar && KK.gissat === t}" ${svar ? 'disabled' : ''}><b>${i + 1}</b><span>${esc(t)}</span></button></li>`; }).join('')}</ol>
+      ${svar
+        ? `<button type="button" class="spela" data-kk="start">Ny runda<span style="font-size:.8rem;font-weight:700">Lämna telefonen till nästa spelare</span></button>
+           <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">Ändra inställningar</button></div>`
+        : `<button type="button" class="spela" data-kk="facit">${KK.gissat == null ? 'Visa svaret' : 'Lås svaret och visa'}</button>
+           <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">Avbryt rundan</button></div>`}
+    </section>`;
+  }
+}
+document.addEventListener('click', e => {
+  const an = e.target.closest('[data-kkantal]'); if (an){ KKI.antal = +an.dataset.kkantal; sparaKKI(); korkortSida(); return; }
+  const nv = e.target.closest('[data-kkniva]');
+  if (nv){ const k = nv.dataset.kkniva; KKI.niva = KKI.niva.includes(k) ? KKI.niva.filter(x => x !== k) : KKN.filter(x => x === k || KKI.niva.includes(x)); sparaKKI(); korkortSida(); return; }
+  const al = e.target.closest('[data-kkalt]');
+  if (al && KK.fas === 'gissa'){ const t = KK.alt[+al.dataset.kkalt]; KK.gissat = KK.gissat === t ? null : t; korkortSida(); return; }
+  const b = e.target.closest('[data-kk]'); if (!b) return;
+  const a = b.dataset.kk;
+  if (a === 'visa' && Date.now() - (KK.gomd || 0) < 700) return;
+  if (a === 'start'){ kkNytt(); window.scrollTo(0,0); }
+  else if (a === 'byt'){ kkNytt(true); }
+  else if (a === 'visa'){ KK.visar = true; }
+  else if (a === 'gom'){ KK.fas = 'gissa'; KK.gomd = Date.now(); window.scrollTo(0,0); }
+  else if (a === 'facit'){ KK.fas = 'svar'; window.scrollTo(0,0); }
+  else if (a === 'avbryt'){ KK = {fas:'val'}; }
+  korkortSida();
+});
+const VERKTYG = {kortlek:kortlekSida, tarningar:tarningSida, impostor:impostorSida, korkortet:korkortSida};
 
 let senasteLista = null, forraHash = null;
 function route(){
