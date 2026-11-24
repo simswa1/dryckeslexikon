@@ -158,6 +158,63 @@ article ul li{margin-bottom:6px}
 @media(min-width:640px){.rutor{grid-template-columns:repeat(3,minmax(0,1fr))}.stor.hel{grid-column:auto;min-height:200px}.stor.hel svg{width:62%;height:58%;top:10px}.stor.hel h2,.stor.hel p{max-width:none}.kats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:380px){.stor{min-height:180px}.stor h2{font-size:1.25rem}.fakta3 b{font-size:.82rem}}
 @media(prefers-reduced-motion:reduce){.stor{transition:none}}
+/* Spelläge: helskärm med stort frågekort */
+.startspel{background:linear-gradient(150deg,#5fd8b0,#2a9c8e);color:#062a24;margin:22px 0 6px}
+body.ispel{overflow:hidden}
+body.ispel .topp,body.ispel .slump{display:none}
+.spel{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;background:var(--bg);background-image:radial-gradient(700px 500px at 100% 0,#4a1f3d 0,transparent 60%),radial-gradient(600px 500px at 0 100%,#2a1f4d 0,transparent 60%);padding:calc(10px + env(safe-area-inset-top)) 16px calc(14px + env(safe-area-inset-bottom));overflow-y:auto;-webkit-user-select:none;user-select:none}
+.spel[hidden]{display:none}
+.shuv{display:flex;align-items:center;gap:10px;max-width:640px;width:100%;margin:0 auto}
+.shuv h2{flex:1;font-size:1.3rem}
+.rund{flex:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--kant);background:var(--yta);font-size:1.4rem;font-weight:800;cursor:pointer;display:grid;place-items:center;text-decoration:none;line-height:1}
+.rund:disabled{opacity:.35}
+.rund.pa{background:#e2475f;border-color:#e2475f;color:#fff}
+.sval{max-width:640px;width:100%;margin:0 auto}
+.sval p.vtext{margin:14px 0 10px}
+.nivor{display:grid;gap:10px}
+.niva{display:flex;align-items:center;gap:14px;min-height:76px;padding:12px 16px;border-radius:18px;border:2px solid var(--kant);background:var(--yta);cursor:pointer;text-align:left;width:100%}
+.niva b{display:block;font:800 1.3rem/1.1 "Baloo 2",sans-serif}
+.niva small{color:var(--dim)}
+.niva .pr{width:16px;height:16px;border-radius:50%;flex:none}
+.niva div{flex:1}
+.niva .bock{position:static;flex:none}
+.niva[aria-pressed=true]{border-color:currentColor}
+.niva[aria-pressed=true] .bock{background:currentColor;border-color:currentColor}
+.n-Lugn{color:#5fd8b0}.n-Lagom{color:#ffb838}.n-Het{color:#ff7a8e}.n-Egna{color:#7aa8ff}.n-Fav{color:#c79bff}
+.niva b,.niva small{color:var(--text)}.niva small{color:var(--dim)}
+.niva .pr{background:currentColor}
+.egna{margin-top:22px}
+.egna h3{font-size:1.15rem;margin-bottom:4px}
+.egnarad{display:flex;gap:8px;margin:8px 0}
+.egnarad input{flex:1;padding:12px 14px;font:16px "Nunito Sans",sans-serif;border-radius:14px;border:1px solid var(--kant);background:var(--yta);color:var(--text)}
+.egnarad button{min-height:48px;padding:0 16px;border-radius:14px;border:0;background:var(--bla);color:#0b1240;font-weight:800;cursor:pointer}
+.egnalista{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.egnalista li{display:flex;align-items:center;gap:8px;padding:8px 8px 8px 14px;border-radius:12px;background:var(--yta)}
+.egnalista li span{flex:1;overflow-wrap:anywhere}
+.egnalista button{width:40px;height:40px;border-radius:10px;border:0;background:var(--yta2);cursor:pointer;font-size:1.1rem}
+.sbotten{position:sticky;bottom:0;padding-top:12px;background:linear-gradient(transparent,var(--bg) 30%)}
+.sbotten .spela{border:0;width:100%;cursor:pointer}
+.sbotten .spela:disabled{opacity:.45}
+.spelyta{flex:1;display:flex;flex-direction:column;max-width:640px;width:100%;margin:0 auto;min-height:0}
+.raknare{text-align:center;font-weight:800;color:var(--dim);font-size:1rem}
+.raknare .nb{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.08);font-size:.85rem}
+.kortyta{flex:1;display:flex;align-items:center;justify-content:center;padding:14px 0;min-height:260px;touch-action:pan-y}
+.frkort{position:relative;width:100%;min-height:min(62vh,520px);display:flex;flex-direction:column;justify-content:center;padding:28px 24px;border-radius:30px;background:linear-gradient(160deg,#3a2747,#26182f);border:2px solid currentColor;box-shadow:0 20px 50px rgba(0,0,0,.5);cursor:pointer;will-change:transform}
+.frkort .inl{font:700 1.05rem "Nunito Sans",sans-serif;color:var(--dim);margin-bottom:10px}
+.frkort .fr{font:800 clamp(1.9rem,8.5vw,3rem)/1.12 "Baloo 2",sans-serif;color:var(--text);text-wrap:balance;overflow-wrap:anywhere}
+.frkort .tips{position:absolute;left:0;right:0;bottom:16px;text-align:center;color:var(--dim);font-size:.82rem;opacity:.8}
+.frkort.slut .fr{font-size:clamp(1.7rem,7vw,2.4rem)}
+.frkort.ut-v{animation:utv .18s ease-in forwards}.frkort.ut-h{animation:uth .18s ease-in forwards}
+.frkort.in-h{animation:inh .22s ease-out}.frkort.in-v{animation:inv .22s ease-out}
+@keyframes utv{to{transform:translateX(-110%) rotate(-8deg);opacity:0}}
+@keyframes uth{to{transform:translateX(110%) rotate(8deg);opacity:0}}
+@keyframes inh{from{transform:translateX(40%) scale(.96);opacity:0}}
+@keyframes inv{from{transform:translateX(-40%) scale(.96);opacity:0}}
+.kontroll{display:flex;align-items:center;gap:12px}
+.kontroll .nasta{flex:1;min-height:64px;border:0;border-radius:20px;background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;font:800 1.5rem "Baloo 2",sans-serif;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.kontroll .rund{width:60px;height:60px}
+.kontroll .nasta:active,.rund:active{transform:scale(.97)}
+@media(prefers-reduced-motion:reduce){.frkort{animation:none!important}}
 </style>
 </head>
 <body>
@@ -188,9 +245,11 @@ article ul li{margin-bottom:6px}
 
 <div class="topp"><div class="in"><a class="logo" href="#">Dryckes<span>lexikon</span></a><a class="tbk" id="tbk" href="#" hidden>← Tillbaka</a></div></div>
 <div class="wrap"><main id="vy"></main></div>
+<div class="spel" id="spel" hidden role="dialog" aria-label="Spelläge"></div>
 <button class="slump" id="slump" type="button">Slumpa en lek</button>
 
 <script id="lekdata" type="application/json">__LEKAR__</script>
+<script id="fragdata" type="application/json">__FRAGOR__</script>
 <script>
 {
 const LEKAR = JSON.parse(document.getElementById('lekdata').textContent)
@@ -385,6 +444,7 @@ function lekSida(id){
     ${l.osaker ? `<div class="notis"><b>Reglerna varierar mellan sällskap.</b>${l.osaker_kommentar ? ' '+esc(l.osaker_kommentar) : ''} Kom överens innan ni börjar.</div>` : ''}
     ${lst('Det här behövs', l.behover && l.behover.length ? l.behover : ['Gott sällskap'])}
     ${lst('Regler', l.regler, true)}
+    ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
     ${lst('Varianter', l.varianter)}
     ${l.taggar && l.taggar.length ? `<div class="taggar">${l.taggar.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
     
@@ -394,6 +454,9 @@ function lekSida(id){
 let senasteLista = null, forraHash = null;
 function route(){
   const h = decodeURIComponent(location.hash.slice(1));
+  const spel = h.match(/^spel-(.+)$/);
+  if (spel){ spelSida(spel[1]); return; }
+  if (SP.id) stangSpel();
   const lek = h.match(/^lek-(.+)$/);
   $('#tbk').hidden = !h;
   $('#slump').hidden = !h || !!lek;
@@ -423,6 +486,139 @@ document.addEventListener('click', e => {
   if (c.dataset.s != null) S.spelare = c.dataset.s === '' ? null : +c.dataset.s;
   if (c.dataset.n != null) S.niva = c.dataset.n || null;
   lista(senasteLista, false);
+});
+// ===== Spelläge med frågebank =====
+const FRAGOR = JSON.parse(document.getElementById('fragdata').textContent || '{}');
+const NIVAER = ['Lugn','Lagom','Het'];
+const lasLS = (k, std) => { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? std; } catch(e) { return std; } };
+const skrivLS = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} };
+const EGNA = lasLS('dryckeslexikon-egnafragor', {});       // {lekid: [text]}
+const FAVFR = lasLS('dryckeslexikon-favfragor', {});       // {lekid: [text]}
+const SPELVAL = lasLS('dryckeslexikon-spelval', {});       // {lekid: ['Lugn','Lagom']}
+const LEKKO = lasLS('dryckeslexikon-lekko', {});           // {lekid: {nyckel, ordning:[text], pos}}
+const antalFragor = id => NIVAER.reduce((s,n) => s + ((FRAGOR[id]?.nivaer?.[n]) || []).length, 0);
+const blanda = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; };
+const SP = {id:null, lage:'val', ko:[], pos:0, niva:{}, wl:null};
+
+function spelPool(id){
+  const F = FRAGOR[id], val = SPELVAL[id] || ['Lugn','Lagom'], pool = [], niva = {};
+  const ta = (arr, n) => (arr||[]).forEach(t => { t = String(t).trim(); if (t && !(t in niva)){ niva[t] = n; pool.push(t); } });
+  if (val.includes('Fav')) ta(FAVFR[id], 'Fav');
+  else { NIVAER.forEach(n => val.includes(n) && ta(F.nivaer[n], n)); if (val.includes('Egna')) ta(EGNA[id], 'Egna'); }
+  return {pool, niva, nyckel: val.slice().sort().join('+')};
+}
+// Egna frågor som redan börjar med inledningen visas utan den.
+const inledFor = (id, t) => { const inl = (FRAGOR[id].inledning || '').replace(/[ .…]+$/,''); return inl && !norm(t).startsWith(norm(inl).slice(0, 8)) ? inl + ' …' : ''; };
+
+function spelSida(id){
+  const l = LEKAR.find(x => x.id === id);
+  if (!l || !FRAGOR[id]){ location.hash = 'lek-' + encodeURIComponent(id); return; }
+  if (SP.id !== id){ SP.id = id; SP.lage = 'val'; }
+  document.body.classList.add('ispel');
+  let el = $('#spel'); el.hidden = false;
+  SP.lage === 'spel' ? ritaSpel() : ritaVal();
+}
+function stangSpel(){ document.body.classList.remove('ispel'); const el = $('#spel'); if (el){ el.hidden = true; el.innerHTML = ''; } slappVaken(); SP.id = null; }
+
+function ritaVal(){
+  const id = SP.id, F = FRAGOR[id], l = LEKAR.find(x => x.id === id), val = SPELVAL[id] || ['Lugn','Lagom'];
+  const egna = EGNA[id] || [], fav = FAVFR[id] || [];
+  const ruta = (n, namn, txt, antal) => `<button type="button" class="niva n-${n}" data-niva="${n}" aria-pressed="${val.includes(n)}"><i class="pr"></i><div><b>${namn}</b><small>${txt} · ${antal} st</small></div><span class="bock"></span></button>`;
+  const {pool} = spelPool(id);
+  $('#spel').innerHTML = `<div class="shuv"><a class="rund" href="#lek-${encodeURIComponent(id)}" aria-label="Stäng">✕</a><h2>${esc(l.namn)}</h2></div>
+    <div class="sval">
+      <p class="vtext">${esc(F.instruktion || '')} Välj vilka frågor ni vill ha.</p>
+      <div class="nivor">
+        ${ruta('Lugn','Lugn','Snällt och roligt för alla', F.nivaer.Lugn.length)}
+        ${ruta('Lagom','Lagom','Lite pinsamt och avslöjande', F.nivaer.Lagom.length)}
+        ${ruta('Het','Het','Kärlek, flörtar och det hetaste', F.nivaer.Het.length)}
+        ${ruta('Egna','Egna frågor','Som ni har skrivit själva', egna.length)}
+        ${ruta('Fav','Bara favoriter','Frågor ni har sparat med hjärtat', fav.length)}
+      </div>
+      <div class="egna">
+        <h3>Lägg till egna frågor</h3>
+        <p class="vtext" style="margin:0">Skriv fortsättningen på "${esc(F.inledning)}". De sparas bara i den här telefonen.</p>
+        <form class="egnarad" id="egnaform"><input id="egnain" maxlength="160" placeholder="${id==='jag-har-aldrig' ? 't.ex. ätit en hel tårta själv.' : 't.ex. bli kändis?'}" aria-label="Ny egen fråga"><button type="submit">Lägg till</button></form>
+        <ul class="egnalista">${egna.map((t,i) => `<li><span>${esc(t)}</span><button type="button" data-tabort="${i}" aria-label="Ta bort">✕</button></li>`).join('')}</ul>
+      </div>
+      <div class="sbotten"><button type="button" class="spela" id="startknapp" ${pool.length ? '' : 'disabled'}>${pool.length ? '▶ Starta' : 'Välj minst en nivå'}<span>${pool.length} frågor</span></button></div>
+    </div>`;
+  $('#egnaform').addEventListener('submit', e => { e.preventDefault(); const t = $('#egnain').value.trim(); if (!t) return;
+    (EGNA[id] = EGNA[id] || []).push(t); skrivLS('dryckeslexikon-egnafragor', EGNA);
+    const v = SPELVAL[id] || ['Lugn','Lagom']; if (!v.includes('Egna')){ SPELVAL[id] = v.filter(x => x!=='Fav').concat('Egna'); skrivLS('dryckeslexikon-spelval', SPELVAL); }
+    ritaVal(); $('#egnain').focus(); });
+}
+
+function startaSpel(){
+  const id = SP.id, {pool, niva, nyckel} = spelPool(id);
+  if (!pool.length) return;
+  let ko = LEKKO[id];
+  // Fortsätt där ni slutade om valen är samma; nya frågor läggs sist i högen.
+  if (!ko || ko.nyckel !== nyckel || ko.pos >= ko.ordning.length){ ko = {nyckel, ordning: blanda(pool), pos: 0}; }
+  else { const finns = new Set(pool); ko.ordning = ko.ordning.filter(t => finns.has(t)); const har = new Set(ko.ordning); ko.ordning = ko.ordning.concat(blanda(pool.filter(t => !har.has(t)))); }
+  LEKKO[id] = ko; skrivLS('dryckeslexikon-lekko', LEKKO);
+  SP.ko = ko.ordning; SP.pos = Math.min(ko.pos, SP.ko.length - 1); SP.niva = niva; SP.lage = 'spel';
+  hallVaken(); ritaSpel('in-h');
+}
+function sparaPos(){ const k = LEKKO[SP.id]; if (k){ k.pos = SP.pos; skrivLS('dryckeslexikon-lekko', LEKKO); } }
+
+function ritaSpel(anim){
+  const id = SP.id, slut = SP.pos >= SP.ko.length, t = SP.ko[SP.pos], n = SP.niva[t] || 'Egna';
+  const fav = !slut && (FAVFR[id] || []).includes(t);
+  $('#spel').innerHTML = `<div class="shuv"><button type="button" class="rund" data-spel="val" aria-label="Till nivåval">✕</button>
+      <div class="raknare" style="flex:1">${slut ? 'Klart!' : `${SP.pos + 1} / ${SP.ko.length}`}${slut ? '' : `<span class="nb n-${n}">${n==='Fav'?'Favorit':n==='Egna'?'Egen':n}</span>`}</div>
+      <button type="button" class="rund ${fav?'pa':''}" data-spel="fav" aria-label="Spara frågan" aria-pressed="${fav}" ${slut?'disabled':''}>${fav?'♥':'♡'}</button></div>
+    <div class="spelyta">
+      <div class="kortyta" id="kortyta">
+        ${slut ? `<div class="frkort slut n-Lugn ${anim||''}" data-spel="om"><div class="fr">Alla ${SP.ko.length} frågor är visade!</div><p class="inl" style="margin-top:12px">Tryck för att blanda om och köra igen.</p></div>`
+        : `<div class="frkort n-${n} ${anim||''}" id="frkort" data-spel="nasta">${inledFor(id, t) ? `<div class="inl">${esc(inledFor(id, t))}</div>` : ''}<div class="fr">${esc(t)}</div>${SP.pos === 0 ? '<div class="tips">Tryck eller svep för nästa fråga</div>' : ''}</div>`}
+      </div>
+      <div class="kontroll">
+        <button type="button" class="rund" data-spel="bak" aria-label="Förra frågan" ${SP.pos === 0 ? 'disabled' : ''}>←</button>
+        ${slut ? '<button type="button" class="nasta" data-spel="om">Blanda om</button>' : '<button type="button" class="nasta" data-spel="nasta">Nästa →</button>'}
+      </div>
+    </div>`;
+  const ky = $('#kortyta'); let x0 = null, y0 = 0;
+  ky.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+  ky.addEventListener('touchend', e => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)){ SP.svept = Date.now(); dx < 0 ? nastaFraga() : forraFraga(); } }, {passive:true});
+}
+function byt(riktning, f){
+  const k = $('#frkort') || document.querySelector('.frkort');
+  const kor = () => { f(); sparaPos(); ritaSpel(riktning > 0 ? 'in-h' : 'in-v'); };
+  if (k && !matchMedia('(prefers-reduced-motion: reduce)').matches){ k.classList.add(riktning > 0 ? 'ut-v' : 'ut-h'); setTimeout(kor, 170); } else kor();
+}
+const nastaFraga = () => { if (SP.pos < SP.ko.length) byt(1, () => SP.pos++); };
+const forraFraga = () => { if (SP.pos > 0) byt(-1, () => SP.pos--); };
+
+async function hallVaken(){ try { if ('wakeLock' in navigator && !SP.wl) { SP.wl = await navigator.wakeLock.request('screen'); SP.wl.addEventListener('release', () => SP.wl = null); } } catch(e) {} }
+function slappVaken(){ try { SP.wl && SP.wl.release(); } catch(e) {} SP.wl = null; }
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && SP.id && SP.lage === 'spel') hallVaken(); });
+
+document.addEventListener('click', e => {
+  if (!SP.id) return;
+  const nv = e.target.closest('[data-niva]');
+  if (nv){ const n = nv.dataset.niva; let v = (SPELVAL[SP.id] || ['Lugn','Lagom']).slice();
+    if (n === 'Fav') v = v.includes('Fav') ? ['Lugn','Lagom'] : ['Fav'];
+    else { v = v.filter(x => x !== 'Fav'); v = v.includes(n) ? v.filter(x => x !== n) : v.concat(n); }
+    SPELVAL[SP.id] = v; skrivLS('dryckeslexikon-spelval', SPELVAL); ritaVal(); return; }
+  const tb = e.target.closest('[data-tabort]');
+  if (tb){ EGNA[SP.id].splice(+tb.dataset.tabort, 1); skrivLS('dryckeslexikon-egnafragor', EGNA); ritaVal(); return; }
+  if (e.target.closest('#startknapp')){ startaSpel(); return; }
+  const s = e.target.closest('[data-spel]'); if (!s) return;
+  const a = s.dataset.spel;
+  if (a === 'nasta'){ if (SP.svept && Date.now() - SP.svept < 400) return; nastaFraga(); }
+  else if (a === 'bak') forraFraga();
+  else if (a === 'om'){ delete LEKKO[SP.id]; skrivLS('dryckeslexikon-lekko', LEKKO); startaSpel(); }
+  else if (a === 'val'){ SP.lage = 'val'; slappVaken(); ritaVal(); $('#spel').scrollTop = 0; }
+  else if (a === 'fav'){ const t = SP.ko[SP.pos], f = FAVFR[SP.id] = FAVFR[SP.id] || [], i = f.indexOf(t);
+    i >= 0 ? f.splice(i, 1) : f.push(t); skrivLS('dryckeslexikon-favfragor', FAVFR); ritaSpel(); }
+});
+document.addEventListener('keydown', e => {
+  if (!SP.id || SP.lage !== 'spel' || e.target.closest('input')) return;
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); nastaFraga(); }
+  else if (e.key === 'ArrowLeft'){ e.preventDefault(); forraFraga(); }
+  else if (e.key === 'Escape'){ SP.lage = 'val'; slappVaken(); ritaVal(); }
 });
 $('#slump').addEventListener('click', slumpa);
 window.addEventListener('hashchange', route);
