@@ -33,12 +33,19 @@ for l in lekar:
     fragor[l["id"]] = dict(fragor[kalla], **({"instruktion": l["spel_instruktion"]} if l.get("spel_instruktion") else {}))
     print(f"Frågor {l['id']}: lånar från {kalla}")
 fragdata = json.dumps(fragor, ensure_ascii=False).replace("</", "<\\/")
+# Impostor: ordbank per kategori (källa: fliken "Impostor" i Google-arket "Dryckeslexikon – frågebank")
+imf = här.parent / "lekar" / "impostor.json"
+imp = json.loads(imf.read_text(encoding="utf-8")) if imf.exists() else {"kategorier": {}}
+imp["kategorier"] = {k: list(dict.fromkeys(str(o).strip() for o in v if str(o).strip())) for k, v in imp.get("kategorier", {}).items()}
+imp["kategorier"] = {k: v for k, v in imp["kategorier"].items() if v}
+print("Impostor: " + ", ".join(f"{k} {len(v)}" for k, v in imp["kategorier"].items()))
+impdata = json.dumps(imp, ensure_ascii=False).replace("</", "<\\/")
 bf = här / "bilder" / "lekbilder.json"
 bilder = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}
 utan_bild = [i for i in ids if i not in bilder]
 if utan_bild: print("Saknar bild (gruppens ikon visas):", ", ".join(utan_bild))
 symboler = "\n".join(f'  <symbol id="lb-{i}" viewBox="0 0 100 100">{bilder[i]}</symbol>' for i in ids if i in bilder)
-mall = (här / "mall.html").read_text(encoding="utf-8").replace("__LEKAR__", data).replace("__FRAGOR__", fragdata).replace("<!--LEKBILDER-->", symboler)
+mall = (här / "mall.html").read_text(encoding="utf-8").replace("__LEKAR__", data).replace("__FRAGOR__", fragdata).replace("__IMPOSTOR__", impdata).replace("<!--LEKBILDER-->", symboler)
 
 # 1) Fristående fil (artifact)
 (här / "index.html").write_text(mall.replace("<!--PWA-->", "").replace("/*PWA-SW*/", ""), encoding="utf-8")
