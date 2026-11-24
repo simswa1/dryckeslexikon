@@ -433,16 +433,7 @@ function start(){
       ${ikon('kort')}<h2>Kortlek</h2><p>Dra kort direkt i telefonen.</p></a>
     <a class="stor c-tarn" href="#tarningar">
       ${ikon('tarning')}<h2>Tärningar</h2><p>Slå 1–10 tärningar.</p></a>
-  </nav>
-  <section class="valja" aria-labelledby="vh">
-  <h3 class="rubrik" id="vh">Vad har ni framme?</h3>
-  <p class="vtext">Markera det ni har. Tryck sedan på Spela så visas lekarna som passar er. Lekar som inte kräver något kommer alltid med.</p>
-  <div class="kats" role="group" aria-label="Det här har vi">
-    ${GRUPPER.filter(g=>g.id!=='prat' && antal(l=>l._grupp===g.id)).map(g=>`<button type="button" class="kat" data-val="${g.id}" aria-pressed="${VAL.has(g.id)}">${ikon(g.ikon)}<span><b>${esc(g.namn)}</b><small>${antal(l=>l._grupp===g.id)} lekar</small></span><i class="bock" aria-hidden="true"></i></button>`).join('')}
-  </div>
-  <a class="spela" id="spelaknapp" href="#spela"></a>
-  </section>`;
-  uppdateraSpela();
+  </nav>`;
   const sok = $('#sok'), fl = $('#forslag');
   let akt = -1;
   const ga = () => { if (sok.value.trim()){ S.sok = sok.value; location.hash = 'alla'; } };
