@@ -1,0 +1,1100 @@
+{
+ "_om": "Engelsk översättning av lekarna i lekar.json, per lek-id. bygg.py lägger in den som 'en' på varje lek. Saknas en text visas den svenska. Raden om att sällskapet bestämmer själv läggs till automatiskt sist i reglerna.",
+ "_vanliga": {
+  "Sällskapet bestämmer alltid själv om, när och hur mycket man dricker. Klunkar och straff i reglerna är bara förslag.": "The group always decides for itself if, when and how much to drink. Sips and penalties in the rules are only suggestions."
+ },
+ "lekar": {
+  "kungen-i-ringen": {
+   "namn": "Ring of Fire (Kings)",
+   "kort": "Cards are drawn one at a time from a ring around a cup in the middle, and every card value has its own rule.",
+   "tid": "30–60 min",
+   "behover": [
+    "Deck of cards",
+    "A big glass or cup",
+    "Drinks"
+   ],
+   "regler": [
+    "Put an empty glass in the middle and spread the cards face down in a ring around it.",
+    "Take turns drawing a card and do what the card says.",
+    "Ace – Waterfall: everyone starts drinking at the same time and can only stop once the person to their right has stopped.",
+    "2 – You: pick someone to drink.",
+    "3 – Me: you drink.",
+    "4 – Floor: the last person to touch the floor drinks.",
+    "5 – Guys: all the guys drink.",
+    "6 – Chicks: all the girls drink.",
+    "7 – Heaven: the last person to point at the ceiling drinks.",
+    "8 – Mate: pick a mate who drinks every time you drink for the rest of the game.",
+    "9 – Rhyme: say a word, then everyone in turn has to rhyme with it. Whoever hesitates or repeats a word drinks.",
+    "10 – Categories: pick a category (e.g. car brands). Everyone names something in turn, and whoever draws a blank drinks.",
+    "Jack – Rule: make up a rule that lasts for the rest of the game. Anyone who breaks it drinks.",
+    "Queen – Question master: until the next queen is drawn, anyone who answers a question from you drinks.",
+    "King – Pour a little of your drink into the glass in the middle. Whoever draws the fourth king drinks the glass (or just takes a sip, if that's what you agreed).",
+    "Whoever breaks the ring of cards while drawing drinks."
+   ],
+   "varianter": [
+    "Thumb master: one card (often 7 or queen) makes you thumb master. When you put your thumb on the table, everyone else has to do the same, and the last one drinks.",
+    "Alcohol-free: swap drinks for small dares or points."
+   ],
+   "taggar": [
+    "classic",
+    "big groups",
+    "warm-up"
+   ],
+   "osaker_kommentar": "What each card means varies a lot between groups. This is a common version, but 7, 8, queen and king are often swapped out."
+  },
+  "olspelet": {
+   "namn": "The Beer Game",
+   "kort": "Our crew's own card game: draw one card at a time going clockwise, and every card has its own task.",
+   "tid": "30–60 min",
+   "behover": [
+    "Deck of cards",
+    "Drinks"
+   ],
+   "regler": [
+    "Player one takes the first card from the deck. After that, turns go clockwise.",
+    "Whoever draws a card does what the card says.",
+    "Ace – Waterfall: everyone starts drinking, and you can only stop once the person before you has stopped (see the game Waterfall).",
+    "Red cards 2–6: hand out as many sips as the card shows.",
+    "Black cards 2–6: take as many sips yourself as the card shows.",
+    "7 – Buzz: play Buzz. Count in turn and say 'buzz' instead of any number that contains a 7 or is divisible by 7. Whoever slips up gets a penalty.",
+    "8 – Story: each player adds a word and repeats everything the others have said. The first one who can't do it gets a penalty.",
+    "9 – Association: say a word that you associate with the previous word, not the first one. Whoever drifts too far off gets a penalty.",
+    "10 – Theme: pick a theme, for example clothing brands. Whoever can't think of anything or repeats something already said gets a penalty.",
+    "Jack – Rule: make a rule everyone has to follow for the rest of the game. The jack can also cancel an earlier rule.",
+    "Queen – All the girls drink.",
+    "King – All the guys drink."
+   ],
+   "taggar": [
+    "our own game",
+    "deck of cards",
+    "big groups"
+   ],
+   "kortregler": [
+    {
+     "titel": "Waterfall",
+     "text": "Everyone starts drinking, and you can only stop once the person before you has stopped."
+    },
+    {
+     "titel": "Hand out sips",
+     "text": "Hand out as many sips as the card shows."
+    },
+    {
+     "titel": "Take sips",
+     "text": "Take as many sips yourself as the card shows."
+    },
+    {
+     "titel": "Buzz",
+     "text": "Play Buzz: count in turn and say 'buzz' instead of any number that contains a 7 or is divisible by 7. Whoever slips up gets a penalty."
+    },
+    {
+     "titel": "Story",
+     "text": "Each player adds a word and repeats everything the others have said. The first one who can't do it gets a penalty."
+    },
+    {
+     "titel": "Association",
+     "text": "Say a word you associate with the previous word, not the first one. Whoever drifts too far off gets a penalty."
+    },
+    {
+     "titel": "Theme",
+     "text": "Pick a theme, for example clothing brands. Whoever can't think of anything or repeats something already said gets a penalty."
+    },
+    {
+     "titel": "Rule",
+     "text": "Make a rule everyone has to follow for the rest of the game. You can also cancel an earlier rule."
+    },
+    {
+     "titel": "Girls drink",
+     "text": "All the girls drink."
+    },
+    {
+     "titel": "Guys drink",
+     "text": "All the guys drink."
+    }
+   ]
+  },
+  "bussen": {
+   "namn": "Ride the Bus",
+   "kort": "Guess cards right to hand out sips, and whoever loses has to ride the bus at the end.",
+   "tid": "30–45 min",
+   "behover": [
+    "Deck of cards (two is better)",
+    "Drinks"
+   ],
+   "regler": [
+    "Round 1 – Red or black: everyone in turn guesses whether the next card is red or black. Wrong guess = drink 1.",
+    "Round 2 – Higher or lower: guess whether the next card is higher or lower than your first card. Wrong = drink 2.",
+    "Round 3 – Inside or outside: guess whether the next card lands between or outside your two cards. Wrong = drink 3.",
+    "Round 4 – Suit: guess the card's suit (hearts, diamonds, spades, clubs). Wrong = drink 4.",
+    "The pyramid: lay out a pyramid of face-down cards and turn them one at a time. If you have a card of the same value, you get to hand out sips (more the higher up the pyramid).",
+    "Whoever has the most cards left in their hand rides the bus.",
+    "The bus: lay out a row of 5–10 cards. The bus driver guesses higher or lower for each card. On a wrong guess they drink and start over from the beginning. Get through the whole row to get off the bus."
+   ],
+   "varianter": [
+    "If two players have the same number of cards left, settle it with a high card, or both ride."
+   ],
+   "taggar": [
+    "classic"
+   ],
+   "osaker_kommentar": "The number of sips, how the pyramid is scored and how many cards the bus has vary between groups."
+  },
+  "pyramiden": {
+   "namn": "Pyramid",
+   "kort": "Everyone has four cards, a pyramid of cards is turned one by one, and whoever has the same value hands out sips, or bluffs that they do.",
+   "tid": "20–40 min",
+   "behover": [
+    "Deck of cards",
+    "Drinks"
+   ],
+   "regler": [
+    "Deal 4 cards to each player. Everyone gets to look at their cards for 30 seconds, then they're turned face down.",
+    "Lay out a face-down pyramid: 5 cards on the bottom row, then 4, 3, 2 and 1 at the top.",
+    "Turn the cards one at a time, from the bottom up.",
+    "Whoever has (or claims to have) the same value as the turned card can hand out sips: 1 sip on the bottom row, 2 on the next, and so on up to 5.",
+    "Whoever gets sips can call 'bluff'. Then the giver has to show the card. If they don't have it, they drink double. If they did have it, the accuser drinks double.",
+    "A card that has been shown is swapped for a new one from the pile."
+   ],
+   "taggar": [
+    "memory",
+    "bluffing"
+   ],
+   "osaker_kommentar": "Some play that the top card is worth 10 sips, or that you drink yourself on every other row."
+  },
+  "fuck-the-dealer": {
+   "namn": "F*** the Dealer",
+   "kort": "Guess which card comes next. Guess wrong and you drink, but if everyone guesses wrong the dealer drinks.",
+   "tid": "20–30 min",
+   "behover": [
+    "Deck of cards",
+    "Drinks"
+   ],
+   "regler": [
+    "One player is the dealer and holds the deck.",
+    "The player to the left guesses the value of the top card. If it's wrong, the dealer says 'higher' or 'lower' and the player gets one more guess.",
+    "Right on the first try: the dealer drinks 5. Right on the second: the dealer drinks 3.",
+    "Wrong twice: the player drinks as many sips as the difference between the guess and the card.",
+    "The card is placed face up so everyone can see which cards have already come out.",
+    "If three players in a row guess wrong, the dealer passes the deck to the next person."
+   ],
+   "taggar": [
+    "guessing"
+   ],
+   "osaker_kommentar": "The number of sips and how many misses in a row before the dealer changes vary (often three)."
+  },
+  "presidenten": {
+   "namn": "President",
+   "kort": "A climbing card game where the winner becomes president and the last one out becomes the scum, with perks and penalties next round.",
+   "tid": "30–60 min",
+   "behover": [
+    "Deck of cards"
+   ],
+   "regler": [
+    "Deal out the whole deck. 2 is highest, then ace, king and down to 3.",
+    "Whoever has the 3 of clubs starts by playing one card or several of the same value.",
+    "The next player has to play the same number of cards of a higher value, or pass.",
+    "When everyone has passed, whoever played last wins the pile and starts a new one.",
+    "The first to get rid of their cards becomes president, then vice president, and so on. The last person becomes the scum.",
+    "Next round, the scum gives their two best cards to the president, who gives back any two cards."
+   ],
+   "varianter": [
+    "As a drinking game: the president decides when the scum drinks, and anyone who passes drinks 1."
+   ],
+   "taggar": [
+    "strategy"
+   ],
+   "osaker_kommentar": "The game has lots of names (Asshole, Scum, Kings and Peasants) and details like which card is highest differ."
+  },
+  "hastkapplopning": {
+   "namn": "Horse Race",
+   "kort": "Bet sips on an ace (a horse) and see which one crosses the finish line first.",
+   "tid": "10–15 min",
+   "behover": [
+    "Deck of cards",
+    "Drinks"
+   ],
+   "regler": [
+    "Take out the four aces and line them up as the starting line. They're the horses.",
+    "Lay 6–8 cards face down in a row beside them. That's the track.",
+    "Everyone bets a number of sips on a horse (suit).",
+    "Turn one card at a time from the deck. The ace of the same suit moves one step forward.",
+    "When all horses have passed a track card, it's turned over. The horse of that card's suit moves one step back.",
+    "The first ace over the finish line wins. Those who bet on the winner hand out their bet in sips, everyone else drinks theirs."
+   ],
+   "taggar": [
+    "big groups",
+    "easy"
+   ],
+   "osaker_kommentar": "Some let the winners hand out double their bet."
+  },
+  "hogt-eller-lagt": {
+   "namn": "Higher or Lower",
+   "kort": "A simple game where you take turns guessing whether the next card is higher or lower.",
+   "tid": "10–20 min",
+   "behover": [
+    "Deck of cards",
+    "Drinks"
+   ],
+   "regler": [
+    "Turn over a card.",
+    "The next player guesses whether the next card is higher or lower.",
+    "Wrong guess: drink as many sips as there are cards in the pile, and the pile starts over.",
+    "Right three times in a row: you can pass the turn on."
+   ],
+   "taggar": [
+    "easy"
+   ]
+  },
+  "kortet-i-pannan": {
+   "namn": "Card on the Forehead",
+   "kort": "Everyone holds a card to their forehead without seeing it themselves and bets on whether theirs is highest.",
+   "tid": "10–20 min",
+   "behover": [
+    "Deck of cards",
+    "Drinks"
+   ],
+   "regler": [
+    "Deal one card to each player. Nobody is allowed to look at their own.",
+    "Everyone holds their card up to their forehead at the same time so all the others can see it.",
+    "Go around and let each person choose to stay in or fold.",
+    "Whoever folds drinks 1. Among those who stayed in, the lowest card drinks as many sips as the number of players who stayed."
+   ],
+   "taggar": [
+    "bluffing",
+    "quick"
+   ],
+   "osaker_kommentar": "The penalty system is a common house rule, not a fixed standard."
+  },
+  "tjugoett": {
+   "namn": "21",
+   "kort": "Count to 21 in turn and add new rules every time someone reaches 21.",
+   "tid": "15–30 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "Players count up from 1 in turn. Each person can say 1, 2 or 3 numbers.",
+    "If you say one number, the next person says the next number. Say two and the direction switches. Say three and the next person is skipped.",
+    "Whoever says 21 drinks and then makes up a new rule, e.g. that 7 is replaced with 'hello' or that 12 and 15 swap places.",
+    "Whoever hesitates, says the wrong thing or breaks a rule drinks, and counting starts over from 1."
+   ],
+   "taggar": [
+    "warm-up",
+    "no equipment"
+   ],
+   "osaker_kommentar": "What 2 and 3 numbers mean differs. Sometimes two numbers means 'switch direction' and three means 'skip'."
+  },
+  "maxla": {
+   "namn": "Mexico (Mäxla)",
+   "kort": "A bluffing game with two dice where you have to beat the person before you, or lie about it.",
+   "tid": "20–40 min",
+   "behover": [
+    "2 dice",
+    "A cup to shake them in",
+    "Drinks"
+   ],
+   "regler": [
+    "Roll the dice under the cup without the others seeing and read the result. The highest die is read first: 6 and 3 make 63.",
+    "Ranking from highest: Mexico (2–1), then doubles (6–6 highest down to 1–1), then regular numbers from 65 down to 31. 3–2 is 'little Mexico' in some groups.",
+    "Announce what you rolled, or lie. Your call has to be higher than the previous player's.",
+    "Pass the cup on, covered. The next player can believe you and roll themselves, or lift the cup.",
+    "If they lift and the previous player lied, the liar drinks. If the previous player told the truth, the one who lifted drinks.",
+    "If someone rolls Mexico, it's revealed straight away and everyone else drinks."
+   ],
+   "taggar": [
+    "bluffing",
+    "classic"
+   ],
+   "osaker_kommentar": "Whether 3–1 or 3–2 are special and how many sips Mexico is worth varies."
+  },
+  "tre-man": {
+   "namn": "Three Man",
+   "kort": "Roll two dice around the table, where different totals mean different rules and one player is named three man.",
+   "tid": "20–40 min",
+   "behover": [
+    "2 dice",
+    "Drinks"
+   ],
+   "regler": [
+    "Everyone rolls one die. The first to roll a three becomes three man.",
+    "Players take turns rolling two dice.",
+    "Total 7: the person to the roller's left drinks. Total 11: the person to the right drinks. Total 9: no rule in some groups, in others the person opposite drinks.",
+    "Doubles: the roller hands the dice to two people who drink or hand out sips.",
+    "Every three that shows up, and a total of 3, makes the three man drink.",
+    "A 2 and a 1 (total 3): the roller becomes the new three man.",
+    "If you roll nothing that triggers a rule, the turn passes on."
+   ],
+   "taggar": [
+    "dice"
+   ],
+   "osaker_kommentar": "The game has lots of local versions, especially for what 9, 10 and doubles mean."
+  },
+  "lognartarning": {
+   "namn": "Liar's Dice",
+   "kort": "Everyone has hidden dice and bids on how many of a certain number there are in total around the table.",
+   "tid": "20–40 min",
+   "behover": [
+    "5 dice and a cup per player"
+   ],
+   "regler": [
+    "Everyone shakes their 5 dice under their cup and peeks in secret.",
+    "The first player bids, e.g. 'four fives', meaning there are at least four fives among all the dice.",
+    "The next player has to raise the bid (more dice, or the same number of a higher value) or call 'liar'.",
+    "On 'liar', everyone shows their dice. Ones often count as wild.",
+    "Whoever was wrong loses a die. The last player with dice left wins."
+   ],
+   "varianter": [
+    "Drinking version: whoever loses a die drinks."
+   ],
+   "taggar": [
+    "bluffing",
+    "strategy"
+   ]
+  },
+  "tarning-sexan": {
+   "namn": "Roll a Six",
+   "kort": "Pass the die around the table, and whoever rolls a six has to drink or do a dare.",
+   "tid": "10–20 min",
+   "behover": [
+    "1 die",
+    "Drinks"
+   ],
+   "regler": [
+    "The die is passed around the table and everyone rolls in turn.",
+    "Whoever rolls a 6 takes a sip or does a dare.",
+    "Whoever rolls a 1 sends a sip to anyone they like.",
+    "Other numbers: nothing happens."
+   ],
+   "taggar": [
+    "easy",
+    "quick"
+   ],
+   "osaker_kommentar": "This is a simple basic version. Let us know if you have a specific version in mind."
+  },
+  "beer-pong": {
+   "namn": "Beer Pong",
+   "kort": "Two teams throw ping pong balls into each other's cups. If you sink one, the other team drinks.",
+   "tid": "15–30 min per game",
+   "behover": [
+    "Long table",
+    "20 cups",
+    "2 ping pong balls",
+    "Drinks"
+   ],
+   "regler": [
+    "Set up 10 cups in a triangle (4-3-2-1) at each end of the table and fill them a little.",
+    "Teams take turns throwing. Both players on the team throw once per turn.",
+    "Ball in a cup: the other team drinks it and removes the cup.",
+    "If both players on a team hit in the same turn, they get the balls back.",
+    "A bounce shot that goes in usually counts as two cups, but the other team is allowed to swat the ball away.",
+    "Each team can ask for a re-rack twice per game.",
+    "The first team to clear all the opponent's cups wins. The losing team gets one last chance to sink all their remaining cups (redemption)."
+   ],
+   "varianter": [
+    "Fill the cups with water and drink from your own glass, it's more hygienic."
+   ],
+   "taggar": [
+    "classic",
+    "competition",
+    "teams"
+   ],
+   "osaker_kommentar": "Bounce shots, the elbow rule and re-racks are house rules that differ between groups."
+  },
+  "flip-cup": {
+   "namn": "Flip Cup",
+   "kort": "A team relay where you drink your cup and then flip it upside down by flicking the rim.",
+   "tid": "10–20 min",
+   "behover": [
+    "Long table",
+    "A plastic cup per player",
+    "Drinks"
+   ],
+   "regler": [
+    "Split into two equal teams standing on opposite sides of the table, facing each other.",
+    "Everyone has a cup with a little drink in front of them.",
+    "The first person on each team drinks up and places the cup upright on the edge of the table, with the rim sticking out over the edge.",
+    "Flick the cup so it flips and lands upside down. Only then can the next person on the team start.",
+    "The team whose last person flips their cup first wins."
+   ],
+   "taggar": [
+    "teams",
+    "competition",
+    "big groups"
+   ]
+  },
+  "myntet": {
+   "namn": "Quarters",
+   "kort": "Bounce a coin off the table and into a glass. If you make it, you choose who drinks.",
+   "tid": "15–30 min",
+   "behover": [
+    "A coin",
+    "A glass",
+    "Drinks"
+   ],
+   "regler": [
+    "Put a glass in the middle of the table.",
+    "Players take turns trying to bounce a coin off the table so it lands in the glass.",
+    "Hit: pick someone to drink, and you get to go again.",
+    "Three hits in a row: you get to make up a rule.",
+    "Miss: the coin passes to the next person."
+   ],
+   "taggar": [
+    "skill"
+   ]
+  },
+  "olstafett": {
+   "namn": "Beer Relay",
+   "kort": "A team relay where each person runs, drinks and runs back.",
+   "tid": "10 min",
+   "behover": [
+    "A can or cup per person",
+    "Room to run"
+   ],
+   "regler": [
+    "Split into teams and line up.",
+    "Place one drink per person on the other side of the room or yard.",
+    "The first person runs, finishes their drink, runs back and tags the next person's hand.",
+    "The first team to finish wins."
+   ],
+   "varianter": [
+    "Spin around a stick ten times before you run back (dizzy bat)."
+   ],
+   "taggar": [
+    "outdoors",
+    "teams"
+   ]
+  },
+  "kubb": {
+   "namn": "Kubb",
+   "kort": "A Swedish throwing game where the teams try to knock over the other side's kubbs and finally the king.",
+   "tid": "20–60 min",
+   "behover": [
+    "Kubb set (10 kubbs, 1 king, 6 batons, 4 corner stakes)",
+    "A lawn"
+   ],
+   "regler": [
+    "Mark out a pitch of roughly 5 x 8 metres. Place 5 kubbs on each baseline and the king in the middle.",
+    "Team A throws its 6 batons underarm with a vertical spin to knock over team B's kubbs.",
+    "Team B then throws the knocked-over kubbs into team A's half, where they're stood up as field kubbs.",
+    "Field kubbs have to be knocked down before baseline kubbs. If a team doesn't knock down all field kubbs, the opponents get to throw from the front-most remaining field kubb.",
+    "Once all the opponent's kubbs are down, the team can try to knock over the king from the baseline. If they do, they win.",
+    "Knock over the king too early and you lose on the spot."
+   ],
+   "varianter": [
+    "As a drinking game: every time your team loses a kubb, you drink."
+   ],
+   "taggar": [
+    "outdoors",
+    "teams",
+    "summer"
+   ]
+  },
+  "snurra-flaskan": {
+   "namn": "Spin the Bottle",
+   "kort": "Spin a bottle in the middle of the circle. Whoever it points at gets a question, a dare or a kiss.",
+   "tid": "15–30 min",
+   "behover": [
+    "An empty bottle"
+   ],
+   "regler": [
+    "Sit in a circle on the floor with the bottle in the middle.",
+    "Whoever starts spins the bottle.",
+    "The person the bottle points at gets whatever you agreed: a question, a challenge, or in the classic version a kiss.",
+    "The person who was picked spins next."
+   ],
+   "taggar": [
+    "classic"
+   ]
+  },
+  "jag-har-aldrig": {
+   "namn": "Never Have I Ever",
+   "kort": "Say something you've never done. Everyone who has done it drinks.",
+   "tid": "15–60 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "Take turns saying a sentence that starts with 'Never have I ever ...', e.g. 'Never have I ever been to Norway'.",
+    "Everyone who has done it takes a sip.",
+    "The person who said it doesn't drink (but if they actually have done it, they can choose to drink).",
+    "Keep going around the table."
+   ],
+   "varianter": [
+    "Finger version: everyone holds up 10 fingers and puts one down instead of drinking. The first to run out of fingers loses.",
+    "Alcohol-free: use sweets or points."
+   ],
+   "taggar": [
+    "classic",
+    "getting to know each other",
+    "no equipment"
+   ]
+  },
+  "mest-sannolikt": {
+   "namn": "Most Likely To",
+   "kort": "Read out a question like 'Who's most likely to...' and everyone points at the same time.",
+   "tid": "15–45 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "One person reads out a question, e.g. 'Who's most likely to become famous?'",
+    "Everyone counts to three and points at who they think at the same time.",
+    "Each person drinks one sip for every finger pointing at them."
+   ],
+   "taggar": [
+    "getting to know each other",
+    "no equipment",
+    "big groups"
+   ]
+  },
+  "snusdosan": {
+   "namn": "The Snus Tin",
+   "kort": "Like Most Likely To, but you toss a snus tin to the person the statement fits best.",
+   "tid": "15–45 min",
+   "behover": [
+    "Something you can toss (e.g. a snus tin)",
+    "Drinks"
+   ],
+   "regler": [
+    "You play with something you can toss, ideally a snus tin, since someone in the group usually has one.",
+    "You get a statement, just like in Most Likely To.",
+    "Then you toss the tin to the person the statement fits best.",
+    "Whoever catches the tin reads out the next statement."
+   ],
+   "taggar": [
+    "our own game",
+    "getting to know each other",
+    "big groups"
+   ],
+   "spel_instruktion": "Read out the statement. Toss the tin to the person it fits best."
+  },
+  "impostor": {
+   "namn": "Impostor",
+   "kort": "Everyone except one gets the same secret word. The impostor only knows the category and has to bluff their way through.",
+   "tid": "5–15 min per round",
+   "behover": [
+    "A phone (the app hands out the words), or paper and a pen"
+   ],
+   "regler": [
+    "Start Impostor in the app and choose how many you are, how many impostors you want and which categories to include.",
+    "Pass the phone around. Each person taps to reveal their word, looks in secret, hides it and passes it on.",
+    "Everyone gets the same secret word, except the impostor, who only gets the category (or nothing at all, if you pick the harder mode).",
+    "The app picks who starts. In turn, each person says one word connected to the secret word. Not too obvious, or the impostor will figure it out. Not too vague, or you'll look suspicious.",
+    "After one or two rounds, discuss and vote for who you think the impostor is.",
+    "Vote out the wrong person and the impostor wins. Vote out the impostor and they get one chance to guess the word. If they guess right, the impostor still wins, otherwise everyone else does.",
+    "Suggestion: the losers of the round take a sip."
+   ],
+   "varianter": [
+    "Without a phone: a game master writes the same word on every slip of paper except one, which says 'Impostor'.",
+    "Harder: the impostor doesn't even get the category.",
+    "Several impostors: with lots of players you can have two or three impostors, who don't know about each other."
+   ],
+   "taggar": [
+    "bluffing",
+    "big groups",
+    "phone game"
+   ]
+  },
+  "korkortet": {
+   "namn": "The Licence Game",
+   "kort": "One player ranks everyone's driving licences by a secret statement. The others guess which statement it was.",
+   "tid": "15–45 min",
+   "behover": [
+    "A driving licence or ID card per person (or some other personal item)",
+    "A phone (the app shows the statements)"
+   ],
+   "regler": [
+    "Everyone playing puts down a personal item, ideally a driving licence or ID.",
+    "Player one holds the phone and gets a statement, for example 'Who's most likely to fall asleep first at the party?'. Nobody else is allowed to see it.",
+    "The player then ranks the licences from who the statement fits best to who it fits least.",
+    "The app then shows 4, 6, 8 or 10 statements, and one of them is the one player one ranked the licences by.",
+    "The other players then have to work out which statement player one went by.",
+    "Show the answer and pass the phone on. The next player does a new round.",
+    "Suggestion: if you guess wrong you take a sip, if you guess right the ranker takes a sip."
+   ],
+   "varianter": [
+    "Difficulty in the app: on Easy the statements are clearly different, on Medium some of them are similar to the right one, and on Hard they're very similar.",
+    "Harder: pick more statements to guess from (8 or 10).",
+    "Without a phone: the ranker writes their statement on a slip of paper and then reads out a few fake statements together with the real one."
+   ],
+   "taggar": [
+    "our own game",
+    "getting to know each other",
+    "phone game"
+   ]
+  },
+  "sanning-eller-konsekvens": {
+   "namn": "Truth or Dare",
+   "kort": "Choose between answering a question honestly or doing a dare.",
+   "tid": "20–60 min",
+   "regler": [
+    "Take turns asking someone: 'Truth or dare?'",
+    "If they pick truth, they have to answer a question honestly.",
+    "If they pick dare, they have to do a challenge the group comes up with.",
+    "Whoever refuses to answer or do the dare gets a penalty, e.g. a drink.",
+    "The person who just answered asks next."
+   ],
+   "taggar": [
+    "classic",
+    "getting to know each other"
+   ]
+  },
+  "tva-sanningar-en-logn": {
+   "namn": "Two Truths and a Lie",
+   "kort": "Tell three things about yourself, one is false, and the others have to guess which.",
+   "tid": "15–30 min",
+   "regler": [
+    "One person makes three statements about themselves. Two are true and one is a lie.",
+    "The rest of the group discusses and guesses which one is the lie.",
+    "As a drinking game: everyone who guesses wrong drinks. If everyone guesses right, the storyteller drinks."
+   ],
+   "taggar": [
+    "getting to know each other",
+    "no equipment"
+   ]
+  },
+  "heta-stolen": {
+   "namn": "The Hot Seat",
+   "kort": "One person sits in the hot seat and everyone else gets to ask questions that have to be answered honestly.",
+   "tid": "15–30 min",
+   "regler": [
+    "One person takes the hot seat.",
+    "For 2 minutes, everyone else can ask questions, and the person has to answer honestly.",
+    "Whoever refuses to answer a question drinks or gets a penalty.",
+    "Then the seat passes to the next person."
+   ],
+   "taggar": [
+    "getting to know each other"
+   ]
+  },
+  "paranoia": {
+   "namn": "Paranoia",
+   "kort": "Whisper a question about someone in the group. The answer is said out loud, but the question is only revealed if someone dares.",
+   "tid": "15–30 min",
+   "behover": [
+    "Drinks",
+    "A coin (optional)"
+   ],
+   "regler": [
+    "Whisper a question to the person next to you, e.g. 'Who here is the hottest?'",
+    "They answer out loud by saying the name of someone in the group.",
+    "The person who was named can drink to hear the question. Then it's revealed out loud.",
+    "Otherwise the question stays secret and it's the next person's turn to whisper."
+   ],
+   "varianter": [
+    "Flip a coin instead of drinking: heads means the question is revealed."
+   ],
+   "taggar": [
+    "suspense"
+   ]
+  },
+  "bizz-buzz": {
+   "namn": "Bizz Buzz",
+   "kort": "Count in turn, but replace every number that has to do with 7 with a word.",
+   "tid": "10–20 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "Players count in turn from 1.",
+    "Every number that contains a 7 or is divisible by 7 is replaced with 'bizz'.",
+    "Whoever says the wrong thing, hesitates too long or forgets drinks, and the count starts over.",
+    "Harder: add 'buzz' for numbers with a 5 or divisible by 5. Numbers that are both become 'bizz-buzz'."
+   ],
+   "taggar": [
+    "warm-up",
+    "no equipment"
+   ]
+  },
+  "kategorier": {
+   "namn": "Categories",
+   "kort": "Name something from a category in turn. Whoever draws a blank or repeats loses.",
+   "tid": "5–20 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "One person picks a category, e.g. 'types of beer' or 'famous singers'.",
+    "Go around, each naming something that fits the category.",
+    "Whoever hesitates too long, repeats something or gets it wrong drinks and picks the next category."
+   ],
+   "taggar": [
+    "no equipment",
+    "quick"
+   ]
+  },
+  "rimleken": {
+   "namn": "Rhyme Time",
+   "kort": "Say a word and let everyone rhyme with it in turn.",
+   "tid": "5–15 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "One person says a word.",
+    "Go around, each saying a word that rhymes.",
+    "Whoever hesitates, repeats or makes up a word that doesn't exist drinks and says the next word."
+   ],
+   "taggar": [
+    "no equipment",
+    "quick"
+   ]
+  },
+  "jag-packar-min-vaska": {
+   "namn": "I Packed My Bag",
+   "kort": "A memory game where each person adds something to the bag and has to remember everything already packed.",
+   "tid": "10–20 min",
+   "regler": [
+    "The first person says: 'I packed my bag and in it I put a ...', e.g. a toothbrush.",
+    "The next person repeats everything said so far and adds something new.",
+    "Whoever forgets something or gets the order wrong is out (or drinks).",
+    "The last person left wins."
+   ],
+   "taggar": [
+    "memory",
+    "no equipment"
+   ]
+  },
+  "sista-bokstaven": {
+   "namn": "Word Chain",
+   "kort": "Say a word that starts with the last letter of the previous word.",
+   "tid": "5–15 min",
+   "regler": [
+    "Pick a category if you like, e.g. cities or animals.",
+    "The first person says a word, e.g. 'London'.",
+    "The next person has to say a word that starts with the last letter: 'New York'.",
+    "Whoever hesitates or repeats is out or drinks."
+   ],
+   "taggar": [
+    "no equipment"
+   ]
+  },
+  "kandisleken": {
+   "namn": "Celebrity (The Hat Game)",
+   "kort": "Everyone writes names on slips of paper. Over three rounds the teams guess the same names with stricter and stricter rules.",
+   "tid": "45–90 min",
+   "behover": [
+    "Slips of paper",
+    "Pens",
+    "A hat or bowl",
+    "Timer"
+   ],
+   "regler": [
+    "Everyone writes 3–5 names of famous people (or characters) on separate slips and puts them in the hat.",
+    "Split into two teams. The teams take turns, and one person at a time gets 1 minute.",
+    "Round 1: describe as many names as possible in words without saying the name.",
+    "Round 2: same slips, but only one single word per name.",
+    "Round 3: same slips, but only body language (charades).",
+    "Each correctly guessed name is one point. The team with the most points after three rounds wins."
+   ],
+   "taggar": [
+    "teams",
+    "big groups",
+    "favourite"
+   ]
+  },
+  "vem-ar-jag": {
+   "namn": "Who Am I?",
+   "kort": "Everyone has a name on a note on their forehead and asks yes or no questions to work out who they are.",
+   "tid": "20–40 min",
+   "behover": [
+    "Post-it notes",
+    "Pen"
+   ],
+   "regler": [
+    "Each person writes a famous person on a note and sticks it on the forehead of the person next to them, without them seeing.",
+    "Take turns asking a yes or no question, e.g. 'Am I a man?'",
+    "If the answer is yes, you keep asking. If it's no, the turn passes on.",
+    "The first to guess right wins. The game goes on until everyone has guessed."
+   ],
+   "varianter": [
+    "As a drinking game: drink every time you get a no."
+   ],
+   "taggar": [
+    "classic"
+   ]
+  },
+  "charader": {
+   "namn": "Charades",
+   "kort": "Act out a film, song or word with body language without talking, and let your team guess.",
+   "tid": "20–60 min",
+   "behover": [
+    "Slips of paper with words",
+    "Timer"
+   ],
+   "regler": [
+    "Split into two teams.",
+    "One person draws a slip and has 1–2 minutes to act out the word with gestures. No talking, no sounds.",
+    "Their own team guesses. A correct answer is one point.",
+    "The teams take turns. The team with the most points wins."
+   ],
+   "taggar": [
+    "teams",
+    "classic"
+   ]
+  },
+  "rita-och-gissa": {
+   "namn": "Draw and Guess",
+   "kort": "Draw a word on paper while your team guesses, with no letters or numbers.",
+   "tid": "20–60 min",
+   "behover": [
+    "Paper or a whiteboard",
+    "Pens",
+    "Slips of paper with words",
+    "Timer"
+   ],
+   "regler": [
+    "Split into teams.",
+    "One person draws a word and sketches it. No letters, numbers or words allowed.",
+    "The team has 1 minute to guess.",
+    "A correct answer is one point. The teams take turns."
+   ],
+   "taggar": [
+    "teams"
+   ]
+  },
+  "forbjudna-ord": {
+   "namn": "Forbidden Words",
+   "kort": "Describe a word to your team without saying certain forbidden words.",
+   "tid": "20–45 min",
+   "behover": [
+    "Cards with a word and 3–5 forbidden words",
+    "Timer"
+   ],
+   "regler": [
+    "Split into teams.",
+    "One person draws a card with a word and a few forbidden words, e.g. 'Beach' without 'sand', 'sea', 'sun'.",
+    "Describe as many words as possible in 1 minute.",
+    "Say a forbidden word and the other team gets a point (or the describer drinks)."
+   ],
+   "taggar": [
+    "teams"
+   ]
+  },
+  "viskleken": {
+   "namn": "Telephone (Chinese Whispers)",
+   "kort": "A sentence is whispered around the circle and changes along the way.",
+   "tid": "5–10 min",
+   "regler": [
+    "Sit or stand in a circle.",
+    "The first person whispers a sentence to the next, just once.",
+    "The sentence is whispered on all the way around.",
+    "The last person says out loud what they heard, and the first person reveals the original."
+   ],
+   "taggar": [
+    "no equipment",
+    "big groups"
+   ]
+  },
+  "maffia": {
+   "namn": "Mafia",
+   "kort": "A role-playing game where a secret mafia kills villagers at night and the village tries to find them during the day.",
+   "tid": "30–60 min",
+   "behover": [
+    "Playing cards or slips of paper for roles"
+   ],
+   "regler": [
+    "One person is the game master. Everyone else gets a secret role: some mafia (about one per four players), a detective, a doctor, and the rest villagers.",
+    "Night: everyone closes their eyes. The mafia opens their eyes and points out a victim. The doctor points out someone to save. The detective points at a person, and the game master gives a thumbs up or down for whether that person is mafia.",
+    "Day: everyone opens their eyes. The game master says who died (unless the doctor saved them).",
+    "The village discusses and votes out a suspect. The person voted out shows their role and is out.",
+    "The villagers win when all the mafia are out. The mafia wins when they're as many as the villagers."
+   ],
+   "varianter": [
+    "Werewolf: the same game with werewolves and more special roles like the witch and the seer."
+   ],
+   "taggar": [
+    "big groups",
+    "bluffing",
+    "favourite"
+   ]
+  },
+  "blinkmordaren": {
+   "namn": "Wink Murder",
+   "kort": "A secret murderer kills by winking at people. Everyone else tries to unmask them.",
+   "tid": "15–30 min",
+   "behover": [
+    "Cards or slips of paper"
+   ],
+   "regler": [
+    "Deal a card to each person. Whoever gets e.g. the ace of spades is the murderer, and another can be the detective if you like.",
+    "Mingle or sit in a circle and look at each other.",
+    "The murderer kills by discreetly winking at someone. The person winked at waits a few seconds and then 'dies' dramatically.",
+    "Anyone who thinks they know who the murderer is says 'I accuse!'. A wrong guess means you're out.",
+    "The murderer wins if everyone dies before they're caught."
+   ],
+   "taggar": [
+    "big groups",
+    "mingling"
+   ]
+  },
+  "stolleken": {
+   "namn": "Musical Chairs",
+   "kort": "Walk around the chairs while the music plays. When it stops everyone has to find a chair, but there's one too few.",
+   "tid": "10–20 min",
+   "behover": [
+    "Chairs (one fewer than the number of players)",
+    "Music"
+   ],
+   "regler": [
+    "Put the chairs in a circle facing outwards. There should be one chair fewer than the number of players.",
+    "Play music and let everyone walk around.",
+    "When the music stops, everyone sits down as fast as they can. Whoever is left standing is out.",
+    "Remove one chair per round until one winner is left."
+   ],
+   "taggar": [
+    "physical",
+    "classic"
+   ]
+  },
+  "musikquiz": {
+   "namn": "Name That Tune",
+   "kort": "Play short intros of songs and see who guesses the artist and title first.",
+   "tid": "20–60 min",
+   "behover": [
+    "Speaker",
+    "A playlist"
+   ],
+   "regler": [
+    "One person is the DJ and plays 5–10 seconds of a song.",
+    "The players or teams shout out or write down the artist and song title.",
+    "One point for the artist and one for the title.",
+    "Whoever has the most points after all the songs wins."
+   ],
+   "varianter": [
+    "As a drinking game: whoever guesses wrong or last drinks."
+   ],
+   "taggar": [
+    "music",
+    "teams"
+   ]
+  },
+  "power-hour": {
+   "namn": "Power Hour (Centurion)",
+   "kort": "A playlist changes song every minute and everyone takes a small sip at every change.",
+   "tid": "60 min",
+   "behover": [
+    "Playlist with 60 songs of 1 minute each",
+    "Drinks"
+   ],
+   "regler": [
+    "Make a playlist where each song plays for exactly one minute.",
+    "Every time the song changes, everyone takes a small sip (traditionally a shot of beer).",
+    "Keep going for an hour. Centurion is the version with 100 minutes."
+   ],
+   "varianter": [
+    "Recommended: use a soft drink or water every other minute."
+   ],
+   "taggar": [
+    "music",
+    "big groups"
+   ]
+  },
+  "film-drickspel": {
+   "namn": "Movie or TV Drinking Game",
+   "kort": "Pick things that usually happen in a film or series and drink every time they happen.",
+   "tid": "The whole film",
+   "behover": [
+    "A film or series",
+    "Drinks"
+   ],
+   "regler": [
+    "Choose a film or series.",
+    "Make a list of 4–8 things that usually happen, e.g. 'someone says the main character's name' or 'a car explodes'.",
+    "Every time something on the list happens, everyone takes a sip.",
+    "You can give each person their own thing to watch out for."
+   ],
+   "taggar": [
+    "chill",
+    "film"
+   ]
+  },
+  "tummen": {
+   "namn": "Thumb Master",
+   "kort": "One person is thumb master and can put their thumb on the table at any time. The last to notice and do the same drinks.",
+   "tid": "Runs all evening",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "Pick a thumb master, e.g. with a card in another game.",
+    "When the thumb master discreetly puts their thumb on the edge of the table, everyone else has to do the same.",
+    "The last one to notice drinks.",
+    "The role can pass to the loser or stay with the thumb master."
+   ],
+   "varianter": [
+    "Question master: whoever answers a question from the question master drinks."
+   ],
+   "taggar": [
+    "runs all evening",
+    "no equipment"
+   ]
+  },
+  "skal-for-guvernoren": {
+   "namn": "Here's to the Governor",
+   "kort": "Count to 21 in turn, with rules added after every successful round.",
+   "tid": "15–30 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "Count in turn from 1 to 21, one number per person.",
+    "Whoever hesitates or gets it wrong drinks, and you start over.",
+    "Whoever says 21 says 'here's to the governor', everyone drinks, and that person makes up a new rule for a number, e.g. that 9 has to be said in German.",
+    "The rules last for the rest of the game and it gets harder and harder."
+   ],
+   "taggar": [
+    "no equipment"
+   ],
+   "osaker_kommentar": "Very similar to the game 21. Maybe they should be merged into one game with variants?"
+  },
+  "ja-nej-leken": {
+   "namn": "The Yes/No Game",
+   "kort": "Answer questions without saying yes or no.",
+   "tid": "5–15 min",
+   "regler": [
+    "One person fires quick questions at another.",
+    "The person answering isn't allowed to say 'yes' or 'no', or nod or shake their head.",
+    "Whoever lasts a minute wins. Whoever slips up is out (or drinks)."
+   ],
+   "taggar": [
+    "no equipment",
+    "quick"
+   ]
+  },
+  "vattenfall": {
+   "namn": "Waterfall",
+   "kort": "Everyone starts drinking at the same time and nobody can stop until the person before them has stopped.",
+   "tid": "1–2 min",
+   "behover": [
+    "Drinks"
+   ],
+   "regler": [
+    "Everyone sits in a circle.",
+    "The starter begins drinking. Then the next person starts, and so on around the circle.",
+    "The starter can stop whenever they like. Everyone else can only stop once the person before them has stopped."
+   ],
+   "taggar": [
+    "quick",
+    "part of other games"
+   ]
+  },
+  "olschack": {
+   "namn": "Beer Chess",
+   "kort": "Regular chess, but the pieces are small glasses and whoever takes a piece drinks it.",
+   "tid": "30–60 min",
+   "behover": [
+    "Chessboard",
+    "32 small glasses with two different drinks"
+   ],
+   "regler": [
+    "Set up glasses as chess pieces, with one colour of drink per side. Mark the glasses so you can tell which piece is which.",
+    "Play chess as usual.",
+    "When you take a piece, you drink it.",
+    "Whoever takes the king wins."
+   ],
+   "taggar": [
+    "two players",
+    "strategy"
+   ]
+  }
+ }
+}

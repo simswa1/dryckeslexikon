@@ -29,6 +29,17 @@ button{font:inherit;color:inherit}
 .logo span{color:var(--ol)}
 .tbk{min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--kant);background:var(--yta);text-decoration:none;display:flex;align-items:center;font-weight:700;font-size:.95rem}
 .tbk[hidden]{display:none}
+.sprak{display:flex;gap:7px;margin-left:2px}
+.sprak button{width:34px;height:34px;padding:0;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.55);background:none;cursor:pointer;opacity:.5;transition:opacity .15s,border-color .15s,transform .15s;flex:none}
+.sprak button svg{display:block;width:100%;height:100%}
+.sprak button[aria-pressed="true"]{opacity:1;border-color:var(--ol)}
+.sprak button:active{transform:scale(.92)}
+.sprak18{justify-content:center;margin:0 0 14px}
+.aldersparr .sprak button{display:block;width:34px;height:34px;min-height:0;margin:0;border-radius:50%}
+.sprak button:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.tbkt{margin-left:5px}
+@media(max-width:400px){.topp .in{gap:7px}.logo{font-size:1.2rem}.tbk{padding:0 10px;font-size:.9rem}.sprak{gap:5px}.sprak button{width:30px;height:30px}}
+@media(max-width:350px){.tbkt{display:none}.tbk{padding:0 13px}}
 h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif;line-height:1.08;margin:0}
 .hej{padding:26px 0 14px}
 .hej h1{font-size:clamp(2rem,8vw,3.1rem);text-wrap:balance}
@@ -353,31 +364,63 @@ body.ispel .topp,body.ispel .slump{display:none}
  </defs>
 </svg>
 
-<div class="topp"><div class="in"><a class="logo" href="#">Dryckes<span>lexikon</span></a><a class="tbk" id="tbk" href="#" hidden>← Tillbaka</a></div></div>
+<div class="topp"><div class="in"><a class="logo" href="#">Dryckes<span>lexikon</span></a><a class="tbk" id="tbk" href="#" hidden data-t-aria="Tillbaka"><span aria-hidden="true">←</span><span class="tbkt" data-t="Tillbaka">Tillbaka</span></a><div class="sprak" role="group" aria-label="Språk / Language">
+  <button type="button" data-sprak="sv" aria-label="Svenska" lang="sv"><svg viewBox="0 0 16 10" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="16" height="10" fill="#006aa7"/><rect x="5" width="2" height="10" fill="#fecc02"/><rect y="4" width="16" height="2" fill="#fecc02"/></svg></button>
+  <button type="button" data-sprak="en" aria-label="English" lang="en"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukt"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#ukt)" stroke="#c8102e" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#c8102e" stroke-width="6"/></svg></button>
+</div></div></div>
 <div class="wrap"><main id="vy"></main></div>
-<footer class="ansvar"><b>18+</b>Drick ansvarsfullt. Ni bestämmer själva om, när och hur mycket det ska drickas.</footer>
+<footer class="ansvar"><b>18+</b><span data-t="Drick ansvarsfullt. Ni bestämmer själva om, när och hur mycket det ska drickas.">Drick ansvarsfullt. Ni bestämmer själva om, när och hur mycket det ska drickas.</span></footer>
 <div class="aldersparr" id="aldersparr" role="dialog" aria-modal="true" aria-labelledby="a18h" hidden>
   <div class="ruta18">
+    <div class="sprak sprak18" role="group" aria-label="Språk / Language">
+  <button type="button" data-sprak="sv" aria-label="Svenska" lang="sv"><svg viewBox="0 0 16 10" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="16" height="10" fill="#006aa7"/><rect x="5" width="2" height="10" fill="#fecc02"/><rect y="4" width="16" height="2" fill="#fecc02"/></svg></button>
+  <button type="button" data-sprak="en" aria-label="English" lang="en"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="ukt2"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#ukt2)" stroke="#c8102e" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#c8102e" stroke-width="6"/></svg></button>
+</div>
     <div class="tag18" aria-hidden="true">18+</div>
-    <h2 id="a18h">Är du 18 år eller äldre?</h2>
-    <p>Dryckeslexikon innehåller lekar där dricka kan ingå och är till för dig som har fyllt 18. Drick ansvarsfullt. Alla lekar går lika bra att köra utan alkohol.</p>
-    <button type="button" class="ja18" id="ja18">Ja, jag är 18 år eller äldre</button>
-    <button type="button" class="nej18" id="nej18">Nej, jag är under 18</button>
-    <p class="under18" id="under18" hidden>Appen är bara för dig som har fyllt 18. Välkommen tillbaka då!</p>
+    <h2 id="a18h" data-t="Är du 18 år eller äldre?">Är du 18 år eller äldre?</h2>
+    <p data-t="Dryckeslexikon innehåller lekar där dricka kan ingå och är till för dig som har fyllt 18. Drick ansvarsfullt. Alla lekar går lika bra att köra utan alkohol.">Dryckeslexikon innehåller lekar där dricka kan ingå och är till för dig som har fyllt 18. Drick ansvarsfullt. Alla lekar går lika bra att köra utan alkohol.</p>
+    <button type="button" class="ja18" id="ja18" data-t="Ja, jag är 18 år eller äldre">Ja, jag är 18 år eller äldre</button>
+    <button type="button" class="nej18" id="nej18" data-t="Nej, jag är under 18">Nej, jag är under 18</button>
+    <p class="under18" id="under18" hidden data-t="Appen är bara för dig som har fyllt 18. Välkommen tillbaka då!">Appen är bara för dig som har fyllt 18. Välkommen tillbaka då!</p>
   </div>
 </div>
-<div class="spel" id="spel" hidden role="dialog" aria-label="Spelläge"></div>
-<button class="slump" id="slump" type="button">Slumpa en lek</button>
+<div class="spel" id="spel" hidden role="dialog" aria-label="Spelläge" data-t-aria="Spelläge"></div>
+<button class="slump" id="slump" type="button" data-t="Slumpa en lek">Slumpa en lek</button>
 
 <script id="lekdata" type="application/json">__LEKAR__</script>
 <script id="fragdata" type="application/json">__FRAGOR__</script>
 <script id="impdata" type="application/json">__IMPOSTOR__</script>
 <script id="kkdata" type="application/json">__KORKORTET__</script>
+<script id="fragdata-en" type="application/json">__FRAGOR_EN__</script>
+<script id="impdata-en" type="application/json">__IMPOSTOR_EN__</script>
+<script id="kkdata-en" type="application/json">__KORKORTET_EN__</script>
 <script>
 {
+// ===== Språk: svenska (standard) eller engelska. Valet sparas i telefonen. =====
+const SPRAKNYCKEL = 'dryckeslexikon-sprak';
+let LANG = (() => { try { return localStorage.getItem(SPRAKNYCKEL) === 'en' ? 'en' : 'sv'; } catch(e) { return 'sv'; } })();
+const EN = __EN__;
+// T('svensk text', {n:3}) ger texten på valt språk. {namn} byts mot värden.
+const T = (s, v) => { let t = LANG === 'en' && EN[s] != null ? EN[s] : s; if (v) t = t.replace(/\{(\w+)\}/g, (m, k) => v[k] ?? m); return t; };
+const Fl = (l, k) => F(l, k);
+// F(lek, 'regler') ger lekens fält på valt språk (svenska om översättning saknas).
+const F = (l, k) => { const e = LANG === 'en' && l.en ? l.en[k] : null; return e != null && (!Array.isArray(e) || e.length) ? e : l[k]; };
+const jsonData = id => { try { return JSON.parse(document.getElementById(id).textContent || '{}'); } catch(e) { return {}; } };
+const DATA = {sv: {fr: jsonData('fragdata'), imp: jsonData('impdata'), kk: jsonData('kkdata')},
+              en: {fr: jsonData('fragdata-en'), imp: jsonData('impdata-en'), kk: jsonData('kkdata-en')}};
+let FRAGOR, IMP, IMKAT, KKD, KKN, KKG;
+function laddaData(){
+  const d = DATA[LANG], s = DATA.sv;
+  FRAGOR = Object.assign({}, s.fr, LANG === 'en' ? Object.fromEntries(Object.entries(d.fr).filter(([k, v]) => v && v.nivaer)) : {});
+  IMP = LANG === 'en' && Object.keys(d.imp.kategorier || {}).length ? d.imp : s.imp;
+  IMKAT = Object.keys(IMP.kategorier || {});
+  KKD = LANG === 'en' && Object.values(d.kk.nivaer || {}).some(x => x.length) ? d.kk : s.kk;
+  KKN = ['Lugn','Lagom','Het'].filter(n => ((KKD.nivaer || {})[n] || []).length);
+  KKG = {}; Object.entries(KKD.grupper || {}).forEach(([g, ts]) => ts.forEach(t => KKG[t] = g));
+}
+laddaData();
 const LEKAR = JSON.parse(document.getElementById('lekdata').textContent)
-  .filter(l => l && l.id && l.namn)
-  .sort((a,b) => (b.popularitet??50) - (a.popularitet??50) || a.namn.localeCompare(b.namn,'sv')); // populärast först inom varje grupp
+  .filter(l => l && l.id && l.namn);
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Gemener och utan accenter (é -> e), men å, ä och ö behålls som egna bokstäver.
@@ -386,10 +429,15 @@ const slugNorm = s => String(s ?? '').toLowerCase().normalize('NFD').replace(/[\
 const slug = s => slugNorm(s).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const spelareText = s => !s ? '–' : s.max == null ? `${s.min}+` : s.min === s.max ? `${s.min}` : `${s.min}–${s.max}`;
 const NIVA = {'Lätt':1,'Medel':2,'Svår':3};
-const svarHtml = v => v ? `<span class="svar" aria-hidden="true">${[1,2,3].map(i=>`<i class="${i<=NIVA[v]?'p':''}"></i>`).join('')}</span>${esc(v)}` : '–';
+const svarHtml = v => v ? `<span class="svar" aria-hidden="true">${[1,2,3].map(i=>`<i class="${i<=NIVA[v]?'p':''}"></i>`).join('')}</span>${esc(T(v))}` : '–';
 const lekbild = (l, klass='rbild') => `<svg class="${klass}" viewBox="0 0 100 100" aria-hidden="true"><use href="#${document.getElementById('lb-'+l.id) ? 'lb-'+l.id : (gruppAv(l._grupp)||{}).ikon || 'stjarna'}"/></svg>`;
 const ikon = id => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
-LEKAR.forEach(l => l._sok = norm([l.namn,l.kort,l.kategori,(l.behover||[]).join(' '),(l.taggar||[]).join(' '),(l.regler||[]).join(' ')].join(' ')));
+// Sortering och sökning görs om när språket byts. Båda språkens namn går att söka på.
+function forbered(){
+  LEKAR.sort((a,b) => (b.popularitet??50) - (a.popularitet??50) || F(a,'namn').localeCompare(F(b,'namn'), LANG)); // populärast först inom varje grupp
+  LEKAR.forEach(l => l._sok = norm([F(l,'namn'), l.namn, (l.en||{}).namn, F(l,'kort'), T(l.kategori||''), (F(l,'behover')||[]).join(' '), (F(l,'taggar')||[]).join(' '), (F(l,'regler')||[]).join(' ')].join(' ')));
+}
+forbered();
 
 // Lekarna delas in efter vad man behöver. Första gruppen som passar vinner.
 // En lek kan tvingas till en grupp med fältet "grupp" (gruppens id) i lekar.json.
@@ -440,23 +488,23 @@ LISTOR['favoriter'] = {titel:'Favoriter', text:'Lekar ni har sparat med hjärtat
 function start(){
   $('#vy').innerHTML = `
   <section class="hej">
-    <h1>Vad ska vi leka ikväll?</h1>
-    <p>${LEKAR.length} lekar med regler, antal spelare, tid och svårighetsgrad. Ni bestämmer själva om, när och hur mycket det ska drickas.</p>
-    <div class="sokruta"><input class="sok" id="sok" type="search" placeholder="Sök efter en lek…" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="forslag" aria-autocomplete="list">
+    <h1>${T('Vad ska vi leka ikväll?')}</h1>
+    <p>${T('{n} lekar med regler, antal spelare, tid och svårighetsgrad. Ni bestämmer själva om, när och hur mycket det ska drickas.', {n: LEKAR.length})}</p>
+    <div class="sokruta"><input class="sok" id="sok" type="search" placeholder="${esc(T('Sök efter en lek…'))}" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="forslag" aria-autocomplete="list">
     <ul class="forslag" id="forslag" role="listbox" hidden></ul></div>
   </section>
-  <nav class="stora" aria-label="Huvudval">
-    <a class="stor bred c-dryck" href="#alla"><span class="n">${LEKAR.length} lekar</span>
+  <nav class="stora" aria-label="${T('Huvudval')}">
+    <a class="stor bred c-dryck" href="#alla"><span class="n">${T('{n} lekar', {n: LEKAR.length})}</span>
       <svg viewBox="0 0 220 120" aria-hidden="true"><use href="#vinglas" x="0" y="0" width="64" height="118"/><use href="#laskglas" x="56" y="4" width="62" height="114"/><use href="#olglas" x="116" y="6" width="96" height="112"/></svg>
-      <h2>Alla lekar</h2><p>Hela samlingen, sorterad efter vad ni behöver.</p></a>
+      <h2>${T('Alla lekar')}</h2><p>${T('Hela samlingen, sorterad efter vad ni behöver.')}</p></a>
     <a class="stor c-slump" href="#" data-slump="1">
-      ${ikon('stjarna')}<h2>Slumpa</h2><p>Låt slumpen välja lek åt er.</p></a>
-    <a class="stor c-fav" href="#favoriter"><span class="n">${FAV.size} sparade</span>
-      ${ikon('hjarta')}<h2>Favoriter</h2><p>Era sparade lekar.</p></a>
+      ${ikon('stjarna')}<h2>${T('Slumpa')}</h2><p>${T('Låt slumpen välja lek åt er.')}</p></a>
+    <a class="stor c-fav" href="#favoriter"><span class="n">${T('{n} sparade', {n: FAV.size})}</span>
+      ${ikon('hjarta')}<h2>${T('Favoriter')}</h2><p>${T('Era sparade lekar.')}</p></a>
     <a class="stor c-kortlek" href="#kortlek">
-      ${ikon('kort')}<h2>Kortlek</h2><p>Dra kort direkt i telefonen.</p></a>
+      ${ikon('kort')}<h2>${T('Kortlek')}</h2><p>${T('Dra kort direkt i telefonen.')}</p></a>
     <a class="stor c-tarn" href="#tarningar">
-      ${ikon('tarning')}<h2>Tärningar</h2><p>Slå 1–10 tärningar.</p></a>
+      ${ikon('tarning')}<h2>${T('Tärningar')}</h2><p>${T('Slå 1–10 tärningar.')}</p></a>
   </nav>`;
   const sok = $('#sok'), fl = $('#forslag');
   let akt = -1;
@@ -467,9 +515,9 @@ function start(){
     if (!q){ fl.hidden = true; sok.setAttribute('aria-expanded','false'); return; }
     const t = forslag(q);
     fl.innerHTML = t.length
-      ? t.slice(0,8).map(l => `<li><a role="option" href="#lek-${encodeURIComponent(l.id)}">${lekbild(l,'fb')}<span class="fn">${markera(l.namn,q)}</span><span class="fm">${spelareText(l.spelare)} spelare · ${esc(l.tid||'')}</span></a></li>`).join('')
-        + (t.length > 8 ? `<li><a class="alla" href="#alla" data-allasok="1">Visa alla ${t.length} träffar</a></li>` : '')
-      : `<li class="ingen">Ingen lek matchar ”${esc(sok.value.trim())}”</li>`;
+      ? t.slice(0,8).map(l => `<li><a role="option" href="#lek-${encodeURIComponent(l.id)}">${lekbild(l,'fb')}<span class="fn">${markera(F(l,'namn'),q)}</span><span class="fm">${spelareText(l.spelare)} ${T('spelare')} · ${esc(F(l,'tid')||'')}</span></a></li>`).join('')
+        + (t.length > 8 ? `<li><a class="alla" href="#alla" data-allasok="1">${T('Visa alla {n} träffar', {n: t.length})}</a></li>` : '')
+      : `<li class="ingen">${T('Ingen lek matchar ”{q}”', {q: esc(sok.value.trim())})}</li>`;
     fl.hidden = false; sok.setAttribute('aria-expanded','true');
   };
   const flytta = d => {
@@ -493,14 +541,14 @@ function start(){
 // och från tre bokstäver även lekar där texten finns i beskrivning eller regler.
 function forslag(q){
   const poang = l => {
-    const n = norm(l.namn);
+    const n = norm(F(l,'namn'));
     if (n.startsWith(q)) return 0;
     if (n.split(/[^a-z0-9åäö]+/).some(w => w.startsWith(q))) return 1;
     if (q.length >= 2 && n.includes(q)) return 2;
     if (q.length >= 3 && l._sok.includes(q)) return 3;
     return 9;
   };
-  return LEKAR.map(l => [poang(l), l]).filter(x => x[0] < 9).sort((a,b) => a[0]-b[0] || a[1].namn.localeCompare(b[1].namn,'sv')).map(x => x[1]);
+  return LEKAR.map(l => [poang(l), l]).filter(x => x[0] < 9).sort((a,b) => a[0]-b[0] || F(a[1],'namn').localeCompare(F(b[1],'namn'),LANG)).map(x => x[1]);
 }
 function markera(namn, q){
   const n = norm(namn); let i = n.startsWith(q) ? 0 : -1;
@@ -520,56 +568,56 @@ function lista(namn, nyLista){
   const L = LISTOR[namn];
   if (nyLista){
     const valda = GRUPPER.filter(g=>VAL.has(g.id)).map(g=>g.namn);
-    const text = namn==='spela' ? `Valt: ${valda.length ? valda.join(' + ') : 'inget särskilt'}. Lekar som inte kräver något är också med.` : L.text;
-    $('#vy').innerHTML = `<section class="lhuv"><h1>${esc(L.titel)}</h1><p>${esc(text)}</p>
-      <input class="sok" id="sok" type="search" placeholder="Sök i listan…" autocomplete="off" value="${esc(S.sok)}">
+    const text = namn==='spela' ? T('Valt: {v}. Lekar som inte kräver något är också med.', {v: valda.length ? valda.map(x => T(x)).join(' + ') : T('inget särskilt')}) : T(L.text);
+    $('#vy').innerHTML = `<section class="lhuv"><h1>${esc(T(L.titel))}</h1><p>${esc(text)}</p>
+      <input class="sok" id="sok" type="search" placeholder="${esc(T('Sök i listan…'))}" autocomplete="off" value="${esc(S.sok)}">
       <div class="chips" id="fSpel"></div><div class="chips" id="fNiva"></div><div class="abc" id="abc"></div></section><div id="res"></div>`;
     $('#sok').addEventListener('input', e => { S.sok = e.target.value; lista(namn,false); });
   }
-  const spel = [[null,'Alla antal'],...[...new Set([2,4,6,10,S.spelare].filter(Boolean))].sort((a,b)=>a-b).map(n=>[n, n+' spelare'])];
+  const spel = [[null,T('Alla antal')],...[...new Set([2,4,6,10,S.spelare].filter(Boolean))].sort((a,b)=>a-b).map(n=>[n, T('{n} spelare', {n})])];
   $('#fSpel').innerHTML = spel.map(([v,t])=>`<button type="button" class="chip ${S.spelare===v?'pa':''}" data-s="${v??''}">${t}</button>`).join('');
-  $('#fNiva').innerHTML = [[null,'Alla nivåer'],['Lätt','Lätt'],['Medel','Medel'],['Svår','Svår']].map(([v,t])=>`<button type="button" class="chip ${S.niva===v?'pa':''}" data-n="${v??''}">${t}</button>`).join('');
+  $('#fNiva').innerHTML = [[null,T('Alla nivåer')],['Lätt',T('Lätt')],['Medel',T('Medel')],['Svår',T('Svår')]].map(([v,t])=>`<button type="button" class="chip ${S.niva===v?'pa':''}" data-n="${v??''}">${t}</button>`).join('');
   const t = filtrera(L.f);
   const grupper = {};
   t.forEach(l => (grupper[l._grupp] ??= []).push(l));
   const bok = GRUPPER.map(g=>g.id).filter(id => grupper[id]);
   const bid = id => 'g-' + id;
-  $('#abc').innerHTML = !L.engrupp && bok.length > 1 ? bok.map(id=>`<a href="#${namn}" data-hopp="${bid(id)}">${ikon(gruppAv(id).ikon)}${esc(gruppAv(id).namn)} <span>${grupper[id].length}</span></a>`).join('') : '';
-  $('#res').innerHTML = `<p style="color:var(--dim);margin:12px 0 0">${t.length} ${t.length===1?'lek':'lekar'}</p>`
-    + (t.length ? '' : `<p class="tom">${esc(L.tom && !S.sok && S.spelare==null && S.niva==null ? L.tom : 'Inga lekar matchar. Prova att ändra filtren.')}</p>`)
-    + bok.map(b => (L.engrupp ? '<div style="height:10px"></div>' : `<div class="bokstav" id="${bid(b)}">${ikon(gruppAv(b).ikon)}<span>${esc(gruppAv(b).namn)}<small>${esc(gruppAv(b).text)}</small></span></div>`) + `<ul class="rutor">`
+  $('#abc').innerHTML = !L.engrupp && bok.length > 1 ? bok.map(id=>`<a href="#${namn}" data-hopp="${bid(id)}">${ikon(gruppAv(id).ikon)}${esc(T(gruppAv(id).namn))} <span>${grupper[id].length}</span></a>`).join('') : '';
+  $('#res').innerHTML = `<p style="color:var(--dim);margin:12px 0 0">${t.length} ${t.length===1?T('lek'):T('lekar')}</p>`
+    + (t.length ? '' : `<p class="tom">${esc(L.tom && !S.sok && S.spelare==null && S.niva==null ? T(L.tom) : T('Inga lekar matchar. Prova att ändra filtren.'))}</p>`)
+    + bok.map(b => (L.engrupp ? '<div style="height:10px"></div>' : `<div class="bokstav" id="${bid(b)}">${ikon(gruppAv(b).ikon)}<span>${esc(T(gruppAv(b).namn))}<small>${esc(T(gruppAv(b).text))}</small></span></div>`) + `<ul class="rutor">`
       + grupper[b].map(l => `<li><a class="ruta" href="#lek-${encodeURIComponent(l.id)}">
-          ${FAV.has(l.id) ? '<span class="rfav" aria-label="Favorit">♥</span>' : ''}
+          ${FAV.has(l.id) ? `<span class="rfav" aria-label="${T('Favorit')}">♥</span>` : ''}
           ${lekbild(l)}
-          <b class="rnamn">${esc(l.namn)}</b>
-          <span class="rmeta">${spelareText(l.spelare)} spelare${l.svarighet ? ' · ' + svarHtml(l.svarighet) : ''}</span>
+          <b class="rnamn">${esc(F(l,'namn'))}</b>
+          <span class="rmeta">${spelareText(l.spelare)} ${T('spelare')}${l.svarighet ? ' · ' + svarHtml(l.svarighet) : ''}</span>
         </a></li>`).join('') + `</ul>`).join('');
 }
 
 function lekSida(id){
   const l = LEKAR.find(x => x.id === id);
-  if (!l){ $('#vy').innerHTML = `<p class="tom">Hittade inte leken. <a href="#">Till startsidan</a></p>`; return; }
+  if (!l){ $('#vy').innerHTML = `<p class="tom">${T('Hittade inte leken.')} <a href="#">${T('Till startsidan')}</a></p>`; return; }
   const lst = (rubrik, arr, ordnad) => arr && arr.length ? `<h2>${rubrik}</h2><${ordnad?'ol class="regler"':'ul'}>${arr.map(x=>`<li>${esc(x)}</li>`).join('')}</${ordnad?'ol':'ul'}>` : '';
   $('#vy').innerHTML = `<article>
-    <div class="lekhuv">${lekbild(l,'lekbild')}<div style="flex:1"><h1>${esc(l.namn)}</h1><button type="button" class="favknapp ${FAV.has(l.id)?'pa':''}" data-fav="${esc(l.id)}" aria-pressed="${FAV.has(l.id)}">${FAV.has(l.id)?'♥ Sparad':'♡ Spara'}</button></div></div>
-    <p class="ingress">${esc(l.kort)}</p>
+    <div class="lekhuv">${lekbild(l,'lekbild')}<div style="flex:1"><h1>${esc(F(l,'namn'))}</h1><button type="button" class="favknapp ${FAV.has(l.id)?'pa':''}" data-fav="${esc(l.id)}" aria-pressed="${FAV.has(l.id)}">${FAV.has(l.id)?T('♥ Sparad'):T('♡ Spara')}</button></div></div>
+    <p class="ingress">${esc(F(l,'kort'))}</p>
     <div class="fakta">
-      <div><small>Spelare</small><b>${spelareText(l.spelare)}</b></div>
-      <div><small>Tid</small><b>${esc(l.tid||'–')}</b></div>
-      <div><small>Svårighet</small><b>${svarHtml(l.svarighet)}</b></div>
-      <div><small>Behövs</small><b><a href="#grupp-${l._grupp}">${esc(gruppAv(l._grupp).namn)}</a></b></div>
+      <div><small>${T('Spelare')}</small><b>${spelareText(l.spelare)}</b></div>
+      <div><small>${T('Tid')}</small><b>${esc(F(l,'tid')||'–')}</b></div>
+      <div><small>${T('Svårighet')}</small><b>${svarHtml(l.svarighet)}</b></div>
+      <div><small>${T('Behövs')}</small><b><a href="#grupp-${l._grupp}">${esc(T(gruppAv(l._grupp).namn))}</a></b></div>
     </div>
-    ${l.osaker ? `<div class="notis"><b>Reglerna varierar mellan sällskap.</b>${l.osaker_kommentar ? ' '+esc(l.osaker_kommentar) : ''} Kom överens innan ni börjar.</div>` : ''}
-    ${lst('Det här behövs', l.behover && l.behover.length ? l.behover : ['Gott sällskap'])}
-    ${lst('Regler', l.regler, true)}
-    ${l.kortregler ? `<a class="verktygslank" href="#kortlek-${encodeURIComponent(l.id)}">${ikon('kort')}<span>Spela med telefonens kortlek<small>Kortets regel visas när du drar</small></span></a>`
-      : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
-    ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? (n => `<a class="verktygslank" href="${n ? '#tarningar-' + encodeURIComponent(l.id) : '#tarningar'}">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>${n ? `Öppnas med ${tarningText(n)}, som leken använder` : 'Öppna de digitala tärningarna'}</small></span></a>`)(tarningarFor(l)) : ''}
-    ${l.verktyg === 'impostor' ? `<a class="verktygslank imlank" href="#impostor">${ikon('impostor')}<span>▶ Spela i telefonen<small>Skicka runt telefonen, var och en ser sitt ord</small></span></a>` : ''}
-    ${l.verktyg === 'korkortet' ? `<a class="verktygslank kklank" href="#korkortet">${ikon('korkort')}<span>▶ Spela i telefonen<small>Hemligt påstående, rangordna och gissa</small></span></a>` : ''}
-    ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
-    ${lst('Varianter', l.varianter)}
-    ${l.taggar && l.taggar.length ? `<div class="taggar">${l.taggar.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
+    ${l.osaker ? `<div class="notis"><b>${T('Reglerna varierar mellan sällskap.')}</b>${F(l,'osaker_kommentar') ? ' '+esc(F(l,'osaker_kommentar')) : ''} ${T('Kom överens innan ni börjar.')}</div>` : ''}
+    ${lst(T('Det här behövs'), l.behover && l.behover.length ? F(l,'behover') : [T('Gott sällskap')])}
+    ${lst(T('Regler'), F(l,'regler'), true)}
+    ${l.kortregler ? `<a class="verktygslank" href="#kortlek-${encodeURIComponent(l.id)}">${ikon('kort')}<span>${T('Spela med telefonens kortlek')}<small>${T('Kortets regel visas när du drar')}</small></span></a>`
+      : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>${T('Ingen kortlek? Använd telefonen')}<small>${T('Öppna den digitala kortleken')}</small></span></a>` : ''}
+    ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? (n => `<a class="verktygslank" href="${n ? '#tarningar-' + encodeURIComponent(l.id) : '#tarningar'}">${ikon('tarning')}<span>${T('Inga tärningar? Använd telefonen')}<small>${n ? T('Öppnas med {t}, som leken använder', {t: tarningText(n)}) : T('Öppna de digitala tärningarna')}</small></span></a>`)(tarningarFor(l)) : ''}
+    ${l.verktyg === 'impostor' ? `<a class="verktygslank imlank" href="#impostor">${ikon('impostor')}<span>${T('▶ Spela i telefonen')}<small>${T('Skicka runt telefonen, var och en ser sitt ord')}</small></span></a>` : ''}
+    ${l.verktyg === 'korkortet' ? `<a class="verktygslank kklank" href="#korkortet">${ikon('korkort')}<span>${T('▶ Spela i telefonen')}<small>${T('Hemligt påstående, rangordna och gissa')}</small></span></a>` : ''}
+    ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">${T('▶ Starta spel')}<span>${T('{n} frågor att visa på skärmen', {n: antalFragor(l.id)})}</span></a>` : ''}
+    ${lst(T('Varianter'), F(l,'varianter'))}
+    ${F(l,'taggar') && F(l,'taggar').length ? `<div class="taggar">${F(l,'taggar').map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
     
   </article>`;
 }
@@ -582,31 +630,32 @@ const nyLek = () => blandaLek([...Array(52).keys()]);
 function blandaLek(a){ for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; }
 let KL = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexikon-kortlek') || 'null'); if (v && Array.isArray(v.kvar)) return v; } catch(e) {} return {kvar:nyLek(), dragna:[]}; })();
 const sparaKL = () => { try { localStorage.setItem('dryckeslexikon-kortlek', JSON.stringify(KL)); } catch(e) {} };
-const kortInfo = n => { const f = FARGER[Math.floor(n/13)], v = VALORER[n%13]; return {f, v, namn:`${f.namn} ${VALNAMN[v] || v}`}; };
+const FARGNAMN_EN = {'Hjärter':'Hearts','Ruter':'Diamonds','Klöver':'Clubs','Spader':'Spades'}, VALNAMN_EN = {A:'Ace',J:'Jack',Q:'Queen',K:'King'};
+const kortInfo = n => { const f = FARGER[Math.floor(n/13)], v = VALORER[n%13]; return {f, v, namn: LANG === 'en' ? `${VALNAMN_EN[v] || v} of ${FARGNAMN_EN[f.namn]}` : `${f.namn} ${VALNAMN[v] || v}`}; };
 const TS = '︎'; // visa färgtecknen som text, inte som emoji
 function kortHtml(n, anim){
   const {f, v} = kortInfo(n), s = f.s + TS, bild = /[JQK]/.test(v);
-  return `<button type="button" class="spkort ${f.rod?'rod':''} ${anim?'drar':''}" data-kl="nasta" aria-label="${esc(kortInfo(n).namn)}. Tryck för nästa kort">
+  return `<button type="button" class="spkort ${f.rod?'rod':''} ${anim?'drar':''}" data-kl="nasta" aria-label="${esc(kortInfo(n).namn)}. ${T('Tryck för nästa kort')}">
     <span class="hr h1">${v}<i>${s}</i></span><span class="hr h2">${v}<i>${s}</i></span>
     <span class="mitt ${bild?'bild':''}">${bild ? `<span>${v}<small>${s}</small></span>` : s}</span></button>`;
 }
 let KLEK = null; // lek vars kortregler visas under kortet (#kortlek-<id>)
-const kortRegel = (l, n) => { const {f, v} = kortInfo(n); return (l.kortregler || []).find(r => r.valor.includes(v) && (!r.farg || (r.farg === 'rod') === f.rod)); };
+const kortRegel = (l, n) => { const {f, v} = kortInfo(n); return (F(l,'kortregler') || []).find(r => r.valor.includes(v) && (!r.farg || (r.farg === 'rod') === f.rod)); };
 function kortlekSida(anim){
   const n = KL.dragna.length ? KL.dragna[KL.dragna.length-1] : null, slut = !KL.kvar.length;
   const rg = KLEK && n != null ? kortRegel(KLEK, n) : null;
   const forra = KL.dragna.length > 1 ? kortInfo(KL.dragna[KL.dragna.length-2]).namn : '';
   $('#vy').innerHTML = `<section class="verktyg ${KLEK?'medregel':''}">
-    <h1>${KLEK ? esc(KLEK.namn) : 'Kortlek'}</h1>
-    <span class="kvar">${KL.kvar.length} kort kvar</span>
+    <h1>${KLEK ? esc(F(KLEK,'namn')) : T('Kortlek')}</h1>
+    <span class="kvar">${T('{n} kort kvar', {n: KL.kvar.length})}</span>
     <div class="kortplats">${n == null
-      ? `<button type="button" class="spkort baksida ${anim?'drar':''}" data-kl="nasta" aria-label="Dra första kortet"><span class="mitt">Tryck för att ta översta kortet</span></button>`
+      ? `<button type="button" class="spkort baksida ${anim?'drar':''}" data-kl="nasta" aria-label="${T('Dra första kortet')}"><span class="mitt">${T('Tryck för att ta översta kortet')}</span></button>`
       : kortHtml(n, anim)}</div>
     <div class="kortnamn" aria-live="polite">${n == null ? '' : esc(kortInfo(n).namn)}</div>
-    ${KLEK ? `<div class="kortregel" aria-live="polite">${rg ? `<b>${esc(rg.titel)}</b><p>${esc(rg.text)}</p>` : `<p>Dra ett kort så visas vad det betyder. <a href="#lek-${encodeURIComponent(KLEK.id)}">Alla regler</a></p>`}</div>` : ''}
-    <div class="forra">${slut ? 'Det var sista kortet. Blanda om för en ny lek.' : forra ? 'Förra kortet: ' + esc(forra) : ''}</div>
-    <button type="button" class="spela" data-kl="nasta" ${slut?'disabled':''}>${slut ? 'Leken är slut' : n == null ? 'Ta översta kortet' : 'Nästa kort'}</button>
-    <div class="knapprad"><button type="button" class="liten" data-kl="blanda">↻ Blanda om</button></div>
+    ${KLEK ? `<div class="kortregel" aria-live="polite">${rg ? `<b>${esc(rg.titel)}</b><p>${esc(rg.text)}</p>` : `<p>${T('Dra ett kort så visas vad det betyder.')} <a href="#lek-${encodeURIComponent(KLEK.id)}">${T('Alla regler')}</a></p>`}</div>` : ''}
+    <div class="forra">${slut ? T('Det var sista kortet. Blanda om för en ny lek.') : forra ? T('Förra kortet: ') + esc(forra) : ''}</div>
+    <button type="button" class="spela" data-kl="nasta" ${slut?'disabled':''}>${slut ? T('Leken är slut') : n == null ? T('Ta översta kortet') : T('Nästa kort')}</button>
+    <div class="knapprad"><button type="button" class="liten" data-kl="blanda">${T('↻ Blanda om')}</button></div>
   </section>`;
 }
 function nastaKort(){
@@ -620,7 +669,7 @@ const PRICKAR = {1:[[50,50]],2:[[28,28],[72,72]],3:[[26,26],[50,50],[74,74]],4:[
 const tarningSvg = v => `<svg viewBox="0 0 100 100" role="img" aria-label="${v}"><rect x="4" y="4" width="92" height="92" rx="20" fill="#fff"/>${PRICKAR[v].map(([x,y]) => `<circle cx="${x}" cy="${y}" r="9" fill="${v===1?'#c22f52':'#1d1630'}"/>`).join('')}</svg>`;
 // Hur många tärningar en lek använder: fältet "tarningar" i lekar.json, annars läses det ur "behover" (t.ex. "2 tärningar", "fem tärningar").
 const ORDTAL = {en:1, ett:1, 'två':2, tre:3, fyra:4, fem:5, sex:6, sju:7, 'åtta':8, nio:9, tio:10};
-const tarningText = n => n === 1 ? '1 tärning' : `${n} tärningar`;
+const tarningText = n => n === 1 ? T('1 tärning') : T('{n} tärningar', {n});
 function tarningarFor(l){
   let n = +l.tarningar || 0;
   if (!n) for (const b of l.behover || []){
@@ -633,14 +682,14 @@ let TLEK = null; // lek man kom ifrån (#tarningar-<id>)
 function tarningSida(anim){
   const s = TA.slag, sum = s.reduce((a,b)=>a+b,0), lekN = TLEK ? tarningarFor(TLEK) : null;
   $('#vy').innerHTML = `<section class="verktyg">
-    <h1>${TLEK ? esc(TLEK.namn) : 'Tärningar'}</h1><p>${TLEK && lekN ? (TA.antal === lekN ? `Inställt på ${tarningText(lekN)}, som leken använder.` : `Leken använder ${tarningText(lekN)}.`) : 'Välj hur många tärningar ni vill slå.'}</p>
-    <div class="antalrad"><span>Antal tärningar</span><div class="stepper">
-      <button type="button" data-ta="minus" aria-label="Färre tärningar" ${TA.antal<=1?'disabled':''}>−</button>
+    <h1>${TLEK ? esc(F(TLEK,'namn')) : T('Tärningar')}</h1><p>${TLEK && lekN ? (TA.antal === lekN ? T('Inställt på {t}, som leken använder.', {t: tarningText(lekN)}) : T('Leken använder {t}.', {t: tarningText(lekN)})) : T('Välj hur många tärningar ni vill slå.')}</p>
+    <div class="antalrad"><span>${T('Antal tärningar')}</span><div class="stepper">
+      <button type="button" data-ta="minus" aria-label="${T('Färre tärningar')}" ${TA.antal<=1?'disabled':''}>−</button>
       <output aria-live="polite">${TA.antal}</output>
-      <button type="button" data-ta="plus" aria-label="Fler tärningar" ${TA.antal>=10?'disabled':''}>+</button></div></div>
+      <button type="button" data-ta="plus" aria-label="${T('Fler tärningar')}" ${TA.antal>=10?'disabled':''}>+</button></div></div>
     <div class="tarningar ${TA.antal>4?'m5':''} ${anim?'rullar':''}" data-ta="sla">${s.length ? s.map(tarningSvg).join('') : Array.from({length:TA.antal}, () => tarningSvg(6).replace(/<circle[^>]*>/g,'')).join('')}</div>
-    <div class="summa" aria-live="polite">${s.length ? (s.length > 1 ? `Summa ${sum}` : `${sum}`) + `<small>${s.length > 1 ? s.join(' + ') : 'Du slog ' + sum}</small>` : '<small>Tryck på knappen för att slå</small>'}</div>
-    <button type="button" class="spela" data-ta="sla">${TA.antal === 1 ? 'Slå tärningen' : 'Slå tärningarna'}</button>
+    <div class="summa" aria-live="polite">${s.length ? (s.length > 1 ? T('Summa {n}', {n: sum}) : `${sum}`) + `<small>${s.length > 1 ? s.join(' + ') : T('Du slog {n}', {n: sum})}</small>` : `<small>${T('Tryck på knappen för att slå')}</small>`}</div>
+    <button type="button" class="spela" data-ta="sla">${TA.antal === 1 ? T('Slå tärningen') : T('Slå tärningarna')}</button>
   </section>`;
 }
 function slaTarningar(){
@@ -658,8 +707,6 @@ document.addEventListener('click', e => {
 });
 
 // ===== Impostor: alla utom impostorn får samma ord (inställningar och använda ord sparas i telefonen) =====
-const IMP = JSON.parse(document.getElementById('impdata').textContent || '{}');
-const IMKAT = Object.keys(IMP.kategorier || {});
 let IMI = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexikon-impostor') || 'null'); if (v && v.spelare) return v; } catch(e) {} return {}; })();
 IMI = {spelare: Math.min(20, Math.max(3, IMI.spelare|0 || 5)), imp: Math.max(1, IMI.imp|0 || 1), visaKat: IMI.visaKat !== false,
   kat: Array.isArray(IMI.kat) ? IMI.kat.filter(k => IMKAT.includes(k)) : IMKAT.slice(), anvanda: Array.isArray(IMI.anvanda) ? IMI.anvanda.slice(-300) : []};
@@ -683,50 +730,50 @@ function impostorSida(){
   if (IM.fas === 'val'){
     const mi = maxImp(n); if (IMI.imp > mi) IMI.imp = mi;
     v.innerHTML = `<section class="verktyg">
-      <h1>Impostor</h1><p>Alla får samma hemliga ord utom impostorn, som bara får veta kategorin. Skicka runt telefonen så att var och en ser sitt ord.</p>
-      <div class="antalrad"><span>Spelare</span><div class="stepper">
-        <button type="button" data-im="sp-" aria-label="Färre spelare" ${n<=3?'disabled':''}>−</button><output aria-live="polite">${n}</output>
-        <button type="button" data-im="sp+" aria-label="Fler spelare" ${n>=20?'disabled':''}>+</button></div></div>
-      <div class="antalrad"><span>Impostorer</span><div class="stepper">
-        <button type="button" data-im="im-" aria-label="Färre impostorer" ${IMI.imp<=1?'disabled':''}>−</button><output aria-live="polite">${IMI.imp}</output>
-        <button type="button" data-im="im+" aria-label="Fler impostorer" ${IMI.imp>=mi?'disabled':''}>+</button></div></div>
+      <h1>Impostor</h1><p>${T('Alla får samma hemliga ord utom impostorn, som bara får veta kategorin. Skicka runt telefonen så att var och en ser sitt ord.')}</p>
+      <div class="antalrad"><span>${T('Spelare')}</span><div class="stepper">
+        <button type="button" data-im="sp-" aria-label="${T('Färre spelare')}" ${n<=3?'disabled':''}>−</button><output aria-live="polite">${n}</output>
+        <button type="button" data-im="sp+" aria-label="${T('Fler spelare')}" ${n>=20?'disabled':''}>+</button></div></div>
+      <div class="antalrad"><span>${T('Impostorer')}</span><div class="stepper">
+        <button type="button" data-im="im-" aria-label="${T('Färre impostorer')}" ${IMI.imp<=1?'disabled':''}>−</button><output aria-live="polite">${IMI.imp}</output>
+        <button type="button" data-im="im+" aria-label="${T('Fler impostorer')}" ${IMI.imp>=mi?'disabled':''}>+</button></div></div>
       <div class="imval">
-        <h3>Kategorier <button type="button" class="chip" data-im="allakat" style="margin-left:6px">${IMI.kat.length === IMKAT.length ? 'Välj bort alla' : 'Välj alla'}</button></h3>
+        <h3>${T('Kategorier')} <button type="button" class="chip" data-im="allakat" style="margin-left:6px">${IMI.kat.length === IMKAT.length ? T('Välj bort alla') : T('Välj alla')}</button></h3>
         <div class="imkats">${IMKAT.map(k => `<button type="button" class="chip" data-imkat="${esc(k)}" aria-pressed="${IMI.kat.includes(k)}">${esc(k)} <span style="opacity:.6">${IMP.kategorier[k].length}</span></button>`).join('')}</div>
-        <button type="button" class="imvaxla" data-im="visakat" aria-pressed="${IMI.visaKat}"><i></i><span>Impostorn får se kategorin<small>${IMI.visaKat ? 'Lättare för impostorn' : 'Svårare: impostorn vet ingenting'}</small></span></button>
+        <button type="button" class="imvaxla" data-im="visakat" aria-pressed="${IMI.visaKat}"><i></i><span>${T('Impostorn får se kategorin')}<small>${IMI.visaKat ? T('Lättare för impostorn') : T('Svårare: impostorn vet ingenting')}</small></span></button>
       </div>
-      <button type="button" class="spela" data-im="start" ${IMI.kat.length?'':'disabled'}>${IMI.kat.length ? 'Starta' : 'Välj minst en kategori'}</button>
-      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#lek-impostor" style="display:inline-flex;align-items:center;text-decoration:none">Regler</a></div>
+      <button type="button" class="spela" data-im="start" ${IMI.kat.length?'':'disabled'}>${IMI.kat.length ? T('Starta') : T('Välj minst en kategori')}</button>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#lek-impostor" style="display:inline-flex;align-items:center;text-decoration:none">${T('Regler')}</a></div>
     </section>`;
   } else if (IM.fas === 'titta'){
     const imp = IM.imps.has(IM.i), sista = IM.i === n - 1;
     v.innerHTML = `<section class="verktyg">
-      <span class="imsteg">Spelare ${IM.i + 1} av ${n}</span>
+      <span class="imsteg">${T('Spelare {i} av {n}', {i: IM.i + 1, n})}</span>
       ${!IM.visar
-        ? `<button type="button" class="imkort dold" data-im="visa" style="width:100%"><span class="etikett" style="color:#fff">Ge telefonen till</span><span class="num">Spelare ${IM.i + 1}</span><p style="color:#fff">Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.</p></button>
-           <button type="button" class="spela" data-im="visa">Visa mitt ord</button>`
+        ? `<button type="button" class="imkort dold" data-im="visa" style="width:100%"><span class="etikett" style="color:#fff">${T('Ge telefonen till')}</span><span class="num">${T('Spelare {i}', {i: IM.i + 1})}</span><p style="color:#fff">${T('Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.')}</p></button>
+           <button type="button" class="spela" data-im="visa">${T('Visa mitt ord')}</button>`
         : `<div class="imkort ${imp ? 'imp' : 'ord'}" aria-live="polite">${imp
-            ? `<span class="etikett">Du är</span><span class="stor-t">Impostor</span>${IMI.visaKat ? `<p>Kategori: <b>${esc(IM.kat)}</b></p>` : ''}<p>Du vet inte ordet. Låtsas att du gör det och försök lista ut det.</p>`
-            : `<span class="etikett">Kategori: ${esc(IM.kat)}</span><span class="stor-t">${esc(IM.ord)}</span><p>Håll ordet hemligt. En av er är impostor.</p>`}</div>
-           <button type="button" class="spela" data-im="gom">${sista ? 'Göm. Alla har sett sitt ord' : `Göm och lämna till spelare ${IM.i + 2}`}</button>`}
-      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">Avbryt rundan</button></div>
+            ? `<span class="etikett">${T('Du är')}</span><span class="stor-t">Impostor</span>${IMI.visaKat ? `<p>${T('Kategori:')} <b>${esc(IM.kat)}</b></p>` : ''}<p>${T('Du vet inte ordet. Låtsas att du gör det och försök lista ut det.')}</p>`
+            : `<span class="etikett">${T('Kategori:')} ${esc(IM.kat)}</span><span class="stor-t">${esc(IM.ord)}</span><p>${T('Håll ordet hemligt. En av er är impostor.')}</p>`}</div>
+           <button type="button" class="spela" data-im="gom">${sista ? T('Göm. Alla har sett sitt ord') : T('Göm och lämna till spelare {i}', {i: IM.i + 2})}</button>`}
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">${T('Avbryt rundan')}</button></div>
     </section>`;
   } else if (IM.fas === 'prata'){
     v.innerHTML = `<section class="verktyg">
-      <h1>Dags att prata</h1>
-      <div class="imkort"><span class="etikett">Spelare ${IM.borjar + 1} börjar</span>
-        <p>Säg ett ord var som hör ihop med det hemliga ordet, varvet runt. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.</p></div>
-      <ol class="imlista"><li>Ta ett eller två varv med ord.</li><li>Diskutera och rösta på den ni tror är impostor.</li><li>Blir impostorn utröstad får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå.</li></ol>
-      <button type="button" class="spela" data-im="svar">Visa ordet och impostorn</button>
+      <h1>${T('Dags att prata')}</h1>
+      <div class="imkort"><span class="etikett">${T('Spelare {i} börjar', {i: IM.borjar + 1})}</span>
+        <p>${T('Säg ett ord var som hör ihop med det hemliga ordet, varvet runt. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.')}</p></div>
+      <ol class="imlista"><li>${T('Ta ett eller två varv med ord.')}</li><li>${T('Diskutera och rösta på den ni tror är impostor.')}</li><li>${T('Blir impostorn utröstad får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå.')}</li></ol>
+      <button type="button" class="spela" data-im="svar">${T('Visa ordet och impostorn')}</button>
     </section>`;
   } else {
-    const lista = [...IM.imps].sort((a,b) => a-b).map(x => 'spelare ' + (x + 1));
+    const lista = [...IM.imps].sort((a,b) => a-b).map(x => T('spelare {i}', {i: x + 1}));
     v.innerHTML = `<section class="verktyg">
-      <h1>Facit</h1>
-      <div class="imkort ord"><span class="etikett">Ordet var</span><span class="stor-t">${esc(IM.ord)}</span><p>Kategori: ${esc(IM.kat)}</p></div>
-      <div class="imkort imp" style="min-height:0"><span class="etikett">${lista.length > 1 ? 'Impostorerna var' : 'Impostorn var'}</span><span class="stor-t" style="font-size:clamp(1.6rem,8vw,2.4rem)">${esc(lista.join(' och ').replace(/^s/, 'S'))}</span></div>
-      <button type="button" class="spela" data-im="start">Ny runda</button>
-      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">Ändra inställningar</button></div>
+      <h1>${T('Facit')}</h1>
+      <div class="imkort ord"><span class="etikett">${T('Ordet var')}</span><span class="stor-t">${esc(IM.ord)}</span><p>${T('Kategori:')} ${esc(IM.kat)}</p></div>
+      <div class="imkort imp" style="min-height:0"><span class="etikett">${lista.length > 1 ? T('Impostorerna var') : T('Impostorn var')}</span><span class="stor-t" style="font-size:clamp(1.6rem,8vw,2.4rem)">${esc(lista.join(T(' och ')).replace(/^\S/, c => c.toUpperCase()))}</span></div>
+      <button type="button" class="spela" data-im="start">${T('Ny runda')}</button>
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">${T('Ändra inställningar')}</button></div>
     </section>`;
   }
 }
@@ -748,8 +795,6 @@ document.addEventListener('click', e => {
   impostorSida();
 });
 // ===== Körkortet: en spelare får ett hemligt påstående och rangordnar körkorten, de andra gissar bland 4–10 påståenden =====
-const KKD = JSON.parse(document.getElementById('kkdata').textContent || '{}');
-const KKN = ['Lugn','Lagom','Het'].filter(n => ((KKD.nivaer || {})[n] || []).length);
 let KKI = (() => { try { return JSON.parse(localStorage.getItem('dryckeslexikon-korkortet') || 'null') || {}; } catch(e) { return {}; } })();
 KKI = {antal: [4,6,8,10].includes(KKI.antal) ? KKI.antal : 6, svar: ['Lätt','Medel','Svår'].includes(KKI.svar) ? KKI.svar : 'Medel',
   niva: Array.isArray(KKI.niva) ? KKI.niva.filter(n => KKN.includes(n)) : KKN.filter(n => n !== 'Het'),
@@ -759,8 +804,8 @@ const sparaKKI = () => { try { localStorage.setItem('dryckeslexikon-korkortet', 
 let KK = {fas:'val'}; // val -> hemlig (visar) -> gissa (gissat) -> svar
 const kkPool = nivaer => [...new Set(nivaer.flatMap(n => KKD.nivaer[n] || []))];
 // Hur lika två påståenden är: gemensamma teman (3 p), samma temagrupp (1 p), gemensamma ord (1 p).
-const KKG = {}; Object.entries(KKD.grupper || {}).forEach(([g, ts]) => ts.forEach(t => KKG[t] = g));
-const KKSTOPP = new Set('någon något sitt sina sig den det har efter från till med utan aldrig bara mest som att och för ett en i på av om ha'.split(' '));
+const KKSTOPP = new Set(('någon något sitt sina sig den det har efter från till med utan aldrig bara mest som att och för ett en i på av om ha'
+  + ' the and for with from their they them have has had someone something this that what when who most likely after without just about into your').split(' '));
 const kkOrd = t => new Set(t.toLowerCase().replace(/[^a-zåäö ]/g, ' ').split(/\s+/).filter(w => w.length > 2 && !KKSTOPP.has(w)));
 function kkLikhet(a, b){
   const ta = (KKD.teman || {})[a] || [], tb = (KKD.teman || {})[b] || [];
@@ -802,49 +847,49 @@ function kkNytt(byt){
   KK = {fas:'hemlig', visar: !!byt, ratt, alt: blanda(falska.concat(ratt)), gissat: null};
 }
 function korkortSida(){
-  const v = $('#vy'), inl = esc(KKD.inledning || 'Vem är mest trolig att …');
+  const v = $('#vy'), inl = esc(KKD.inledning || T('Vem är mest trolig att …'));
   if (KK.fas === 'val'){
     const n = kkPool(KKI.niva).length;
     v.innerHTML = `<section class="verktyg">
-      <h1>Körkortet</h1><p>Alla lägger fram sitt körkort eller id. En spelare får ett hemligt påstående och rangordnar körkorten. De andra gissar vilket påstående det var.</p>
+      <h1>${T('Körkortet')}</h1><p>${T('Alla lägger fram sitt körkort eller id. En spelare får ett hemligt påstående och rangordnar körkorten. De andra gissar vilket påstående det var.')}</p>
       <div class="kkval">
-        <h3>Antal påståenden att gissa bland</h3>
+        <h3>${T('Antal påståenden att gissa bland')}</h3>
         <div class="chips">${[4,6,8,10].map(a => `<button type="button" class="chip" data-kkantal="${a}" aria-pressed="${KKI.antal === a}">${a}</button>`).join('')}</div>
-        <h3>Svårighetsgrad</h3>
-        <div class="chips">${['Lätt','Medel','Svår'].map(k => `<button type="button" class="chip" data-kksvar="${k}" aria-pressed="${KKI.svar === k}">${k}</button>`).join('')}</div>
-        <p class="kktips">${{'Lätt':'Påståendena är tydligt olika varandra.','Medel':'Några av påståendena liknar det rätta.','Svår':'Påståendena är väldigt lika det rätta.'}[KKI.svar]}</p>
-        <h3>Nivå</h3>
-        <div class="chips">${KKN.map(k => `<button type="button" class="chip" data-kkniva="${k}" aria-pressed="${KKI.niva.includes(k)}">${k} <span style="opacity:.6">${KKD.nivaer[k].length}</span></button>`).join('')}</div>
+        <h3>${T('Svårighetsgrad')}</h3>
+        <div class="chips">${['Lätt','Medel','Svår'].map(k => `<button type="button" class="chip" data-kksvar="${k}" aria-pressed="${KKI.svar === k}">${T(k)}</button>`).join('')}</div>
+        <p class="kktips">${T({'Lätt':'Påståendena är tydligt olika varandra.','Medel':'Några av påståendena liknar det rätta.','Svår':'Påståendena är väldigt lika det rätta.'}[KKI.svar])}</p>
+        <h3>${T('Nivå')}</h3>
+        <div class="chips">${KKN.map(k => `<button type="button" class="chip" data-kkniva="${k}" aria-pressed="${KKI.niva.includes(k)}">${T(k)} <span style="opacity:.6">${KKD.nivaer[k].length}</span></button>`).join('')}</div>
       </div>
-      <button type="button" class="spela" data-kk="start" ${n ? '' : 'disabled'}>${n ? 'Starta' : 'Välj minst en nivå'}</button>
-      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#lek-korkortet" style="display:inline-flex;align-items:center;text-decoration:none">Regler</a></div>
+      <button type="button" class="spela" data-kk="start" ${n ? '' : 'disabled'}>${n ? T('Starta') : T('Välj minst en nivå')}</button>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#lek-korkortet" style="display:inline-flex;align-items:center;text-decoration:none">${T('Regler')}</a></div>
     </section>`;
   } else if (KK.fas === 'hemlig'){
     v.innerHTML = `<section class="verktyg">
-      <span class="imsteg">Runda ${KKI.runda}</span>
+      <span class="imsteg">${T('Runda {n}', {n: KKI.runda})}</span>
       ${!KK.visar
-        ? `<button type="button" class="imkort dold" data-kk="visa" style="width:100%"><span class="etikett" style="color:#fff">Ge telefonen till</span><span class="num" style="font-size:clamp(2rem,10vw,3rem)">Den som rangordnar</span><p style="color:#fff">Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.</p></button>
-           <button type="button" class="spela" data-kk="visa">Visa påståendet</button>`
+        ? `<button type="button" class="imkort dold" data-kk="visa" style="width:100%"><span class="etikett" style="color:#fff">${T('Ge telefonen till')}</span><span class="num" style="font-size:clamp(2rem,10vw,3rem)">${T('Den som rangordnar')}</span><p style="color:#fff">${T('Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.')}</p></button>
+           <button type="button" class="spela" data-kk="visa">${T('Visa påståendet')}</button>`
         : `<div class="imkort kkp" aria-live="polite"><span class="etikett">${inl}</span><span class="stor-t">${esc(KK.ratt)}</span><p>${esc(KKD.instruktion || '')}</p></div>
-           <button type="button" class="spela" data-kk="gom">Klar. Göm och visa alternativen</button>
-           <div class="knapprad" style="margin-top:10px"><button type="button" class="liten" data-kk="byt">Byt påstående</button></div>`}
-      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">Avbryt rundan</button></div>
+           <button type="button" class="spela" data-kk="gom">${T('Klar. Göm och visa alternativen')}</button>
+           <div class="knapprad" style="margin-top:10px"><button type="button" class="liten" data-kk="byt">${T('Byt påstående')}</button></div>`}
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">${T('Avbryt rundan')}</button></div>
     </section>`;
   } else {
     const svar = KK.fas === 'svar', ratt = KK.gissat === KK.ratt;
     v.innerHTML = `<section class="verktyg">
-      <span class="imsteg">Runda ${KKI.runda} · ${KKI.svar}</span>
-      ${svar ? (KK.gissat == null ? `<div class="kkres">Svaret var</div>` : `<div class="kkres ${ratt ? 'ratt' : 'fel'}">${ratt ? 'Rätt gissat!' : 'Fel gissat!'}</div>`)
-             : `<h1>Vilket påstående var det?</h1><p>Titta på hur körkorten ligger och kom överens. Tryck på ert svar.</p>`}
+      <span class="imsteg">${T('Runda {n}', {n: KKI.runda})} · ${T(KKI.svar)}</span>
+      ${svar ? (KK.gissat == null ? `<div class="kkres">${T('Svaret var')}</div>` : `<div class="kkres ${ratt ? 'ratt' : 'fel'}">${ratt ? T('Rätt gissat!') : T('Fel gissat!')}</div>`)
+             : `<h1>${T('Vilket påstående var det?')}</h1><p>${T('Titta på hur körkorten ligger och kom överens. Tryck på ert svar.')}</p>`}
       <p class="kkinl">${inl}</p>
       <ol class="kkalt">${KK.alt.map((t, i) => {
         const k = svar ? (t === KK.ratt ? 'ratt' : t === KK.gissat ? 'fel' : 'bort') : '';
         return `<li><button type="button" class="${k}" data-kkalt="${i}" aria-pressed="${!svar && KK.gissat === t}" ${svar ? 'disabled' : ''}><b>${i + 1}</b><span>${esc(t)}</span></button></li>`; }).join('')}</ol>
       ${svar
-        ? `<button type="button" class="spela" data-kk="start">Ny runda<span style="font-size:.8rem;font-weight:700">Lämna telefonen till nästa spelare</span></button>
-           <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">Ändra inställningar</button></div>`
-        : `<button type="button" class="spela" data-kk="facit">${KK.gissat == null ? 'Visa svaret' : 'Lås svaret och visa'}</button>
-           <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">Avbryt rundan</button></div>`}
+        ? `<button type="button" class="spela" data-kk="start">${T('Ny runda')}<span style="font-size:.8rem;font-weight:700">${T('Lämna telefonen till nästa spelare')}</span></button>
+           <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">${T('Ändra inställningar')}</button></div>`
+        : `<button type="button" class="spela" data-kk="facit">${KK.gissat == null ? T('Visa svaret') : T('Lås svaret och visa')}</button>
+           <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">${T('Avbryt rundan')}</button></div>`}
     </section>`;
   }
 }
@@ -906,7 +951,7 @@ document.addEventListener('click', e => {
   if (vb){ const id = vb.dataset.val; VAL.has(id) ? VAL.delete(id) : VAL.add(id); vb.setAttribute('aria-pressed', VAL.has(id)); sparaVal(); uppdateraSpela(); return; }
   const fv = e.target.closest('[data-fav]');
   if (fv){ const id = fv.dataset.fav; FAV.has(id) ? FAV.delete(id) : FAV.add(id); sparaFav(); const pa = FAV.has(id);
-    fv.classList.toggle('pa', pa); fv.setAttribute('aria-pressed', pa); fv.textContent = pa ? '♥ Sparad' : '♡ Spara'; return; }
+    fv.classList.toggle('pa', pa); fv.setAttribute('aria-pressed', pa); fv.textContent = pa ? T('♥ Sparad') : T('♡ Spara'); return; }
   const sl = e.target.closest('[data-slump]'); if (sl){ e.preventDefault(); slumpa(); return; }
   const hopp = e.target.closest('[data-hopp]'); if (hopp){ e.preventDefault(); document.getElementById(hopp.dataset.hopp)?.scrollIntoView({behavior:'smooth'}); return; }
   const c = e.target.closest('.chip'); if (!c || !senasteLista) return;
@@ -915,7 +960,6 @@ document.addEventListener('click', e => {
   lista(senasteLista, false);
 });
 // ===== Spelläge med frågebank =====
-const FRAGOR = JSON.parse(document.getElementById('fragdata').textContent || '{}');
 const NIVAER = ['Lugn','Lagom','Het'];
 const lasLS = (k, std) => { try { return JSON.parse(localStorage.getItem(k) || 'null') ?? std; } catch(e) { return std; } };
 const skrivLS = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} };
@@ -923,6 +967,7 @@ const EGNA = lasLS('dryckeslexikon-egnafragor', {});       // {lekid: [text]}
 const FAVFR = lasLS('dryckeslexikon-favfragor', {});       // {lekid: [text]}
 const SPELVAL = lasLS('dryckeslexikon-spelval', {});       // {lekid: ['Lugn','Lagom']}
 const LEKKO = lasLS('dryckeslexikon-lekko', {});           // {lekid: {nyckel, ordning:[text], pos}}
+const lk = id => LANG === 'en' ? id + '@en' : id;          // favoritfrågor och kö sparas per språk
 const antalFragor = id => NIVAER.reduce((s,n) => s + ((FRAGOR[id]?.nivaer?.[n]) || []).length, 0);
 const blanda = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; };
 const SP = {id:null, lage:'val', ko:[], pos:0, niva:{}, wl:null};
@@ -930,7 +975,7 @@ const SP = {id:null, lage:'val', ko:[], pos:0, niva:{}, wl:null};
 function spelPool(id){
   const F = FRAGOR[id], val = SPELVAL[id] || ['Lugn','Lagom'], pool = [], niva = {};
   const ta = (arr, n) => (arr||[]).forEach(t => { t = String(t).trim(); if (t && !(t in niva)){ niva[t] = n; pool.push(t); } });
-  if (val.includes('Fav')) ta(FAVFR[id], 'Fav');
+  if (val.includes('Fav')) ta(FAVFR[lk(id)], 'Fav');
   else { NIVAER.forEach(n => val.includes(n) && ta(F.nivaer[n], n)); if (val.includes('Egna')) ta(EGNA[id], 'Egna'); }
   return {pool, niva, nyckel: val.slice().sort().join('+')};
 }
@@ -949,26 +994,26 @@ function stangSpel(){ document.body.classList.remove('ispel'); const el = $('#sp
 
 function ritaVal(){
   const id = SP.id, F = FRAGOR[id], l = LEKAR.find(x => x.id === id), val = SPELVAL[id] || ['Lugn','Lagom'];
-  const egna = EGNA[id] || [], fav = FAVFR[id] || [];
-  const ruta = (n, namn, txt, antal) => `<button type="button" class="niva n-${n}" data-niva="${n}" aria-pressed="${val.includes(n)}"><i class="pr"></i><div><b>${namn}</b><small>${txt} · ${antal} st</small></div><span class="bock"></span></button>`;
+  const egna = EGNA[id] || [], fav = FAVFR[lk(id)] || [];
+  const ruta = (n, namn, txt, antal) => `<button type="button" class="niva n-${n}" data-niva="${n}" aria-pressed="${val.includes(n)}"><i class="pr"></i><div><b>${namn}</b><small>${txt} · ${T('{n} st', {n: antal})}</small></div><span class="bock"></span></button>`;
   const {pool} = spelPool(id);
-  $('#spel').innerHTML = `<div class="shuv"><a class="rund" href="#lek-${encodeURIComponent(id)}" aria-label="Stäng">✕</a><h2>${esc(l.namn)}</h2></div>
+  $('#spel').innerHTML = `<div class="shuv"><a class="rund" href="#lek-${encodeURIComponent(id)}" aria-label="${T('Stäng')}">✕</a><h2>${esc(Fl(l,'namn'))}</h2></div>
     <div class="sval">
-      <p class="vtext">${esc(F.instruktion || '')} Välj vilka frågor ni vill ha.</p>
+      <p class="vtext">${esc(F.instruktion || '')} ${T('Välj vilka frågor ni vill ha.')}</p>
       <div class="nivor">
-        ${ruta('Lugn','Lugn','Snällt och roligt för alla', F.nivaer.Lugn.length)}
-        ${ruta('Lagom','Lagom','Lite pinsamt och avslöjande', F.nivaer.Lagom.length)}
-        ${ruta('Het','Het','Kärlek, flörtar och det hetaste', F.nivaer.Het.length)}
-        ${ruta('Egna','Egna frågor','Som ni har skrivit själva', egna.length)}
-        ${ruta('Fav','Bara favoriter','Frågor ni har sparat med hjärtat', fav.length)}
+        ${ruta('Lugn',T('Lugn'),T('Snällt och roligt för alla'), F.nivaer.Lugn.length)}
+        ${ruta('Lagom',T('Lagom'),T('Lite pinsamt och avslöjande'), F.nivaer.Lagom.length)}
+        ${ruta('Het',T('Het'),T('Kärlek, flörtar och det hetaste'), F.nivaer.Het.length)}
+        ${ruta('Egna',T('Egna frågor'),T('Som ni har skrivit själva'), egna.length)}
+        ${ruta('Fav',T('Bara favoriter'),T('Frågor ni har sparat med hjärtat'), fav.length)}
       </div>
       <div class="egna">
-        <h3>Lägg till egna frågor</h3>
-        <p class="vtext" style="margin:0">Skriv fortsättningen på "${esc(F.inledning)}". De sparas bara i den här telefonen.</p>
-        <form class="egnarad" id="egnaform"><input id="egnain" maxlength="160" placeholder="${id==='jag-har-aldrig' ? 't.ex. ätit en hel tårta själv.' : 't.ex. bli kändis?'}" aria-label="Ny egen fråga"><button type="submit">Lägg till</button></form>
-        <ul class="egnalista">${egna.map((t,i) => `<li><span>${esc(t)}</span><button type="button" data-tabort="${i}" aria-label="Ta bort">✕</button></li>`).join('')}</ul>
+        <h3>${T('Lägg till egna frågor')}</h3>
+        <p class="vtext" style="margin:0">${T('Skriv fortsättningen på "{x}". De sparas bara i den här telefonen.', {x: esc(F.inledning)})}</p>
+        <form class="egnarad" id="egnaform"><input id="egnain" maxlength="160" placeholder="${id==='jag-har-aldrig' ? T('t.ex. ätit en hel tårta själv.') : T('t.ex. bli kändis?')}" aria-label="${T('Ny egen fråga')}"><button type="submit">${T('Lägg till')}</button></form>
+        <ul class="egnalista">${egna.map((t,i) => `<li><span>${esc(t)}</span><button type="button" data-tabort="${i}" aria-label="${T('Ta bort')}">✕</button></li>`).join('')}</ul>
       </div>
-      <div class="sbotten"><button type="button" class="spela" id="startknapp" ${pool.length ? '' : 'disabled'}>${pool.length ? '▶ Starta' : 'Välj minst en nivå'}<span>${pool.length} frågor</span></button></div>
+      <div class="sbotten"><button type="button" class="spela" id="startknapp" ${pool.length ? '' : 'disabled'}>${pool.length ? T('▶ Starta') : T('Välj minst en nivå')}<span>${T('{n} frågor', {n: pool.length})}</span></button></div>
     </div>`;
   $('#egnaform').addEventListener('submit', e => { e.preventDefault(); const t = $('#egnain').value.trim(); if (!t) return;
     (EGNA[id] = EGNA[id] || []).push(t); skrivLS('dryckeslexikon-egnafragor', EGNA);
@@ -979,30 +1024,30 @@ function ritaVal(){
 function startaSpel(){
   const id = SP.id, {pool, niva, nyckel} = spelPool(id);
   if (!pool.length) return;
-  let ko = LEKKO[id];
+  let ko = LEKKO[lk(id)];
   // Fortsätt där ni slutade om valen är samma; nya frågor läggs sist i högen.
   if (!ko || ko.nyckel !== nyckel || ko.pos >= ko.ordning.length){ ko = {nyckel, ordning: blanda(pool), pos: 0}; }
   else { const finns = new Set(pool); ko.ordning = ko.ordning.filter(t => finns.has(t)); const har = new Set(ko.ordning); ko.ordning = ko.ordning.concat(blanda(pool.filter(t => !har.has(t)))); }
-  LEKKO[id] = ko; skrivLS('dryckeslexikon-lekko', LEKKO);
+  LEKKO[lk(id)] = ko; skrivLS('dryckeslexikon-lekko', LEKKO);
   SP.ko = ko.ordning; SP.pos = Math.min(ko.pos, SP.ko.length - 1); SP.niva = niva; SP.lage = 'spel';
   hallVaken(); ritaSpel('in-h');
 }
-function sparaPos(){ const k = LEKKO[SP.id]; if (k){ k.pos = SP.pos; skrivLS('dryckeslexikon-lekko', LEKKO); } }
+function sparaPos(){ const k = LEKKO[lk(SP.id)]; if (k){ k.pos = SP.pos; skrivLS('dryckeslexikon-lekko', LEKKO); } }
 
 function ritaSpel(anim){
   const id = SP.id, slut = SP.pos >= SP.ko.length, t = SP.ko[SP.pos], n = SP.niva[t] || 'Egna';
-  const fav = !slut && (FAVFR[id] || []).includes(t);
-  $('#spel').innerHTML = `<div class="shuv"><button type="button" class="rund" data-spel="val" aria-label="Till nivåval">✕</button>
-      <div class="raknare" style="flex:1">${slut ? 'Klart!' : `${SP.pos + 1} / ${SP.ko.length}`}${slut ? '' : `<span class="nb n-${n}">${n==='Fav'?'Favorit':n==='Egna'?'Egen':n}</span>`}</div>
-      <button type="button" class="rund ${fav?'pa':''}" data-spel="fav" aria-label="Spara frågan" aria-pressed="${fav}" ${slut?'disabled':''}>${fav?'♥':'♡'}</button></div>
+  const fav = !slut && (FAVFR[lk(id)] || []).includes(t);
+  $('#spel').innerHTML = `<div class="shuv"><button type="button" class="rund" data-spel="val" aria-label="${T('Till nivåval')}">✕</button>
+      <div class="raknare" style="flex:1">${slut ? T('Klart!') : `${SP.pos + 1} / ${SP.ko.length}`}${slut ? '' : `<span class="nb n-${n}">${n==='Fav'?T('Favorit'):n==='Egna'?T('Egen'):T(n)}</span>`}</div>
+      <button type="button" class="rund ${fav?'pa':''}" data-spel="fav" aria-label="${T('Spara frågan')}" aria-pressed="${fav}" ${slut?'disabled':''}>${fav?'♥':'♡'}</button></div>
     <div class="spelyta">
       <div class="kortyta" id="kortyta">
-        ${slut ? `<div class="frkort slut n-Lugn ${anim||''}" data-spel="om"><div class="fr">Alla ${SP.ko.length} frågor är visade!</div><p class="inl" style="margin-top:12px">Tryck för att blanda om och köra igen.</p></div>`
-        : `<div class="frkort n-${n} ${anim||''}" id="frkort" data-spel="nasta">${inledFor(id, t) ? `<div class="inl">${esc(inledFor(id, t))}</div>` : ''}<div class="fr">${esc(t)}</div>${SP.pos === 0 ? '<div class="tips">Tryck eller svep för nästa fråga</div>' : ''}</div>`}
+        ${slut ? `<div class="frkort slut n-Lugn ${anim||''}" data-spel="om"><div class="fr">${T('Alla {n} frågor är visade!', {n: SP.ko.length})}</div><p class="inl" style="margin-top:12px">${T('Tryck för att blanda om och köra igen.')}</p></div>`
+        : `<div class="frkort n-${n} ${anim||''}" id="frkort" data-spel="nasta">${inledFor(id, t) ? `<div class="inl">${esc(inledFor(id, t))}</div>` : ''}<div class="fr">${esc(t)}</div>${SP.pos === 0 ? `<div class="tips">${T('Tryck eller svep för nästa fråga')}</div>` : ''}</div>`}
       </div>
       <div class="kontroll">
-        <button type="button" class="rund" data-spel="bak" aria-label="Förra frågan" ${SP.pos === 0 ? 'disabled' : ''}>←</button>
-        ${slut ? '<button type="button" class="nasta" data-spel="om">Blanda om</button>' : '<button type="button" class="nasta" data-spel="nasta">Nästa →</button>'}
+        <button type="button" class="rund" data-spel="bak" aria-label="${T('Förra frågan')}" ${SP.pos === 0 ? 'disabled' : ''}>←</button>
+        ${slut ? `<button type="button" class="nasta" data-spel="om">${T('Blanda om')}</button>` : `<button type="button" class="nasta" data-spel="nasta">${T('Nästa →')}</button>`}
       </div>
     </div>`;
   const ky = $('#kortyta'); let x0 = null, y0 = 0;
@@ -1036,9 +1081,9 @@ document.addEventListener('click', e => {
   const a = s.dataset.spel;
   if (a === 'nasta'){ if (SP.svept && Date.now() - SP.svept < 400) return; nastaFraga(); }
   else if (a === 'bak') forraFraga();
-  else if (a === 'om'){ delete LEKKO[SP.id]; skrivLS('dryckeslexikon-lekko', LEKKO); startaSpel(); }
+  else if (a === 'om'){ delete LEKKO[lk(SP.id)]; skrivLS('dryckeslexikon-lekko', LEKKO); startaSpel(); }
   else if (a === 'val'){ SP.lage = 'val'; slappVaken(); ritaVal(); $('#spel').scrollTop = 0; }
-  else if (a === 'fav'){ const t = SP.ko[SP.pos], f = FAVFR[SP.id] = FAVFR[SP.id] || [], i = f.indexOf(t);
+  else if (a === 'fav'){ const t = SP.ko[SP.pos], f = FAVFR[lk(SP.id)] = FAVFR[lk(SP.id)] || [], i = f.indexOf(t);
     i >= 0 ? f.splice(i, 1) : f.push(t); skrivLS('dryckeslexikon-favfragor', FAVFR); ritaSpel(); }
 });
 document.addEventListener('keydown', e => {
@@ -1048,6 +1093,33 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'Escape'){ SP.lage = 'val'; slappVaken(); ritaVal(); }
 });
 $('#slump').addEventListener('click', slumpa);
+// ===== Språkbyte (flaggorna uppe till höger) =====
+function ritaSprak(){
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-t]').forEach(el => el.textContent = T(el.dataset.t));
+  document.querySelectorAll('[data-t-aria]').forEach(el => el.setAttribute('aria-label', T(el.dataset.tAria)));
+  document.querySelectorAll('[data-sprak]').forEach(b => b.setAttribute('aria-pressed', b.dataset.sprak === LANG));
+}
+// Text i en pågående runda (Impostor, Körkortet) byts mot samma rad på det andra språket.
+const motsv = (fran, till, t) => { const i = fran.indexOf(t); return i >= 0 && till[i] != null ? till[i] : t; };
+function bytSprak(ny){
+  if (ny === LANG) return;
+  const gIMP = IMP, gKAT = IMKAT, gKK = kkPool(KKN);
+  LANG = ny; try { localStorage.setItem(SPRAKNYCKEL, ny); } catch(e) {}
+  laddaData(); forbered();
+  if (IMP !== gIMP){
+    IMI.kat = IMI.kat.map(k => motsv(gKAT, IMKAT, k)).filter(k => IMKAT.includes(k)); if (!IMI.kat.length) IMI.kat = IMKAT.slice(); sparaIMI();
+    if (IM.kat){ const nk = motsv(gKAT, IMKAT, IM.kat); IM.ord = motsv(gIMP.kategorier[IM.kat] || [], IMP.kategorier[nk] || [], IM.ord); IM.kat = nk; }
+  }
+  const nKK = kkPool(KKN);
+  if (KK.ratt){ const m = t => t == null ? t : motsv(gKK, nKK, t); KK.ratt = m(KK.ratt); KK.alt = KK.alt.map(m); KK.gissat = m(KK.gissat); }
+  KKI.niva = KKI.niva.filter(n => KKN.includes(n)); if (!KKI.niva.length) KKI.niva = KKN.slice(0, 1);
+  ritaSprak();
+  const tb = $('#tbk'), href = tb.getAttribute('href'), y = window.scrollY;
+  forraHash = decodeURIComponent(location.hash.slice(1)); route(); tb.setAttribute('href', href); window.scrollTo(0, y);
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-sprak]'); if (b){ e.preventDefault(); bytSprak(b.dataset.sprak); } });
+ritaSprak();
 // Svep från vänster till höger = tillbaka (samma som Tillbaka-knappen / krysset).
 (function(){
   const fristaende = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
