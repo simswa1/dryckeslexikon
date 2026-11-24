@@ -327,6 +327,24 @@ L[-1]["grupp"] = "prat"
 # Länkar till spelläget #impostor (ordbanken ligger i impostor.json).
 L[-1]["verktyg"] = "impostor"
 
+lek("korkortet", "Körkortet", "Frågelek",
+    "En spelare rangordnar allas körkort efter ett hemligt påstående. De andra gissar vilket påstående det var.",
+    3, 10, "15–45 min", True, ["Ett körkort eller id-kort per person (eller någon annan personlig sak)", "En telefon (appen visar påståendena)"],
+    ["Alla som är med i leken lägger fram en personlig sak, förslagsvis körkort eller id.",
+     "Spelare ett har telefonen och får ett påstående, till exempel 'Vem är mest trolig att somna först på festen?'. Ingen annan får se det.",
+     "Spelaren rangordnar därefter körkorten i den ordning de troligast stämmer in på påståendet, till minst troligt.",
+     "Därefter presenterar appen 4, 6, 8 eller 10 påståenden, där ett av dem är det som spelare ett har rangordnat körkorten efter.",
+     "Därefter ska de övriga spelarna komma fram till vilket påstående spelare ett har utgått från.",
+     "Visa svaret och skicka telefonen vidare. Nästa spelare gör en ny runda.",
+     "Förslag: gissar ni fel tar ni en klunk, gissar ni rätt tar den som rangordnade en klunk."],
+    varianter=["Svårare: välj fler påståenden att gissa bland (8 eller 10).",
+               "Utan telefon: rangordnaren skriver sitt påstående på en lapp och läser sedan upp några falska påståenden tillsammans med det riktiga."],
+    taggar=["egen lek", "lära känna", "spel i telefonen"], osaker=False)
+L[-1]["svarighet"] = "Lätt"
+L[-1]["grupp"] = "prat"
+# Länkar till spelläget #korkortet (påståendena ligger i korkortet.json).
+L[-1]["verktyg"] = "korkortet"
+
 lek("sanning-eller-konsekvens", "Sanning eller konsekvens", "Frågelek",
     "Välj mellan att svara ärligt på en fråga eller göra en utmaning.",
     3, 15, "20–60 min", False, [],

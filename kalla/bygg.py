@@ -40,12 +40,18 @@ imp["kategorier"] = {k: list(dict.fromkeys(str(o).strip() for o in v if str(o).s
 imp["kategorier"] = {k: v for k, v in imp["kategorier"].items() if v}
 print("Impostor: " + ", ".join(f"{k} {len(v)}" for k, v in imp["kategorier"].items()))
 impdata = json.dumps(imp, ensure_ascii=False).replace("</", "<\\/")
+# Körkortet: påståenden per nivå (källa: fliken "Körkortet" i Google-arket "Dryckeslexikon – frågebank")
+kkf = här.parent / "lekar" / "korkortet.json"
+kk = json.loads(kkf.read_text(encoding="utf-8")) if kkf.exists() else {"nivaer": {}}
+kk["nivaer"] = {n: list(dict.fromkeys(str(q).strip() for q in kk.get("nivaer", {}).get(n, []) if str(q).strip())) for n in ("Lugn", "Lagom", "Het")}
+print("Körkortet: " + ", ".join(f"{n} {len(q)}" for n, q in kk["nivaer"].items()))
+kkdata = json.dumps(kk, ensure_ascii=False).replace("</", "<\\/")
 bf = här / "bilder" / "lekbilder.json"
 bilder = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}
 utan_bild = [i for i in ids if i not in bilder]
 if utan_bild: print("Saknar bild (gruppens ikon visas):", ", ".join(utan_bild))
 symboler = "\n".join(f'  <symbol id="lb-{i}" viewBox="0 0 100 100">{bilder[i]}</symbol>' for i in ids if i in bilder)
-mall = (här / "mall.html").read_text(encoding="utf-8").replace("__LEKAR__", data).replace("__FRAGOR__", fragdata).replace("__IMPOSTOR__", impdata).replace("<!--LEKBILDER-->", symboler)
+mall = (här / "mall.html").read_text(encoding="utf-8").replace("__LEKAR__", data).replace("__FRAGOR__", fragdata).replace("__IMPOSTOR__", impdata).replace("__KORKORTET__", kkdata).replace("<!--LEKBILDER-->", symboler)
 
 # 1) Fristående fil (artifact)
 (här / "index.html").write_text(mall.replace("<!--PWA-->", "").replace("/*PWA-SW*/", ""), encoding="utf-8")
