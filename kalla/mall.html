@@ -751,6 +751,29 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'Escape'){ SP.lage = 'val'; slappVaken(); ritaVal(); }
 });
 $('#slump').addEventListener('click', slumpa);
+// Svep från vänster till höger = tillbaka (samma som Tillbaka-knappen / krysset).
+(function(){
+  const fristaende = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  let t0 = null;
+  const rullarSidled = el => { for (; el && el !== document.body; el = el.parentElement){ if (el.scrollWidth > el.clientWidth + 2 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return true; } return false; };
+  document.addEventListener('touchstart', e => {
+    t0 = null; if (e.touches.length !== 1) return;
+    const x = e.touches[0].clientX, el = e.target;
+    if (!fristaende && x < 25) return;               // webbläsarens egen kantsvepning sköter det
+    if (el.closest('input, textarea, select, #kortyta') || rullarSidled(el)) return; // spelets kort har egen svepning
+    t0 = {x, y: e.touches[0].clientY, t: Date.now()};
+  }, {passive:true});
+  document.addEventListener('touchend', e => {
+    if (!t0) return; const p = e.changedTouches[0], dx = p.clientX - t0.x, dy = p.clientY - t0.y, dt = Date.now() - t0.t; t0 = null;
+    if (dx < 70 || Math.abs(dy) > dx * 0.6 || dt > 700) return;
+    gaTillbaka();
+  }, {passive:true});
+  document.addEventListener('touchcancel', () => { t0 = null; }, {passive:true});
+  function gaTillbaka(){
+    if (SP.id){ const x = document.querySelector('#spel .shuv .rund'); if (x) x.click(); return; }
+    const tb = $('#tbk'); if (!tb.hidden) location.hash = tb.getAttribute('href').slice(1);
+  }
+})();
 window.addEventListener('hashchange', route);
 route();
 /*PWA-SW*/
