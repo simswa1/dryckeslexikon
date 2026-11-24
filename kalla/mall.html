@@ -525,7 +525,7 @@ function lekSida(id){
     ${lst('Regler', l.regler, true)}
     ${l.kortregler ? `<a class="verktygslank" href="#kortlek-${encodeURIComponent(l.id)}">${ikon('kort')}<span>Spela med telefonens kortlek<small>Kortets regel visas när du drar</small></span></a>`
       : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
-    ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? `<a class="verktygslank" href="#tarningar">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>Öppna de digitala tärningarna</small></span></a>` : ''}
+    ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? (n => `<a class="verktygslank" href="${n ? '#tarningar-' + encodeURIComponent(l.id) : '#tarningar'}">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>${n ? `Öppnas med ${tarningText(n)}, som leken använder` : 'Öppna de digitala tärningarna'}</small></span></a>`)(tarningarFor(l)) : ''}
     ${l.verktyg === 'impostor' ? `<a class="verktygslank imlank" href="#impostor">${ikon('impostor')}<span>▶ Spela i telefonen<small>Skicka runt telefonen, var och en ser sitt ord</small></span></a>` : ''}
     ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
     ${lst('Varianter', l.varianter)}
@@ -578,17 +578,29 @@ let TA = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexiko
 const sparaTA = () => { try { localStorage.setItem('dryckeslexikon-tarningar', JSON.stringify({antal:TA.antal})); } catch(e) {} };
 const PRICKAR = {1:[[50,50]],2:[[28,28],[72,72]],3:[[26,26],[50,50],[74,74]],4:[[28,28],[72,28],[28,72],[72,72]],5:[[26,26],[74,26],[50,50],[26,74],[74,74]],6:[[28,24],[72,24],[28,50],[72,50],[28,76],[72,76]]};
 const tarningSvg = v => `<svg viewBox="0 0 100 100" role="img" aria-label="${v}"><rect x="4" y="4" width="92" height="92" rx="20" fill="#fff"/>${PRICKAR[v].map(([x,y]) => `<circle cx="${x}" cy="${y}" r="9" fill="${v===1?'#c22f52':'#1d1630'}"/>`).join('')}</svg>`;
+// Hur många tärningar en lek använder: fältet "tarningar" i lekar.json, annars läses det ur "behover" (t.ex. "2 tärningar", "fem tärningar").
+const ORDTAL = {en:1, ett:1, 'två':2, tre:3, fyra:4, fem:5, sex:6, sju:7, 'åtta':8, nio:9, tio:10};
+const tarningText = n => n === 1 ? '1 tärning' : `${n} tärningar`;
+function tarningarFor(l){
+  let n = +l.tarningar || 0;
+  if (!n) for (const b of l.behover || []){
+    const m = String(b).toLowerCase().match(/(?:^|[^a-zåäö0-9])(\d+|en|ett|två|tre|fyra|fem|sex|sju|åtta|nio|tio)\s+tärning/);
+    if (m){ n = +m[1] || ORDTAL[m[1]]; break; }
+  }
+  return n ? Math.min(10, Math.max(1, n)) : null;
+}
+let TLEK = null; // lek man kom ifrån (#tarningar-<id>)
 function tarningSida(anim){
-  const s = TA.slag, sum = s.reduce((a,b)=>a+b,0);
+  const s = TA.slag, sum = s.reduce((a,b)=>a+b,0), lekN = TLEK ? tarningarFor(TLEK) : null;
   $('#vy').innerHTML = `<section class="verktyg">
-    <h1>Tärningar</h1><p>Välj hur många tärningar ni vill slå.</p>
+    <h1>${TLEK ? esc(TLEK.namn) : 'Tärningar'}</h1><p>${TLEK && lekN ? (TA.antal === lekN ? `Inställt på ${tarningText(lekN)}, som leken använder.` : `Leken använder ${tarningText(lekN)}.`) : 'Välj hur många tärningar ni vill slå.'}</p>
     <div class="antalrad"><span>Antal tärningar</span><div class="stepper">
       <button type="button" data-ta="minus" aria-label="Färre tärningar" ${TA.antal<=1?'disabled':''}>−</button>
       <output aria-live="polite">${TA.antal}</output>
       <button type="button" data-ta="plus" aria-label="Fler tärningar" ${TA.antal>=10?'disabled':''}>+</button></div></div>
     <div class="tarningar ${TA.antal>4?'m5':''} ${anim?'rullar':''}" data-ta="sla">${s.length ? s.map(tarningSvg).join('') : Array.from({length:TA.antal}, () => tarningSvg(6).replace(/<circle[^>]*>/g,'')).join('')}</div>
     <div class="summa" aria-live="polite">${s.length ? (s.length > 1 ? `Summa ${sum}` : `${sum}`) + `<small>${s.length > 1 ? s.join(' + ') : 'Du slog ' + sum}</small>` : '<small>Tryck på knappen för att slå</small>'}</div>
-    <button type="button" class="spela" data-ta="sla">Slå tärningarna</button>
+    <button type="button" class="spela" data-ta="sla">${TA.antal === 1 ? 'Slå tärningen' : 'Slå tärningarna'}</button>
   </section>`;
 }
 function slaTarningar(){
@@ -708,7 +720,13 @@ function route(){
   $('#slump').hidden = !h || !!lek || !!VERKTYG[h];
   const klek = h.match(/^kortlek-(.+)$/);
   KLEK = klek ? (LEKAR.find(x => x.id === klek[1] && x.kortregler) || null) : null;
+  const tlek = h.match(/^tarningar-(.+)$/);
+  TLEK = tlek ? (LEKAR.find(x => x.id === tlek[1]) || null) : null;
   if (klek){ $('#tbk').href = '#lek-' + encodeURIComponent(klek[1]); $('#slump').hidden = true; kortlekSida(); window.scrollTo(0,0); }
+  else if (tlek){
+    const n = TLEK && tarningarFor(TLEK);
+    if (n && n !== TA.antal){ TA.antal = n; TA.slag = []; sparaTA(); }
+    $('#tbk').href = TLEK ? '#lek-' + encodeURIComponent(TLEK.id) : '#'; $('#slump').hidden = true; tarningSida(); window.scrollTo(0,0); }
   else if (VERKTYG[h]){ $('#tbk').href = forraHash && forraHash !== h && !VERKTYG[forraHash] ? '#'+forraHash : '#'; VERKTYG[h](); window.scrollTo(0,0); }
   else if (lek){ $('#tbk').href = senasteLista ? '#'+senasteLista : '#'; lekSida(lek[1]); window.scrollTo(0,0); }
   else if (LISTOR[h]){
