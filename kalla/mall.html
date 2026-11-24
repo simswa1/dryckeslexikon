@@ -163,6 +163,30 @@ article ul li{margin-bottom:6px}
 /* ===== Verktyg: kortlek och tärningar ===== */
 .c-kortlek{background:linear-gradient(150deg,#7aa8ff,#5160d6 80%);color:#0b1240}
 .c-tarn{background:linear-gradient(150deg,#5fd8b0,#2a9c8e 75%);color:#062a24}
+/* ===== Impostor ===== */
+.c-impostor{background:linear-gradient(150deg,#ff9a5a,#b8325a 55%,#4a1f6b);color:#fff}
+.c-impostor p{opacity:.95}
+.imval{max-width:420px;margin:0 auto 12px;text-align:left}
+.imval h3{font-size:1.05rem;margin:16px 0 8px}
+.imkats{display:flex;flex-wrap:wrap;gap:8px}
+.imkats .chip[aria-pressed=true]{background:#3a2a14;border-color:var(--ol);color:var(--text)}
+.imvaxla{display:flex;align-items:center;gap:12px;width:100%;margin:14px 0 0;padding:12px 14px;border-radius:16px;background:var(--yta);border:2px solid var(--kant);font-weight:700;text-align:left;cursor:pointer}
+.imvaxla i{flex:none;width:50px;height:30px;border-radius:999px;background:var(--yta2);position:relative;transition:background .15s}
+.imvaxla i:after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:left .15s}
+.imvaxla[aria-pressed=true] i{background:var(--ol)}.imvaxla[aria-pressed=true] i:after{left:23px}
+.imvaxla small{display:block;font-weight:600;color:var(--dim)}
+.imkort{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;min-height:max(240px,min(calc(100svh - 360px),380px));margin:6px auto 14px;padding:24px 18px;border-radius:24px;background:var(--yta);border:2px solid var(--kant);text-align:center}
+.imkort.dold{background:repeating-linear-gradient(45deg,#3a2350 0 14px,#311d45 14px 28px);border-color:#5a3b7a;cursor:pointer}
+.imkort.ord{background:#fff;color:#1d1630;border-color:#fff}
+.imkort.imp{background:linear-gradient(150deg,#e2475f,#7a1f4a);color:#fff;border-color:#e2475f}
+.imkort .stor-t{font:800 clamp(2rem,10vw,3rem)/1.05 "Baloo 2",sans-serif;word-break:break-word}
+.imkort .etikett{font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;opacity:.75}
+.imkort p{margin:0;max-width:30ch}
+.imkort .num{font:800 clamp(3rem,16vw,4.6rem)/1 "Baloo 2",sans-serif;color:var(--ol)}
+.imsteg{display:inline-block;margin:0 0 10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-weight:800}
+.imlista{text-align:left;max-width:420px;margin:0 auto 14px;padding-left:1.3em}
+.imlista li{margin-bottom:6px}
+.verktygslank.imlank{background:linear-gradient(150deg,#ff9a5a33,#b8325a33);border-color:#b8325a}
 .verktyg{max-width:520px;margin:0 auto;padding:12px 0 10px;text-align:center}
 .verktyg h1{font-size:clamp(1.8rem,7vw,2.4rem)}
 .verktyg>p{color:var(--dim);margin:6px 0 14px}
@@ -286,6 +310,7 @@ body.ispel .topp,body.ispel .slump{display:none}
  <symbol id="penna" viewBox="0 0 100 100"><rect x="10" y="18" width="52" height="66" rx="4" fill="#fff7a8" transform="rotate(-8 36 51)"/><g stroke="#c9a400" stroke-width="3" stroke-linecap="round" opacity=".6" transform="rotate(-8 36 51)"><path d="M20 36h32M20 48h32M20 60h22"/></g><g transform="rotate(35 70 50)"><rect x="62" y="10" width="14" height="62" rx="2" fill="#ffb838"/><path d="M62 72h14l-7 16z" fill="#f4d3a0"/><path d="M66.5 82h5l-2.5 6z" fill="#1d1630"/><rect x="62" y="6" width="14" height="8" rx="2" fill="#e2475f"/></g></symbol>
   <symbol id="musik" viewBox="0 0 100 100"><path d="M38 20l44-10v56" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/><path d="M38 20v58" stroke="#fff" stroke-width="7"/><ellipse cx="28" cy="80" rx="13" ry="10" fill="#7aa8ff"/><ellipse cx="72" cy="68" rx="13" ry="10" fill="#ff7a8e"/></symbol>
  <symbol id="hjarta" viewBox="0 0 100 100"><path d="M50 88C20 66 6 50 6 32 6 18 17 8 30 8c9 0 16 5 20 12 4-7 11-12 20-12 13 0 24 10 24 24 0 18-14 34-44 56z" fill="#fff"/><path d="M30 18c-7 0-13 5-14 12" stroke="#ffc2cc" stroke-width="6" stroke-linecap="round" fill="none"/></symbol>
+ <symbol id="impostor" viewBox="0 0 120 100"><ellipse cx="60" cy="94" rx="50" ry="5" fill="#000" opacity=".2"/><g fill="#ffd9a8"><circle cx="22" cy="44" r="11"/><path d="M6 88c0-18 7-28 16-28s16 10 16 28z"/><circle cx="98" cy="44" r="11"/><path d="M82 88c0-18 7-28 16-28s16 10 16 28z"/></g><g fill="#1d1630"><path d="M38 90c0-24 9-38 22-38s22 14 22 38z"/><circle cx="60" cy="36" r="16"/><path d="M38 30c2-14 12-20 22-20s20 6 22 20c-6-3-14-4-22-4s-16 1-22 4z"/><rect x="34" y="27" width="52" height="6" rx="3"/></g><path d="M48 37h24" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="52" cy="37" r="2.4" fill="#e2475f"/><circle cx="68" cy="37" r="2.4" fill="#e2475f"/><rect x="88" y="6" width="28" height="22" rx="8" fill="#fff"/><path d="M94 28l-2 8 9-8z" fill="#fff"/><text x="102" y="23" text-anchor="middle" font-size="17" font-weight="800" fill="#b8325a" font-family="Arial">?</text></symbol>
  <!--LEKBILDER-->
  </defs>
 </svg>
@@ -297,6 +322,7 @@ body.ispel .topp,body.ispel .slump{display:none}
 
 <script id="lekdata" type="application/json">__LEKAR__</script>
 <script id="fragdata" type="application/json">__FRAGOR__</script>
+<script id="impdata" type="application/json">__IMPOSTOR__</script>
 <script>
 {
 const LEKAR = JSON.parse(document.getElementById('lekdata').textContent)
@@ -381,6 +407,8 @@ function start(){
       ${ikon('kort')}<h2>Kortlek</h2><p>Dra kort direkt i telefonen.</p></a>
     <a class="stor c-tarn" href="#tarningar">
       ${ikon('tarning')}<h2>Tärningar</h2><p>Slå 1–10 tärningar.</p></a>
+    <a class="stor hel c-impostor" href="#impostor">
+      ${ikon('impostor')}<h2>Impostor</h2><p>Alla får samma hemliga ord utom en. Vem är impostorn?</p></a>
   </nav>
   <section class="valja" aria-labelledby="vh">
   <h3 class="rubrik" id="vh">Vad har ni framme?</h3>
@@ -498,6 +526,7 @@ function lekSida(id){
     ${l.kortregler ? `<a class="verktygslank" href="#kortlek-${encodeURIComponent(l.id)}">${ikon('kort')}<span>Spela med telefonens kortlek<small>Kortets regel visas när du drar</small></span></a>`
       : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
     ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? `<a class="verktygslank" href="#tarningar">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>Öppna de digitala tärningarna</small></span></a>` : ''}
+    ${l.verktyg === 'impostor' ? `<a class="verktygslank imlank" href="#impostor">${ikon('impostor')}<span>▶ Spela i telefonen<small>Skicka runt telefonen, var och en ser sitt ord</small></span></a>` : ''}
     ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
     ${lst('Varianter', l.varianter)}
     ${l.taggar && l.taggar.length ? `<div class="taggar">${l.taggar.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
@@ -575,7 +604,98 @@ document.addEventListener('click', e => {
     if (a === 'sla') slaTarningar();
     else { TA.antal = Math.min(10, Math.max(1, TA.antal + (a === 'plus' ? 1 : -1))); TA.slag = []; sparaTA(); tarningSida(); } }
 });
-const VERKTYG = {kortlek:kortlekSida, tarningar:tarningSida};
+
+// ===== Impostor: alla utom impostorn får samma ord (inställningar och använda ord sparas i telefonen) =====
+const IMP = JSON.parse(document.getElementById('impdata').textContent || '{}');
+const IMKAT = Object.keys(IMP.kategorier || {});
+let IMI = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexikon-impostor') || 'null'); if (v && v.spelare) return v; } catch(e) {} return {}; })();
+IMI = {spelare: Math.min(20, Math.max(3, IMI.spelare|0 || 5)), imp: Math.max(1, IMI.imp|0 || 1), visaKat: IMI.visaKat !== false,
+  kat: Array.isArray(IMI.kat) ? IMI.kat.filter(k => IMKAT.includes(k)) : IMKAT.slice(), anvanda: Array.isArray(IMI.anvanda) ? IMI.anvanda.slice(-300) : []};
+if (!IMI.kat.length) IMI.kat = IMKAT.slice();
+const sparaIMI = () => { try { localStorage.setItem('dryckeslexikon-impostor', JSON.stringify(IMI)); } catch(e) {} };
+const maxImp = n => Math.max(1, Math.min(3, Math.floor((n - 1) / 2)));
+let IM = {fas:'val'}; // val -> titta (i, visar) -> prata -> svar
+function imStart(){
+  IMI.imp = Math.min(IMI.imp, maxImp(IMI.spelare));
+  const alla = IMI.kat.flatMap(k => IMP.kategorier[k].map(o => [k, o]));
+  let pool = alla.filter(([k, o]) => !IMI.anvanda.includes(k + '|' + o));
+  if (!pool.length){ IMI.anvanda = IMI.anvanda.filter(x => !alla.some(([k, o]) => x === k + '|' + o)); pool = alla; }
+  const [kat, ord] = pool[Math.floor(Math.random() * pool.length)];
+  IMI.anvanda.push(kat + '|' + ord); sparaIMI();
+  const imps = new Set(); while (imps.size < IMI.imp) imps.add(Math.floor(Math.random() * IMI.spelare));
+  IM = {fas:'titta', i:0, visar:false, kat, ord, imps, borjar: Math.floor(Math.random() * IMI.spelare)};
+  impostorSida();
+}
+function impostorSida(){
+  const v = $('#vy'), n = IMI.spelare;
+  if (IM.fas === 'val'){
+    const mi = maxImp(n); if (IMI.imp > mi) IMI.imp = mi;
+    v.innerHTML = `<section class="verktyg">
+      <h1>Impostor</h1><p>Alla får samma hemliga ord utom impostorn, som bara får veta kategorin. Skicka runt telefonen så att var och en ser sitt ord.</p>
+      <div class="antalrad"><span>Spelare</span><div class="stepper">
+        <button type="button" data-im="sp-" aria-label="Färre spelare" ${n<=3?'disabled':''}>−</button><output aria-live="polite">${n}</output>
+        <button type="button" data-im="sp+" aria-label="Fler spelare" ${n>=20?'disabled':''}>+</button></div></div>
+      <div class="antalrad"><span>Impostorer</span><div class="stepper">
+        <button type="button" data-im="im-" aria-label="Färre impostorer" ${IMI.imp<=1?'disabled':''}>−</button><output aria-live="polite">${IMI.imp}</output>
+        <button type="button" data-im="im+" aria-label="Fler impostorer" ${IMI.imp>=mi?'disabled':''}>+</button></div></div>
+      <div class="imval">
+        <h3>Kategorier <button type="button" class="chip" data-im="allakat" style="margin-left:6px">${IMI.kat.length === IMKAT.length ? 'Välj bort alla' : 'Välj alla'}</button></h3>
+        <div class="imkats">${IMKAT.map(k => `<button type="button" class="chip" data-imkat="${esc(k)}" aria-pressed="${IMI.kat.includes(k)}">${esc(k)} <span style="opacity:.6">${IMP.kategorier[k].length}</span></button>`).join('')}</div>
+        <button type="button" class="imvaxla" data-im="visakat" aria-pressed="${IMI.visaKat}"><i></i><span>Impostorn får se kategorin<small>${IMI.visaKat ? 'Lättare för impostorn' : 'Svårare: impostorn vet ingenting'}</small></span></button>
+      </div>
+      <button type="button" class="spela" data-im="start" ${IMI.kat.length?'':'disabled'}>${IMI.kat.length ? 'Starta' : 'Välj minst en kategori'}</button>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#lek-impostor" style="display:inline-flex;align-items:center;text-decoration:none">Regler</a></div>
+    </section>`;
+  } else if (IM.fas === 'titta'){
+    const imp = IM.imps.has(IM.i), sista = IM.i === n - 1;
+    v.innerHTML = `<section class="verktyg">
+      <span class="imsteg">Spelare ${IM.i + 1} av ${n}</span>
+      ${!IM.visar
+        ? `<button type="button" class="imkort dold" data-im="visa" style="width:100%"><span class="etikett" style="color:#fff">Ge telefonen till</span><span class="num">Spelare ${IM.i + 1}</span><p style="color:#fff">Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.</p></button>
+           <button type="button" class="spela" data-im="visa">Visa mitt ord</button>`
+        : `<div class="imkort ${imp ? 'imp' : 'ord'}" aria-live="polite">${imp
+            ? `<span class="etikett">Du är</span><span class="stor-t">Impostor</span>${IMI.visaKat ? `<p>Kategori: <b>${esc(IM.kat)}</b></p>` : ''}<p>Du vet inte ordet. Låtsas att du gör det och försök lista ut det.</p>`
+            : `<span class="etikett">Kategori: ${esc(IM.kat)}</span><span class="stor-t">${esc(IM.ord)}</span><p>Håll ordet hemligt. En av er är impostor.</p>`}</div>
+           <button type="button" class="spela" data-im="gom">${sista ? 'Göm. Alla har sett sitt ord' : `Göm och lämna till spelare ${IM.i + 2}`}</button>`}
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">Avbryt rundan</button></div>
+    </section>`;
+  } else if (IM.fas === 'prata'){
+    v.innerHTML = `<section class="verktyg">
+      <h1>Dags att prata</h1>
+      <div class="imkort"><span class="etikett">Spelare ${IM.borjar + 1} börjar</span>
+        <p>Säg ett ord var som hör ihop med det hemliga ordet, varvet runt. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.</p></div>
+      <ol class="imlista"><li>Ta ett eller två varv med ord.</li><li>Diskutera och rösta på den ni tror är impostor.</li><li>Blir impostorn utröstad får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå.</li></ol>
+      <button type="button" class="spela" data-im="svar">Visa ordet och impostorn</button>
+    </section>`;
+  } else {
+    const lista = [...IM.imps].sort((a,b) => a-b).map(x => 'spelare ' + (x + 1));
+    v.innerHTML = `<section class="verktyg">
+      <h1>Facit</h1>
+      <div class="imkort ord"><span class="etikett">Ordet var</span><span class="stor-t">${esc(IM.ord)}</span><p>Kategori: ${esc(IM.kat)}</p></div>
+      <div class="imkort imp" style="min-height:0"><span class="etikett">${lista.length > 1 ? 'Impostorerna var' : 'Impostorn var'}</span><span class="stor-t" style="font-size:clamp(1.6rem,8vw,2.4rem)">${esc(lista.join(' och ').replace(/^s/, 'S'))}</span></div>
+      <button type="button" class="spela" data-im="start">Ny runda</button>
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">Ändra inställningar</button></div>
+    </section>`;
+  }
+}
+document.addEventListener('click', e => {
+  const kb = e.target.closest('[data-imkat]');
+  if (kb){ const k = kb.dataset.imkat; IMI.kat = IMI.kat.includes(k) ? IMI.kat.filter(x => x !== k) : IMKAT.filter(x => x === k || IMI.kat.includes(x)); sparaIMI(); impostorSida(); return; }
+  const b = e.target.closest('[data-im]'); if (!b) return;
+  const a = b.dataset.im;
+  if (a === 'visa' && Date.now() - (IM.gomd || 0) < 700) return; // dubbeltryck ska inte visa nästa spelares ord
+  if (a === 'sp-' || a === 'sp+'){ IMI.spelare = Math.min(20, Math.max(3, IMI.spelare + (a === 'sp+' ? 1 : -1))); sparaIMI(); }
+  else if (a === 'im-' || a === 'im+'){ IMI.imp = Math.min(maxImp(IMI.spelare), Math.max(1, IMI.imp + (a === 'im+' ? 1 : -1))); sparaIMI(); }
+  else if (a === 'allakat'){ IMI.kat = IMI.kat.length === IMKAT.length ? [] : IMKAT.slice(); sparaIMI(); }
+  else if (a === 'visakat'){ IMI.visaKat = !IMI.visaKat; sparaIMI(); }
+  else if (a === 'start'){ imStart(); window.scrollTo(0,0); return; }
+  else if (a === 'visa'){ IM.visar = true; }
+  else if (a === 'gom'){ IM.visar = false; IM.gomd = Date.now(); if (IM.i < IMI.spelare - 1) IM.i++; else IM.fas = 'prata'; window.scrollTo(0,0); }
+  else if (a === 'svar'){ IM.fas = 'svar'; }
+  else if (a === 'avbryt'){ IM = {fas:'val'}; }
+  impostorSida();
+});
+const VERKTYG = {kortlek:kortlekSida, tarningar:tarningSida, impostor:impostorSida};
 
 let senasteLista = null, forraHash = null;
 function route(){

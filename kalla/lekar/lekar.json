@@ -812,6 +812,45 @@
     "spel_instruktion": "Läs upp påståendet. Kasta dosan till den det stämmer mest in på."
   },
   {
+    "id": "impostor",
+    "namn": "Impostor",
+    "kategori": "Ord & gissning",
+    "kort": "Alla utom en får samma hemliga ord. Impostorn vet bara kategorin och måste bluffa sig igenom.",
+    "spelare": {
+      "min": 3,
+      "max": 20
+    },
+    "tid": "5–15 min per runda",
+    "alkohol": true,
+    "behover": [
+      "En telefon (appen delar ut orden), eller lappar och penna"
+    ],
+    "regler": [
+      "Starta Impostor i appen och välj hur många ni är, hur många impostorer ni vill ha och vilka kategorier som ska vara med.",
+      "Skicka runt telefonen. Var och en trycker fram sitt ord, tittar i hemlighet, gömmer det och lämnar vidare.",
+      "Alla får samma hemliga ord, utom impostorn som bara får veta kategorin (eller ingenting, om ni väljer det svårare läget).",
+      "Appen lottar vem som börjar. I tur och ordning säger var och en ett ord som hör ihop med det hemliga ordet. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.",
+      "Efter ett eller två varv diskuterar ni och röstar på den ni tror är impostor.",
+      "Röstar ni ut fel person vinner impostorn. Röstar ni ut impostorn får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå, annars vinner resten.",
+      "Förslag: de som förlorar rundan tar en klunk.",
+      "Sällskapet bestämmer alltid själv om, när och hur mycket man dricker. Klunkar och straff i reglerna är bara förslag."
+    ],
+    "varianter": [
+      "Utan telefon: en spelledare skriver samma ord på alla lappar utom en, där det står 'Impostor'.",
+      "Svårare: impostorn får inte ens veta kategorin.",
+      "Flera impostorer: med många spelare kan ni ha två eller tre impostorer, som inte vet om varandra."
+    ],
+    "taggar": [
+      "bluff",
+      "stora grupper",
+      "spel i telefonen"
+    ],
+    "osaker": false,
+    "svarighet": "Lätt",
+    "grupp": "prat",
+    "verktyg": "impostor"
+  },
+  {
     "id": "sanning-eller-konsekvens",
     "namn": "Sanning eller konsekvens",
     "kategori": "Frågelek",

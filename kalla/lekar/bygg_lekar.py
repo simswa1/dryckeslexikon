@@ -308,6 +308,25 @@ L[-1]["svarighet"] = "Lätt"
 L[-1]["fragor_fran"] = "mest-sannolikt"
 L[-1]["spel_instruktion"] = "Läs upp påståendet. Kasta dosan till den det stämmer mest in på."
 
+lek("impostor", "Impostor", "Ord & gissning",
+    "Alla utom en får samma hemliga ord. Impostorn vet bara kategorin och måste bluffa sig igenom.",
+    3, 20, "5–15 min per runda", True, ["En telefon (appen delar ut orden), eller lappar och penna"],
+    ["Starta Impostor i appen och välj hur många ni är, hur många impostorer ni vill ha och vilka kategorier som ska vara med.",
+     "Skicka runt telefonen. Var och en trycker fram sitt ord, tittar i hemlighet, gömmer det och lämnar vidare.",
+     "Alla får samma hemliga ord, utom impostorn som bara får veta kategorin (eller ingenting, om ni väljer det svårare läget).",
+     "Appen lottar vem som börjar. I tur och ordning säger var och en ett ord som hör ihop med det hemliga ordet. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.",
+     "Efter ett eller två varv diskuterar ni och röstar på den ni tror är impostor.",
+     "Röstar ni ut fel person vinner impostorn. Röstar ni ut impostorn får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå, annars vinner resten.",
+     "Förslag: de som förlorar rundan tar en klunk."],
+    varianter=["Utan telefon: en spelledare skriver samma ord på alla lappar utom en, där det står 'Impostor'.",
+               "Svårare: impostorn får inte ens veta kategorin.",
+               "Flera impostorer: med många spelare kan ni ha två eller tre impostorer, som inte vet om varandra."],
+    taggar=["bluff", "stora grupper", "spel i telefonen"], osaker=False)
+L[-1]["svarighet"] = "Lätt"
+L[-1]["grupp"] = "prat"
+# Länkar till spelläget #impostor (ordbanken ligger i impostor.json).
+L[-1]["verktyg"] = "impostor"
+
 lek("sanning-eller-konsekvens", "Sanning eller konsekvens", "Frågelek",
     "Välj mellan att svara ärligt på en fråga eller göra en utmaning.",
     3, 15, "20–60 min", False, [],
