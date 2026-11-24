@@ -295,6 +295,19 @@ lek("mest-sannolikt", "Pekleken", "Frågelek",
      "Varje person dricker en klunk för varje finger som pekar på dem."],
     taggar=["lära känna", "inget material", "stora grupper"], osaker=False)
 
+lek("snusdosan", "Snusdosan", "Frågelek",
+    "Som Pekleken, fast ni kastar en snusdosa till den som påståendet stämmer mest in på.",
+    3, 15, "15–45 min", True, ["Ett kastbart föremål (t.ex. en snusdosa)", "Dricka"],
+    ["Ni spelar med ett kastbart föremål, förslagsvis en snusdosa, eftersom det är vanligt att någon i gruppen har en.",
+     "Du får ett påstående, likt Pekleken.",
+     "Sedan kastar du dosan till personen som påståendet stämmer mest in på.",
+     "Den som får dosan läser upp nästa påstående."],
+    taggar=["egen lek", "lära känna", "stora grupper"], osaker=False)
+L[-1]["svarighet"] = "Lätt"
+# Starta spel använder Peklekens frågor (samma påståenden passar).
+L[-1]["fragor_fran"] = "mest-sannolikt"
+L[-1]["spel_instruktion"] = "Läs upp påståendet. Kasta dosan till den det stämmer mest in på."
+
 lek("sanning-eller-konsekvens", "Sanning eller konsekvens", "Frågelek",
     "Välj mellan att svara ärligt på en fråga eller göra en utmaning.",
     3, 15, "20–60 min", False, [],
