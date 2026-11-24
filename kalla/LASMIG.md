@@ -17,3 +17,8 @@
 - 2026-11-24: Simon tog bort de stora knapparna för Impostor och Körkortet från startsidan. De nås via leken i Alla lekar ("Spela i telefonen").
 - 2026-11-24 kväll: Simon tog bort hela 'Vad har ni framme?'-sektionen (valbara rutor + Spela) från startsidan. Lekarna nås via Alla lekar.
 - Popularitet: `../lekar/popularitet.json` (id -> 1–100, Simons egna lekar högst). Lekarna sorteras populärast först inom varje grupp.
+- 2026-11-24: Engelsk översättning. Svensk och engelsk flagga (runda, med ram) uppe till höger, även i 18+-rutan. Valet sparas i telefonen (localStorage `dryckeslexikon-sprak`), svenska är standard. Saknas en engelsk text visas svenskan.
+  - Appens texter: `sprak_en.json` (svensk text -> engelsk). I mall.html skrivs texter som `T('svensk text', {n: 3})`; statiska element har `data-t="svensk text"`. Ny text i appen = lägg till den i sprak_en.json.
+  - Lekarna: `../lekar/lekar_en.json` (lek-id -> namn, kort, tid, behover, regler, varianter, taggar, osaker_kommentar, kortregler[{titel,text}], spel_instruktion). Raden om att sällskapet bestämmer själv läggs till automatiskt. Ny lek = lägg till dess engelska här. Grupperna räknas fortfarande fram ur de svenska fälten.
+  - Frågor: `../lekar/fragor_en.json`, `../lekar/korkortet_en.json`, `../lekar/impostor_en.json`. Källa i Google-arket: kolumnerna E–G (Calm/Medium/Hot, inledning i F1, instruktion i F2) i flikarna Pekleken, Jag har aldrig och Körkortet, och fliken "Impostor (engelska)". Engelskan står på samma rad som svenskan. Körkortets engelska påståenden får samma teman som den svenska raden, så korkortet_en.json ska ha samma radordning som korkortet.json (tom sträng där engelska saknas).
+  - Favoritfrågor och var man är i frågehögen sparas per språk.
