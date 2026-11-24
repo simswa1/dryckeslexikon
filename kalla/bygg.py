@@ -25,6 +25,13 @@ if okanda: raise SystemExit(f"Frågor till okänd lek: {okanda}")
 for k, v in fragor.items():
     v["nivaer"] = {n: [str(q).strip() for q in v.get("nivaer", {}).get(n, []) if str(q).strip()] for n in ("Lugn", "Lagom", "Het")}
     print(f"Frågor {k}: " + ", ".join(f"{n} {len(q)}" for n, q in v["nivaer"].items()))
+# En lek kan låna en annan leks frågor: "fragor_fran" (lek-id) och ev. "spel_instruktion" i lekar.json.
+for l in lekar:
+    kalla = l.get("fragor_fran")
+    if not kalla: continue
+    if kalla not in fragor: raise SystemExit(f"{l['id']}: fragor_fran pekar på {kalla} som saknar frågor")
+    fragor[l["id"]] = dict(fragor[kalla], **({"instruktion": l["spel_instruktion"]} if l.get("spel_instruktion") else {}))
+    print(f"Frågor {l['id']}: lånar från {kalla}")
 fragdata = json.dumps(fragor, ensure_ascii=False).replace("</", "<\\/")
 bf = här / "bilder" / "lekbilder.json"
 bilder = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}

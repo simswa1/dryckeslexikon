@@ -780,6 +780,38 @@
     "osaker": false
   },
   {
+    "id": "snusdosan",
+    "namn": "Snusdosan",
+    "kategori": "Frågelek",
+    "kort": "Som Pekleken, fast ni kastar en snusdosa till den som påståendet stämmer mest in på.",
+    "spelare": {
+      "min": 3,
+      "max": 15
+    },
+    "tid": "15–45 min",
+    "alkohol": true,
+    "behover": [
+      "Ett kastbart föremål (t.ex. en snusdosa)",
+      "Dricka"
+    ],
+    "regler": [
+      "Ni spelar med ett kastbart föremål, förslagsvis en snusdosa, eftersom det är vanligt att någon i gruppen har en.",
+      "Du får ett påstående, likt Pekleken.",
+      "Sedan kastar du dosan till personen som påståendet stämmer mest in på.",
+      "Den som får dosan läser upp nästa påstående.",
+      "Sällskapet bestämmer alltid själv om, när och hur mycket man dricker. Klunkar och straff i reglerna är bara förslag."
+    ],
+    "taggar": [
+      "egen lek",
+      "lära känna",
+      "stora grupper"
+    ],
+    "osaker": false,
+    "svarighet": "Lätt",
+    "fragor_fran": "mest-sannolikt",
+    "spel_instruktion": "Läs upp påståendet. Kasta dosan till den det stämmer mest in på."
+  },
+  {
     "id": "sanning-eller-konsekvens",
     "namn": "Sanning eller konsekvens",
     "kategori": "Frågelek",
