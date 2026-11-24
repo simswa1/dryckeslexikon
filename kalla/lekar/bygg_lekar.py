@@ -38,6 +38,38 @@ lek("kungen-i-ringen", "Kungen i ringen (Ring of Fire)", "Kortlek",
     taggar=["klassiker", "stora grupper", "uppvärmning"], osaker=True,
     kommentar="Vad varje kort betyder skiljer sig mycket mellan sällskap. Här är en vanlig version, men 7, 8, dam och kung byts ofta ut.")
 
+# Simons kompisgängs egen lek (regler från Simon 2026-11-24)
+lek("olspelet", "Ölspelet", "Kortlek",
+    "Vårt gängs eget kortspel: dra ett kort i taget medsols, och varje kort har sin egen uppgift.",
+    3, 10, "30–60 min", True, ["Kortlek", "Dricka"],
+    ["Spelare ett tar första kortet i leken. Därefter går turen medsols (klockans varv).",
+     "Den som drar ett kort gör det som kortet säger.",
+     "Ess – Vattenfall: alla börjar dricka, och man får sluta först när personen före har slutat (se leken Vattenfall).",
+     "Röda kort 2–6: ge bort lika många klunkar som kortet visar.",
+     "Svarta kort 2–6: ta lika många klunkar själv som kortet visar.",
+     "7 – Burr: spela burr. Räkna i tur och ordning och säg 'burr' i stället för tal som innehåller en 7:a eller går jämnt upp i 7. Den som gör fel får straff.",
+     "8 – Saga: varje spelare lägger till ett ord och upprepar vad alla andra har sagt. Den första som inte klarar uppgiften får straff.",
+     "9 – Association: säg ett ord som associeras med det förra ordet, alltså inte med det första ordet. Den som svävar för långt iväg får straff.",
+     "10 – Tema: bestäm ett tema, till exempel klädmärken. Den som inte kommer på något eller säger något som redan är sagt får straff.",
+     "Knekt – Regel: bestäm en regel som alla ska följa under resten av spelet. Knekten får också ta bort en tidigare regel.",
+     "Dam – Alla tjejer dricker.",
+     "Kung – Alla killar dricker."],
+    taggar=["egen lek", "kortlek", "stora grupper"], osaker=False)
+L[-1]["svarighet"] = "Medel"
+# Visas under kortet när man drar i den digitala kortleken (#kortlek-olspelet).
+L[-1]["kortregler"] = [
+    {"valor": ["A"], "titel": "Vattenfall", "text": "Alla börjar dricka, och man får sluta först när personen före har slutat."},
+    {"valor": ["2","3","4","5","6"], "farg": "rod", "titel": "Ge bort klunkar", "text": "Ge bort lika många klunkar som kortet visar."},
+    {"valor": ["2","3","4","5","6"], "farg": "svart", "titel": "Ta klunkar", "text": "Ta lika många klunkar själv som kortet visar."},
+    {"valor": ["7"], "titel": "Burr", "text": "Spela burr: räkna i tur och ordning och säg 'burr' i stället för tal som innehåller en 7:a eller går jämnt upp i 7. Den som gör fel får straff."},
+    {"valor": ["8"], "titel": "Saga", "text": "Varje spelare lägger till ett ord och upprepar vad alla andra har sagt. Den första som inte klarar uppgiften får straff."},
+    {"valor": ["9"], "titel": "Association", "text": "Säg ett ord som associeras med det förra ordet, inte med det första. Den som svävar för långt iväg får straff."},
+    {"valor": ["10"], "titel": "Tema", "text": "Bestäm ett tema, till exempel klädmärken. Den som inte kommer på något eller säger något som redan är sagt får straff."},
+    {"valor": ["J"], "titel": "Regel", "text": "Bestäm en regel som alla ska följa under resten av spelet. Du får också ta bort en tidigare regel."},
+    {"valor": ["Q"], "titel": "Tjejerna dricker", "text": "Alla tjejer dricker."},
+    {"valor": ["K"], "titel": "Killarna dricker", "text": "Alla killar dricker."},
+]
+
 lek("bussen", "Bussen", "Kortlek",
     "Gissa rätt på kort för att dela ut klunkar, och den som förlorar får åka bussen i slutet.",
     3, 8, "30–45 min", True, ["Kortlek (gärna två)", "Dricka"],
