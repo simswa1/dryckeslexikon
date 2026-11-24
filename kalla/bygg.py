@@ -18,12 +18,20 @@ ids = [l["id"] for l in lekar]
 dubbletter = {i for i in ids if ids.count(i) > 1}
 if dubbletter: raise SystemExit(f"Dubbla id: {dubbletter}")
 data = json.dumps(lekar, ensure_ascii=False).replace("</", "<\\/")
+ff = här.parent / "lekar" / "fragor.json"
+fragor = json.loads(ff.read_text(encoding="utf-8")) if ff.exists() else {}
+okanda = [k for k in fragor if k not in ids]
+if okanda: raise SystemExit(f"Frågor till okänd lek: {okanda}")
+for k, v in fragor.items():
+    v["nivaer"] = {n: [str(q).strip() for q in v.get("nivaer", {}).get(n, []) if str(q).strip()] for n in ("Lugn", "Lagom", "Het")}
+    print(f"Frågor {k}: " + ", ".join(f"{n} {len(q)}" for n, q in v["nivaer"].items()))
+fragdata = json.dumps(fragor, ensure_ascii=False).replace("</", "<\\/")
 bf = här / "bilder" / "lekbilder.json"
 bilder = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}
 utan_bild = [i for i in ids if i not in bilder]
 if utan_bild: print("Saknar bild (gruppens ikon visas):", ", ".join(utan_bild))
 symboler = "\n".join(f'  <symbol id="lb-{i}" viewBox="0 0 100 100">{bilder[i]}</symbol>' for i in ids if i in bilder)
-mall = (här / "mall.html").read_text(encoding="utf-8").replace("__LEKAR__", data).replace("<!--LEKBILDER-->", symboler)
+mall = (här / "mall.html").read_text(encoding="utf-8").replace("__LEKAR__", data).replace("__FRAGOR__", fragdata).replace("<!--LEKBILDER-->", symboler)
 
 # 1) Fristående fil (artifact)
 (här / "index.html").write_text(mall.replace("<!--PWA-->", "").replace("/*PWA-SW*/", ""), encoding="utf-8")

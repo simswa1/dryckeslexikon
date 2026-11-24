@@ -7,3 +7,4 @@
 - Ikon: `ikon/ikon.svg` (källa) och PNG i 1024/512/192/180/32. 1024 är App Store-storleken.
 - Favoriter sparas i telefonens webbläsare (localStorage), inget skickas någonstans.
 - Bild per lek: ritas i `bilder/rita_lekbilder.py` (en rad per lek-id) -> `bilder/lekbilder.json`. Kör skriptet och sedan bygg.py. Saknas bild visas gruppens ikon.
+- Frågebank och spelläge: frågorna ligger i `../lekar/fragor.json` (lek-id -> inledning, instruktion, nivaer {Lugn, Lagom, Het}). Leker med frågor får knappen "Starta spel" (helskärm, svep/tryck för nästa, bakåt, räknare, hjärta för favoritfrågor, egna frågor; allt sparas i telefonen). Källan för frågorna är Google-kalkylarket "Dryckeslexikon – frågebank" i Drive-mappen Dryckeslexikon: en flik per lek, rad 1 inledning, rad 2 instruktion, rad 3 rubriker, kolumnerna Lugn/Lagom/Het.
