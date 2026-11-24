@@ -1,0 +1,14 @@
+{
+  "_forklaring": "Svårighetsgrad per lek-id: Lätt = förklarad på en minut, Medel = några regler att hålla koll på, Svår = många regler eller kräver skicklighet/taktik. Läses in av app/bygg.py. Ett fält 'svarighet' direkt i lekar.json vinner över denna fil.",
+  "kungen-i-ringen": "Medel", "bussen": "Medel", "pyramiden": "Medel", "fuck-the-dealer": "Medel",
+  "presidenten": "Svår", "hastkapplopning": "Lätt", "hogt-eller-lagt": "Lätt", "kortet-i-pannan": "Lätt",
+  "tjugoett": "Medel", "maxla": "Svår", "tre-man": "Svår", "lognartarning": "Svår", "tarning-sexan": "Lätt",
+  "beer-pong": "Medel", "flip-cup": "Medel", "myntet": "Medel", "olstafett": "Lätt", "kubb": "Svår",
+  "snurra-flaskan": "Lätt", "jag-har-aldrig": "Lätt", "mest-sannolikt": "Lätt", "sanning-eller-konsekvens": "Lätt",
+  "tva-sanningar-en-logn": "Lätt", "heta-stolen": "Lätt", "paranoia": "Lätt", "bizz-buzz": "Medel",
+  "kategorier": "Lätt", "rimleken": "Lätt", "jag-packar-min-vaska": "Medel", "sista-bokstaven": "Lätt",
+  "kandisleken": "Medel", "vem-ar-jag": "Lätt", "charader": "Lätt", "rita-och-gissa": "Lätt",
+  "forbjudna-ord": "Medel", "viskleken": "Lätt", "maffia": "Svår", "blinkmordaren": "Medel",
+  "stolleken": "Lätt", "musikquiz": "Lätt", "power-hour": "Lätt", "film-drickspel": "Lätt", "tummen": "Lätt",
+  "skal-for-guvernoren": "Svår", "ja-nej-leken": "Lätt", "vattenfall": "Lätt", "olschack": "Svår"
+}
