@@ -12,6 +12,10 @@ svf = här.parent / "lekar" / "svarighet.json"
 svar = json.loads(svf.read_text(encoding="utf-8")) if svf.exists() else {}
 for l in lekar:
     if not l.get("svarighet") and svar.get(l["id"]): l["svarighet"] = svar[l["id"]]
+pf = här.parent / "lekar" / "popularitet.json"
+pop = json.loads(pf.read_text(encoding="utf-8")) if pf.exists() else {}
+for l in lekar:
+    if l.get("popularitet") is None: l["popularitet"] = pop.get(l["id"], 50)
 saknar = [l["id"] for l in lekar if not l.get("svarighet")]
 if saknar: print("Saknar svårighetsgrad:", ", ".join(saknar))
 ids = [l["id"] for l in lekar]

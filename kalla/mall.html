@@ -353,7 +353,7 @@ body.ispel .topp,body.ispel .slump{display:none}
 {
 const LEKAR = JSON.parse(document.getElementById('lekdata').textContent)
   .filter(l => l && l.id && l.namn)
-  .sort((a,b) => a.namn.localeCompare(b.namn,'sv'));
+  .sort((a,b) => (b.popularitet??50) - (a.popularitet??50) || a.namn.localeCompare(b.namn,'sv')); // populärast först inom varje grupp
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Gemener och utan accenter (é -> e), men å, ä och ö behålls som egna bokstäver.

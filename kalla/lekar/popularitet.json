@@ -1,0 +1,13 @@
+{
+  "_forklaring": "Popularitet 1–100 per lek-id, används för att sortera lekarna inom varje grupp (högst först). Bedömning av hur känd och spelad leken är i Sverige; Simons egna lekar ligger överst. Fältet 'popularitet' direkt i lekar.json vinner. Lekar som saknas här får 50.",
+  "olspelet": 100, "snusdosan": 98, "korkortet": 96,
+  "kungen-i-ringen": 95, "beer-pong": 94, "jag-har-aldrig": 93, "mest-sannolikt": 90, "sanning-eller-konsekvens": 89,
+  "kubb": 88, "charader": 87, "flip-cup": 85, "maffia": 85, "bussen": 84, "vem-ar-jag": 84, "snurra-flaskan": 82,
+  "fuck-the-dealer": 80, "impostor": 80, "tva-sanningar-en-logn": 78, "pyramiden": 78, "maxla": 78,
+  "rita-och-gissa": 76, "kandisleken": 76, "musikquiz": 75, "kategorier": 74, "power-hour": 72, "vattenfall": 72,
+  "heta-stolen": 70, "forbjudna-ord": 70, "blinkmordaren": 70, "viskleken": 68, "stolleken": 68, "tummen": 66,
+  "paranoia": 66, "hogt-eller-lagt": 65, "presidenten": 64, "myntet": 62, "olstafett": 62, "tre-man": 60,
+  "film-drickspel": 60, "lognartarning": 58, "ja-nej-leken": 58, "bizz-buzz": 56, "rimleken": 54,
+  "jag-packar-min-vaska": 54, "sista-bokstaven": 52, "tjugoett": 52, "kortet-i-pannan": 50, "hastkapplopning": 50,
+  "tarning-sexan": 48, "skal-for-guvernoren": 45, "olschack": 42
+}

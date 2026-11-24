@@ -16,3 +16,4 @@
 - Körkortet svårighetsgrad (Lätt/Medel/Svår): avgör hur lika de falska påståendena är det rätta. Teman per påstående i `../lekar/korkortet_teman.json` (teman + temagrupper). Likhet = gemensamma teman ×3 + samma temagrupp + gemensamma ord. Nya påståenden från arket utan tema jämförs bara på ord; ge dem gärna teman i filen.
 - 2026-11-24: Simon tog bort de stora knapparna för Impostor och Körkortet från startsidan. De nås via leken i Alla lekar ("Spela i telefonen").
 - 2026-11-24 kväll: Simon tog bort hela 'Vad har ni framme?'-sektionen (valbara rutor + Spela) från startsidan. Lekarna nås via Alla lekar.
+- Popularitet: `../lekar/popularitet.json` (id -> 1–100, Simons egna lekar högst). Lekarna sorteras populärast först inom varje grupp.
