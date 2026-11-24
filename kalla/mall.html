@@ -160,6 +160,48 @@ article ul li{margin-bottom:6px}
 @media(prefers-reduced-motion:reduce){.stor{transition:none}}
 /* Spelläge: helskärm med stort frågekort */
 .startspel{background:linear-gradient(150deg,#5fd8b0,#2a9c8e);color:#062a24;margin:22px 0 6px}
+/* ===== Verktyg: kortlek och tärningar ===== */
+.c-kortlek{background:linear-gradient(150deg,#7aa8ff,#5160d6 80%);color:#0b1240}
+.c-tarn{background:linear-gradient(150deg,#5fd8b0,#2a9c8e 75%);color:#062a24}
+.verktyg{max-width:520px;margin:0 auto;padding:12px 0 10px;text-align:center}
+.verktyg h1{font-size:clamp(1.8rem,7vw,2.4rem)}
+.verktyg>p{color:var(--dim);margin:6px 0 14px}
+.kvar{display:inline-block;margin:0 0 10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-weight:800}
+.kortplats{display:grid;place-items:center;perspective:900px}
+.spkort{position:relative;height:max(210px,min(calc(100vh - 310px),calc(100svh - 310px),440px));width:auto;max-width:78vw;aspect-ratio:5/7;container-type:size;border-radius:20px;background:#fff;color:#1d1630;box-shadow:0 18px 40px rgba(0,0,0,.5);border:0;padding:0;cursor:pointer;font-family:"Baloo 2",Georgia,serif}
+.spkort.rod{color:#d22e4a}
+.spkort .hr{position:absolute;display:flex;flex-direction:column;align-items:center;line-height:.9;font-weight:800;font-size:12cqh}
+.spkort .hr i{font-style:normal;font-size:.85em}
+.spkort .h1{top:4cqh;left:5cqh}.spkort .h2{bottom:4cqh;right:5cqh;transform:rotate(180deg)}
+.spkort .mitt{position:absolute;inset:0;display:grid;place-items:center;font-size:42cqh;line-height:1}
+.spkort .mitt.bild{font-size:34cqh;font-weight:800}
+.spkort .mitt.bild small{display:block;font-size:.45em;text-align:center;margin-top:-.2em}
+.spkort.baksida{background:repeating-linear-gradient(45deg,#c22f52 0 10px,#a0203f 10px 20px);border:10px solid #fff;color:#fff}
+.spkort.baksida .mitt{font-size:1.3rem;font-weight:800;padding:20px;font-family:"Nunito Sans",sans-serif;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+.spkort.slut{background:var(--yta);color:var(--text);border:2px dashed var(--kant);box-shadow:none}
+.spkort.slut .mitt{font-size:1.3rem;font-weight:800;padding:20px;font-family:"Nunito Sans",sans-serif}
+.kortnamn{font:800 1.35rem "Baloo 2",sans-serif;margin:10px 0 0;min-height:1.6em}
+.forra{color:var(--dim);font-size:.9rem;min-height:1.4em}
+.verktyg .spela{border:0;width:100%;cursor:pointer}
+.verktyg .spela:disabled{opacity:.45}
+.knapprad{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:4px 0}
+.liten{min-height:48px;padding:0 18px;border-radius:14px;border:1px solid var(--kant);background:var(--yta);font-weight:800;cursor:pointer}
+.drar{animation:drar .32s ease-out}
+@keyframes drar{from{transform:translateY(-30px) rotateY(80deg);opacity:.2}}
+.verktyg .antalrad{max-width:420px;margin:0 auto 14px;font-size:1.1rem}
+.verktyg .stepper button{width:52px;height:52px}
+.verktyg .stepper button:disabled{opacity:.35}
+.tarningar{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:10px auto 6px;min-height:110px;cursor:pointer}
+.tarningar svg{width:clamp(62px,21vw,92px);height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+.tarningar.m5 svg{width:clamp(54px,16vw,78px)}
+.rullar svg{animation:rull .45s ease-out}
+@keyframes rull{0%{transform:rotate(-200deg) scale(.6);opacity:.3}70%{transform:rotate(12deg) scale(1.05)}}
+.summa{font:800 clamp(2.4rem,11vw,3.4rem)/1 "Baloo 2",sans-serif;color:var(--ol);margin:12px 0 2px}
+.summa small{display:block;font:700 .9rem "Nunito Sans",sans-serif;color:var(--dim);margin-top:4px}
+.verktygslank{display:flex;align-items:center;gap:12px;margin:14px 0;padding:12px 16px;border-radius:16px;background:var(--yta);border:2px solid var(--kant);text-decoration:none;font-weight:800}
+.verktygslank svg{width:52px;height:46px;flex:none}
+.verktygslank small{display:block;font-weight:600;color:var(--dim)}
+@media(prefers-reduced-motion:reduce){.drar,.rullar svg{animation:none}}
 body.ispel{overflow:hidden}
 body.ispel .topp,body.ispel .slump{display:none}
 .spel{position:fixed;inset:0;z-index:20;display:flex;flex-direction:column;background:var(--bg);background-image:radial-gradient(700px 500px at 100% 0,#4a1f3d 0,transparent 60%),radial-gradient(600px 500px at 0 100%,#2a1f4d 0,transparent 60%);padding:calc(10px + env(safe-area-inset-top)) 16px calc(14px + env(safe-area-inset-bottom));overflow-y:auto;-webkit-user-select:none;user-select:none}
@@ -327,9 +369,13 @@ function start(){
       <svg viewBox="0 0 220 120" aria-hidden="true"><use href="#vinglas" x="0" y="0" width="64" height="118"/><use href="#laskglas" x="56" y="4" width="62" height="114"/><use href="#olglas" x="116" y="6" width="96" height="112"/></svg>
       <h2>Alla lekar</h2><p>Hela samlingen, sorterad efter vad ni behöver.</p></a>
     <a class="stor c-slump" href="#" data-slump="1">
-      ${ikon('tarning')}<h2>Slumpa</h2><p>Låt tärningen välja åt er.</p></a>
+      ${ikon('stjarna')}<h2>Slumpa</h2><p>Låt slumpen välja lek åt er.</p></a>
     <a class="stor c-fav" href="#favoriter"><span class="n">${FAV.size} sparade</span>
       ${ikon('hjarta')}<h2>Favoriter</h2><p>Era sparade lekar.</p></a>
+    <a class="stor c-kortlek" href="#kortlek">
+      ${ikon('kort')}<h2>Kortlek</h2><p>Dra kort direkt i telefonen.</p></a>
+    <a class="stor c-tarn" href="#tarningar">
+      ${ikon('tarning')}<h2>Tärningar</h2><p>Slå 1–10 tärningar.</p></a>
   </nav>
   <section class="valja" aria-labelledby="vh">
   <h3 class="rubrik" id="vh">Vad har ni framme?</h3>
@@ -444,12 +490,82 @@ function lekSida(id){
     ${l.osaker ? `<div class="notis"><b>Reglerna varierar mellan sällskap.</b>${l.osaker_kommentar ? ' '+esc(l.osaker_kommentar) : ''} Kom överens innan ni börjar.</div>` : ''}
     ${lst('Det här behövs', l.behover && l.behover.length ? l.behover : ['Gott sällskap'])}
     ${lst('Regler', l.regler, true)}
+    ${(l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
+    ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? `<a class="verktygslank" href="#tarningar">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>Öppna de digitala tärningarna</small></span></a>` : ''}
     ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
     ${lst('Varianter', l.varianter)}
     ${l.taggar && l.taggar.length ? `<div class="taggar">${l.taggar.map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
     
   </article>`;
 }
+
+// ===== Verktyg: digital kortlek och tärningar (läget sparas i telefonen) =====
+const FARGER = [{s:'♥',namn:'Hjärter',rod:true},{s:'♦',namn:'Ruter',rod:true},{s:'♣',namn:'Klöver',rod:false},{s:'♠',namn:'Spader',rod:false}];
+const VALORER = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+const VALNAMN = {A:'ess',J:'knekt',Q:'dam',K:'kung'};
+const nyLek = () => blandaLek([...Array(52).keys()]);
+function blandaLek(a){ for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; }
+let KL = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexikon-kortlek') || 'null'); if (v && Array.isArray(v.kvar)) return v; } catch(e) {} return {kvar:nyLek(), dragna:[]}; })();
+const sparaKL = () => { try { localStorage.setItem('dryckeslexikon-kortlek', JSON.stringify(KL)); } catch(e) {} };
+const kortInfo = n => { const f = FARGER[Math.floor(n/13)], v = VALORER[n%13]; return {f, v, namn:`${f.namn} ${VALNAMN[v] || v}`}; };
+const TS = '︎'; // visa färgtecknen som text, inte som emoji
+function kortHtml(n, anim){
+  const {f, v} = kortInfo(n), s = f.s + TS, bild = /[JQK]/.test(v);
+  return `<button type="button" class="spkort ${f.rod?'rod':''} ${anim?'drar':''}" data-kl="nasta" aria-label="${esc(kortInfo(n).namn)}. Tryck för nästa kort">
+    <span class="hr h1">${v}<i>${s}</i></span><span class="hr h2">${v}<i>${s}</i></span>
+    <span class="mitt ${bild?'bild':''}">${bild ? `<span>${v}<small>${s}</small></span>` : s}</span></button>`;
+}
+function kortlekSida(anim){
+  const n = KL.dragna.length ? KL.dragna[KL.dragna.length-1] : null, slut = !KL.kvar.length;
+  const forra = KL.dragna.length > 1 ? kortInfo(KL.dragna[KL.dragna.length-2]).namn : '';
+  $('#vy').innerHTML = `<section class="verktyg">
+    <h1>Kortlek</h1>
+    <span class="kvar">${KL.kvar.length} kort kvar</span>
+    <div class="kortplats">${n == null
+      ? `<button type="button" class="spkort baksida ${anim?'drar':''}" data-kl="nasta" aria-label="Dra första kortet"><span class="mitt">Tryck för att ta översta kortet</span></button>`
+      : kortHtml(n, anim)}</div>
+    <div class="kortnamn" aria-live="polite">${n == null ? '' : esc(kortInfo(n).namn)}</div>
+    <div class="forra">${slut ? 'Det var sista kortet. Blanda om för en ny lek.' : forra ? 'Förra kortet: ' + esc(forra) : ''}</div>
+    <button type="button" class="spela" data-kl="nasta" ${slut?'disabled':''}>${slut ? 'Leken är slut' : n == null ? 'Ta översta kortet' : 'Nästa kort'}</button>
+    <div class="knapprad"><button type="button" class="liten" data-kl="blanda">↻ Blanda om</button></div>
+  </section>`;
+}
+function nastaKort(){
+  if (!KL.kvar.length) return;
+  KL.dragna.push(KL.kvar.pop()); sparaKL(); kortlekSida(true);
+}
+// Tärningar
+let TA = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexikon-tarningar') || 'null'); if (v && v.antal) return {antal:Math.min(10,Math.max(1,v.antal|0)), slag:[]}; } catch(e) {} return {antal:2, slag:[]}; })();
+const sparaTA = () => { try { localStorage.setItem('dryckeslexikon-tarningar', JSON.stringify({antal:TA.antal})); } catch(e) {} };
+const PRICKAR = {1:[[50,50]],2:[[28,28],[72,72]],3:[[26,26],[50,50],[74,74]],4:[[28,28],[72,28],[28,72],[72,72]],5:[[26,26],[74,26],[50,50],[26,74],[74,74]],6:[[28,24],[72,24],[28,50],[72,50],[28,76],[72,76]]};
+const tarningSvg = v => `<svg viewBox="0 0 100 100" role="img" aria-label="${v}"><rect x="4" y="4" width="92" height="92" rx="20" fill="#fff"/>${PRICKAR[v].map(([x,y]) => `<circle cx="${x}" cy="${y}" r="9" fill="${v===1?'#c22f52':'#1d1630'}"/>`).join('')}</svg>`;
+function tarningSida(anim){
+  const s = TA.slag, sum = s.reduce((a,b)=>a+b,0);
+  $('#vy').innerHTML = `<section class="verktyg">
+    <h1>Tärningar</h1><p>Välj hur många tärningar ni vill slå.</p>
+    <div class="antalrad"><span>Antal tärningar</span><div class="stepper">
+      <button type="button" data-ta="minus" aria-label="Färre tärningar" ${TA.antal<=1?'disabled':''}>−</button>
+      <output aria-live="polite">${TA.antal}</output>
+      <button type="button" data-ta="plus" aria-label="Fler tärningar" ${TA.antal>=10?'disabled':''}>+</button></div></div>
+    <div class="tarningar ${TA.antal>4?'m5':''} ${anim?'rullar':''}" data-ta="sla">${s.length ? s.map(tarningSvg).join('') : Array.from({length:TA.antal}, () => tarningSvg(6).replace(/<circle[^>]*>/g,'')).join('')}</div>
+    <div class="summa" aria-live="polite">${s.length ? (s.length > 1 ? `Summa ${sum}` : `${sum}`) + `<small>${s.length > 1 ? s.join(' + ') : 'Du slog ' + sum}</small>` : '<small>Tryck på knappen för att slå</small>'}</div>
+    <button type="button" class="spela" data-ta="sla">Slå tärningarna</button>
+  </section>`;
+}
+function slaTarningar(){
+  TA.slag = Array.from({length:TA.antal}, () => 1 + Math.floor(Math.random()*6));
+  tarningSida(true);
+  try { navigator.vibrate && navigator.vibrate(30); } catch(e) {}
+}
+document.addEventListener('click', e => {
+  const k = e.target.closest('[data-kl]');
+  if (k){ if (k.dataset.kl === 'nasta') nastaKort(); else { KL = {kvar:nyLek(), dragna:[]}; sparaKL(); kortlekSida(true); } return; }
+  const t = e.target.closest('[data-ta]');
+  if (t){ const a = t.dataset.ta;
+    if (a === 'sla') slaTarningar();
+    else { TA.antal = Math.min(10, Math.max(1, TA.antal + (a === 'plus' ? 1 : -1))); TA.slag = []; sparaTA(); tarningSida(); } }
+});
+const VERKTYG = {kortlek:kortlekSida, tarningar:tarningSida};
 
 let senasteLista = null, forraHash = null;
 function route(){
@@ -459,8 +575,9 @@ function route(){
   if (SP.id) stangSpel();
   const lek = h.match(/^lek-(.+)$/);
   $('#tbk').hidden = !h;
-  $('#slump').hidden = !h || !!lek;
-  if (lek){ $('#tbk').href = senasteLista ? '#'+senasteLista : '#'; lekSida(lek[1]); window.scrollTo(0,0); }
+  $('#slump').hidden = !h || !!lek || !!VERKTYG[h];
+  if (VERKTYG[h]){ $('#tbk').href = forraHash && forraHash !== h && !VERKTYG[forraHash] ? '#'+forraHash : '#'; VERKTYG[h](); window.scrollTo(0,0); }
+  else if (lek){ $('#tbk').href = senasteLista ? '#'+senasteLista : '#'; lekSida(lek[1]); window.scrollTo(0,0); }
   else if (LISTOR[h]){
     $('#tbk').href = '#';
     if (h!==senasteLista){ S.spelare=null; S.niva=null; if (h==='spela') S.sok=''; }
