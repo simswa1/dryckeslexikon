@@ -45,6 +45,14 @@ kkf = här.parent / "lekar" / "korkortet.json"
 kk = json.loads(kkf.read_text(encoding="utf-8")) if kkf.exists() else {"nivaer": {}}
 kk["nivaer"] = {n: list(dict.fromkeys(str(q).strip() for q in kk.get("nivaer", {}).get(n, []) if str(q).strip())) for n in ("Lugn", "Lagom", "Het")}
 print("Körkortet: " + ", ".join(f"{n} {len(q)}" for n, q in kk["nivaer"].items()))
+ktf = här.parent / "lekar" / "korkortet_teman.json"
+if ktf.exists():
+    kt = json.loads(ktf.read_text(encoding="utf-8"))
+    allakk = {q for v in kk["nivaer"].values() for q in v}
+    kk["teman"] = {q: t for q, t in kt.get("teman", {}).items() if q in allakk}
+    kk["grupper"] = kt.get("grupper", {})
+    utan = len(allakk) - len(kk["teman"])
+    if utan: print(f"Körkortet: {utan} påståenden saknar tema (jämförs på ord)")
 kkdata = json.dumps(kk, ensure_ascii=False).replace("</", "<\\/")
 bf = här / "bilder" / "lekbilder.json"
 bilder = json.loads(bf.read_text(encoding="utf-8")) if bf.exists() else {}

@@ -337,7 +337,7 @@ lek("korkortet", "Körkortet", "Frågelek",
      "Därefter ska de övriga spelarna komma fram till vilket påstående spelare ett har utgått från.",
      "Visa svaret och skicka telefonen vidare. Nästa spelare gör en ny runda.",
      "Förslag: gissar ni fel tar ni en klunk, gissar ni rätt tar den som rangordnade en klunk."],
-    varianter=["Svårare: välj fler påståenden att gissa bland (8 eller 10).",
+    varianter=["Svårighetsgrad i appen: på Lätt är påståendena tydligt olika, på Medel liknar några det rätta och på Svår är de väldigt lika.", "Svårare: välj fler påståenden att gissa bland (8 eller 10).",
                "Utan telefon: rangordnaren skriver sitt påstående på en lapp och läser sedan upp några falska påståenden tillsammans med det riktiga."],
     taggar=["egen lek", "lära känna", "spel i telefonen"], osaker=False)
 L[-1]["svarighet"] = "Lätt"
