@@ -196,6 +196,11 @@ article ul li{margin-bottom:6px}
 .tarningar.m5 svg{width:clamp(54px,16vw,78px)}
 .rullar svg{animation:rull .45s ease-out}
 @keyframes rull{0%{transform:rotate(-200deg) scale(.6);opacity:.3}70%{transform:rotate(12deg) scale(1.05)}}
+.verktyg.medregel .spkort{height:max(170px,min(calc(100vh - 450px),calc(100svh - 450px),380px))}
+.kortregel{margin:10px auto 12px;padding:12px 16px;border-radius:16px;background:var(--yta);border:1px solid var(--kant);text-align:left;min-height:4.2em}
+.kortregel b{display:block;font:800 1.25rem "Baloo 2",sans-serif;color:var(--ol)}
+.kortregel p{margin:2px 0 0}
+.kortregel a{color:var(--dim);font-size:.9rem}
 .summa{font:800 clamp(2.4rem,11vw,3.4rem)/1 "Baloo 2",sans-serif;color:var(--ol);margin:12px 0 2px}
 .summa small{display:block;font:700 .9rem "Nunito Sans",sans-serif;color:var(--dim);margin-top:4px}
 .verktygslank{display:flex;align-items:center;gap:12px;margin:14px 0;padding:12px 16px;border-radius:16px;background:var(--yta);border:2px solid var(--kant);text-decoration:none;font-weight:800}
@@ -490,7 +495,8 @@ function lekSida(id){
     ${l.osaker ? `<div class="notis"><b>Reglerna varierar mellan sällskap.</b>${l.osaker_kommentar ? ' '+esc(l.osaker_kommentar) : ''} Kom överens innan ni börjar.</div>` : ''}
     ${lst('Det här behövs', l.behover && l.behover.length ? l.behover : ['Gott sällskap'])}
     ${lst('Regler', l.regler, true)}
-    ${(l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
+    ${l.kortregler ? `<a class="verktygslank" href="#kortlek-${encodeURIComponent(l.id)}">${ikon('kort')}<span>Spela med telefonens kortlek<small>Kortets regel visas när du drar</small></span></a>`
+      : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>Ingen kortlek? Använd telefonen<small>Öppna den digitala kortleken</small></span></a>` : ''}
     ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? `<a class="verktygslank" href="#tarningar">${ikon('tarning')}<span>Inga tärningar? Använd telefonen<small>Öppna de digitala tärningarna</small></span></a>` : ''}
     ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">▶ Starta spel<span>${antalFragor(l.id)} frågor att visa på skärmen</span></a>` : ''}
     ${lst('Varianter', l.varianter)}
@@ -515,16 +521,20 @@ function kortHtml(n, anim){
     <span class="hr h1">${v}<i>${s}</i></span><span class="hr h2">${v}<i>${s}</i></span>
     <span class="mitt ${bild?'bild':''}">${bild ? `<span>${v}<small>${s}</small></span>` : s}</span></button>`;
 }
+let KLEK = null; // lek vars kortregler visas under kortet (#kortlek-<id>)
+const kortRegel = (l, n) => { const {f, v} = kortInfo(n); return (l.kortregler || []).find(r => r.valor.includes(v) && (!r.farg || (r.farg === 'rod') === f.rod)); };
 function kortlekSida(anim){
   const n = KL.dragna.length ? KL.dragna[KL.dragna.length-1] : null, slut = !KL.kvar.length;
+  const rg = KLEK && n != null ? kortRegel(KLEK, n) : null;
   const forra = KL.dragna.length > 1 ? kortInfo(KL.dragna[KL.dragna.length-2]).namn : '';
-  $('#vy').innerHTML = `<section class="verktyg">
-    <h1>Kortlek</h1>
+  $('#vy').innerHTML = `<section class="verktyg ${KLEK?'medregel':''}">
+    <h1>${KLEK ? esc(KLEK.namn) : 'Kortlek'}</h1>
     <span class="kvar">${KL.kvar.length} kort kvar</span>
     <div class="kortplats">${n == null
       ? `<button type="button" class="spkort baksida ${anim?'drar':''}" data-kl="nasta" aria-label="Dra första kortet"><span class="mitt">Tryck för att ta översta kortet</span></button>`
       : kortHtml(n, anim)}</div>
     <div class="kortnamn" aria-live="polite">${n == null ? '' : esc(kortInfo(n).namn)}</div>
+    ${KLEK ? `<div class="kortregel" aria-live="polite">${rg ? `<b>${esc(rg.titel)}</b><p>${esc(rg.text)}</p>` : `<p>Dra ett kort så visas vad det betyder. <a href="#lek-${encodeURIComponent(KLEK.id)}">Alla regler</a></p>`}</div>` : ''}
     <div class="forra">${slut ? 'Det var sista kortet. Blanda om för en ny lek.' : forra ? 'Förra kortet: ' + esc(forra) : ''}</div>
     <button type="button" class="spela" data-kl="nasta" ${slut?'disabled':''}>${slut ? 'Leken är slut' : n == null ? 'Ta översta kortet' : 'Nästa kort'}</button>
     <div class="knapprad"><button type="button" class="liten" data-kl="blanda">↻ Blanda om</button></div>
@@ -576,7 +586,10 @@ function route(){
   const lek = h.match(/^lek-(.+)$/);
   $('#tbk').hidden = !h;
   $('#slump').hidden = !h || !!lek || !!VERKTYG[h];
-  if (VERKTYG[h]){ $('#tbk').href = forraHash && forraHash !== h && !VERKTYG[forraHash] ? '#'+forraHash : '#'; VERKTYG[h](); window.scrollTo(0,0); }
+  const klek = h.match(/^kortlek-(.+)$/);
+  KLEK = klek ? (LEKAR.find(x => x.id === klek[1] && x.kortregler) || null) : null;
+  if (klek){ $('#tbk').href = '#lek-' + encodeURIComponent(klek[1]); $('#slump').hidden = true; kortlekSida(); window.scrollTo(0,0); }
+  else if (VERKTYG[h]){ $('#tbk').href = forraHash && forraHash !== h && !VERKTYG[forraHash] ? '#'+forraHash : '#'; VERKTYG[h](); window.scrollTo(0,0); }
   else if (lek){ $('#tbk').href = senasteLista ? '#'+senasteLista : '#'; lekSida(lek[1]); window.scrollTo(0,0); }
   else if (LISTOR[h]){
     $('#tbk').href = '#';
