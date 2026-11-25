@@ -1,0 +1,15 @@
+/* Förslagslådan */
+.forslagslank{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding:12px 16px;border-radius:18px;background:#fff1c2;border:2.5px solid var(--kant);box-shadow:var(--skugga);text-decoration:none;font-weight:800}
+.forslagslank .em{font-size:1.9rem;line-height:1}
+.forslagslank small{display:block;font-weight:600;color:var(--dim);font-size:.85rem}
+.fsform{text-align:left;margin-top:8px}
+.fsform h3{font-size:1.1rem;margin:16px 0 8px}
+.fsform h3 small{font:600 .85rem "Space Grotesk",sans-serif;color:var(--dim)}
+.fstyper{flex-wrap:wrap}
+.fsform textarea,.fsform input{width:100%;padding:12px 14px;font:16px "Space Grotesk",sans-serif;border-radius:14px;border:2.5px solid var(--kant);background:#fff;color:var(--text);box-shadow:3px 3px 0 var(--kant);resize:vertical}
+.fsform textarea:focus,.fsform input:focus{outline:3px solid var(--blaa);outline-offset:2px}
+.fsinfo{font-size:.85rem;color:var(--dim);margin:14px 0}
+.fsfel{background:#ffe1ea;border:2px solid var(--kant);border-radius:12px;padding:10px 12px;font-weight:700}
+.fsform .spela{width:100%;border:0;cursor:pointer}
+.tackruta{font-size:4rem;margin:10px 0}
+.ansvar a{color:inherit;font-weight:700}

@@ -1,0 +1,43 @@
+// ===== Förslagslåda: skickas till Google-formuläret "Dryckeslexikon – förslagslåda" (svaren hamnar i ett kalkylark i Drive-mappen Dryckeslexikon) =====
+const FORSLAG_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd1dk1ziTId_JgCV6L7SXdC8Tsnhj9HZ_xLWuMqJeQno_JLCA/formResponse';
+const FORSLAG_FALT = {typ: 'entry.1907318290', text: 'entry.1961217978', namn: 'entry.597152676'};
+const FTYPER = ['Ny lek', 'Nya frågor eller ord', 'Förbättring av appen', 'Något är fel', 'Annat']; // måste stämma med svarsalternativen i formuläret
+const FS = {typ: 'Ny lek', text: '', namn: '', fas: 'skriv'};
+function forslagSida(){
+  if (FS.fas === 'tack'){
+    $('#vy').innerHTML = `<section class="verktyg"><div class="tackruta">💌</div><h1>${T('Tack för förslaget!')}</h1>
+      <p>${T('Det har kommit fram. Bra idéer läggs in i en kommande uppdatering.')}</p>
+      <button type="button" class="spela" data-fs="ny">${T('Skicka ett till')}</button>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#" style="display:inline-flex;align-items:center;text-decoration:none">${T('Till startsidan')}</a></div></section>`;
+    return;
+  }
+  $('#vy').innerHTML = `<section class="verktyg forslagsida">
+    <h1>${T('Förslagslådan')}</h1>
+    <p>${T('Saknar ni en lek, har ni fler frågor till spellägena eller har ni hittat något som blivit fel? Skriv här så hamnar det hos oss som gör appen.')}</p>
+    <form id="fsform" class="fsform">
+      <h3>${T('Vad gäller det?')}</h3>
+      <div class="chips fstyper">${FTYPER.map(t => `<button type="button" class="chip" data-fstyp="${esc(t)}" aria-pressed="${FS.typ === t}">${esc(T(t))}</button>`).join('')}</div>
+      <h3><label for="fstext">${T('Ditt förslag')}</label></h3>
+      <textarea id="fstext" rows="6" maxlength="3000" required placeholder="${esc(FS.typ === 'Ny lek' ? T('Vad heter leken och hur går den till?') : T('Skriv så tydligt du kan.'))}">${esc(FS.text)}</textarea>
+      <h3><label for="fsnamn">${T('Namn eller hur vi når dig')} <small>${T('(frivilligt)')}</small></label></h3>
+      <input id="fsnamn" maxlength="120" autocomplete="off" value="${esc(FS.namn)}">
+      <p class="fsinfo">${T('Förslaget skickas via Google Formulär. Skriv inget känsligt. Lämnar du inget namn är förslaget anonymt.')}</p>
+      ${FS.fel ? `<p class="fsfel" role="alert">${T('Det gick inte att skicka. Kolla att telefonen har internet och försök igen.')}</p>` : ''}
+      <button type="submit" class="spela" ${FS.fas === 'skickar' ? 'disabled' : ''}>${FS.fas === 'skickar' ? T('Skickar…') : T('Skicka förslaget')}</button>
+    </form></section>`;
+  $('#fstext').addEventListener('input', e => { FS.text = e.target.value; });
+  $('#fsnamn').addEventListener('input', e => { FS.namn = e.target.value; });
+  $('#fsform').addEventListener('submit', async e => {
+    e.preventDefault(); if (!FS.text.trim() || FS.fas === 'skickar') return;
+    FS.fas = 'skickar'; FS.fel = false; forslagSida();
+    const data = new URLSearchParams({[FORSLAG_FALT.typ]: FS.typ, [FORSLAG_FALT.text]: FS.text.trim() + (LANG === 'en' ? '\n\n(skickat från den engelska versionen)' : ''), [FORSLAG_FALT.namn]: FS.namn.trim()});
+    try { await fetch(FORSLAG_URL, {method: 'POST', mode: 'no-cors', body: data}); FS.fas = 'tack'; FS.text = ''; }
+    catch(x) { FS.fas = 'skriv'; FS.fel = true; }
+    if (location.hash.slice(1) === 'forslag') { forslagSida(); window.scrollTo(0, 0); }
+  });
+}
+document.addEventListener('click', e => {
+  const ty = e.target.closest('[data-fstyp]'); if (ty){ FS.typ = ty.dataset.fstyp; forslagSida(); return; }
+  const fs = e.target.closest('[data-fs]'); if (fs){ FS.fas = 'skriv'; FS.fel = false; forslagSida(); }
+});
+VERKTYG.forslag = forslagSida;

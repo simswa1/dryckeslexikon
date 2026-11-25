@@ -1,0 +1,61 @@
+/* ===== Inför kvällen: gänget, kvällens lista och timer ===== */
+.ikvall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:-6px 0 18px}
+.ikvall a{display:flex;align-items:center;gap:10px;min-height:66px;padding:10px 12px;border-radius:18px;background:var(--yta);border:2px solid var(--kant);text-decoration:none;font-weight:800;line-height:1.15}
+.ikvall a:active{transform:scale(.98)}
+.ikvall svg{width:40px;height:36px;flex:none}
+.ikvall span{min-width:0}
+.ikvall small{display:block;font-weight:600;color:var(--dim);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ikvall .kvl{border-color:#2f8f74}.ikvall .gl{border-color:#5160d6}
+.lekknappar{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.lekknappar .favknapp{margin-top:0}
+.kvknapp.pa{background:var(--mint);border-color:var(--mint);color:#062a24}
+.turruta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0;padding:10px 12px 10px 16px;border-radius:16px;background:linear-gradient(150deg,#7aa8ff22,#5160d622);border:2px solid #5160d6}
+.turruta>div{flex:1;min-width:110px}
+.turruta small{display:block;color:var(--dim);font-size:.78rem;font-weight:700}
+.turruta b{font:800 1.5rem/1.1 "Baloo 2",sans-serif;color:var(--bla);overflow-wrap:anywhere}
+.turruta .liten{min-height:44px;padding:0 12px}
+.turtom{display:inline-block;margin:2px 0 10px;color:var(--bla);font-weight:700;font-size:.92rem}
+#turnamn.pop{animation:pop .35s}
+@keyframes pop{0%{transform:scale(.6);opacity:.3}70%{transform:scale(1.12)}}
+.timer{margin:14px 0;padding:14px 16px 12px;border-radius:18px;background:var(--yta);border:2px solid var(--kant);text-align:center}
+.timer>small{display:block;color:var(--dim);font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.timer .tid{font:800 clamp(3rem,16vw,4.2rem)/1 "Baloo 2",sans-serif;color:var(--ol);font-variant-numeric:tabular-nums;margin:8px 0 10px}
+.timer.kor{border-color:var(--ol)}
+.timer.slut{border-color:var(--vin);animation:blink .45s 6}
+.timer.slut .tid{color:var(--vin)}
+@keyframes blink{50%{background:#e2475f55}}
+.timer .chips{justify-content:center;flex-wrap:wrap;margin:0 0 10px}
+.timer .chip[aria-pressed=true]{background:#3a2a14;border-color:var(--ol);color:var(--text)}
+.timer .tstart{background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;border:0;min-width:140px}
+.timer .tstart.paus{background:var(--yta2);color:var(--text)}
+.gang .ganglista{list-style:none;padding:0;margin:14px 0;display:grid;gap:6px;text-align:left}
+.ganglista li{display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;border-radius:12px;background:var(--yta);border:2px solid transparent;font-weight:700}
+.ganglista li.tur{border-color:var(--bla)}
+.ganglista li span{flex:1;overflow-wrap:anywhere}
+.ganglista li em{font-style:normal;font-size:.78rem;color:var(--bla);font-weight:800}
+.ganglista button{width:40px;height:40px;border-radius:10px;border:0;background:var(--yta2);cursor:pointer;font-size:1.1rem}
+.vemborjar{margin:16px 0 12px}
+.vemborjar small{display:block;color:var(--dim);font-weight:700}
+.vemborjar b{display:block;font:800 clamp(2.2rem,11vw,3rem)/1.1 "Baloo 2",sans-serif;color:var(--bla);overflow-wrap:anywhere}
+.gang .egnarad button{background:var(--bla)}
+.kvlista{list-style:none;padding:0;margin:16px 0;display:grid;gap:8px}
+.kvlista li{display:flex;align-items:center;gap:6px;padding:6px;border-radius:16px;background:var(--yta);border:1px solid var(--kant)}
+.kvlista li>a{flex:1;display:flex;align-items:center;gap:10px;min-height:52px;text-decoration:none;padding:2px 4px}
+.kvlista .fb{width:44px;height:44px;flex:none}
+.kvlista b{display:block;line-height:1.2}
+.kvlista small{display:block;color:var(--dim);font-size:.8rem}
+.kvflytt{display:flex;gap:4px;flex:none}
+.kvflytt button{width:38px;height:42px;border-radius:10px;border:0;background:var(--yta2);cursor:pointer;font-size:1.05rem;font-weight:800}
+.kvflytt button:disabled{opacity:.3}
+.kvlista+.spela{margin-top:6px}
+.kvbar{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:stretch;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(26,16,36,.95);backdrop-filter:blur(10px);border-top:1px solid #2f8f74}
+.kvbar a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:14px;background:var(--yta);border:1px solid var(--kant);text-decoration:none;font-weight:800}
+.kvbar .kvpil{width:60px;font-size:1.4rem;flex:none}
+.kvbar .kvpil[aria-disabled=true]{opacity:.3;pointer-events:none}
+.kvbar .kvmitt{flex:1;flex-direction:column;line-height:1.15;padding:4px 8px;text-align:center}
+.kvbar .kvmitt small{color:var(--dim);font-size:.78rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.kvbar .kvmitt b{color:var(--mint)}
+body.medkv .ansvar{padding-bottom:90px}
+.kvplats{height:70px}
+.frkort .vem{position:absolute;top:16px;left:0;right:0;text-align:center;font-weight:800;font-size:.95rem;color:var(--bla)}
+@media(max-width:360px){.ikvall{grid-template-columns:1fr}}
