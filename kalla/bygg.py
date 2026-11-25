@@ -137,7 +137,7 @@ manifest = {
   "name": "Dryckeslexikon", "short_name": "Dryckeslexikon", "lang": "sv",
   "description": "Idéer och regler för festlekar. Sällskapet bestämmer själv om, när och hur mycket det ska drickas.",
   "start_url": "./", "scope": "./", "display": "standalone",
-  "background_color": "#1a1024", "theme_color": "#1a1024",
+  "background_color": "#fff6e5", "theme_color": "#fff6e5",
   "icons": [{"src": f"ikon/ikon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "any"} for n in (192, 512, 1024)]
          + [{"src": "ikon/ikon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}]
 }

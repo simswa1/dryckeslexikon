@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <!-- Ändra inte lekarna här: de ligger i ../lekar/lekar.json (+ svarighet.json). Kör python3 bygg.py för att bygga index.html. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1a1024">
+<meta name="theme-color" content="#fff6e5">
 <title>Dryckeslexikon</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="ikon/ikon-32.png">
@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Dryckeslexikon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* VOICE: kvällsfest, varm och lekfull men lättläst i en mörk lokal.
    IDEA: en bardisk-meny / spelhylla, stora brickor man trycker på.
@@ -24,14 +24,14 @@
 :root{color-scheme:dark;--bg:#1a1024;--yta:#26182f;--yta2:#30203b;--kant:#46304f;--text:#fbf3ea;--dim:#c5b4c9;--ol:#ffb838;--vin:#e2475f;--mint:#5fd8b0;--bla:#7aa8ff}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:90px}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 "Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;-webkit-text-size-adjust:100%;
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 "Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;-webkit-text-size-adjust:100%;
  background-image:radial-gradient(900px 500px at 90% -10%,#4a1f3d 0,transparent 60%),radial-gradient(700px 500px at -10% 10%,#2a1f4d 0,transparent 60%);background-attachment:fixed}
 a{color:inherit}
 button{font:inherit;color:inherit}
 .wrap{max-width:860px;margin:0 auto;padding:0 16px calc(90px + env(safe-area-inset-bottom))}
 .topp{position:sticky;top:0;z-index:5;background:rgba(26,16,36,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--kant);padding:calc(10px + env(safe-area-inset-top)) 16px 10px}
 .topp .in{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:10px}
-.logo{font:800 1.35rem/1 "Baloo 2",system-ui,sans-serif;text-decoration:none;flex:1;padding:6px 0}
+.logo{font:800 1.35rem/1 "Rubik",system-ui,sans-serif;text-decoration:none;flex:1;padding:6px 0}
 .logo span{color:var(--ol)}
 .tbk{min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--kant);background:var(--yta);text-decoration:none;display:flex;align-items:center;font-weight:700;font-size:.95rem}
 .tbk[hidden]{display:none}
@@ -46,11 +46,11 @@ button{font:inherit;color:inherit}
 .tbkt{margin-left:5px}
 @media(max-width:400px){.topp .in{gap:7px}.logo{font-size:1.2rem}.tbk{padding:0 10px;font-size:.9rem}.sprak{gap:5px}.sprak button{width:30px;height:30px}}
 @media(max-width:350px){.tbkt{display:none}.tbk{padding:0 13px}}
-h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif;line-height:1.08;margin:0}
+h1,h2,h3{font-family:"Rubik",system-ui,sans-serif;line-height:1.08;margin:0}
 .hej{padding:26px 0 14px}
 .hej h1{font-size:clamp(2rem,8vw,3.1rem);text-wrap:balance}
 .hej p{color:var(--dim);margin:8px 0 0;max-width:34em}
-.sok{width:100%;margin:16px 0 4px;padding:13px 16px;font:16px "Nunito Sans",sans-serif;border-radius:14px;border:1px solid var(--kant);background:var(--yta);color:var(--text)}
+.sok{width:100%;margin:16px 0 4px;padding:13px 16px;font:16px "Space Grotesk",sans-serif;border-radius:14px;border:1px solid var(--kant);background:var(--yta);color:var(--text)}
 .sok:focus{outline:3px solid var(--ol);outline-offset:1px;border-color:transparent}
 .stora{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
 .stor{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:200px;padding:16px;border-radius:22px;text-decoration:none;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .15s}
@@ -92,9 +92,9 @@ h3.rubrik{font-size:1.25rem;margin:26px 0 10px}
 .antalrad{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0;padding:10px 14px;border-radius:16px;background:var(--yta);border:2px solid var(--kant);font-weight:700}
 .stepper{display:flex;align-items:center;gap:6px}
 .stepper button{width:44px;height:44px;border-radius:12px;border:0;background:var(--yta2);font-size:1.4rem;font-weight:800;cursor:pointer}
-.stepper output{min-width:48px;text-align:center;font:800 1.3rem "Baloo 2",sans-serif;color:var(--ol)}
-.spela{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;border-radius:18px;background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;font:800 1.5rem/1.1 "Baloo 2",sans-serif;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.35);margin:10px 0}
-.spela span{font:700 .85rem "Nunito Sans",sans-serif;opacity:.85}
+.stepper output{min-width:48px;text-align:center;font:800 1.3rem "Rubik",sans-serif;color:var(--ol)}
+.spela{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;border-radius:18px;background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;font:800 1.5rem/1.1 "Rubik",sans-serif;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.35);margin:10px 0}
+.spela span{font:700 .85rem "Space Grotesk",sans-serif;opacity:.85}
 .spela:active{transform:scale(.98)}
 .kat svg{width:52px;height:52px;flex:none}
 .kat b{display:block;font-weight:700;line-height:1.2;overflow-wrap:anywhere}
@@ -114,12 +114,12 @@ h3.rubrik{font-size:1.25rem;margin:26px 0 10px}
 .abc a span{color:var(--ol)}
 .bokstav{display:flex;align-items:center;gap:12px;margin:28px 0 10px}
 .bokstav svg{width:48px;height:48px;flex:none}
-.bokstav span{font:800 1.45rem/1.1 "Baloo 2",sans-serif;color:var(--ol)}
-.bokstav small{display:block;font:400 .88rem/1.3 "Nunito Sans",sans-serif;color:var(--dim)}
+.bokstav span{font:800 1.45rem/1.1 "Rubik",sans-serif;color:var(--ol)}
+.bokstav small{display:block;font:400 .88rem/1.3 "Space Grotesk",sans-serif;color:var(--dim)}
 ul.lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .rad{display:block;background:var(--yta);border:1px solid var(--kant);border-radius:18px;padding:14px 16px;text-decoration:none}
 .rad:active{background:var(--yta2)}
-.rad .namn{font:800 1.2rem/1.15 "Baloo 2",sans-serif;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.rad .namn{font:800 1.2rem/1.15 "Rubik",sans-serif;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .rad .kort{color:var(--dim);font-size:.92rem;margin-top:3px}
 .fakta3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:10px}
 .fakta3 div{background:rgba(0,0,0,.22);border-radius:10px;padding:6px 8px;line-height:1.2}
@@ -128,7 +128,7 @@ ul.lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .svar{display:inline-flex;gap:3px;vertical-align:middle;margin-right:5px}
 .svar i{width:8px;height:8px;border-radius:50%;background:#5a4663}
 .svar i.p{background:var(--ol)}
-.mini{font:700 .7rem/1 "Nunito Sans",sans-serif;padding:4px 8px;border-radius:999px;background:#3b1f2a;color:#ffb3bf}
+.mini{font:700 .7rem/1 "Space Grotesk",sans-serif;padding:4px 8px;border-radius:999px;background:#3b1f2a;color:#ffb3bf}
 .mini.d{background:#4a3110;color:var(--ol)}
 .sokruta{position:relative}
 .forslag{position:absolute;left:0;right:0;top:100%;margin-top:6px;z-index:8;list-style:none;padding:6px;background:#2d1d37;border:1px solid var(--kant);border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.55);max-height:min(60vh,420px);overflow-y:auto}
@@ -145,7 +145,7 @@ ul.lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .ruta:active{transform:scale(.97)}
 .ruta:focus-visible{outline:3px solid var(--ol);outline-offset:2px}
 .rbild{width:min(100%,104px);aspect-ratio:1;height:auto}
-.rnamn{font:800 1.08rem/1.15 "Baloo 2",sans-serif;text-wrap:balance;overflow-wrap:anywhere}
+.rnamn{font:800 1.08rem/1.15 "Rubik",sans-serif;text-wrap:balance;overflow-wrap:anywhere}
 .rmeta{color:var(--dim);font-size:.78rem;line-height:1.2;margin-top:auto;white-space:nowrap}
 .rmeta .svar i{width:6px;height:6px}
 .rfav{position:absolute;top:8px;right:10px;color:#ff7a8e;font-size:1.1rem}
@@ -178,7 +178,7 @@ article ul li{margin-bottom:6px}
 .aldersparr{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:24px;background:rgba(14,8,20,.94);backdrop-filter:blur(8px)}
 .aldersparr[hidden]{display:none}
 .aldersparr .ruta18{max-width:380px;width:100%;text-align:center;background:var(--yta);border:1px solid var(--kant);border-radius:24px;padding:26px 22px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.aldersparr .tag18{display:inline-grid;place-items:center;width:76px;height:76px;border-radius:50%;border:4px solid var(--ol);color:var(--ol);font:800 1.9rem/1 "Baloo 2",sans-serif;margin-bottom:12px}
+.aldersparr .tag18{display:inline-grid;place-items:center;width:76px;height:76px;border-radius:50%;border:4px solid var(--ol);color:var(--ol);font:800 1.9rem/1 "Rubik",sans-serif;margin-bottom:12px}
 .aldersparr h2{font-size:1.6rem;margin:0 0 8px}
 .aldersparr p{color:var(--dim);margin:0 0 18px}
 .aldersparr button{display:block;width:100%;min-height:52px;border-radius:14px;border:0;font-weight:800;font-size:1.02rem;cursor:pointer;margin-top:10px}
@@ -209,10 +209,10 @@ article ul li{margin-bottom:6px}
 .imkort.dold{background:repeating-linear-gradient(45deg,#3a2350 0 14px,#311d45 14px 28px);border-color:#5a3b7a;cursor:pointer}
 .imkort.ord{background:#fff;color:#1d1630;border-color:#fff}
 .imkort.imp{background:linear-gradient(150deg,#e2475f,#7a1f4a);color:#fff;border-color:#e2475f}
-.imkort .stor-t{font:800 clamp(2rem,10vw,3rem)/1.05 "Baloo 2",sans-serif;word-break:break-word}
+.imkort .stor-t{font:800 clamp(2rem,10vw,3rem)/1.05 "Rubik",sans-serif;word-break:break-word}
 .imkort .etikett{font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;opacity:.75}
 .imkort p{margin:0;max-width:30ch}
-.imkort .num{font:800 clamp(3rem,16vw,4.6rem)/1 "Baloo 2",sans-serif;color:var(--ol)}
+.imkort .num{font:800 clamp(3rem,16vw,4.6rem)/1 "Rubik",sans-serif;color:var(--ol)}
 .imsteg{display:inline-block;margin:0 0 10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-weight:800}
 .imlista{text-align:left;max-width:420px;margin:0 auto 14px;padding-left:1.3em}
 .imlista li{margin-bottom:6px}
@@ -228,7 +228,7 @@ article ul li{margin-bottom:6px}
 .imkort.kkp .stor-t{font-size:clamp(1.5rem,7vw,2.2rem)}
 .kkalt{list-style:none;padding:0;margin:0 auto 14px;max-width:520px;display:grid;gap:8px;counter-reset:kk}
 .kkalt button{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:10px 14px;border-radius:16px;border:2px solid var(--kant);background:var(--yta);font-weight:700;font-size:1rem;text-align:left;cursor:pointer}
-.kkalt button b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--yta2);font:800 1rem "Baloo 2",sans-serif}
+.kkalt button b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--yta2);font:800 1rem "Rubik",sans-serif}
 .kkalt button[aria-pressed=true]{border-color:#c79bff;background:#2e2350}
 .kkalt button[aria-pressed=true] b{background:#c79bff;color:#1d1630}
 .kkalt button.ratt{border-color:var(--mint);background:#123d33}.kkalt button.ratt b{background:var(--mint);color:#062a24}
@@ -237,7 +237,7 @@ article ul li{margin-bottom:6px}
 .kkalt button.bort{opacity:.45}
 .kktips{margin:8px 0 0;color:var(--dim);font-size:.9rem}
 .kkinl{color:var(--dim);font-weight:700;margin:0 0 10px}
-.kkres{font:800 clamp(1.8rem,8vw,2.4rem)/1.1 "Baloo 2",sans-serif;margin:4px 0 10px}
+.kkres{font:800 clamp(1.8rem,8vw,2.4rem)/1.1 "Rubik",sans-serif;margin:4px 0 10px}
 .kkres.ratt{color:var(--mint)}.kkres.fel{color:#ff7a8e}
 .verktygslank.kklank{background:linear-gradient(150deg,#c79bff33,#6a3fc033);border-color:#8a5ad8}
 .verktygslank.imlank{background:linear-gradient(150deg,#ff9a5a33,#b8325a33);border-color:#b8325a}
@@ -246,7 +246,7 @@ article ul li{margin-bottom:6px}
 .verktyg>p{color:var(--dim);margin:6px 0 14px}
 .kvar{display:inline-block;margin:0 0 10px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-weight:800}
 .kortplats{display:grid;place-items:center;perspective:900px}
-.spkort{position:relative;height:max(210px,min(calc(100vh - 310px),calc(100svh - 310px),440px));width:auto;max-width:78vw;aspect-ratio:5/7;container-type:size;border-radius:20px;background:#fff;color:#1d1630;box-shadow:0 18px 40px rgba(0,0,0,.5);border:0;padding:0;cursor:pointer;font-family:"Baloo 2",Georgia,serif}
+.spkort{position:relative;height:max(210px,min(calc(100vh - 310px),calc(100svh - 310px),440px));width:auto;max-width:78vw;aspect-ratio:5/7;container-type:size;border-radius:20px;background:#fff;color:#1d1630;box-shadow:0 18px 40px rgba(0,0,0,.5);border:0;padding:0;cursor:pointer;font-family:"Rubik",Georgia,serif}
 .spkort.rod{color:#d22e4a}
 .spkort .hr{position:absolute;display:flex;flex-direction:column;align-items:center;line-height:.9;font-weight:800;font-size:12cqh}
 .spkort .hr i{font-style:normal;font-size:.85em}
@@ -255,10 +255,10 @@ article ul li{margin-bottom:6px}
 .spkort .mitt.bild{font-size:34cqh;font-weight:800}
 .spkort .mitt.bild small{display:block;font-size:.45em;text-align:center;margin-top:-.2em}
 .spkort.baksida{background:repeating-linear-gradient(45deg,#c22f52 0 10px,#a0203f 10px 20px);border:10px solid #fff;color:#fff}
-.spkort.baksida .mitt{font-size:1.3rem;font-weight:800;padding:20px;font-family:"Nunito Sans",sans-serif;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+.spkort.baksida .mitt{font-size:1.3rem;font-weight:800;padding:20px;font-family:"Space Grotesk",sans-serif;text-shadow:0 2px 6px rgba(0,0,0,.4)}
 .spkort.slut{background:var(--yta);color:var(--text);border:2px dashed var(--kant);box-shadow:none}
-.spkort.slut .mitt{font-size:1.3rem;font-weight:800;padding:20px;font-family:"Nunito Sans",sans-serif}
-.kortnamn{font:800 1.35rem "Baloo 2",sans-serif;margin:10px 0 0;min-height:1.6em}
+.spkort.slut .mitt{font-size:1.3rem;font-weight:800;padding:20px;font-family:"Space Grotesk",sans-serif}
+.kortnamn{font:800 1.35rem "Rubik",sans-serif;margin:10px 0 0;min-height:1.6em}
 .forra{color:var(--dim);font-size:.9rem;min-height:1.4em}
 .verktyg .spela{border:0;width:100%;cursor:pointer}
 .verktyg .spela:disabled{opacity:.45}
@@ -276,11 +276,11 @@ article ul li{margin-bottom:6px}
 @keyframes rull{0%{transform:rotate(-200deg) scale(.6);opacity:.3}70%{transform:rotate(12deg) scale(1.05)}}
 .verktyg.medregel .spkort{height:max(170px,min(calc(100vh - 450px),calc(100svh - 450px),380px))}
 .kortregel{margin:10px auto 12px;padding:12px 16px;border-radius:16px;background:var(--yta);border:1px solid var(--kant);text-align:left;min-height:4.2em}
-.kortregel b{display:block;font:800 1.25rem "Baloo 2",sans-serif;color:var(--ol)}
+.kortregel b{display:block;font:800 1.25rem "Rubik",sans-serif;color:var(--ol)}
 .kortregel p{margin:2px 0 0}
 .kortregel a{color:var(--dim);font-size:.9rem}
-.summa{font:800 clamp(2.4rem,11vw,3.4rem)/1 "Baloo 2",sans-serif;color:var(--ol);margin:12px 0 2px}
-.summa small{display:block;font:700 .9rem "Nunito Sans",sans-serif;color:var(--dim);margin-top:4px}
+.summa{font:800 clamp(2.4rem,11vw,3.4rem)/1 "Rubik",sans-serif;color:var(--ol);margin:12px 0 2px}
+.summa small{display:block;font:700 .9rem "Space Grotesk",sans-serif;color:var(--dim);margin-top:4px}
 .verktygslank{display:flex;align-items:center;gap:12px;margin:14px 0;padding:12px 16px;border-radius:16px;background:var(--yta);border:2px solid var(--kant);text-decoration:none;font-weight:800}
 .verktygslank svg{width:52px;height:46px;flex:none}
 .verktygslank small{display:block;font-weight:600;color:var(--dim)}
@@ -298,7 +298,7 @@ body.ispel .topp,body.ispel .slump{display:none}
 .sval p.vtext{margin:14px 0 10px}
 .nivor{display:grid;gap:10px}
 .niva{display:flex;align-items:center;gap:14px;min-height:76px;padding:12px 16px;border-radius:18px;border:2px solid var(--kant);background:var(--yta);cursor:pointer;text-align:left;width:100%}
-.niva b{display:block;font:800 1.3rem/1.1 "Baloo 2",sans-serif}
+.niva b{display:block;font:800 1.3rem/1.1 "Rubik",sans-serif}
 .niva small{color:var(--dim)}
 .niva .pr{width:16px;height:16px;border-radius:50%;flex:none}
 .niva div{flex:1}
@@ -311,7 +311,7 @@ body.ispel .topp,body.ispel .slump{display:none}
 .egna{margin-top:22px}
 .egna h3{font-size:1.15rem;margin-bottom:4px}
 .egnarad{display:flex;gap:8px;margin:8px 0}
-.egnarad input{flex:1;padding:12px 14px;font:16px "Nunito Sans",sans-serif;border-radius:14px;border:1px solid var(--kant);background:var(--yta);color:var(--text)}
+.egnarad input{flex:1;padding:12px 14px;font:16px "Space Grotesk",sans-serif;border-radius:14px;border:1px solid var(--kant);background:var(--yta);color:var(--text)}
 .egnarad button{min-height:48px;padding:0 16px;border-radius:14px;border:0;background:var(--bla);color:#0b1240;font-weight:800;cursor:pointer}
 .egnalista{list-style:none;padding:0;margin:0;display:grid;gap:6px}
 .egnalista li{display:flex;align-items:center;gap:8px;padding:8px 8px 8px 14px;border-radius:12px;background:var(--yta)}
@@ -325,8 +325,8 @@ body.ispel .topp,body.ispel .slump{display:none}
 .raknare .nb{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.08);font-size:.85rem}
 .kortyta{flex:1;display:flex;align-items:center;justify-content:center;padding:14px 0;min-height:260px;touch-action:pan-y}
 .frkort{position:relative;width:100%;min-height:min(62vh,520px);display:flex;flex-direction:column;justify-content:center;padding:28px 24px;border-radius:30px;background:linear-gradient(160deg,#3a2747,#26182f);border:2px solid currentColor;box-shadow:0 20px 50px rgba(0,0,0,.5);cursor:pointer;will-change:transform}
-.frkort .inl{font:700 1.05rem "Nunito Sans",sans-serif;color:var(--dim);margin-bottom:10px}
-.frkort .fr{font:800 clamp(1.9rem,8.5vw,3rem)/1.12 "Baloo 2",sans-serif;color:var(--text);text-wrap:balance;overflow-wrap:anywhere}
+.frkort .inl{font:700 1.05rem "Space Grotesk",sans-serif;color:var(--dim);margin-bottom:10px}
+.frkort .fr{font:800 clamp(1.9rem,8.5vw,3rem)/1.12 "Rubik",sans-serif;color:var(--text);text-wrap:balance;overflow-wrap:anywhere}
 .frkort .tips{position:absolute;left:0;right:0;bottom:16px;text-align:center;color:var(--dim);font-size:.82rem;opacity:.8}
 .frkort.slut .fr{font-size:clamp(1.7rem,7vw,2.4rem)}
 .frkort.ut-v{animation:utv .18s ease-in forwards}.frkort.ut-h{animation:uth .18s ease-in forwards}
@@ -336,10 +336,204 @@ body.ispel .topp,body.ispel .slump{display:none}
 @keyframes inh{from{transform:translateX(40%) scale(.96);opacity:0}}
 @keyframes inv{from{transform:translateX(-40%) scale(.96);opacity:0}}
 .kontroll{display:flex;align-items:center;gap:12px}
-.kontroll .nasta{flex:1;min-height:64px;border:0;border-radius:20px;background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;font:800 1.5rem "Baloo 2",sans-serif;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.kontroll .nasta{flex:1;min-height:64px;border:0;border-radius:20px;background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;font:800 1.5rem "Rubik",sans-serif;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.35)}
 .kontroll .rund{width:60px;height:60px}
 .kontroll .nasta:active,.rund:active{transform:scale(.97)}
 @media(prefers-reduced-motion:reduce){.frkort{animation:none!important}}
+/* ===== Inför kvällen: gänget, kvällens lista och timer ===== */
+.ikvall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:-6px 0 18px}
+.ikvall a{display:flex;align-items:center;gap:10px;min-height:66px;padding:10px 12px;border-radius:18px;background:var(--yta);border:2px solid var(--kant);text-decoration:none;font-weight:800;line-height:1.15}
+.ikvall a:active{transform:scale(.98)}
+.ikvall svg{width:40px;height:36px;flex:none}
+.ikvall span{min-width:0}
+.ikvall small{display:block;font-weight:600;color:var(--dim);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ikvall .kvl{border-color:#2f8f74}.ikvall .gl{border-color:#5160d6}
+.lekknappar{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.lekknappar .favknapp{margin-top:0}
+.kvknapp.pa{background:var(--mint);border-color:var(--mint);color:#062a24}
+.turruta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0;padding:10px 12px 10px 16px;border-radius:16px;background:linear-gradient(150deg,#7aa8ff22,#5160d622);border:2px solid #5160d6}
+.turruta>div{flex:1;min-width:110px}
+.turruta small{display:block;color:var(--dim);font-size:.78rem;font-weight:700}
+.turruta b{font:800 1.5rem/1.1 "Rubik",sans-serif;color:var(--bla);overflow-wrap:anywhere}
+.turruta .liten{min-height:44px;padding:0 12px}
+.turtom{display:inline-block;margin:2px 0 10px;color:var(--bla);font-weight:700;font-size:.92rem}
+#turnamn.pop{animation:pop .35s}
+@keyframes pop{0%{transform:scale(.6);opacity:.3}70%{transform:scale(1.12)}}
+.timer{margin:14px 0;padding:14px 16px 12px;border-radius:18px;background:var(--yta);border:2px solid var(--kant);text-align:center}
+.timer>small{display:block;color:var(--dim);font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.timer .tid{font:800 clamp(3rem,16vw,4.2rem)/1 "Rubik",sans-serif;color:var(--ol);font-variant-numeric:tabular-nums;margin:8px 0 10px}
+.timer.kor{border-color:var(--ol)}
+.timer.slut{border-color:var(--vin);animation:blink .45s 6}
+.timer.slut .tid{color:var(--vin)}
+@keyframes blink{50%{background:#e2475f55}}
+.timer .chips{justify-content:center;flex-wrap:wrap;margin:0 0 10px}
+.timer .chip[aria-pressed=true]{background:#3a2a14;border-color:var(--ol);color:var(--text)}
+.timer .tstart{background:linear-gradient(150deg,#ffb838,#d9721e);color:#2a1300;border:0;min-width:140px}
+.timer .tstart.paus{background:var(--yta2);color:var(--text)}
+.gang .ganglista{list-style:none;padding:0;margin:14px 0;display:grid;gap:6px;text-align:left}
+.ganglista li{display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;border-radius:12px;background:var(--yta);border:2px solid transparent;font-weight:700}
+.ganglista li.tur{border-color:var(--bla)}
+.ganglista li span{flex:1;overflow-wrap:anywhere}
+.ganglista li em{font-style:normal;font-size:.78rem;color:var(--bla);font-weight:800}
+.ganglista button{width:40px;height:40px;border-radius:10px;border:0;background:var(--yta2);cursor:pointer;font-size:1.1rem}
+.vemborjar{margin:16px 0 12px}
+.vemborjar small{display:block;color:var(--dim);font-weight:700}
+.vemborjar b{display:block;font:800 clamp(2.2rem,11vw,3rem)/1.1 "Rubik",sans-serif;color:var(--bla);overflow-wrap:anywhere}
+.gang .egnarad button{background:var(--bla)}
+.kvlista{list-style:none;padding:0;margin:16px 0;display:grid;gap:8px}
+.kvlista li{display:flex;align-items:center;gap:6px;padding:6px;border-radius:16px;background:var(--yta);border:1px solid var(--kant)}
+.kvlista li>a{flex:1;display:flex;align-items:center;gap:10px;min-height:52px;text-decoration:none;padding:2px 4px}
+.kvlista .fb{width:44px;height:44px;flex:none}
+.kvlista b{display:block;line-height:1.2}
+.kvlista small{display:block;color:var(--dim);font-size:.8rem}
+.kvflytt{display:flex;gap:4px;flex:none}
+.kvflytt button{width:38px;height:42px;border-radius:10px;border:0;background:var(--yta2);cursor:pointer;font-size:1.05rem;font-weight:800}
+.kvflytt button:disabled{opacity:.3}
+.kvlista+.spela{margin-top:6px}
+.kvbar{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:stretch;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(26,16,36,.95);backdrop-filter:blur(10px);border-top:1px solid #2f8f74}
+.kvbar a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:14px;background:var(--yta);border:1px solid var(--kant);text-decoration:none;font-weight:800}
+.kvbar .kvpil{width:60px;font-size:1.4rem;flex:none}
+.kvbar .kvpil[aria-disabled=true]{opacity:.3;pointer-events:none}
+.kvbar .kvmitt{flex:1;flex-direction:column;line-height:1.15;padding:4px 8px;text-align:center}
+.kvbar .kvmitt small{color:var(--dim);font-size:.78rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.kvbar .kvmitt b{color:var(--mint)}
+body.medkv .ansvar{padding-bottom:90px}
+.kvplats{height:70px}
+.frkort .vem{position:absolute;top:16px;left:0;right:0;text-align:center;font-weight:800;font-size:.95rem;color:var(--bla)}
+@media(max-width:360px){.ikvall{grid-template-columns:1fr}}
+/* ===== Design B: ljus och lekfull (2026-11-25). Krämvit bakgrund, svarta kanter, klara färger som klistermärken. ===== */
+:root{color-scheme:light;--bg:#fff6e5;--yta:#fff;--yta2:#f6ecd6;--kant:#141414;--text:#141414;--dim:#5b5249;--ol:#e8590c;--vin:#ff6b9d;--mint:#2fb36b;--bla:#2b6fd6;
+ --gul:#ffd23f;--rosa:#ff6b9d;--gron:#7ae582;--blaa:#4cc9f0;--lila:#b892ff;--skugga:4px 4px 0 #141414}
+body{background:var(--bg);background-image:radial-gradient(#14141412 1.2px,transparent 1.4px);background-size:22px 22px;background-attachment:scroll}
+h1,h2,h3{font-weight:900;letter-spacing:-.01em}
+.topp{background:rgba(255,246,229,.94);border-bottom:2.5px solid var(--kant)}
+.logo{display:inline-flex;flex:none;margin-right:auto;font-weight:900;background:var(--gul);border:2.5px solid var(--kant);border-radius:10px;padding:5px 10px 4px;box-shadow:3px 3px 0 var(--kant);transform:rotate(-2deg);font-size:1.2rem}
+.logo span{color:inherit}
+.tbk,.liten,.favknapp,.chip,.abc a,.rund,.stepper button,.egnarad button,.kvflytt button,.ganglista button,.egnalista button{border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant);background:#fff;color:var(--text)}
+.tbk:active,.liten:active,.favknapp:active,.chip:active,.rund:active,.stepper button:active,.stor:active,.ruta:active,.spela:active,.verktygslank:active,.ikvall a:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--kant)}
+.stepper button:disabled,.kvflytt button:disabled{box-shadow:none}
+.chip{color:var(--text);font-weight:700;box-shadow:2px 2px 0 var(--kant)}
+.chip.pa,.chip[aria-pressed=true],.imkats .chip[aria-pressed=true],.kkval .chip[aria-pressed=true],.timer .chip[aria-pressed=true]{background:var(--gul);border-color:var(--kant);color:var(--text)}
+.sprak button{border:2.5px solid var(--kant);opacity:.45}
+.sprak button[aria-pressed="true"]{border-color:var(--kant);box-shadow:2px 2px 0 var(--kant)}
+.hej h1{font-size:clamp(2.3rem,10vw,3.3rem);line-height:1}
+.sok{border:2.5px solid var(--kant);box-shadow:var(--skugga);background:#fff;color:var(--text)}
+.sok:focus{outline:3px solid var(--blaa);outline-offset:2px;border-color:var(--kant)}
+.forslag{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.forslag a.akt,.forslag a:hover{background:var(--yta2)}
+.forslag .fn mark,.forslag .alla{color:var(--ol)}
+.stor{border:2.5px solid var(--kant);box-shadow:5px 5px 0 var(--kant);color:var(--text)}
+.stor .n{background:#fff;color:var(--text);border:2px solid var(--kant)}
+.c-dryck{background:var(--blaa);color:var(--text)}.c-slump{background:var(--gul);color:var(--text)}.c-fav{background:var(--rosa);color:var(--text)}
+.c-kortlek{background:var(--gron);color:var(--text)}.c-tarn{background:var(--lila);color:var(--text)}
+.c-fri{background:var(--gron);color:var(--text)}.c-alla{background:var(--blaa);color:var(--text)}.c-impostor{background:#ff9f45;color:var(--text)}.c-korkort{background:var(--lila);color:var(--text)}
+.ikvall a{border:2.5px solid var(--kant);box-shadow:var(--skugga);background:#fff}
+.ikvall .kvl{background:#d9f7e2;border-color:var(--kant)}.ikvall .gl{background:#dcecff;border-color:var(--kant)}
+.ikvall small{color:var(--dim)}
+.lhuv h1,.verktyg h1{font-size:clamp(2rem,8.5vw,2.8rem)}
+.abc a span{color:var(--ol)}
+.bokstav span{color:var(--text)}
+.ruta{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.rfav{color:#e0336f}
+.lekbild{background:var(--yta2);border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.svar i{background:#d9cfbd}.svar i.p{background:var(--ol)}
+.fakta div{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.fakta b a{color:var(--bla)}
+article h2{color:var(--text);font-size:1.45rem}
+ol.regler li{background:#fff;border:2px solid var(--kant)}
+ol.regler li::before{background:var(--gul);color:var(--text);border:2px solid var(--kant);line-height:24px}
+.notis{background:#ffe1ea;border:2.5px solid var(--kant);color:var(--text)}
+.taggar span{background:#fff;border:1.5px solid var(--kant);color:var(--text)}
+.favknapp.pa{background:var(--rosa);border-color:var(--kant);color:var(--text)}
+.kvknapp.pa{background:var(--gron);border-color:var(--kant);color:var(--text)}
+.verktygslank{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.verktygslank.kklank{background:#efe5ff;border-color:var(--kant)}.verktygslank.imlank{background:#ffe9d6;border-color:var(--kant)}
+.spela,.aldersparr .ja18{background:var(--gul);color:var(--text);border:2.5px solid var(--kant)!important;box-shadow:5px 5px 0 var(--kant);font-weight:900}
+.startspel{background:var(--gron);color:var(--text)}
+.verktyg .spela:disabled{box-shadow:none}
+.slump{background:var(--rosa);color:var(--text);border:2.5px solid var(--kant);box-shadow:4px 4px 0 var(--kant)}
+.turruta{background:#dcecff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.turruta b,.vemborjar b,#turnamn{color:var(--text)}
+.turtom{color:var(--bla)}
+.timer{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.timer.kor{background:#fff8d6;border-color:var(--kant)}
+.timer .tid{color:var(--text)}
+.timer.slut{background:#ffe1ea}.timer.slut .tid{color:#d61f5c}
+@keyframes blink{50%{background:var(--rosa)}}
+.timer .tstart{background:var(--gul);color:var(--text);border:2.5px solid var(--kant)}
+.timer .tstart.paus{background:#fff}
+.ganglista li,.egnalista li{background:#fff;border:2px solid var(--kant)}
+.ganglista li.tur{background:#dcecff;border-color:var(--kant)}
+.ganglista li em{color:var(--bla)}
+.egnarad input{border:2.5px solid var(--kant);background:#fff;color:var(--text)}
+.egnarad button,.gang .egnarad button{background:var(--blaa);color:var(--text)}
+.kvlista li{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.kvbar{background:rgba(255,246,229,.96);border-top:2.5px solid var(--kant)}
+.kvbar a{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.kvbar .kvmitt{background:#d9f7e2}.kvbar .kvmitt b{color:var(--text)}
+.antalrad,.imvaxla{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.imvaxla i{background:#e6dcc8;border:2px solid var(--kant)}
+.imvaxla[aria-pressed=true] i{background:var(--gron)}
+.imvaxla i:after{border:2px solid var(--kant);top:2px;left:2px;width:22px;height:22px}
+.stepper output{color:var(--text)}
+.imsteg{background:#fff;border:2px solid var(--kant)}
+.imkort{border:3px solid var(--kant)!important;box-shadow:6px 6px 0 var(--kant)}
+.imkort .num{color:var(--text)}
+.imkort.dold{background:repeating-linear-gradient(45deg,var(--rosa) 0 14px,#ff86ad 14px 28px)}
+.imkort.dold .etikett,.imkort.dold p{color:var(--text)!important}
+.imkort.ord,.imkort.kkp{background:#fff;color:var(--text)}
+.imkort.imp{background:var(--rosa);color:var(--text)}
+.kkalt button{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant);color:var(--text)}
+.kkalt button[aria-pressed=true]{background:#efe5ff;border-color:var(--kant)}.kkalt button[aria-pressed=true] b{background:var(--lila);color:var(--text)}
+.kkalt button.ratt{background:#d9f7e2;border-color:var(--kant)}.kkalt button.ratt b{background:var(--gron);color:var(--text)}
+.kkalt button.fel{background:#ffe1ea;border-color:var(--kant)}.kkalt button.fel b{background:var(--rosa);color:var(--text)}
+.kkres.ratt{color:#1e8a4f}.kkres.fel{color:#d61f5c}
+.kortregel{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.kortregel b{color:var(--text)}
+.summa{color:var(--text)}
+.spkort{border:3px solid var(--kant);box-shadow:6px 6px 0 var(--kant)}
+.spkort.baksida{border:10px solid #fff;outline:3px solid var(--kant);background:repeating-linear-gradient(45deg,var(--rosa) 0 10px,#ff86ad 10px 20px)}
+.tarningar svg{filter:drop-shadow(4px 4px 0 #141414)}
+.tarningar svg rect:first-of-type{stroke:#141414;stroke-width:4}
+.spel{background:var(--bg);background-image:radial-gradient(#14141412 1.2px,transparent 1.4px);background-size:22px 22px}
+.shuv h2{font-weight:900}
+.raknare{color:var(--text)}
+.raknare .nb{background:#fff;border:2px solid var(--kant)}
+.n-Lugn{color:#1e8a4f}.n-Lagom{color:#c76a00}.n-Het{color:#d61f5c}.n-Egna{color:#2b6fd6}.n-Fav{color:#7a4fd6}
+.frkort{background:#fff;border:3px solid var(--kant)!important;box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--gron),15px 16px 0 1px var(--kant)}
+.frkort.n-Lagom{box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--gul),15px 16px 0 1px var(--kant)}
+.frkort.n-Het{box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--rosa),15px 16px 0 1px var(--kant)}
+.frkort.n-Egna,.frkort.n-Fav{box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--blaa),15px 16px 0 1px var(--kant)}
+.frkort .fr{font-weight:900;letter-spacing:-.01em}
+.frkort .inl{color:var(--dim)}
+.frkort .vem{color:var(--bla)}
+.kontroll .nasta{background:var(--blaa);color:var(--text);border:2.5px solid var(--kant)!important;box-shadow:5px 5px 0 var(--kant);font-weight:900}
+.rund.pa{background:var(--rosa);border-color:var(--kant);color:var(--text)}
+.niva{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant);color:var(--text)}
+.sbotten{background:linear-gradient(transparent,var(--bg) 30%)}
+.ansvar b{border-color:var(--kant);color:var(--text);background:var(--gul)}
+.aldersparr{background:rgba(255,246,229,.97)}
+.aldersparr .ruta18{background:#fff;border:3px solid var(--kant);box-shadow:8px 8px 0 var(--kant)}
+.aldersparr .tag18{border-color:var(--kant);color:var(--text);background:var(--gul)}
+.mini{background:#ffe1ea;color:#a3123f}.mini.d{background:#fff1c2;color:#8a5200}
+.kat{background:#fff;border:2.5px solid var(--kant)}
+.kat[aria-pressed=true]{background:var(--gul);border-color:var(--kant)}
+:focus-visible{outline-color:var(--bla)!important}
+/* Förslagslådan */
+.forslagslank{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding:12px 16px;border-radius:18px;background:#fff1c2;border:2.5px solid var(--kant);box-shadow:var(--skugga);text-decoration:none;font-weight:800}
+.forslagslank .em{font-size:1.9rem;line-height:1}
+.forslagslank small{display:block;font-weight:600;color:var(--dim);font-size:.85rem}
+.fsform{text-align:left;margin-top:8px}
+.fsform h3{font-size:1.1rem;margin:16px 0 8px}
+.fsform h3 small{font:600 .85rem "Space Grotesk",sans-serif;color:var(--dim)}
+.fstyper{flex-wrap:wrap}
+.fsform textarea,.fsform input{width:100%;padding:12px 14px;font:16px "Space Grotesk",sans-serif;border-radius:14px;border:2.5px solid var(--kant);background:#fff;color:var(--text);box-shadow:3px 3px 0 var(--kant);resize:vertical}
+.fsform textarea:focus,.fsform input:focus{outline:3px solid var(--blaa);outline-offset:2px}
+.fsinfo{font-size:.85rem;color:var(--dim);margin:14px 0}
+.fsfel{background:#ffe1ea;border:2px solid var(--kant);border-radius:12px;padding:10px 12px;font-weight:700}
+.fsform .spela{width:100%;border:0;cursor:pointer}
+.tackruta{font-size:4rem;margin:10px 0}
+.ansvar a{color:inherit;font-weight:700}
 </style>
 </head>
 <body>
@@ -455,7 +649,7 @@ body.ispel .topp,body.ispel .slump{display:none}
 // ===== Språk: svenska (standard) eller engelska. Valet sparas i telefonen. =====
 const SPRAKNYCKEL = 'dryckeslexikon-sprak';
 let LANG = (() => { try { return localStorage.getItem(SPRAKNYCKEL) === 'en' ? 'en' : 'sv'; } catch(e) { return 'sv'; } })();
-const EN = {" och ": " and ", "1 tärning": "1 die", "Alla antal": "Any number", "Alla får samma hemliga ord utom impostorn, som bara får veta kategorin. Skicka runt telefonen så att var och en ser sitt ord.": "Everyone gets the same secret word except the impostor, who only gets the category. Pass the phone around so each person sees their word.", "Alla lekar": "All games", "Alla lägger fram sitt körkort eller id. En spelare får ett hemligt påstående och rangordnar körkorten. De andra gissar vilket påstående det var.": "Everyone puts down their driving licence or ID. One player gets a secret statement and ranks the licences. The others guess which statement it was.", "Alla nivåer": "All levels", "Alla regler": "All rules", "Alla {n} frågor är visade!": "All {n} questions have been shown!", "Allt annat roligt.": "Everything else that's fun.", "Allt du behöver är en kortlek.": "All you need is a deck of cards.", "Antal påståenden att gissa bland": "Number of statements to guess from", "Antal tärningar": "Number of dice", "Appen är bara för dig som har fyllt 18. Välkommen tillbaka då!": "The app is only for people aged 18 or over. Welcome back then!", "Avbryt rundan": "Cancel round", "Bara favoriter": "Favourites only", "Bara ni, rösterna och ev. något att dricka.": "Just you, your voices and maybe something to drink.", "Behövs": "You need", "Blanda om": "Shuffle again", "Blir impostorn utröstad får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå.": "If the impostor is voted out, they get one chance to guess the word. If they guess right, the impostor still wins.", "Byt påstående": "Change statement", "Dags att prata": "Time to talk", "Den som rangordnar": "The ranker", "Det här behövs": "What you need", "Det var sista kortet. Blanda om för en ny lek.": "That was the last card. Shuffle for a new deck.", "Diskutera och rösta på den ni tror är impostor.": "Discuss and vote for who you think the impostor is.", "Dra ett kort så visas vad det betyder.": "Draw a card to see what it means.", "Dra första kortet": "Draw the first card", "Dra kort direkt i telefonen.": "Draw cards right on your phone.", "Drick ansvarsfullt. Ni bestämmer själva om, när och hur mycket det ska drickas.": "Drink responsibly. You decide for yourselves if, when and how much to drink.", "Dryckeslexikon innehåller lekar där dricka kan ingå och är till för dig som har fyllt 18. Drick ansvarsfullt. Alla lekar går lika bra att köra utan alkohol.": "Dryckeslexikon has games that can involve drinking and is meant for people aged 18 or over. Drink responsibly. Every game works just as well without alcohol.", "Du slog {n}": "You rolled {n}", "Du vet inte ordet. Låtsas att du gör det och försök lista ut det.": "You don't know the word. Pretend you do and try to work it out.", "Du är": "You are the", "Egen": "Own", "Egna frågor": "Your own questions", "Era sparade lekar.": "Your saved games.", "Facit": "The answer", "Favorit": "Favourite", "Favoriter": "Favourites", "Fel gissat!": "Wrong guess!", "Fler impostorer": "More impostors", "Fler spelare": "More players", "Fler tärningar": "More dice", "Frågelek": "Question games", "Frågor ni har sparat med hjärtat": "Questions you've saved with the heart", "Färre impostorer": "Fewer impostors", "Färre spelare": "Fewer players", "Färre tärningar": "Fewer dice", "Förra frågan": "Previous question", "Förra kortet: ": "Previous card: ", "Ge telefonen till": "Hand the phone to", "Gott sällskap": "Good company", "Gräsmatta, stolar eller plats att springa.": "A lawn, chairs or room to run.", "Göm och lämna till spelare {i}": "Hide and pass to player {i}", "Göm. Alla har sett sitt ord": "Hide. Everyone has seen their word", "Hela biblioteket, sorterat efter vad ni behöver.": "The whole library, sorted by what you need.", "Hela samlingen, sorterad efter vad ni behöver.": "The whole collection, sorted by what you need.", "Hemligt påstående, rangordna och gissa": "Secret statement, rank and guess", "Het": "Hot", "Hittade inte leken.": "Couldn't find that game.", "Huvudval": "Main menu", "Håll ordet hemligt. En av er är impostor.": "Keep the word secret. One of you is the impostor.", "Högtalare, spellista eller en film.": "A speaker, a playlist or a film.", "Impostorer": "Impostors", "Impostorerna var": "The impostors were", "Impostorn får se kategorin": "The impostor sees the category", "Impostorn var": "The impostor was", "Inga favoriter än. Öppna en lek och tryck på hjärtat för att spara den här.": "No favourites yet. Open a game and tap the heart to save it here.", "Inga lekar matchar. Prova att ändra filtren.": "No games match. Try changing the filters.", "Inga lekar passar just nu. Gå tillbaka och markera fler saker eller ändra antalet.": "No games fit right now. Go back and select more things or change the number.", "Inga tärningar? Använd telefonen": "No dice? Use your phone", "Ingen kortlek? Använd telefonen": "No cards? Use your phone", "Ingen lek matchar ”{q}”": "No game matches “{q}”", "Inget behövs": "Nothing needed", "Inställt på {t}, som leken använder.": "Set to {t}, as the game uses.", "Ja, jag är 18 år eller äldre": "Yes, I'm 18 or over", "Kasta, studsa och tävla.": "Throw, bounce and compete.", "Kategori:": "Category:", "Kategorier": "Categories", "Klar. Göm och visa alternativen": "Done. Hide and show the options", "Klart!": "Done!", "Kom överens innan ni börjar.": "Agree on them before you start.", "Kortets regel visas när du drar": "The card's rule shows when you draw", "Kortlek": "Cards", "Kärlek, flörtar och det hetaste": "Love, flirting and the spiciest stuff", "Körkortet": "The Licence Game", "Lagom": "Medium", "Lappar, pennor och ibland en timer.": "Paper, pens and sometimes a timer.", "Lekar för er": "Games for you", "Lekar ni har sparat med hjärtat.": "Games you've saved with the heart.", "Lekar som behöver något eget.": "Games that need something special.", "Leken använder {t}.": "The game uses {t}.", "Leken är slut": "The deck is empty", "Lite pinsamt och avslöjande": "A bit embarrassing and revealing", "Lugn": "Calm", "Lägg till": "Add", "Lägg till egna frågor": "Add your own questions", "Lämna telefonen till nästa spelare": "Hand the phone to the next player", "Lätt": "Easy", "Lättare för impostorn": "Easier for the impostor", "Lås svaret och visa": "Lock in the answer and show", "Låt slumpen välja lek åt er.": "Let chance pick a game for you.", "Med kortlek": "With cards", "Med tärningar": "With dice", "Medel": "Medium", "Mingel": "Mingling", "Muggar, bollar, mynt och glas på bordet.": "Cups, balls, coins and glasses on the table.", "Musik eller skärm": "Music or a screen", "Nej, jag är under 18": "No, I'm under 18", "Nivå": "Level", "Ny egen fråga": "New question of your own", "Ny runda": "New round", "När festen flyttar ut.": "When the party moves outside.", "Nästa kort": "Next card", "Nästa →": "Next →", "Några av påståendena liknar det rätta.": "Some of the statements are similar to the right one.", "Ord & gissning": "Words & guessing", "Ord, ljud och gester.": "Words, sounds and gestures.", "Ordet var": "The word was", "Penna och lappar": "Pen and paper", "Plats att röra sig": "Room to move", "Plocka fram en vanlig kortlek.": "Grab a regular deck of cards.", "Prata, avslöja och skratta.": "Talk, reveal and laugh.", "Påståendena är tydligt olika varandra.": "The statements are clearly different from each other.", "Påståendena är väldigt lika det rätta.": "The statements are very similar to the right one.", "Regler": "Rules", "Reglerna varierar mellan sällskap.": "The rules vary between groups.", "Roller och hemligheter.": "Roles and secrets.", "Runda {n}": "Round {n}", "Rätt gissat!": "Right guess!", "Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.": "Make sure nobody else is looking. Then tap here to see your word.", "Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.": "Make sure nobody else is looking. Then tap here to see your statement.", "Skicka runt telefonen, var och en ser sitt ord": "Pass the phone around, each person sees their word", "Skriv fortsättningen på \"{x}\". De sparas bara i den här telefonen.": "Write how \"{x}\" continues. They're only saved on this phone.", "Slumpa": "Random", "Slumpa en lek": "Random game", "Slå 1–10 tärningar.": "Roll 1–10 dice.", "Slå tärningarna": "Roll the dice", "Slå tärningen": "Roll the die", "Slå, bluffa och hoppas.": "Roll, bluff and hope.", "Snällt och roligt för alla": "Friendly and fun for everyone", "Som ni har skrivit själva": "That you've written yourselves", "Spara frågan": "Save the question", "Spela med telefonens kortlek": "Play with the phone's deck of cards", "Spelare": "Players", "Spelare {i}": "Player {i}", "Spelare {i} av {n}": "Player {i} of {n}", "Spelare {i} börjar": "Player {i} starts", "Spelläge": "Game mode", "Starta": "Start", "Stäng": "Close", "Summa {n}": "Total {n}", "Svaret var": "The answer was", "Svår": "Hard", "Svårare: impostorn vet ingenting": "Harder: the impostor knows nothing", "Svårighet": "Difficulty", "Svårighetsgrad": "Difficulty", "Säg ett ord var som hör ihop med det hemliga ordet, varvet runt. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.": "Go around the circle, each saying one word connected to the secret word. Not too obvious, or the impostor will figure it out. Not too vague, or you'll look suspicious.", "Sök efter en lek…": "Search for a game…", "Sök i listan…": "Search the list…", "Ta bort": "Remove", "Ta ett eller två varv med ord.": "Go around once or twice with words.", "Ta översta kortet": "Take the top card", "Tid": "Time", "Till nivåval": "Back to levels", "Till startsidan": "Go to the start page", "Titta på hur körkorten ligger och kom överens. Tryck på ert svar.": "Look at how the licences are laid out and agree. Tap your answer.", "Tryck eller svep för nästa fråga": "Tap or swipe for the next question", "Tryck för att blanda om och köra igen.": "Tap to shuffle and go again.", "Tryck för att ta översta kortet": "Tap to take the top card", "Tryck för nästa kort": "Tap for the next card", "Tryck på knappen för att slå": "Press the button to roll", "Tärning": "Dice", "Tärningar": "Dice", "Tärningar och gärna en kopp.": "Dice, and ideally a cup.", "Utomhus": "Outdoors", "Vad ska vi leka ikväll?": "What shall we play tonight?", "Valt: {v}. Lekar som inte kräver något är också med.": "Selected: {v}. Games that need nothing are included too.", "Varianter": "Variants", "Vem är mest trolig att …": "Who's most likely to …", "Vid bordet": "At the table", "Vilket påstående var det?": "Which statement was it?", "Visa alla {n} träffar": "Show all {n} results", "Visa mitt ord": "Show my word", "Visa ordet och impostorn": "Show the word and the impostor", "Visa påståendet": "Show the statement", "Visa svaret": "Show the answer", "Välj alla": "Select all", "Välj bort alla": "Deselect all", "Välj hur många tärningar ni vill slå.": "Choose how many dice you want to roll.", "Välj minst en kategori": "Pick at least one category", "Välj minst en nivå": "Pick at least one level", "Välj vilka frågor ni vill ha.": "Pick which questions you want.", "inget särskilt": "nothing in particular", "lek": "game", "lekar": "games", "spelare": "players", "spelare {i}": "player {i}", "t.ex. bli kändis?": "e.g. become famous?", "t.ex. ätit en hel tårta själv.": "e.g. eaten a whole cake by myself.", "{n} frågor": "{n} questions", "{n} frågor att visa på skärmen": "{n} questions to show on screen", "{n} kort kvar": "{n} cards left", "{n} lekar": "{n} games", "{n} lekar med regler, antal spelare, tid och svårighetsgrad. Ni bestämmer själva om, när och hur mycket det ska drickas.": "{n} games with rules, number of players, time and difficulty. You decide for yourselves if, when and how much to drink.", "{n} sparade": "{n} saved", "{n} spelare": "{n} players", "{n} tärningar": "{n} dice", "Ändra inställningar": "Change settings", "Är du 18 år eller äldre?": "Are you 18 or over?", "Ölspel/bordslek": "Table games", "Öppna de digitala tärningarna": "Open the digital dice", "Öppna den digitala kortleken": "Open the digital deck of cards", "Öppnas med {t}, som leken använder": "Opens with {t}, as the game uses", "Övrigt": "Other", "↻ Blanda om": "↻ Shuffle", "▶ Spela i telefonen": "▶ Play on your phone", "▶ Starta": "▶ Start", "▶ Starta spel": "▶ Start game", "♡ Spara": "♡ Save", "♥ Sparad": "♥ Saved", "{n} st": "{n}", "Tillbaka": "Back"};
+const EN = {" och ": " and ", "1 tärning": "1 die", "Alla antal": "Any number", "Alla får samma hemliga ord utom impostorn, som bara får veta kategorin. Skicka runt telefonen så att var och en ser sitt ord.": "Everyone gets the same secret word except the impostor, who only gets the category. Pass the phone around so each person sees their word.", "Alla lekar": "All games", "Alla lägger fram sitt körkort eller id. En spelare får ett hemligt påstående och rangordnar körkorten. De andra gissar vilket påstående det var.": "Everyone puts down their driving licence or ID. One player gets a secret statement and ranks the licences. The others guess which statement it was.", "Alla nivåer": "All levels", "Alla regler": "All rules", "Alla {n} frågor är visade!": "All {n} questions have been shown!", "Allt annat roligt.": "Everything else that's fun.", "Allt du behöver är en kortlek.": "All you need is a deck of cards.", "Antal påståenden att gissa bland": "Number of statements to guess from", "Antal tärningar": "Number of dice", "Appen är bara för dig som har fyllt 18. Välkommen tillbaka då!": "The app is only for people aged 18 or over. Welcome back then!", "Avbryt rundan": "Cancel round", "Bara favoriter": "Favourites only", "Bara ni, rösterna och ev. något att dricka.": "Just you, your voices and maybe something to drink.", "Behövs": "You need", "Blanda om": "Shuffle again", "Blir impostorn utröstad får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå.": "If the impostor is voted out, they get one chance to guess the word. If they guess right, the impostor still wins.", "Byt påstående": "Change statement", "Dags att prata": "Time to talk", "Den som rangordnar": "The ranker", "Det här behövs": "What you need", "Det var sista kortet. Blanda om för en ny lek.": "That was the last card. Shuffle for a new deck.", "Diskutera och rösta på den ni tror är impostor.": "Discuss and vote for who you think the impostor is.", "Dra ett kort så visas vad det betyder.": "Draw a card to see what it means.", "Dra första kortet": "Draw the first card", "Dra kort direkt i telefonen.": "Draw cards right on your phone.", "Drick ansvarsfullt. Ni bestämmer själva om, när och hur mycket det ska drickas.": "Drink responsibly. You decide for yourselves if, when and how much to drink.", "Dryckeslexikon innehåller lekar där dricka kan ingå och är till för dig som har fyllt 18. Drick ansvarsfullt. Alla lekar går lika bra att köra utan alkohol.": "Dryckeslexikon has games that can involve drinking and is meant for people aged 18 or over. Drink responsibly. Every game works just as well without alcohol.", "Du slog {n}": "You rolled {n}", "Du vet inte ordet. Låtsas att du gör det och försök lista ut det.": "You don't know the word. Pretend you do and try to work it out.", "Du är": "You are the", "Egen": "Own", "Egna frågor": "Your own questions", "Era sparade lekar.": "Your saved games.", "Facit": "The answer", "Favorit": "Favourite", "Favoriter": "Favourites", "Fel gissat!": "Wrong guess!", "Fler impostorer": "More impostors", "Fler spelare": "More players", "Fler tärningar": "More dice", "Frågelek": "Question games", "Frågor ni har sparat med hjärtat": "Questions you've saved with the heart", "Färre impostorer": "Fewer impostors", "Färre spelare": "Fewer players", "Färre tärningar": "Fewer dice", "Förra frågan": "Previous question", "Förra kortet: ": "Previous card: ", "Ge telefonen till": "Hand the phone to", "Gott sällskap": "Good company", "Gräsmatta, stolar eller plats att springa.": "A lawn, chairs or room to run.", "Göm och lämna till spelare {i}": "Hide and pass to player {i}", "Göm. Alla har sett sitt ord": "Hide. Everyone has seen their word", "Hela biblioteket, sorterat efter vad ni behöver.": "The whole library, sorted by what you need.", "Hela samlingen, sorterad efter vad ni behöver.": "The whole collection, sorted by what you need.", "Hemligt påstående, rangordna och gissa": "Secret statement, rank and guess", "Het": "Hot", "Hittade inte leken.": "Couldn't find that game.", "Huvudval": "Main menu", "Håll ordet hemligt. En av er är impostor.": "Keep the word secret. One of you is the impostor.", "Högtalare, spellista eller en film.": "A speaker, a playlist or a film.", "Impostorer": "Impostors", "Impostorerna var": "The impostors were", "Impostorn får se kategorin": "The impostor sees the category", "Impostorn var": "The impostor was", "Inga favoriter än. Öppna en lek och tryck på hjärtat för att spara den här.": "No favourites yet. Open a game and tap the heart to save it here.", "Inga lekar matchar. Prova att ändra filtren.": "No games match. Try changing the filters.", "Inga lekar passar just nu. Gå tillbaka och markera fler saker eller ändra antalet.": "No games fit right now. Go back and select more things or change the number.", "Inga tärningar? Använd telefonen": "No dice? Use your phone", "Ingen kortlek? Använd telefonen": "No cards? Use your phone", "Ingen lek matchar ”{q}”": "No game matches “{q}”", "Inget behövs": "Nothing needed", "Inställt på {t}, som leken använder.": "Set to {t}, as the game uses.", "Ja, jag är 18 år eller äldre": "Yes, I'm 18 or over", "Kasta, studsa och tävla.": "Throw, bounce and compete.", "Kategori:": "Category:", "Kategorier": "Categories", "Klar. Göm och visa alternativen": "Done. Hide and show the options", "Klart!": "Done!", "Kom överens innan ni börjar.": "Agree on them before you start.", "Kortets regel visas när du drar": "The card's rule shows when you draw", "Kortlek": "Cards", "Kärlek, flörtar och det hetaste": "Love, flirting and the spiciest stuff", "Körkortet": "The Licence Game", "Lagom": "Medium", "Lappar, pennor och ibland en timer.": "Paper, pens and sometimes a timer.", "Lekar för er": "Games for you", "Lekar ni har sparat med hjärtat.": "Games you've saved with the heart.", "Lekar som behöver något eget.": "Games that need something special.", "Leken använder {t}.": "The game uses {t}.", "Leken är slut": "The deck is empty", "Lite pinsamt och avslöjande": "A bit embarrassing and revealing", "Lugn": "Calm", "Lägg till": "Add", "Lägg till egna frågor": "Add your own questions", "Lämna telefonen till nästa spelare": "Hand the phone to the next player", "Lätt": "Easy", "Lättare för impostorn": "Easier for the impostor", "Lås svaret och visa": "Lock in the answer and show", "Låt slumpen välja lek åt er.": "Let chance pick a game for you.", "Med kortlek": "With cards", "Med tärningar": "With dice", "Medel": "Medium", "Mingel": "Mingling", "Muggar, bollar, mynt och glas på bordet.": "Cups, balls, coins and glasses on the table.", "Musik eller skärm": "Music or a screen", "Nej, jag är under 18": "No, I'm under 18", "Nivå": "Level", "Ny egen fråga": "New question of your own", "Ny runda": "New round", "När festen flyttar ut.": "When the party moves outside.", "Nästa kort": "Next card", "Nästa →": "Next →", "Några av påståendena liknar det rätta.": "Some of the statements are similar to the right one.", "Ord & gissning": "Words & guessing", "Ord, ljud och gester.": "Words, sounds and gestures.", "Ordet var": "The word was", "Penna och lappar": "Pen and paper", "Plats att röra sig": "Room to move", "Plocka fram en vanlig kortlek.": "Grab a regular deck of cards.", "Prata, avslöja och skratta.": "Talk, reveal and laugh.", "Påståendena är tydligt olika varandra.": "The statements are clearly different from each other.", "Påståendena är väldigt lika det rätta.": "The statements are very similar to the right one.", "Regler": "Rules", "Reglerna varierar mellan sällskap.": "The rules vary between groups.", "Roller och hemligheter.": "Roles and secrets.", "Runda {n}": "Round {n}", "Rätt gissat!": "Right guess!", "Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.": "Make sure nobody else is looking. Then tap here to see your word.", "Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.": "Make sure nobody else is looking. Then tap here to see your statement.", "Skicka runt telefonen, var och en ser sitt ord": "Pass the phone around, each person sees their word", "Skriv fortsättningen på \"{x}\". De sparas bara i den här telefonen.": "Write how \"{x}\" continues. They're only saved on this phone.", "Slumpa": "Random", "Slumpa en lek": "Random game", "Slå 1–10 tärningar.": "Roll 1–10 dice.", "Slå tärningarna": "Roll the dice", "Slå tärningen": "Roll the die", "Slå, bluffa och hoppas.": "Roll, bluff and hope.", "Snällt och roligt för alla": "Friendly and fun for everyone", "Som ni har skrivit själva": "That you've written yourselves", "Spara frågan": "Save the question", "Spela med telefonens kortlek": "Play with the phone's deck of cards", "Spelare": "Players", "Spelare {i}": "Player {i}", "Spelare {i} av {n}": "Player {i} of {n}", "Spelare {i} börjar": "Player {i} starts", "Spelläge": "Game mode", "Starta": "Start", "Stäng": "Close", "Summa {n}": "Total {n}", "Svaret var": "The answer was", "Svår": "Hard", "Svårare: impostorn vet ingenting": "Harder: the impostor knows nothing", "Svårighet": "Difficulty", "Svårighetsgrad": "Difficulty", "Säg ett ord var som hör ihop med det hemliga ordet, varvet runt. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.": "Go around the circle, each saying one word connected to the secret word. Not too obvious, or the impostor will figure it out. Not too vague, or you'll look suspicious.", "Sök efter en lek…": "Search for a game…", "Sök i listan…": "Search the list…", "Ta bort": "Remove", "Ta ett eller två varv med ord.": "Go around once or twice with words.", "Ta översta kortet": "Take the top card", "Tid": "Time", "Till nivåval": "Back to levels", "Till startsidan": "Go to the start page", "Titta på hur körkorten ligger och kom överens. Tryck på ert svar.": "Look at how the licences are laid out and agree. Tap your answer.", "Tryck eller svep för nästa fråga": "Tap or swipe for the next question", "Tryck för att blanda om och köra igen.": "Tap to shuffle and go again.", "Tryck för att ta översta kortet": "Tap to take the top card", "Tryck för nästa kort": "Tap for the next card", "Tryck på knappen för att slå": "Press the button to roll", "Tärning": "Dice", "Tärningar": "Dice", "Tärningar och gärna en kopp.": "Dice, and ideally a cup.", "Utomhus": "Outdoors", "Vad ska vi leka ikväll?": "What shall we play tonight?", "Valt: {v}. Lekar som inte kräver något är också med.": "Selected: {v}. Games that need nothing are included too.", "Varianter": "Variants", "Vem är mest trolig att …": "Who's most likely to …", "Vid bordet": "At the table", "Vilket påstående var det?": "Which statement was it?", "Visa alla {n} träffar": "Show all {n} results", "Visa mitt ord": "Show my word", "Visa ordet och impostorn": "Show the word and the impostor", "Visa påståendet": "Show the statement", "Visa svaret": "Show the answer", "Välj alla": "Select all", "Välj bort alla": "Deselect all", "Välj hur många tärningar ni vill slå.": "Choose how many dice you want to roll.", "Välj minst en kategori": "Pick at least one category", "Välj minst en nivå": "Pick at least one level", "Välj vilka frågor ni vill ha.": "Pick which questions you want.", "inget särskilt": "nothing in particular", "lek": "game", "lekar": "games", "spelare": "players", "spelare {i}": "player {i}", "t.ex. bli kändis?": "e.g. become famous?", "t.ex. ätit en hel tårta själv.": "e.g. eaten a whole cake by myself.", "{n} frågor": "{n} questions", "{n} frågor att visa på skärmen": "{n} questions to show on screen", "{n} kort kvar": "{n} cards left", "{n} lekar": "{n} games", "{n} lekar med regler, antal spelare, tid och svårighetsgrad. Ni bestämmer själva om, när och hur mycket det ska drickas.": "{n} games with rules, number of players, time and difficulty. You decide for yourselves if, when and how much to drink.", "{n} sparade": "{n} saved", "{n} spelare": "{n} players", "{n} tärningar": "{n} dice", "Ändra inställningar": "Change settings", "Är du 18 år eller äldre?": "Are you 18 or over?", "Ölspel/bordslek": "Table games", "Öppna de digitala tärningarna": "Open the digital dice", "Öppna den digitala kortleken": "Open the digital deck of cards", "Öppnas med {t}, som leken använder": "Opens with {t}, as the game uses", "Övrigt": "Other", "↻ Blanda om": "↻ Shuffle", "▶ Spela i telefonen": "▶ Play on your phone", "▶ Starta": "▶ Start", "▶ Starta spel": "▶ Start game", "♡ Spara": "♡ Save", "♥ Sparad": "♥ Saved", "{n} st": "{n}", "Tillbaka": "Back", "+ Kvällen": "+ Tonight", "Använd gängets namn": "Use the crew's names", "Blanda ordningen": "Shuffle the order", "Bläddra bland lekarna": "Browse the games", "Bläddra med pilarna längst ner": "Use the arrows at the bottom to move on", "Börja om": "Reset", "Flytta ner": "Move down", "Flytta upp": "Move up", "Förra leken": "Previous game", "Gänget": "The crew", "Göm och lämna till {n}": "Hide and pass to {n}", "Inför kvällen": "Before tonight", "Inga namn än. Skriv ett namn i taget.": "No names yet. Add one name at a time.", "Kvällens lista": "Tonight's list", "Listan är tom. Öppna en lek och tryck på + Kvällen, eller låt slumpen välja.": "The list is empty. Open a game and tap + Tonight, or let chance decide.", "Lägg till fler": "Add more", "Lämna telefonen till {n}": "Pass the phone to {n}", "Namn": "Name", "Nästa i tur": "Next in turn", "Nästa lek": "Next game", "Nästa: {x}": "Next: {x}", "Paus": "Pause", "Sista leken ikväll": "Last game tonight", "Skriv in alla som är med ikväll. Då kan appen slumpa vem som börjar, visa vems tur det är och använda namnen i Impostor, Körkortet och spellägena. Namnen sparas bara i den här telefonen.": "Add everyone who is playing tonight. The app can then pick who starts, show whose turn it is and use the names in Impostor, The Licence Game and the game modes. Names are only saved on this phone.", "Skriv in vilka som är med": "Add who is playing", "Slumpa 4 lekar": "Pick 4 random games", "Slumpa en till": "Add a random one", "Säker? Tryck igen": "Sure? Tap again", "Ta bort {n}": "Remove {n}", "Tiden är ute!": "Time's up!", "Timer": "Timer", "Tur": "Turn", "Töm gänget": "Clear the crew", "Töm listan": "Clear the list", "Vems tur?": "Whose turn?", "Välj lekar inför festen": "Pick games for the party", "Välj lekarna inför festen och bläddra mellan dem under kvällen. Lägg till med knappen + Kvällen på en lek.": "Pick the games before the party and flip between them during the night. Add games with the + Tonight button on a game.", "{i} av {n}": "{i} of {n}", "{n} börjar": "{n} starts", "{n} lekar valda": "{n} games picked", "{n} läser upp": "{n} reads", "{n} min": "{n} min", "{n} sek": "{n} sec", "▶ Fortsätt": "▶ Resume", "▶ Starta kvällen": "▶ Start the night", "✓ Kvällen": "✓ Tonight", "🎲 Vem börjar?": "🎲 Who starts?", "👥 Skriv in gänget så slumpar appen vem som börjar": "👥 Add the crew and the app picks who starts", "👥 Skriv in gänget så visas namnen i stället för Spelare 1, 2, 3": "👥 Add the crew to see names instead of Player 1, 2, 3", "Tack för förslaget!": "Thanks for the suggestion!", "Det har kommit fram. Bra idéer läggs in i en kommande uppdatering.": "It has arrived. Good ideas go into a coming update.", "Skicka ett till": "Send another", "Förslagslådan": "Suggestion box", "Saknar ni en lek, har ni fler frågor till spellägena eller har ni hittat något som blivit fel? Skriv här så hamnar det hos oss som gör appen.": "Missing a game, got more questions for the game modes or found something wrong? Write here and it reaches the people who make the app.", "Vad gäller det?": "What is it about?", "Ny lek": "New game", "Nya frågor eller ord": "New questions or words", "Förbättring av appen": "Improving the app", "Något är fel": "Something is wrong", "Annat": "Other", "Ditt förslag": "Your suggestion", "Vad heter leken och hur går den till?": "What is the game called and how does it work?", "Skriv så tydligt du kan.": "Write as clearly as you can.", "Namn eller hur vi når dig": "Name or how to reach you", "(frivilligt)": "(optional)", "Förslaget skickas via Google Formulär. Skriv inget känsligt. Lämnar du inget namn är förslaget anonymt.": "The suggestion is sent via Google Forms. Don't write anything sensitive. If you leave no name, the suggestion is anonymous.", "Det gick inte att skicka. Kolla att telefonen har internet och försök igen.": "It could not be sent. Check that the phone is online and try again.", "Skickar…": "Sending…", "Skicka förslaget": "Send suggestion", "Tipsa om en lek eller en idé till appen": "Suggest a game or an idea for the app"};
 // T('svensk text', {n:3}) ger texten på valt språk. {namn} byts mot värden.
 const T = (s, v) => { let t = LANG === 'en' && EN[s] != null ? EN[s] : s; if (v) t = t.replace(/\{(\w+)\}/g, (m, k) => v[k] ?? m); return t; };
 const Fl = (l, k) => F(l, k);
@@ -561,7 +755,9 @@ function start(){
       ${ikon('kort')}<h2>${T('Kortlek')}</h2><p>${T('Dra kort direkt i telefonen.')}</p></a>
     <a class="stor c-tarn" href="#tarningar">
       ${ikon('tarning')}<h2>${T('Tärningar')}</h2><p>${T('Slå 1–10 tärningar.')}</p></a>
-  </nav>`;
+  </nav>
+  ${inforKvallen()}
+  <a class="forslagslank" href="#forslag"><span class="em" aria-hidden="true">💡</span><span>${T('Förslagslådan')}<small>${T('Tipsa om en lek eller en idé till appen')}</small></span></a>`;
   const sok = $('#sok'), fl = $('#forslag');
   let akt = -1;
   const ga = () => { if (sok.value.trim()){ S.sok = sok.value; location.hash = 'alla'; } };
@@ -655,7 +851,7 @@ function lekSida(id){
   if (!l){ $('#vy').innerHTML = `<p class="tom">${T('Hittade inte leken.')} <a href="#">${T('Till startsidan')}</a></p>`; return; }
   const lst = (rubrik, arr, ordnad) => arr && arr.length ? `<h2>${rubrik}</h2><${ordnad?'ol class="regler"':'ul'}>${arr.map(x=>`<li>${esc(x)}</li>`).join('')}</${ordnad?'ol':'ul'}>` : '';
   $('#vy').innerHTML = `<article>
-    <div class="lekhuv">${lekbild(l,'lekbild')}<div style="flex:1"><h1>${esc(F(l,'namn'))}</h1><button type="button" class="favknapp ${FAV.has(l.id)?'pa':''}" data-fav="${esc(l.id)}" aria-pressed="${FAV.has(l.id)}">${FAV.has(l.id)?T('♥ Sparad'):T('♡ Spara')}</button></div></div>
+    <div class="lekhuv">${lekbild(l,'lekbild')}<div style="flex:1"><h1>${esc(F(l,'namn'))}</h1><div class="lekknappar"><button type="button" class="favknapp ${FAV.has(l.id)?'pa':''}" data-fav="${esc(l.id)}" aria-pressed="${FAV.has(l.id)}">${FAV.has(l.id)?T('♥ Sparad'):T('♡ Spara')}</button><button type="button" class="favknapp kvknapp ${KV.includes(l.id)?'pa':''}" data-kv="${esc(l.id)}" aria-pressed="${KV.includes(l.id)}">${KV.includes(l.id)?T('✓ Kvällen'):T('+ Kvällen')}</button></div></div></div>
     <p class="ingress">${esc(F(l,'kort'))}</p>
     <div class="fakta">
       <div><small>${T('Spelare')}</small><b>${spelareText(l.spelare)}</b></div>
@@ -663,9 +859,11 @@ function lekSida(id){
       <div><small>${T('Svårighet')}</small><b>${svarHtml(l.svarighet)}</b></div>
       <div><small>${T('Behövs')}</small><b><a href="#grupp-${l._grupp}">${esc(T(gruppAv(l._grupp).namn))}</a></b></div>
     </div>
+    ${turHtml()}
     ${l.osaker ? `<div class="notis"><b>${T('Reglerna varierar mellan sällskap.')}</b>${F(l,'osaker_kommentar') ? ' '+esc(F(l,'osaker_kommentar')) : ''} ${T('Kom överens innan ni börjar.')}</div>` : ''}
     ${lst(T('Det här behövs'), l.behover && l.behover.length ? F(l,'behover') : [T('Gott sällskap')])}
     ${lst(T('Regler'), F(l,'regler'), true)}
+    ${timerFor_lek(l)}
     ${l.kortregler ? `<a class="verktygslank" href="#kortlek-${encodeURIComponent(l.id)}">${ikon('kort')}<span>${T('Spela med telefonens kortlek')}<small>${T('Kortets regel visas när du drar')}</small></span></a>`
       : (l._grupp==='kortlek' || har(l,/^kortlek/i)) ? `<a class="verktygslank" href="#kortlek">${ikon('kort')}<span>${T('Ingen kortlek? Använd telefonen')}<small>${T('Öppna den digitala kortleken')}</small></span></a>` : ''}
     ${(l._grupp==='tarningar' || har(l,/tärning/i)) ? (n => `<a class="verktygslank" href="${n ? '#tarningar-' + encodeURIComponent(l.id) : '#tarningar'}">${ikon('tarning')}<span>${T('Inga tärningar? Använd telefonen')}<small>${n ? T('Öppnas med {t}, som leken använder', {t: tarningText(n)}) : T('Öppna de digitala tärningarna')}</small></span></a>`)(tarningarFor(l)) : ''}
@@ -674,7 +872,7 @@ function lekSida(id){
     ${FRAGOR[l.id] ? `<a class="spela startspel" href="#spel-${encodeURIComponent(l.id)}">${T('▶ Starta spel')}<span>${T('{n} frågor att visa på skärmen', {n: antalFragor(l.id)})}</span></a>` : ''}
     ${lst(T('Varianter'), F(l,'varianter'))}
     ${F(l,'taggar') && F(l,'taggar').length ? `<div class="taggar">${F(l,'taggar').map(t=>`<span>#${esc(t)}</span>`).join('')}</div>` : ''}
-    
+    ${kvBar(l)}
   </article>`;
 }
 
@@ -764,32 +962,37 @@ document.addEventListener('click', e => {
 
 // ===== Impostor: alla utom impostorn får samma ord (inställningar och använda ord sparas i telefonen) =====
 let IMI = (() => { try { const v = JSON.parse(localStorage.getItem('dryckeslexikon-impostor') || 'null'); if (v && v.spelare) return v; } catch(e) {} return {}; })();
-IMI = {spelare: Math.min(20, Math.max(3, IMI.spelare|0 || 5)), imp: Math.max(1, IMI.imp|0 || 1), visaKat: IMI.visaKat !== false,
+IMI = {spelare: Math.min(20, Math.max(3, IMI.spelare|0 || 5)), imp: Math.max(1, IMI.imp|0 || 1), visaKat: IMI.visaKat !== false, medNamn: IMI.medNamn !== false,
   kat: Array.isArray(IMI.kat) ? IMI.kat.filter(k => IMKAT.includes(k)) : IMKAT.slice(), anvanda: Array.isArray(IMI.anvanda) ? IMI.anvanda.slice(-300) : []};
 if (!IMI.kat.length) IMI.kat = IMKAT.slice();
 const sparaIMI = () => { try { localStorage.setItem('dryckeslexikon-impostor', JSON.stringify(IMI)); } catch(e) {} };
 const maxImp = n => Math.max(1, Math.min(3, Math.floor((n - 1) / 2)));
+const imMedNamn = () => IMI.medNamn !== false && GANG.namn.length >= 3;
+const imAntal = () => imMedNamn() ? Math.min(20, GANG.namn.length) : IMI.spelare;
+const imSp = (i, liten) => IM.namn ? esc(IM.namn[i]) : T(liten ? 'spelare {i}' : 'Spelare {i}', {i: i + 1});
 let IM = {fas:'val'}; // val -> titta (i, visar) -> prata -> svar
 function imStart(){
-  IMI.imp = Math.min(IMI.imp, maxImp(IMI.spelare));
+  const N = imAntal();
+  IMI.imp = Math.min(IMI.imp, maxImp(N));
   const alla = IMI.kat.flatMap(k => IMP.kategorier[k].map(o => [k, o]));
   let pool = alla.filter(([k, o]) => !IMI.anvanda.includes(k + '|' + o));
   if (!pool.length){ IMI.anvanda = IMI.anvanda.filter(x => !alla.some(([k, o]) => x === k + '|' + o)); pool = alla; }
   const [kat, ord] = pool[Math.floor(Math.random() * pool.length)];
   IMI.anvanda.push(kat + '|' + ord); sparaIMI();
-  const imps = new Set(); while (imps.size < IMI.imp) imps.add(Math.floor(Math.random() * IMI.spelare));
-  IM = {fas:'titta', i:0, visar:false, kat, ord, imps, borjar: Math.floor(Math.random() * IMI.spelare)};
+  const imps = new Set(); while (imps.size < IMI.imp) imps.add(Math.floor(Math.random() * N));
+  IM = {fas:'titta', i:0, visar:false, kat, ord, imps, n: N, namn: imMedNamn() ? GANG.namn.slice(0, N) : null, borjar: Math.floor(Math.random() * N)};
   impostorSida();
 }
 function impostorSida(){
-  const v = $('#vy'), n = IMI.spelare;
+  const v = $('#vy'), n = IM.fas === 'val' ? imAntal() : IM.n;
   if (IM.fas === 'val'){
     const mi = maxImp(n); if (IMI.imp > mi) IMI.imp = mi;
     v.innerHTML = `<section class="verktyg">
       <h1>Impostor</h1><p>${T('Alla får samma hemliga ord utom impostorn, som bara får veta kategorin. Skicka runt telefonen så att var och en ser sitt ord.')}</p>
-      <div class="antalrad"><span>${T('Spelare')}</span><div class="stepper">
+      ${GANG.namn.length >= 3 ? `<button type="button" class="imvaxla" data-im="mednamn" aria-pressed="${imMedNamn()}" style="margin:0 0 14px"><i></i><span>${T('Använd gängets namn')}<small>${esc(GANG.namn.slice(0, 20).join(', '))}</small></span></button>` : `<p style="margin:-6px 0 10px"><a class="turtom" href="#ganget">${T('👥 Skriv in gänget så visas namnen i stället för Spelare 1, 2, 3')}</a></p>`}
+      ${imMedNamn() ? '' : `<div class="antalrad"><span>${T('Spelare')}</span><div class="stepper">
         <button type="button" data-im="sp-" aria-label="${T('Färre spelare')}" ${n<=3?'disabled':''}>−</button><output aria-live="polite">${n}</output>
-        <button type="button" data-im="sp+" aria-label="${T('Fler spelare')}" ${n>=20?'disabled':''}>+</button></div></div>
+        <button type="button" data-im="sp+" aria-label="${T('Fler spelare')}" ${n>=20?'disabled':''}>+</button></div></div>`}
       <div class="antalrad"><span>${T('Impostorer')}</span><div class="stepper">
         <button type="button" data-im="im-" aria-label="${T('Färre impostorer')}" ${IMI.imp<=1?'disabled':''}>−</button><output aria-live="polite">${IMI.imp}</output>
         <button type="button" data-im="im+" aria-label="${T('Fler impostorer')}" ${IMI.imp>=mi?'disabled':''}>+</button></div></div>
@@ -806,28 +1009,28 @@ function impostorSida(){
     v.innerHTML = `<section class="verktyg">
       <span class="imsteg">${T('Spelare {i} av {n}', {i: IM.i + 1, n})}</span>
       ${!IM.visar
-        ? `<button type="button" class="imkort dold" data-im="visa" style="width:100%"><span class="etikett" style="color:#fff">${T('Ge telefonen till')}</span><span class="num">${T('Spelare {i}', {i: IM.i + 1})}</span><p style="color:#fff">${T('Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.')}</p></button>
+        ? `<button type="button" class="imkort dold" data-im="visa" style="width:100%"><span class="etikett" style="color:#fff">${T('Ge telefonen till')}</span><span class="num">${imSp(IM.i)}</span><p style="color:#fff">${T('Se till att ingen annan tittar. Tryck sedan här för att se ditt ord.')}</p></button>
            <button type="button" class="spela" data-im="visa">${T('Visa mitt ord')}</button>`
         : `<div class="imkort ${imp ? 'imp' : 'ord'}" aria-live="polite">${imp
             ? `<span class="etikett">${T('Du är')}</span><span class="stor-t">Impostor</span>${IMI.visaKat ? `<p>${T('Kategori:')} <b>${esc(IM.kat)}</b></p>` : ''}<p>${T('Du vet inte ordet. Låtsas att du gör det och försök lista ut det.')}</p>`
             : `<span class="etikett">${T('Kategori:')} ${esc(IM.kat)}</span><span class="stor-t">${esc(IM.ord)}</span><p>${T('Håll ordet hemligt. En av er är impostor.')}</p>`}</div>
-           <button type="button" class="spela" data-im="gom">${sista ? T('Göm. Alla har sett sitt ord') : T('Göm och lämna till spelare {i}', {i: IM.i + 2})}</button>`}
+           <button type="button" class="spela" data-im="gom">${sista ? T('Göm. Alla har sett sitt ord') : IM.namn ? T('Göm och lämna till {n}', {n: imSp(IM.i + 1)}) : T('Göm och lämna till spelare {i}', {i: IM.i + 2})}</button>`}
       <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">${T('Avbryt rundan')}</button></div>
     </section>`;
   } else if (IM.fas === 'prata'){
     v.innerHTML = `<section class="verktyg">
       <h1>${T('Dags att prata')}</h1>
-      <div class="imkort"><span class="etikett">${T('Spelare {i} börjar', {i: IM.borjar + 1})}</span>
+      <div class="imkort"><span class="etikett">${IM.namn ? T('{n} börjar', {n: imSp(IM.borjar)}) : T('Spelare {i} börjar', {i: IM.borjar + 1})}</span>
         <p>${T('Säg ett ord var som hör ihop med det hemliga ordet, varvet runt. Inte för tydligt, då listar impostorn ut det. Inte för luddigt, då blir du misstänkt.')}</p></div>
       <ol class="imlista"><li>${T('Ta ett eller två varv med ord.')}</li><li>${T('Diskutera och rösta på den ni tror är impostor.')}</li><li>${T('Blir impostorn utröstad får den en chans att gissa ordet. Gissar den rätt vinner impostorn ändå.')}</li></ol>
       <button type="button" class="spela" data-im="svar">${T('Visa ordet och impostorn')}</button>
     </section>`;
   } else {
-    const lista = [...IM.imps].sort((a,b) => a-b).map(x => T('spelare {i}', {i: x + 1}));
+    const lista = [...IM.imps].sort((a,b) => a-b).map(x => imSp(x, true));
     v.innerHTML = `<section class="verktyg">
       <h1>${T('Facit')}</h1>
       <div class="imkort ord"><span class="etikett">${T('Ordet var')}</span><span class="stor-t">${esc(IM.ord)}</span><p>${T('Kategori:')} ${esc(IM.kat)}</p></div>
-      <div class="imkort imp" style="min-height:0"><span class="etikett">${lista.length > 1 ? T('Impostorerna var') : T('Impostorn var')}</span><span class="stor-t" style="font-size:clamp(1.6rem,8vw,2.4rem)">${esc(lista.join(T(' och ')).replace(/^\S/, c => c.toUpperCase()))}</span></div>
+      <div class="imkort imp" style="min-height:0"><span class="etikett">${lista.length > 1 ? T('Impostorerna var') : T('Impostorn var')}</span><span class="stor-t" style="font-size:clamp(1.6rem,8vw,2.4rem)">${lista.join(T(' och ')).replace(/^\S/, c => c.toUpperCase())}</span></div>
       <button type="button" class="spela" data-im="start">${T('Ny runda')}</button>
       <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-im="avbryt">${T('Ändra inställningar')}</button></div>
     </section>`;
@@ -845,7 +1048,8 @@ document.addEventListener('click', e => {
   else if (a === 'visakat'){ IMI.visaKat = !IMI.visaKat; sparaIMI(); }
   else if (a === 'start'){ imStart(); window.scrollTo(0,0); return; }
   else if (a === 'visa'){ IM.visar = true; }
-  else if (a === 'gom'){ IM.visar = false; IM.gomd = Date.now(); if (IM.i < IMI.spelare - 1) IM.i++; else IM.fas = 'prata'; window.scrollTo(0,0); }
+  else if (a === 'gom'){ IM.visar = false; IM.gomd = Date.now(); if (IM.i < IM.n - 1) IM.i++; else IM.fas = 'prata'; window.scrollTo(0,0); }
+  else if (a === 'mednamn'){ IMI.medNamn = !imMedNamn(); sparaIMI(); }
   else if (a === 'svar'){ IM.fas = 'svar'; }
   else if (a === 'avbryt'){ IM = {fas:'val'}; }
   impostorSida();
@@ -900,7 +1104,8 @@ function kkNytt(byt){
   if (falska.length < KKI.antal - 1) falska = falska.concat(kkFalska(ratt, kkPool(KKN).filter(t => t !== ratt && !falska.includes(t)), KKI.antal - 1 - falska.length));
   if (!byt) KKI.runda++;
   sparaKKI();
-  KK = {fas:'hemlig', visar: !!byt, ratt, alt: blanda(falska.concat(ratt)), gissat: null};
+  const vem = byt ? KK.vem : turNamn(); if (!byt) flyttaTur(1);
+  KK = {fas:'hemlig', visar: !!byt, ratt, alt: blanda(falska.concat(ratt)), gissat: null, vem};
 }
 function korkortSida(){
   const v = $('#vy'), inl = esc(KKD.inledning || T('Vem är mest trolig att …'));
@@ -924,7 +1129,7 @@ function korkortSida(){
     v.innerHTML = `<section class="verktyg">
       <span class="imsteg">${T('Runda {n}', {n: KKI.runda})}</span>
       ${!KK.visar
-        ? `<button type="button" class="imkort dold" data-kk="visa" style="width:100%"><span class="etikett" style="color:#fff">${T('Ge telefonen till')}</span><span class="num" style="font-size:clamp(2rem,10vw,3rem)">${T('Den som rangordnar')}</span><p style="color:#fff">${T('Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.')}</p></button>
+        ? `<button type="button" class="imkort dold" data-kk="visa" style="width:100%"><span class="etikett" style="color:#fff">${T('Ge telefonen till')}</span><span class="num" style="font-size:clamp(2rem,10vw,3rem)">${KK.vem ? esc(KK.vem) : T('Den som rangordnar')}</span><p style="color:#fff">${T('Se till att ingen annan tittar. Tryck sedan här för att se ditt påstående.')}</p></button>
            <button type="button" class="spela" data-kk="visa">${T('Visa påståendet')}</button>`
         : `<div class="imkort kkp" aria-live="polite"><span class="etikett">${inl}</span><span class="stor-t">${esc(KK.ratt)}</span><p>${esc(KKD.instruktion || '')}</p></div>
            <button type="button" class="spela" data-kk="gom">${T('Klar. Göm och visa alternativen')}</button>
@@ -942,7 +1147,7 @@ function korkortSida(){
         const k = svar ? (t === KK.ratt ? 'ratt' : t === KK.gissat ? 'fel' : 'bort') : '';
         return `<li><button type="button" class="${k}" data-kkalt="${i}" aria-pressed="${!svar && KK.gissat === t}" ${svar ? 'disabled' : ''}><b>${i + 1}</b><span>${esc(t)}</span></button></li>`; }).join('')}</ol>
       ${svar
-        ? `<button type="button" class="spela" data-kk="start">${T('Ny runda')}<span style="font-size:.8rem;font-weight:700">${T('Lämna telefonen till nästa spelare')}</span></button>
+        ? `<button type="button" class="spela" data-kk="start">${T('Ny runda')}<span style="font-size:.8rem;font-weight:700">${gangN() ? T('Lämna telefonen till {n}', {n: esc(turNamn())}) : T('Lämna telefonen till nästa spelare')}</span></button>
            <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">${T('Ändra inställningar')}</button></div>`
         : `<button type="button" class="spela" data-kk="facit">${KK.gissat == null ? T('Visa svaret') : T('Lås svaret och visa')}</button>
            <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-kk="avbryt">${T('Avbryt rundan')}</button></div>`}
@@ -976,6 +1181,9 @@ function route(){
   if (spel){ spelSida(spel[1]); return; }
   if (SP.id) stangSpel();
   const lek = h.match(/^lek-(.+)$/);
+  if (!lek) document.body.classList.remove('medkv');
+  if (lek && forraHash === 'kvallen') KVAKTIV = true;
+  if (!h || LISTOR[h]) KVAKTIV = false;
   $('#tbk').hidden = !h;
   $('#slump').hidden = !h || !!lek || !!VERKTYG[h];
   const klek = h.match(/^kortlek-(.+)$/);
@@ -987,8 +1195,8 @@ function route(){
     const n = TLEK && tarningarFor(TLEK);
     if (n && n !== TA.antal){ TA.antal = n; TA.slag = []; sparaTA(); }
     $('#tbk').href = TLEK ? '#lek-' + encodeURIComponent(TLEK.id) : '#'; $('#slump').hidden = true; tarningSida(); window.scrollTo(0,0); }
-  else if (VERKTYG[h]){ $('#tbk').href = forraHash && forraHash !== h && !VERKTYG[forraHash] ? '#'+forraHash : '#'; VERKTYG[h](); window.scrollTo(0,0); }
-  else if (lek){ $('#tbk').href = senasteLista ? '#'+senasteLista : '#'; lekSida(lek[1]); window.scrollTo(0,0); }
+  else if (VERKTYG[h]){ $('#tbk').href = h !== 'kvallen' && forraHash && forraHash !== h && !VERKTYG[forraHash] ? '#'+forraHash : '#'; VERKTYG[h](); window.scrollTo(0,0); }
+  else if (lek){ $('#tbk').href = KVAKTIV && KV.includes(lek[1]) ? '#kvallen' : senasteLista ? '#'+senasteLista : '#'; lekSida(lek[1]); window.scrollTo(0,0); }
   else if (LISTOR[h]){
     $('#tbk').href = '#';
     if (h!==senasteLista){ S.spelare=null; S.niva=null; if (h==='spela') S.sok=''; }
@@ -1085,10 +1293,10 @@ function startaSpel(){
   if (!ko || ko.nyckel !== nyckel || ko.pos >= ko.ordning.length){ ko = {nyckel, ordning: blanda(pool), pos: 0}; }
   else { const finns = new Set(pool); ko.ordning = ko.ordning.filter(t => finns.has(t)); const har = new Set(ko.ordning); ko.ordning = ko.ordning.concat(blanda(pool.filter(t => !har.has(t)))); }
   LEKKO[lk(id)] = ko; skrivLS('dryckeslexikon-lekko', LEKKO);
-  SP.ko = ko.ordning; SP.pos = Math.min(ko.pos, SP.ko.length - 1); SP.niva = niva; SP.lage = 'spel';
+  SP.ko = ko.ordning; SP.pos = Math.min(ko.pos, SP.ko.length - 1); SP.niva = niva; SP.lage = 'spel'; SP.tur0 = GANG.tur - SP.pos;
   hallVaken(); ritaSpel('in-h');
 }
-function sparaPos(){ const k = LEKKO[lk(SP.id)]; if (k){ k.pos = SP.pos; skrivLS('dryckeslexikon-lekko', LEKKO); } }
+function sparaPos(){ const k = LEKKO[lk(SP.id)]; if (k){ k.pos = SP.pos; skrivLS('dryckeslexikon-lekko', LEKKO); } if (gangN() && SP.tur0 != null){ GANG.tur = (((SP.tur0 + SP.pos) % gangN()) + gangN()) % gangN(); sparaGang(); } }
 
 function ritaSpel(anim){
   const id = SP.id, slut = SP.pos >= SP.ko.length, t = SP.ko[SP.pos], n = SP.niva[t] || 'Egna';
@@ -1099,7 +1307,7 @@ function ritaSpel(anim){
     <div class="spelyta">
       <div class="kortyta" id="kortyta">
         ${slut ? `<div class="frkort slut n-Lugn ${anim||''}" data-spel="om"><div class="fr">${T('Alla {n} frågor är visade!', {n: SP.ko.length})}</div><p class="inl" style="margin-top:12px">${T('Tryck för att blanda om och köra igen.')}</p></div>`
-        : `<div class="frkort n-${n} ${anim||''}" id="frkort" data-spel="nasta">${inledFor(id, t) ? `<div class="inl">${esc(inledFor(id, t))}</div>` : ''}<div class="fr">${esc(t)}</div>${SP.pos === 0 ? `<div class="tips">${T('Tryck eller svep för nästa fråga')}</div>` : ''}</div>`}
+        : `<div class="frkort n-${n} ${anim||''}" id="frkort" data-spel="nasta">${gangN() ? `<div class="vem">${T('{n} läser upp', {n: esc(GANG.namn[(((SP.tur0 + SP.pos) % gangN()) + gangN()) % gangN()])})}</div>` : ''}${inledFor(id, t) ? `<div class="inl">${esc(inledFor(id, t))}</div>` : ''}<div class="fr">${esc(t)}</div>${SP.pos === 0 ? `<div class="tips">${T('Tryck eller svep för nästa fråga')}</div>` : ''}</div>`}
       </div>
       <div class="kontroll">
         <button type="button" class="rund" data-spel="bak" aria-label="${T('Förra frågan')}" ${SP.pos === 0 ? 'disabled' : ''}>←</button>
@@ -1148,6 +1356,189 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'ArrowLeft'){ e.preventDefault(); forraFraga(); }
   else if (e.key === 'Escape'){ SP.lage = 'val'; slappVaken(); ritaVal(); }
 });
+// ===== Inför kvällen: gänget (namn och vems tur), kvällens lista och timer. Allt sparas bara i telefonen. =====
+const GANG = (() => { const v = lasLS('dryckeslexikon-ganget', {}); return {namn: Array.isArray(v.namn) ? v.namn.filter(x => typeof x === 'string' && x.trim()).slice(0, 30) : [], tur: Math.max(0, v.tur|0)}; })();
+const sparaGang = () => skrivLS('dryckeslexikon-ganget', GANG);
+const gangN = () => GANG.namn.length;
+const turNamn = (k = 0) => gangN() ? GANG.namn[(((GANG.tur + k) % gangN()) + gangN()) % gangN()] : null;
+const flyttaTur = k => { if (gangN()){ GANG.tur = (((GANG.tur + k) % gangN()) + gangN()) % gangN(); sparaGang(); } };
+let KV = lasLS('dryckeslexikon-kvallen', []).filter(id => LEKAR.some(l => l.id === id));
+const sparaKV = () => skrivLS('dryckeslexikon-kvallen', KV);
+let KVAKTIV = false;
+
+function inforKvallen(){
+  return `<nav class="ikvall" aria-label="${T('Inför kvällen')}">
+    <a class="kvl" href="#kvallen">${ikon('bok')}<span>${T('Kvällens lista')}<small>${KV.length ? T('{n} lekar valda', {n: KV.length}) : T('Välj lekar inför festen')}</small></span></a>
+    <a class="gl" href="#ganget">${ikon('folk')}<span>${T('Gänget')}<small>${gangN() ? esc(GANG.namn.join(', ')) : T('Skriv in vilka som är med')}</small></span></a>
+  </nav>`;
+}
+
+// Vems tur? (leksidan och gänget)
+function turHtml(){
+  return gangN() ? `<div class="turruta"><div><small>${T('Vems tur?')}</small><b id="turnamn">${esc(turNamn())}</b></div>
+      <button type="button" class="liten" data-tur="slumpa">${T('🎲 Vem börjar?')}</button><button type="button" class="liten" data-tur="nasta" aria-label="${T('Nästa i tur')}">${T('Nästa →')}</button></div>`
+    : `<a class="turtom" href="#ganget">${T('👥 Skriv in gänget så slumpar appen vem som börjar')}</a>`;
+}
+let TURANIM = null;
+function slumpaTur(){
+  const n = gangN(); if (!n) return;
+  const mal = Math.floor(Math.random() * n), el = () => document.getElementById('turnamn');
+  clearInterval(TURANIM);
+  const klart = () => { GANG.tur = mal; sparaGang(); if (location.hash.slice(1) === 'ganget') gangSida(); const e = el(); if (e){ e.textContent = GANG.namn[mal]; e.classList.remove('pop'); void e.offsetWidth; e.classList.add('pop'); } try { navigator.vibrate && navigator.vibrate(60); } catch(x) {} };
+  if (n === 1 || matchMedia('(prefers-reduced-motion: reduce)').matches) return klart();
+  let steg = 0, i = GANG.tur;
+  TURANIM = setInterval(() => { i = (i + 1 + Math.floor(Math.random() * (n - 1))) % n; const e = el(); if (e) e.textContent = GANG.namn[i]; if (++steg >= 14){ clearInterval(TURANIM); klart(); } }, 75);
+}
+
+function gangSida(){
+  const n = gangN(), tur = n ? GANG.tur % n : 0;
+  $('#vy').innerHTML = `<section class="verktyg gang">
+    <h1>${T('Gänget')}</h1>
+    <p>${T('Skriv in alla som är med ikväll. Då kan appen slumpa vem som börjar, visa vems tur det är och använda namnen i Impostor, Körkortet och spellägena. Namnen sparas bara i den här telefonen.')}</p>
+    <form class="egnarad" id="gangform"><input id="gangin" maxlength="24" placeholder="${esc(T('Namn'))}" aria-label="${esc(T('Namn'))}" autocomplete="off" enterkeyhint="done"><button type="submit">${T('Lägg till')}</button></form>
+    ${n ? `<ol class="ganglista">${GANG.namn.map((x, i) => `<li class="${i === tur ? 'tur' : ''}"><span>${esc(x)}</span>${i === tur ? `<em>${T('Tur')}</em>` : ''}<button type="button" data-gtabort="${i}" aria-label="${esc(T('Ta bort {n}', {n: x}))}">✕</button></li>`).join('')}</ol>
+      <div class="vemborjar"><small>${T('Vems tur?')}</small><b id="turnamn">${esc(turNamn())}</b></div>
+      <button type="button" class="spela" data-tur="slumpa">${T('🎲 Vem börjar?')}</button>
+      <div class="knapprad" style="margin-top:12px"><button type="button" class="liten" data-tur="nasta">${T('Nästa i tur')}</button><button type="button" class="liten" data-gang="blanda">${T('Blanda ordningen')}</button><button type="button" class="liten" data-gang="rensa">${T('Töm gänget')}</button></div>`
+    : `<p class="tom" style="padding:24px 0">${T('Inga namn än. Skriv ett namn i taget.')}</p>`}
+  </section>`;
+  $('#gangform').addEventListener('submit', e => { e.preventDefault(); const t = $('#gangin').value.trim().slice(0, 24); if (!t || gangN() >= 30) return;
+    GANG.namn.push(t); sparaGang(); gangSida(); $('#gangin').focus(); });
+}
+
+function kvallSida(){
+  const lekar = KV.map(id => LEKAR.find(l => l.id === id)).filter(Boolean);
+  $('#vy').innerHTML = `<section class="lhuv"><h1>${T('Kvällens lista')}</h1><p>${T('Välj lekarna inför festen och bläddra mellan dem under kvällen. Lägg till med knappen + Kvällen på en lek.')}</p></section>
+    ${lekar.length ? `<ol class="kvlista">${lekar.map((l, i) => `<li><a href="#lek-${encodeURIComponent(l.id)}">${lekbild(l, 'fb')}<span><b>${i + 1}. ${esc(F(l,'namn'))}</b><small>${spelareText(l.spelare)} ${T('spelare')} · ${esc(F(l,'tid') || '')}</small></span></a>
+        <div class="kvflytt"><button type="button" data-kvflytt="${i}" data-r="-1" aria-label="${T('Flytta upp')}" ${i === 0 ? 'disabled' : ''}>↑</button><button type="button" data-kvflytt="${i}" data-r="1" aria-label="${T('Flytta ner')}" ${i === lekar.length - 1 ? 'disabled' : ''}>↓</button><button type="button" data-kvbort="${esc(l.id)}" aria-label="${T('Ta bort')}">✕</button></div></li>`).join('')}</ol>
+      <a class="spela" href="#lek-${encodeURIComponent(lekar[0].id)}">${T('▶ Starta kvällen')}<span>${T('Bläddra med pilarna längst ner')}</span></a>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#alla" style="display:inline-flex;align-items:center;text-decoration:none">${T('Lägg till fler')}</a><button type="button" class="liten" data-kvslumpa="1">${T('Slumpa en till')}</button><button type="button" class="liten" data-kvrensa="1">${T('Töm listan')}</button></div>`
+    : `<p class="tom" style="padding:24px 0 12px">${T('Listan är tom. Öppna en lek och tryck på + Kvällen, eller låt slumpen välja.')}</p>
+      <div class="knapprad"><a class="liten" href="#alla" style="display:inline-flex;align-items:center;text-decoration:none">${T('Bläddra bland lekarna')}</a><button type="button" class="liten" data-kvslumpa="4">${T('Slumpa 4 lekar')}</button></div>`}`;
+}
+function kvBar(l){
+  if (!KVAKTIV || !KV.includes(l.id)) { document.body.classList.remove('medkv'); return ''; }
+  document.body.classList.add('medkv');
+  const i = KV.indexOf(l.id), fo = KV[i - 1], ne = KV[i + 1], nl = ne && LEKAR.find(x => x.id === ne);
+  const pil = (id, t, lbl) => id ? `<a class="kvpil" href="#lek-${encodeURIComponent(id)}" aria-label="${lbl}">${t}</a>` : `<a class="kvpil" aria-disabled="true">${t}</a>`;
+  return `<div class="kvplats"></div><nav class="kvbar" aria-label="${T('Kvällens lista')}">${pil(fo, '←', T('Förra leken'))}
+    <a class="kvmitt" href="#kvallen"><b>${T('{i} av {n}', {i: i + 1, n: KV.length})}</b><small>${nl ? T('Nästa: {x}', {x: esc(F(nl,'namn'))}) : T('Sista leken ikväll')}</small></a>${pil(ne, '→', T('Nästa lek'))}</nav>`;
+}
+
+// Timer på lekar som har en tidsgräns i reglerna (t.ex. "1 minut", "30 sekunder").
+const TM = {lek:null, std:60, sek:60, kvar:60, slut:0, int:null, ac:null, wl:null};
+function timerFor(l){
+  const m = [l.kort || '', ...(l.regler || []), ...(l.varianter || [])].join(' ').match(/(\d+)(?:\s*[–-]\s*\d+)?\s*(sekund|minut)/i);
+  if (!m) return null; const s = +m[1] * (/minut/i.test(m[2]) ? 60 : 1);
+  return s >= 5 && s <= 600 ? s : null;
+}
+const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+const tidText = s => s < 60 ? T('{n} sek', {n: s}) : s % 60 ? mmss(s) : T('{n} min', {n: s / 60});
+function timerHtml(){
+  const kor = !!TM.int, slut = TM.kvar === 0;
+  return `<div class="timer ${kor ? 'kor' : ''} ${slut ? 'slut' : ''}" id="timer"><small>${T('Timer')}</small>
+    <div class="tid" role="timer">${slut ? T('Tiden är ute!') : mmss(TM.kvar)}</div>
+    <div class="chips">${[...new Set([TM.std, 30, 60, 120])].sort((a, b) => a - b).map(s => `<button type="button" class="chip" data-tsek="${s}" aria-pressed="${TM.sek === s}">${tidText(s)}</button>`).join('')}</div>
+    <div class="knapprad"><button type="button" class="liten tstart ${kor ? 'paus' : ''}" data-timer="start">${kor ? T('Paus') : TM.kvar === TM.sek || slut ? T('▶ Starta') : T('▶ Fortsätt')}</button><button type="button" class="liten" data-timer="noll">${T('Börja om')}</button></div></div>`;
+}
+const ritaTimer = () => { const el = document.getElementById('timer'); if (el) el.outerHTML = timerHtml(); };
+function timerStopp(){ clearInterval(TM.int); TM.int = null; try { TM.wl && TM.wl.release(); } catch(e) {} TM.wl = null; }
+async function timerVaken(){ try { if ('wakeLock' in navigator && !TM.wl){ TM.wl = await navigator.wakeLock.request('screen'); TM.wl.addEventListener('release', () => TM.wl = null); } } catch(e) {} }
+function timerTick(){
+  const k = Math.max(0, Math.ceil((TM.slut - Date.now()) / 1000));
+  if (k !== TM.kvar){ TM.kvar = k; const el = document.querySelector('#timer .tid'); if (el && k) el.textContent = mmss(k); }
+  if (k === 0){ timerStopp(); timerLarm(); ritaTimer(); }
+}
+function timerStart(){
+  try { TM.ac = TM.ac || new (window.AudioContext || window.webkitAudioContext)(); TM.ac.resume && TM.ac.resume(); } catch(e) {}
+  if (TM.kvar === 0) TM.kvar = TM.sek;
+  TM.slut = Date.now() + TM.kvar * 1000; clearInterval(TM.int); TM.int = setInterval(timerTick, 200); timerVaken(); ritaTimer();
+}
+function timerLarm(){
+  try { navigator.vibrate && navigator.vibrate([400, 150, 400, 150, 800]); } catch(e) {}
+  try { const ac = TM.ac; if (!ac) return; const t0 = ac.currentTime;
+    [0, .35, .7].forEach(d => { const o = ac.createOscillator(), g = ac.createGain(); o.type = 'square'; o.frequency.value = 880;
+      g.gain.setValueAtTime(.0001, t0 + d); g.gain.exponentialRampToValueAtTime(.25, t0 + d + .02); g.gain.exponentialRampToValueAtTime(.0001, t0 + d + .28);
+      o.connect(g); g.connect(ac.destination); o.start(t0 + d); o.stop(t0 + d + .3); }); } catch(e) {}
+}
+function timerFor_lek(l){
+  const s = timerFor(l); if (!s) return '';
+  if (TM.lek !== l.id){ timerStopp(); TM.lek = l.id; TM.std = TM.sek = TM.kvar = s; }
+  return timerHtml();
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && TM.int) timerVaken(); });
+
+document.addEventListener('click', e => {
+  const tu = e.target.closest('[data-tur]');
+  if (tu){ if (tu.dataset.tur === 'slumpa') slumpaTur();
+    else { flyttaTur(1); if (location.hash.slice(1) === 'ganget') gangSida(); else { const el = document.getElementById('turnamn'); if (el){ el.textContent = turNamn(); el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); } } }
+    return; }
+  const gt = e.target.closest('[data-gtabort]');
+  if (gt){ const i = +gt.dataset.gtabort; GANG.namn.splice(i, 1); if (GANG.tur > i) GANG.tur--; if (GANG.tur >= gangN()) GANG.tur = 0; sparaGang(); gangSida(); return; }
+  const ga = e.target.closest('[data-gang]');
+  if (ga){ if (ga.dataset.gang === 'blanda'){ GANG.namn = blanda(GANG.namn); GANG.tur = 0; sparaGang(); gangSida(); }
+    else if (ga.dataset.gang === 'rensa'){ if (ga.dataset.saker){ GANG.namn = []; GANG.tur = 0; sparaGang(); gangSida(); } else { ga.dataset.saker = '1'; ga.textContent = T('Säker? Tryck igen'); } }
+    return; }
+  const kb = e.target.closest('[data-kv]');
+  if (kb){ const id = kb.dataset.kv; KV.includes(id) ? (KV = KV.filter(x => x !== id)) : KV.push(id); sparaKV();
+    const pa = KV.includes(id); kb.classList.toggle('pa', pa); kb.setAttribute('aria-pressed', pa); kb.textContent = pa ? T('✓ Kvällen') : T('+ Kvällen'); return; }
+  const kf = e.target.closest('[data-kvflytt]');
+  if (kf){ const i = +kf.dataset.kvflytt, j = i + (+kf.dataset.r); if (j >= 0 && j < KV.length){ [KV[i], KV[j]] = [KV[j], KV[i]]; sparaKV(); kvallSida(); } return; }
+  const kbort = e.target.closest('[data-kvbort]');
+  if (kbort){ KV = KV.filter(x => x !== kbort.dataset.kvbort); sparaKV(); kvallSida(); return; }
+  const ks = e.target.closest('[data-kvslumpa]');
+  if (ks){ const kvar = blanda(LEKAR.filter(l => !KV.includes(l.id))); KV = KV.concat(kvar.slice(0, +ks.dataset.kvslumpa).map(l => l.id)); sparaKV(); kvallSida(); return; }
+  const kr = e.target.closest('[data-kvrensa]');
+  if (kr){ if (kr.dataset.saker){ KV = []; sparaKV(); kvallSida(); } else { kr.dataset.saker = '1'; kr.textContent = T('Säker? Tryck igen'); } return; }
+  const ts = e.target.closest('[data-tsek]');
+  if (ts){ timerStopp(); TM.sek = TM.kvar = +ts.dataset.tsek; ritaTimer(); return; }
+  const tb = e.target.closest('[data-timer]');
+  if (tb){ if (tb.dataset.timer === 'start'){ if (TM.int){ timerStopp(); ritaTimer(); } else timerStart(); } else { timerStopp(); TM.kvar = TM.sek; ritaTimer(); } return; }
+});
+VERKTYG.ganget = gangSida; VERKTYG.kvallen = kvallSida;
+// ===== Förslagslåda: skickas till Google-formuläret "Dryckeslexikon – förslagslåda" (svaren hamnar i ett kalkylark i Drive-mappen Dryckeslexikon) =====
+const FORSLAG_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd1dk1ziTId_JgCV6L7SXdC8Tsnhj9HZ_xLWuMqJeQno_JLCA/formResponse';
+const FORSLAG_FALT = {typ: 'entry.1907318290', text: 'entry.1961217978', namn: 'entry.597152676'};
+const FTYPER = ['Ny lek', 'Nya frågor eller ord', 'Förbättring av appen', 'Något är fel', 'Annat']; // måste stämma med svarsalternativen i formuläret
+const FS = {typ: 'Ny lek', text: '', namn: '', fas: 'skriv'};
+function forslagSida(){
+  if (FS.fas === 'tack'){
+    $('#vy').innerHTML = `<section class="verktyg"><div class="tackruta">💌</div><h1>${T('Tack för förslaget!')}</h1>
+      <p>${T('Det har kommit fram. Bra idéer läggs in i en kommande uppdatering.')}</p>
+      <button type="button" class="spela" data-fs="ny">${T('Skicka ett till')}</button>
+      <div class="knapprad" style="margin-top:12px"><a class="liten" href="#" style="display:inline-flex;align-items:center;text-decoration:none">${T('Till startsidan')}</a></div></section>`;
+    return;
+  }
+  $('#vy').innerHTML = `<section class="verktyg forslagsida">
+    <h1>${T('Förslagslådan')}</h1>
+    <p>${T('Saknar ni en lek, har ni fler frågor till spellägena eller har ni hittat något som blivit fel? Skriv här så hamnar det hos oss som gör appen.')}</p>
+    <form id="fsform" class="fsform">
+      <h3>${T('Vad gäller det?')}</h3>
+      <div class="chips fstyper">${FTYPER.map(t => `<button type="button" class="chip" data-fstyp="${esc(t)}" aria-pressed="${FS.typ === t}">${esc(T(t))}</button>`).join('')}</div>
+      <h3><label for="fstext">${T('Ditt förslag')}</label></h3>
+      <textarea id="fstext" rows="6" maxlength="3000" required placeholder="${esc(FS.typ === 'Ny lek' ? T('Vad heter leken och hur går den till?') : T('Skriv så tydligt du kan.'))}">${esc(FS.text)}</textarea>
+      <h3><label for="fsnamn">${T('Namn eller hur vi når dig')} <small>${T('(frivilligt)')}</small></label></h3>
+      <input id="fsnamn" maxlength="120" autocomplete="off" value="${esc(FS.namn)}">
+      <p class="fsinfo">${T('Förslaget skickas via Google Formulär. Skriv inget känsligt. Lämnar du inget namn är förslaget anonymt.')}</p>
+      ${FS.fel ? `<p class="fsfel" role="alert">${T('Det gick inte att skicka. Kolla att telefonen har internet och försök igen.')}</p>` : ''}
+      <button type="submit" class="spela" ${FS.fas === 'skickar' ? 'disabled' : ''}>${FS.fas === 'skickar' ? T('Skickar…') : T('Skicka förslaget')}</button>
+    </form></section>`;
+  $('#fstext').addEventListener('input', e => { FS.text = e.target.value; });
+  $('#fsnamn').addEventListener('input', e => { FS.namn = e.target.value; });
+  $('#fsform').addEventListener('submit', async e => {
+    e.preventDefault(); if (!FS.text.trim() || FS.fas === 'skickar') return;
+    FS.fas = 'skickar'; FS.fel = false; forslagSida();
+    const data = new URLSearchParams({[FORSLAG_FALT.typ]: FS.typ, [FORSLAG_FALT.text]: FS.text.trim() + (LANG === 'en' ? '\n\n(skickat från den engelska versionen)' : ''), [FORSLAG_FALT.namn]: FS.namn.trim()});
+    try { await fetch(FORSLAG_URL, {method: 'POST', mode: 'no-cors', body: data}); FS.fas = 'tack'; FS.text = ''; }
+    catch(x) { FS.fas = 'skriv'; FS.fel = true; }
+    if (location.hash.slice(1) === 'forslag') { forslagSida(); window.scrollTo(0, 0); }
+  });
+}
+document.addEventListener('click', e => {
+  const ty = e.target.closest('[data-fstyp]'); if (ty){ FS.typ = ty.dataset.fstyp; forslagSida(); return; }
+  const fs = e.target.closest('[data-fs]'); if (fs){ FS.fas = 'skriv'; FS.fel = false; forslagSida(); }
+});
+VERKTYG.forslag = forslagSida;
 $('#slump').addEventListener('click', slumpa);
 // ===== Språkbyte (flaggorna uppe till höger) =====
 function ritaSprak(){

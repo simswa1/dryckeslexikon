@@ -1,0 +1,118 @@
+/* ===== Design B: ljus och lekfull (2026-11-25). Krämvit bakgrund, svarta kanter, klara färger som klistermärken. ===== */
+:root{color-scheme:light;--bg:#fff6e5;--yta:#fff;--yta2:#f6ecd6;--kant:#141414;--text:#141414;--dim:#5b5249;--ol:#e8590c;--vin:#ff6b9d;--mint:#2fb36b;--bla:#2b6fd6;
+ --gul:#ffd23f;--rosa:#ff6b9d;--gron:#7ae582;--blaa:#4cc9f0;--lila:#b892ff;--skugga:4px 4px 0 #141414}
+body{background:var(--bg);background-image:radial-gradient(#14141412 1.2px,transparent 1.4px);background-size:22px 22px;background-attachment:scroll}
+h1,h2,h3{font-weight:900;letter-spacing:-.01em}
+.topp{background:rgba(255,246,229,.94);border-bottom:2.5px solid var(--kant)}
+.logo{display:inline-flex;flex:none;margin-right:auto;font-weight:900;background:var(--gul);border:2.5px solid var(--kant);border-radius:10px;padding:5px 10px 4px;box-shadow:3px 3px 0 var(--kant);transform:rotate(-2deg);font-size:1.2rem}
+.logo span{color:inherit}
+.tbk,.liten,.favknapp,.chip,.abc a,.rund,.stepper button,.egnarad button,.kvflytt button,.ganglista button,.egnalista button{border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant);background:#fff;color:var(--text)}
+.tbk:active,.liten:active,.favknapp:active,.chip:active,.rund:active,.stepper button:active,.stor:active,.ruta:active,.spela:active,.verktygslank:active,.ikvall a:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--kant)}
+.stepper button:disabled,.kvflytt button:disabled{box-shadow:none}
+.chip{color:var(--text);font-weight:700;box-shadow:2px 2px 0 var(--kant)}
+.chip.pa,.chip[aria-pressed=true],.imkats .chip[aria-pressed=true],.kkval .chip[aria-pressed=true],.timer .chip[aria-pressed=true]{background:var(--gul);border-color:var(--kant);color:var(--text)}
+.sprak button{border:2.5px solid var(--kant);opacity:.45}
+.sprak button[aria-pressed="true"]{border-color:var(--kant);box-shadow:2px 2px 0 var(--kant)}
+.hej h1{font-size:clamp(2.3rem,10vw,3.3rem);line-height:1}
+.sok{border:2.5px solid var(--kant);box-shadow:var(--skugga);background:#fff;color:var(--text)}
+.sok:focus{outline:3px solid var(--blaa);outline-offset:2px;border-color:var(--kant)}
+.forslag{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.forslag a.akt,.forslag a:hover{background:var(--yta2)}
+.forslag .fn mark,.forslag .alla{color:var(--ol)}
+.stor{border:2.5px solid var(--kant);box-shadow:5px 5px 0 var(--kant);color:var(--text)}
+.stor .n{background:#fff;color:var(--text);border:2px solid var(--kant)}
+.c-dryck{background:var(--blaa);color:var(--text)}.c-slump{background:var(--gul);color:var(--text)}.c-fav{background:var(--rosa);color:var(--text)}
+.c-kortlek{background:var(--gron);color:var(--text)}.c-tarn{background:var(--lila);color:var(--text)}
+.c-fri{background:var(--gron);color:var(--text)}.c-alla{background:var(--blaa);color:var(--text)}.c-impostor{background:#ff9f45;color:var(--text)}.c-korkort{background:var(--lila);color:var(--text)}
+.ikvall a{border:2.5px solid var(--kant);box-shadow:var(--skugga);background:#fff}
+.ikvall .kvl{background:#d9f7e2;border-color:var(--kant)}.ikvall .gl{background:#dcecff;border-color:var(--kant)}
+.ikvall small{color:var(--dim)}
+.lhuv h1,.verktyg h1{font-size:clamp(2rem,8.5vw,2.8rem)}
+.abc a span{color:var(--ol)}
+.bokstav span{color:var(--text)}
+.ruta{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.rfav{color:#e0336f}
+.lekbild{background:var(--yta2);border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.svar i{background:#d9cfbd}.svar i.p{background:var(--ol)}
+.fakta div{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.fakta b a{color:var(--bla)}
+article h2{color:var(--text);font-size:1.45rem}
+ol.regler li{background:#fff;border:2px solid var(--kant)}
+ol.regler li::before{background:var(--gul);color:var(--text);border:2px solid var(--kant);line-height:24px}
+.notis{background:#ffe1ea;border:2.5px solid var(--kant);color:var(--text)}
+.taggar span{background:#fff;border:1.5px solid var(--kant);color:var(--text)}
+.favknapp.pa{background:var(--rosa);border-color:var(--kant);color:var(--text)}
+.kvknapp.pa{background:var(--gron);border-color:var(--kant);color:var(--text)}
+.verktygslank{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.verktygslank.kklank{background:#efe5ff;border-color:var(--kant)}.verktygslank.imlank{background:#ffe9d6;border-color:var(--kant)}
+.spela,.aldersparr .ja18{background:var(--gul);color:var(--text);border:2.5px solid var(--kant)!important;box-shadow:5px 5px 0 var(--kant);font-weight:900}
+.startspel{background:var(--gron);color:var(--text)}
+.verktyg .spela:disabled{box-shadow:none}
+.slump{background:var(--rosa);color:var(--text);border:2.5px solid var(--kant);box-shadow:4px 4px 0 var(--kant)}
+.turruta{background:#dcecff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.turruta b,.vemborjar b,#turnamn{color:var(--text)}
+.turtom{color:var(--bla)}
+.timer{background:#fff;border:2.5px solid var(--kant);box-shadow:var(--skugga)}
+.timer.kor{background:#fff8d6;border-color:var(--kant)}
+.timer .tid{color:var(--text)}
+.timer.slut{background:#ffe1ea}.timer.slut .tid{color:#d61f5c}
+@keyframes blink{50%{background:var(--rosa)}}
+.timer .tstart{background:var(--gul);color:var(--text);border:2.5px solid var(--kant)}
+.timer .tstart.paus{background:#fff}
+.ganglista li,.egnalista li{background:#fff;border:2px solid var(--kant)}
+.ganglista li.tur{background:#dcecff;border-color:var(--kant)}
+.ganglista li em{color:var(--bla)}
+.egnarad input{border:2.5px solid var(--kant);background:#fff;color:var(--text)}
+.egnarad button,.gang .egnarad button{background:var(--blaa);color:var(--text)}
+.kvlista li{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.kvbar{background:rgba(255,246,229,.96);border-top:2.5px solid var(--kant)}
+.kvbar a{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.kvbar .kvmitt{background:#d9f7e2}.kvbar .kvmitt b{color:var(--text)}
+.antalrad,.imvaxla{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.imvaxla i{background:#e6dcc8;border:2px solid var(--kant)}
+.imvaxla[aria-pressed=true] i{background:var(--gron)}
+.imvaxla i:after{border:2px solid var(--kant);top:2px;left:2px;width:22px;height:22px}
+.stepper output{color:var(--text)}
+.imsteg{background:#fff;border:2px solid var(--kant)}
+.imkort{border:3px solid var(--kant)!important;box-shadow:6px 6px 0 var(--kant)}
+.imkort .num{color:var(--text)}
+.imkort.dold{background:repeating-linear-gradient(45deg,var(--rosa) 0 14px,#ff86ad 14px 28px)}
+.imkort.dold .etikett,.imkort.dold p{color:var(--text)!important}
+.imkort.ord,.imkort.kkp{background:#fff;color:var(--text)}
+.imkort.imp{background:var(--rosa);color:var(--text)}
+.kkalt button{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant);color:var(--text)}
+.kkalt button[aria-pressed=true]{background:#efe5ff;border-color:var(--kant)}.kkalt button[aria-pressed=true] b{background:var(--lila);color:var(--text)}
+.kkalt button.ratt{background:#d9f7e2;border-color:var(--kant)}.kkalt button.ratt b{background:var(--gron);color:var(--text)}
+.kkalt button.fel{background:#ffe1ea;border-color:var(--kant)}.kkalt button.fel b{background:var(--rosa);color:var(--text)}
+.kkres.ratt{color:#1e8a4f}.kkres.fel{color:#d61f5c}
+.kortregel{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant)}
+.kortregel b{color:var(--text)}
+.summa{color:var(--text)}
+.spkort{border:3px solid var(--kant);box-shadow:6px 6px 0 var(--kant)}
+.spkort.baksida{border:10px solid #fff;outline:3px solid var(--kant);background:repeating-linear-gradient(45deg,var(--rosa) 0 10px,#ff86ad 10px 20px)}
+.tarningar svg{filter:drop-shadow(4px 4px 0 #141414)}
+.tarningar svg rect:first-of-type{stroke:#141414;stroke-width:4}
+.spel{background:var(--bg);background-image:radial-gradient(#14141412 1.2px,transparent 1.4px);background-size:22px 22px}
+.shuv h2{font-weight:900}
+.raknare{color:var(--text)}
+.raknare .nb{background:#fff;border:2px solid var(--kant)}
+.n-Lugn{color:#1e8a4f}.n-Lagom{color:#c76a00}.n-Het{color:#d61f5c}.n-Egna{color:#2b6fd6}.n-Fav{color:#7a4fd6}
+.frkort{background:#fff;border:3px solid var(--kant)!important;box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--gron),15px 16px 0 1px var(--kant)}
+.frkort.n-Lagom{box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--gul),15px 16px 0 1px var(--kant)}
+.frkort.n-Het{box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--rosa),15px 16px 0 1px var(--kant)}
+.frkort.n-Egna,.frkort.n-Fav{box-shadow:8px 8px 0 var(--kant),15px 16px 0 -2px var(--blaa),15px 16px 0 1px var(--kant)}
+.frkort .fr{font-weight:900;letter-spacing:-.01em}
+.frkort .inl{color:var(--dim)}
+.frkort .vem{color:var(--bla)}
+.kontroll .nasta{background:var(--blaa);color:var(--text);border:2.5px solid var(--kant)!important;box-shadow:5px 5px 0 var(--kant);font-weight:900}
+.rund.pa{background:var(--rosa);border-color:var(--kant);color:var(--text)}
+.niva{background:#fff;border:2.5px solid var(--kant);box-shadow:3px 3px 0 var(--kant);color:var(--text)}
+.sbotten{background:linear-gradient(transparent,var(--bg) 30%)}
+.ansvar b{border-color:var(--kant);color:var(--text);background:var(--gul)}
+.aldersparr{background:rgba(255,246,229,.97)}
+.aldersparr .ruta18{background:#fff;border:3px solid var(--kant);box-shadow:8px 8px 0 var(--kant)}
+.aldersparr .tag18{border-color:var(--kant);color:var(--text);background:var(--gul)}
+.mini{background:#ffe1ea;color:#a3123f}.mini.d{background:#fff1c2;color:#8a5200}
+.kat{background:#fff;border:2.5px solid var(--kant)}
+.kat[aria-pressed=true]{background:var(--gul);border-color:var(--kant)}
+:focus-visible{outline-color:var(--bla)!important}
