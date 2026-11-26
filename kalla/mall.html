@@ -682,8 +682,8 @@ LISTOR['favoriter'] = {titel:'Favoriter', text:'Lekar ni har sparat med hjärtat
 function start(){
   $('#vy').innerHTML = `
   <section class="hej">
-    <h1>${T('Vad ska vi leka ikväll?')}</h1>
-    <p>${T('{n} lekar med regler, antal spelare, tid och svårighetsgrad. Ni bestämmer själva om, när och hur mycket det ska drickas.', {n: LEKAR.length})}</p>
+    <h1>${T('Kvällens bästa idé')}</h1>
+    <p>${T('Ett lexikon med {n} festlekar. Hitta rätt lek på sekunder, med eller utan något i glaset.', {n: LEKAR.length})}</p>
     <div class="sokruta"><input class="sok" id="sok" type="search" placeholder="${esc(T('Sök efter en lek…'))}" autocomplete="off" enterkeyhint="search" role="combobox" aria-expanded="false" aria-controls="forslag" aria-autocomplete="list">
     <ul class="forslag" id="forslag" role="listbox" hidden></ul></div>
   </section>
