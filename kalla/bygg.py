@@ -5,7 +5,7 @@ Resultat:
   webb/       – installerbar webbapp (PWA) med ikon, manifest och offline-stöd.
                 Ladda upp hela mappen till valfri webbhotell (GitHub Pages, Netlify ...).
 """
-import json, pathlib, shutil, hashlib
+import json, pathlib, shutil, hashlib, re, base64
 här = pathlib.Path(__file__).resolve().parent
 lekar = json.loads((här.parent / "lekar" / "lekar.json").read_text(encoding="utf-8"))
 svf = här.parent / "lekar" / "svarighet.json"
@@ -132,6 +132,16 @@ pwa_head = """<link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-title" content="Dryckeslexikon">"""
 pwa_sw = "if ('serviceWorker' in navigator) { try { navigator.serviceWorker.register('sw.js').catch(()=>{}); } catch(e) {} }"
 html = mall.replace("<!--PWA-->", pwa_head).replace("/*PWA-SW*/", pwa_sw)
+# Säkerhet: Content-Security-Policy som meta-tagg (GitHub Pages tillåter inga egna headers).
+# Bara appens egna inline-skript (via sha256), typsnitten från Google Fonts och förslagslådans Google-formulär tillåts.
+skript = re.findall(r"<script>(.*?)</script>", html, flags=re.S)
+hashar = " ".join("'sha256-" + base64.b64encode(hashlib.sha256(k.encode("utf-8")).digest()).decode() + "'" for k in skript)
+csp = ("default-src 'self'; script-src " + hashar + "; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+       "font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://docs.google.com; "
+       "manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'")
+sakerhet = f'<meta http-equiv="Content-Security-Policy" content="{csp}">\n<meta name="referrer" content="no-referrer">'
+assert '<meta charset="utf-8">' in html
+html = html.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + sakerhet, 1)
 (webb / "index.html").write_text(html, encoding="utf-8")
 manifest = {
   "name": "Dryckeslexikon", "short_name": "Dryckeslexikon", "lang": "sv",
@@ -153,11 +163,11 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (url.origin === location.origin) {
     // Appens egna filer: nätet först (så uppdateringar syns), cache om man är offline.
-    e.respondWith(fetch(e.request).then(r => { const k = r.clone(); caches.open(CACHE).then(c => c.put(e.request, k)); return r; })
+    e.respondWith(fetch(e.request).then(r => { if (r.ok) { const k = r.clone(); caches.open(CACHE).then(c => c.put(e.request, k)); } return r; })
       .catch(() => caches.match(e.request).then(r => r || caches.match('./index.html'))));
   } else if (/fonts\\.(googleapis|gstatic)\\.com$/.test(url.hostname)) {
     // Typsnitt: cache först.
-    e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(n => { const k = n.clone(); caches.open(CACHE).then(c => c.put(e.request, k)); return n; })));
+    e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(n => { if (n.ok || n.type === 'opaque') { const k = n.clone(); caches.open(CACHE).then(c => c.put(e.request, k)); } return n; })));
   }
 });
 """ % version, encoding="utf-8")

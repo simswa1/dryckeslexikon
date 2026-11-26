@@ -1464,16 +1464,19 @@ function forslagSida(){
       <h3><label for="fsnamn">${T('Namn eller hur vi når dig')} <small>${T('(frivilligt)')}</small></label></h3>
       <input id="fsnamn" maxlength="120" autocomplete="off" value="${esc(FS.namn)}">
       <p class="fsinfo">${T('Förslaget skickas via Google Formulär. Skriv inget känsligt. Lämnar du inget namn är förslaget anonymt.')}</p>
-      ${FS.fel ? `<p class="fsfel" role="alert">${T('Det gick inte att skicka. Kolla att telefonen har internet och försök igen.')}</p>` : ''}
+      ${FS.fel ? `<p class="fsfel" role="alert">${FS.fel === 'vanta' ? T('Vänta en minut innan du skickar nästa förslag.') : T('Det gick inte att skicka. Kolla att telefonen har internet och försök igen.')}</p>` : ''}
       <button type="submit" class="spela" ${FS.fas === 'skickar' ? 'disabled' : ''}>${FS.fas === 'skickar' ? T('Skickar…') : T('Skicka förslaget')}</button>
     </form></section>`;
   $('#fstext').addEventListener('input', e => { FS.text = e.target.value; });
   $('#fsnamn').addEventListener('input', e => { FS.namn = e.target.value; });
   $('#fsform').addEventListener('submit', async e => {
     e.preventDefault(); if (!FS.text.trim() || FS.fas === 'skickar') return;
+    // Enkel spärr mot dubbelklick och spam: högst ett förslag per minut från samma telefon.
+    let senast = 0; try { senast = +localStorage.getItem('dryckeslexikon-forslag-tid') || 0; } catch(x) {}
+    if (Date.now() - senast < 60000){ FS.fel = 'vanta'; forslagSida(); return; }
     FS.fas = 'skickar'; FS.fel = false; forslagSida();
     const data = new URLSearchParams({[FORSLAG_FALT.typ]: FS.typ, [FORSLAG_FALT.text]: FS.text.trim() + (LANG === 'en' ? '\n\n(skickat från den engelska versionen)' : ''), [FORSLAG_FALT.namn]: FS.namn.trim()});
-    try { await fetch(FORSLAG_URL, {method: 'POST', mode: 'no-cors', body: data}); FS.fas = 'tack'; FS.text = ''; }
+    try { await fetch(FORSLAG_URL, {method: 'POST', mode: 'no-cors', body: data}); FS.fas = 'tack'; FS.text = ''; try { localStorage.setItem('dryckeslexikon-forslag-tid', String(Date.now())); } catch(x) {} }
     catch(x) { FS.fas = 'skriv'; FS.fel = true; }
     if (location.hash.slice(1) === 'forslag') { forslagSida(); window.scrollTo(0, 0); }
   });
