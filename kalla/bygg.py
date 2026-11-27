@@ -114,8 +114,15 @@ sprak_en = {k: v for k, v in json.loads((här / "sprak_en.json").read_text(encod
 endata = json.dumps(sprak_en, ensure_ascii=False).replace("</", "<\\/")
 mall = (här / "mall.html").read_text(encoding="utf-8").replace("__EN__", endata).replace("__LEKAR__", data).replace("__FRAGOR__", fragdata).replace("__IMPOSTOR__", impdata).replace("__KORKORTET__", kkdata).replace("__FRAGOR_EN__", fragdata_en).replace("__IMPOSTOR_EN__", impdata_en).replace("__KORKORTET_EN__", kkdata_en).replace("<!--LEKBILDER-->", symboler)
 
+# Typsnitt (Rubik + Space Grotesk, SIL OFL). Den fristående filen hämtar dem från Google Fonts,
+# webbappen har dem i egen mapp (typsnitt/) så att inget hämtas från Google och de fungerar offline direkt.
+typsnitt_google = """<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">"""
+typsnitt_lokalt = '<link rel="stylesheet" href="typsnitt/typsnitt.css">'
+typsnittfiler = sorted(p.name for p in (här / "typsnitt").glob("*.woff2"))
+
 # 1) Fristående fil (artifact)
-(här / "index.html").write_text(mall.replace("<!--PWA-->", "").replace("/*PWA-SW*/", ""), encoding="utf-8")
+(här / "index.html").write_text(mall.replace("<!--TYPSNITT-->", typsnitt_google).replace("<!--PWA-->", "").replace("/*PWA-SW*/", ""), encoding="utf-8")
 
 # 2) Installerbar webbapp
 webb = här / "webb"
@@ -123,6 +130,8 @@ if webb.exists(): shutil.rmtree(webb)
 (webb / "ikon").mkdir(parents=True)
 for n in (1024, 512, 192, 180, 32):
     shutil.copy(här / "ikon" / f"ikon-{n}.png", webb / "ikon" / f"ikon-{n}.png")
+shutil.copytree(här / "typsnitt", webb / "typsnitt")
+shutil.copy(här / "integritet.html", webb / "integritet.html")
 pwa_head = """<link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="ikon/ikon-32.png">
 <link rel="apple-touch-icon" href="ikon/ikon-180.png">
@@ -131,13 +140,13 @@ pwa_head = """<link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Dryckeslexikon">"""
 pwa_sw = "if ('serviceWorker' in navigator) { try { navigator.serviceWorker.register('sw.js').catch(()=>{}); } catch(e) {} }"
-html = mall.replace("<!--PWA-->", pwa_head).replace("/*PWA-SW*/", pwa_sw)
+html = mall.replace("<!--TYPSNITT-->", typsnitt_lokalt).replace("<!--PWA-->", pwa_head).replace("/*PWA-SW*/", pwa_sw)
 # Säkerhet: Content-Security-Policy som meta-tagg (GitHub Pages tillåter inga egna headers).
-# Bara appens egna inline-skript (via sha256), typsnitten från Google Fonts och förslagslådans Google-formulär tillåts.
+# Bara appens egna inline-skript (via sha256), egna filer (typsnitt, ikoner) och förslagslådans Google-formulär tillåts.
 skript = re.findall(r"<script>(.*?)</script>", html, flags=re.S)
 hashar = " ".join("'sha256-" + base64.b64encode(hashlib.sha256(k.encode("utf-8")).digest()).decode() + "'" for k in skript)
-csp = ("default-src 'self'; script-src " + hashar + "; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-       "font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://docs.google.com; "
+csp = ("default-src 'self'; script-src " + hashar + "; style-src 'self' 'unsafe-inline'; "
+       "font-src 'self'; img-src 'self' data:; connect-src 'self' https://docs.google.com; "
        "manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'")
 sakerhet = f'<meta http-equiv="Content-Security-Policy" content="{csp}">\n<meta name="referrer" content="no-referrer">'
 assert '<meta charset="utf-8">' in html
@@ -153,9 +162,9 @@ manifest = {
 }
 (webb / "manifest.webmanifest").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
 version = hashlib.sha1(html.encode()).hexdigest()[:10]
-(webb / "sw.js").write_text("""// Offline-stöd: sparar appen i telefonen. Byggversion ändras automatiskt vid varje bygge.
+(webb / "sw.js").write_text(("""// Offline-stöd: sparar appen i telefonen. Byggversion ändras automatiskt vid varje bygge.
 const CACHE = 'dryckeslexikon-%s';
-const FILER = ['./', './index.html', './manifest.webmanifest', './ikon/ikon-180.png', './ikon/ikon-192.png', './ikon/ikon-512.png', './ikon/ikon-32.png'];
+const FILER = ['./', './index.html', './manifest.webmanifest', './ikon/ikon-180.png', './ikon/ikon-192.png', './ikon/ikon-512.png', './ikon/ikon-32.png', './typsnitt/typsnitt.css', %s];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILER))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n !== CACHE).map(n => caches.delete(n))))); self.clients.claim(); });
 self.addEventListener('fetch', e => {
@@ -165,10 +174,7 @@ self.addEventListener('fetch', e => {
     // Appens egna filer: nätet först (så uppdateringar syns), cache om man är offline.
     e.respondWith(fetch(e.request).then(r => { if (r.ok) { const k = r.clone(); caches.open(CACHE).then(c => c.put(e.request, k)); } return r; })
       .catch(() => caches.match(e.request).then(r => r || caches.match('./index.html'))));
-  } else if (/fonts\\.(googleapis|gstatic)\\.com$/.test(url.hostname)) {
-    // Typsnitt: cache först.
-    e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(n => { if (n.ok || n.type === 'opaque') { const k = n.clone(); caches.open(CACHE).then(c => c.put(e.request, k)); } return n; })));
   }
 });
-""" % version, encoding="utf-8")
+""" % (version, ", ".join(f"'./typsnitt/{f}'" for f in typsnittfiler))), encoding="utf-8")
 print(f"Byggde index.html och webb/ med {len(lekar)} lekar")
