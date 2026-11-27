@@ -3,9 +3,16 @@
  "short_name": "Dryckeslexikon",
  "lang": "sv",
  "description": "Idéer och regler för festlekar. Sällskapet bestämmer själv om, när och hur mycket det ska drickas.",
+ "id": "./",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
+ "orientation": "portrait",
+ "categories": [
+  "entertainment",
+  "games",
+  "lifestyle"
+ ],
  "background_color": "#fff6e5",
  "theme_color": "#fff6e5",
  "icons": [
