@@ -16,19 +16,19 @@
    "regler": [
     "Put an empty glass in the middle and spread the cards face down in a ring around it.",
     "Take turns drawing a card and do what the card says.",
-    "Ace – Waterfall: everyone starts drinking at the same time and can only stop once the person to their right has stopped.",
+    "Ace – Waterfall: everyone starts drinking at the same time and can only stop once the person to their right has stopped. Whoever drew the card stops after five seconds at most.",
     "2 – You: pick someone to drink.",
     "3 – Me: you drink.",
     "4 – Floor: the last person to touch the floor drinks.",
-    "5 – Guys: all the guys drink.",
-    "6 – Chicks: all the girls drink.",
+    "5 – Glasses: everyone wearing glasses drinks.",
+    "6 – You pick: name something a few people have, like a striped shirt or dark shoes. Everyone who has it drinks.",
     "7 – Heaven: the last person to point at the ceiling drinks.",
     "8 – Mate: pick a mate who drinks every time you drink for the rest of the game.",
     "9 – Rhyme: say a word, then everyone in turn has to rhyme with it. Whoever hesitates or repeats a word drinks.",
     "10 – Categories: pick a category (e.g. car brands). Everyone names something in turn, and whoever draws a blank drinks.",
     "Jack – Rule: make up a rule that lasts for the rest of the game. Anyone who breaks it drinks.",
     "Queen – Question master: until the next queen is drawn, anyone who answers a question from you drinks.",
-    "King – Pour a little of your drink into the glass in the middle. Whoever draws the fourth king drinks the glass (or just takes a sip, if that's what you agreed).",
+    "King – Pour a splash of your drink into the glass in the middle. Whoever draws the fourth king takes a sip from the glass, and the game is over.",
     "Whoever breaks the ring of cards while drawing drinks."
    ],
    "varianter": [
@@ -53,7 +53,7 @@
    "regler": [
     "Player one takes the first card from the deck. After that, turns go clockwise.",
     "Whoever draws a card does what the card says.",
-    "Ace – Waterfall: everyone starts drinking, and you can only stop once the person before you has stopped (see the game Waterfall).",
+    "Ace – Waterfall: everyone starts drinking, and you can only stop once the person before you has stopped. Whoever drew the card stops after five seconds at most (see the game Waterfall).",
     "Red cards 2–6: hand out as many sips as the card shows.",
     "Black cards 2–6: take as many sips yourself as the card shows.",
     "7 – Buzz: play Buzz. Count in turn and say 'buzz' instead of any number that contains a 7 or is divisible by 7. Whoever slips up gets a penalty.",
@@ -61,8 +61,8 @@
     "9 – Association: say a word that you associate with the previous word, not the first one. Whoever drifts too far off gets a penalty.",
     "10 – Theme: pick a theme, for example clothing brands. Whoever can't think of anything or repeats something already said gets a penalty.",
     "Jack – Rule: make a rule everyone has to follow for the rest of the game. The jack can also cancel an earlier rule.",
-    "Queen – All the girls drink.",
-    "King – All the guys drink."
+    "Queen – Glasses: everyone wearing glasses drinks.",
+    "King – You pick: name something a few people have, like a striped shirt or dark shoes. Everyone who has it drinks."
    ],
    "taggar": [
     "our own game",
@@ -72,7 +72,7 @@
    "kortregler": [
     {
      "titel": "Waterfall",
-     "text": "Everyone starts drinking, and you can only stop once the person before you has stopped."
+     "text": "Everyone starts drinking, and you can only stop once the person before you has stopped. You drew the card, so you stop after five seconds at most."
     },
     {
      "titel": "Hand out sips",
@@ -103,12 +103,12 @@
      "text": "Make a rule everyone has to follow for the rest of the game. You can also cancel an earlier rule."
     },
     {
-     "titel": "Girls drink",
-     "text": "All the girls drink."
+     "titel": "Glasses",
+     "text": "Everyone wearing glasses drinks."
     },
     {
-     "titel": "Guys drink",
-     "text": "All the guys drink."
+     "titel": "You pick",
+     "text": "Name something a few people have, like a striped shirt or dark shoes. Everyone who has it drinks."
     }
    ]
   },
@@ -410,7 +410,7 @@
    "regler": [
     "Split into two equal teams standing on opposite sides of the table, facing each other.",
     "Everyone has a cup with a little drink in front of them.",
-    "The first person on each team drinks up and places the cup upright on the edge of the table, with the rim sticking out over the edge.",
+    "The first person on each team drinks their splash and places the cup upright on the edge of the table, with the rim sticking out over the edge.",
     "Flick the cup so it flips and lands upside down. Only then can the next person on the team start.",
     "The team whose last person flips their cup first wins."
    ],
@@ -442,7 +442,7 @@
   },
   "olstafett": {
    "namn": "Beer Relay",
-   "kort": "A team relay where each person runs, drinks and runs back.",
+   "kort": "A team relay where each person runs, takes a sip and runs back.",
    "tid": "10 min",
    "behover": [
     "A can or cup per person",
@@ -451,11 +451,11 @@
    "regler": [
     "Split into teams and line up.",
     "Place one drink per person on the other side of the room or yard.",
-    "The first person runs, finishes their drink, runs back and tags the next person's hand.",
+    "The first person runs, takes a sip, runs back and tags the next person's hand.",
     "The first team to finish wins."
    ],
    "varianter": [
-    "Spin around a stick ten times before you run back (dizzy bat)."
+    "Swap the sip for a task at the table, like flipping a cup or rhyming on a word."
    ],
    "taggar": [
     "outdoors",
@@ -968,20 +968,20 @@
    ]
   },
   "power-hour": {
-   "namn": "Power Hour (Centurion)",
+   "namn": "Power Hour",
    "kort": "A playlist changes song every minute and everyone takes a small sip at every change.",
-   "tid": "60 min",
+   "tid": "30–60 min",
    "behover": [
-    "Playlist with 60 songs of 1 minute each",
+    "Playlist with 30–60 songs of 1 minute each",
     "Drinks"
    ],
    "regler": [
     "Make a playlist where each song plays for exactly one minute.",
-    "Every time the song changes, everyone takes a small sip (traditionally a shot of beer).",
-    "Keep going for an hour. Centurion is the version with 100 minutes."
+    "Every time the song changes, everyone takes a small sip.",
+    "Play for half an hour or an hour. That adds up to a lot of sips, so mix in alcohol-free drinks or water."
    ],
    "varianter": [
-    "Recommended: use a soft drink or water every other minute."
+    "Water hour: every other song is a sip of water."
    ],
    "taggar": [
     "music",
@@ -1062,15 +1062,15 @@
   },
   "vattenfall": {
    "namn": "Waterfall",
-   "kort": "Everyone starts drinking at the same time and nobody can stop until the person before them has stopped.",
-   "tid": "1–2 min",
+   "kort": "Everyone drinks in a chain around the circle and nobody can stop until the person before them has stopped.",
+   "tid": "1 min",
    "behover": [
     "Drinks"
    ],
    "regler": [
     "Everyone sits in a circle.",
     "The starter begins drinking. Then the next person starts, and so on around the circle.",
-    "The starter can stop whenever they like. Everyone else can only stop once the person before them has stopped."
+    "The starter stops after five seconds at most. Everyone else can only stop once the person before them has stopped."
    ],
    "taggar": [
     "quick",
